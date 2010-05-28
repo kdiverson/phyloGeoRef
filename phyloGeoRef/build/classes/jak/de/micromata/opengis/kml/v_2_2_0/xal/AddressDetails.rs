@@ -1,0 +1,15 @@
+de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails$PostalServiceElements$AddressLatitude
+de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails$PostalServiceElements$Barcode
+de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails$Country
+de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails$PostalServiceElements
+de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails$Country$CountryNameCode
+de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails$Address
+de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails$PostalServiceElements$AddressLatitudeDirection
+de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails$PostalServiceElements$KeyLineCode
+de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails$PostalServiceElements$SortingCode
+de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails
+de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails$PostalServiceElements$EndorsementLineCode
+de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails$PostalServiceElements$AddressLongitude
+de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails$PostalServiceElements$AddressIdentifier
+de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails$PostalServiceElements$SupplementaryPostalServiceData
+de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails$PostalServiceElements$AddressLongitudeDirection

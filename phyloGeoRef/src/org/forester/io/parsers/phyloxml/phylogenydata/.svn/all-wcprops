@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata
+END
+IdentifierParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/IdentifierParser.java
+END
+PropertyParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/PropertyParser.java
+END
+BinaryCharactersParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/BinaryCharactersParser.java
+END
+PointParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/PointParser.java
+END
+ConfidenceParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/ConfidenceParser.java
+END
+BranchWidthParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/BranchWidthParser.java
+END
+ReferenceParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/ReferenceParser.java
+END
+UriParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/UriParser.java
+END
+PhylogenyDataPhyloXmlParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/PhylogenyDataPhyloXmlParser.java
+END
+SequenceRelationParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/SequenceRelationParser.java
+END
+AccessionParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/AccessionParser.java
+END
+ProteinDomainParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/ProteinDomainParser.java
+END
+SequenceParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/SequenceParser.java
+END
+DomainArchitectureParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/DomainArchitectureParser.java
+END
+AnnotationParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/AnnotationParser.java
+END
+DateParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/DateParser.java
+END
+ColorParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/ColorParser.java
+END
+TaxonomyParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/TaxonomyParser.java
+END
+DistributionParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/DistributionParser.java
+END
+EventParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/phyloxml/phylogenydata/EventParser.java
+END

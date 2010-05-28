@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/pccx
+END
+ExternalNodeBasedCoverage.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/pccx/ExternalNodeBasedCoverage.java
+END
+ExternalNodeBasedCoverageMethod.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/pccx/ExternalNodeBasedCoverageMethod.java
+END
+BasicExternalNodeBasedCoverageExtender.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/pccx/BasicExternalNodeBasedCoverageExtender.java
+END
+CoverageCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/pccx/CoverageCalculator.java
+END
+CoverageCalculationMethod.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/pccx/CoverageCalculationMethod.java
+END
+ModelingUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/pccx/ModelingUtils.java
+END
+ExternalNodeBasedCoverageMethodOptions.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/pccx/ExternalNodeBasedCoverageMethodOptions.java
+END
+BranchLengthBasedScoringMethod.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/pccx/BranchLengthBasedScoringMethod.java
+END
+ScoringMethodForExternalNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/pccx/ScoringMethodForExternalNode.java
+END
+LogBranchLengthBasedScoringMethod.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/pccx/LogBranchLengthBasedScoringMethod.java
+END
+CoverageCalculationOptions.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/pccx/CoverageCalculationOptions.java
+END
+BranchCountingBasedScoringMethod.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/pccx/BranchCountingBasedScoringMethod.java
+END
+CoverageExtender.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/pccx/CoverageExtender.java
+END
+Coverage.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/pccx/Coverage.java
+END
+TestPccx.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/pccx/TestPccx.java
+END

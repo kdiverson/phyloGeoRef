@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers
+END
+HmmPfamOutputParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/HmmPfamOutputParser.java
+END
+HmmscanPerDomainTableParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/HmmscanPerDomainTableParser.java
+END
+PhylogenyParserException.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/PhylogenyParserException.java
+END
+PhylogenyParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/PhylogenyParser.java
+END
+ParserUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/io/parsers/ParserUtils.java
+END

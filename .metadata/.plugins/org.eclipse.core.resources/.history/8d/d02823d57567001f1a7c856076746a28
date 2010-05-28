@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data
+END
+Uri.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/Uri.java
+END
+PhylogenyDataUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/PhylogenyDataUtil.java
+END
+SequenceRelation.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/SequenceRelation.java
+END
+Accession.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/Accession.java
+END
+PhylogenyData.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/PhylogenyData.java
+END
+ProteinDomain.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/ProteinDomain.java
+END
+Sequence.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/Sequence.java
+END
+DomainArchitecture.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/DomainArchitecture.java
+END
+Annotation.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/Annotation.java
+END
+Date.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/Date.java
+END
+Taxonomy.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/Taxonomy.java
+END
+NodeData.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/NodeData.java
+END
+Distribution.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/Distribution.java
+END
+Event.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/Event.java
+END
+Identifier.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/Identifier.java
+END
+BinaryCharacters.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/BinaryCharacters.java
+END
+Property.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/Property.java
+END
+BranchData.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/BranchData.java
+END
+Point.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/Point.java
+END
+PropertiesMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/PropertiesMap.java
+END
+BranchColor.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/BranchColor.java
+END
+Confidence.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/Confidence.java
+END
+BranchWidth.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/BranchWidth.java
+END
+Reference.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/data/Reference.java
+END

@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing
+END
+BasicBinaryDomainCombination.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/BasicBinaryDomainCombination.java
+END
+DirectedBinaryDomainCombination.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/DirectedBinaryDomainCombination.java
+END
+DomainLengthsTable.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/DomainLengthsTable.java
+END
+PrintableSpeciesSpecificDomainSimilariyData.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/PrintableSpeciesSpecificDomainSimilariyData.java
+END
+BasicCombinableDomains.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/BasicCombinableDomains.java
+END
+BasicDomain.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/BasicDomain.java
+END
+DirectedCombinableDomains.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/DirectedCombinableDomains.java
+END
+BasicGenomeWideCombinableDomains.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/BasicGenomeWideCombinableDomains.java
+END
+CountsBasedPairwiseDomainSimilarity.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/CountsBasedPairwiseDomainSimilarity.java
+END
+PrintableDomainSimilarity.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/PrintableDomainSimilarity.java
+END
+SurfacingUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/SurfacingUtil.java
+END
+SimpleDomain.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/SimpleDomain.java
+END
+PairwiseDomainSimilarity.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/PairwiseDomainSimilarity.java
+END
+BasicProtein.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/BasicProtein.java
+END
+DomainParsimonyCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/DomainParsimonyCalculator.java
+END
+DomainId.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/DomainId.java
+END
+DomainArchitectureBasedGenomeSimilarityCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/DomainArchitectureBasedGenomeSimilarityCalculator.java
+END
+DomainCountsBasedPairwiseSimilarityCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/DomainCountsBasedPairwiseSimilarityCalculator.java
+END
+CombinationsBasedPairwiseDomainSimilarity.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/CombinationsBasedPairwiseDomainSimilarity.java
+END
+ProteinCountsBasedPairwiseDomainSimilarityCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/ProteinCountsBasedPairwiseDomainSimilarityCalculator.java
+END
+BasicDomainSimilarityCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/BasicDomainSimilarityCalculator.java
+END
+Species.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/Species.java
+END
+PairwiseDomainSimilarityCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/PairwiseDomainSimilarityCalculator.java
+END
+DomainLengths.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/DomainLengths.java
+END
+ProteinId.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/ProteinId.java
+END
+BinaryDomainCombination.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/BinaryDomainCombination.java
+END
+CombinationsBasedPairwiseDomainSimilarityCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/CombinationsBasedPairwiseDomainSimilarityCalculator.java
+END
+PairwiseGenomeComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/PairwiseGenomeComparator.java
+END
+CombinableDomains.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/CombinableDomains.java
+END
+SpeciesSpecificDomainSimilariyData.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/SpeciesSpecificDomainSimilariyData.java
+END
+Domain.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/Domain.java
+END
+GenomeWideCombinableDomains.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/GenomeWideCombinableDomains.java
+END
+DomainCountsDifferenceUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/DomainCountsDifferenceUtil.java
+END
+MappingResults.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/MappingResults.java
+END
+AdjactantDirectedBinaryDomainCombination.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/AdjactantDirectedBinaryDomainCombination.java
+END
+DomainSimilarity.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/DomainSimilarity.java
+END
+SurfacingConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/SurfacingConstants.java
+END
+Protein.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/Protein.java
+END
+TestSurfacing.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/TestSurfacing.java
+END
+AdjactantDirectedCombinableDomains.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/AdjactantDirectedCombinableDomains.java
+END
+DomainSimilarityCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/DomainSimilarityCalculator.java
+END
+BasicSpecies.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/surfacing/BasicSpecies.java
+END

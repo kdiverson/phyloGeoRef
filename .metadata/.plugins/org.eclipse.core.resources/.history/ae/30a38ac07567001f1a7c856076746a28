@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogenyinference
+END
+DistanceMatrix.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogenyinference/DistanceMatrix.java
+END
+FitchParsimony.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogenyinference/FitchParsimony.java
+END
+TestPhylogenyReconstruction.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogenyinference/TestPhylogenyReconstruction.java
+END
+CharacterStateMatrix.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogenyinference/CharacterStateMatrix.java
+END
+DiscreteState.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogenyinference/DiscreteState.java
+END
+BasicCharacterStateMatrix.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogenyinference/BasicCharacterStateMatrix.java
+END
+SymmetricalDistanceMatrixParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogenyinference/SymmetricalDistanceMatrixParser.java
+END
+SankoffParsimony.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogenyinference/SankoffParsimony.java
+END
+BasicSymmetricalDistanceMatrix.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogenyinference/BasicSymmetricalDistanceMatrix.java
+END
+DistanceMethod.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogenyinference/DistanceMethod.java
+END
+DolloParsimony.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogenyinference/DolloParsimony.java
+END
+NeighborJoining.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogenyinference/NeighborJoining.java
+END
+DistanceMatrixParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogenyinference/DistanceMatrixParser.java
+END

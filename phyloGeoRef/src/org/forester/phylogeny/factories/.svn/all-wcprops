@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/factories
+END
+ParserBasedPhylogenyFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/factories/ParserBasedPhylogenyFactory.java
+END
+PhylogenyFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/factories/PhylogenyFactory.java
+END
+BasicPhylogenyFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/phylogeny/factories/BasicPhylogenyFactory.java
+END

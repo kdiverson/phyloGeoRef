@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/go
+END
+BasicGoTerm.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/go/BasicGoTerm.java
+END
+TestGo.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/go/TestGo.java
+END
+GoNameSpace.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/go/GoNameSpace.java
+END
+GoId.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/go/GoId.java
+END
+GoUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/go/GoUtils.java
+END
+GoRelationship.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/go/GoRelationship.java
+END
+PfamToGoMapping.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/go/PfamToGoMapping.java
+END
+PfamToGoParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/go/PfamToGoParser.java
+END
+BasicGoRelationship.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/go/BasicGoRelationship.java
+END
+GoXRef.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/go/GoXRef.java
+END
+Mapping.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/go/Mapping.java
+END
+GoSubset.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/go/GoSubset.java
+END
+OBOparser.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/go/OBOparser.java
+END
+BasicGoXRef.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/go/BasicGoXRef.java
+END
+GoTerm.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/go/GoTerm.java
+END
+BasicGoSubset.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/biojava/biojava.git/!svn/ver/4683/biojava3-phylo/src/main/java/org/forester/go/BasicGoSubset.java
+END
