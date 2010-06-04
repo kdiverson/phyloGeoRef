@@ -17,10 +17,18 @@
 
 package nescent.phyloGeoRef.tree;
 
-import nescent.phyloGeoRef.tree.getTree;
+import java.math.BigDecimal;
+import java.util.ListIterator;
+import java.util.List;
+//import nescent.phyloGeoRef.tree.getTree;
+import nescent.phyloGeoRef.geoData.parseCoords;
 
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
+import org.forester.phylogeny.data.Distribution;
+import org.forester.phylogeny.data.NodeData;
+import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
+import org.forester.phylogeny.iterators.ExternalForwardIterator;
 
 /**
  * This class stores trees. It uses functions from getTree to get a tree
@@ -31,22 +39,32 @@ import org.forester.phylogeny.PhylogenyNode;
  * @author Kathryn Iverson <kd.iverson at gmail.com>
  */
 public class storeTree {
-    //Phylogeny tree = new Phylogeny;
-    Phylogeny phy = null;
-    //Phylogeny [] phyArr = null;
-    void treeStore (Phylogeny [] phyArr) {
+
+    Phylogeny my_phy;
+    List geoCoords; //from parseCoords.java -> returned coordList
+    ListIterator li = geoCoords.listIterator();
+    BigDecimal lat;
+    BigDecimal tude;
+
+    /**
+     * 
+     * @param phyArr
+     */
+    public void treeStore (Phylogeny [] phyArr) {
         for (int i = 0; i < phyArr.length; i++)
-            phy = phyArr[i];
+            my_phy = phyArr[i];
+            double height = my_phy.getHeight();
+            int numBr = my_phy.getNumberOfBranches();
+            PhylogenyNode root =  my_phy.getRoot();
+            int en = my_phy.getNumberOfExternalNodes();
 
-        double height = phy.getHeight();
-        int numBr = phy.getNumberOfBranches();
-        PhylogenyNode root =  phy.getRoot();
-        int en = phy.getNumberOfExternalNodes();
+            for( PhylogenyNodeIterator it = my_phy.iteratorPostorder(); it.hasNext(); ) {
+
+
+        }
+
     }
-    
+
 
     
-
-    
-
 }

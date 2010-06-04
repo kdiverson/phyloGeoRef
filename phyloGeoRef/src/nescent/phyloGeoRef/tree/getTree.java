@@ -23,8 +23,6 @@ import org.forester.io.parsers.nhx.NHXParser;
 import org.forester.io.parsers.phyloxml.PhyloXmlParser;
 import org.forester.io.parsers.tol.TolParser;
 import org.forester.io.parsers.nexus.NexusPhylogeniesParser;
-import org.forester.io.parsers.PhylogenyParser;
-import org.forester.io.parsers.PhylogenyParserException;
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.factories.PhylogenyFactory;
 import org.forester.phylogeny.factories.ParserBasedPhylogenyFactory;
@@ -39,10 +37,10 @@ import org.forester.util.ForesterUtil;
  */
 public class getTree {
 
-    Phylogeny [] phy = null;
+    Phylogeny [] phys;// = null;
 
     /**
-     * openTree (File tree_file, String fileType) takes 2 parameters, a file
+     * openTrees (File tree_file, String fileType) takes 2 parameters, a file
      * and a string. The file is a tree file in nhx, nexus, phylxml or itol
      * format. The second parameter is a string indicating the
      * filetype: NHX, NEXUS, XML or ITOL. It returns an array of phylogeny
@@ -53,43 +51,43 @@ public class getTree {
      * @return Phylogeny []
      * @throws Exception
      */
-    public Phylogeny [] openTree (File tree_file, String fileType) throws Exception {
+    public Phylogeny [] openTrees (File tree_file, String fileType) throws Exception {
         if (fileType.equalsIgnoreCase("NHX"))
             try {
                 PhylogenyFactory factory = ParserBasedPhylogenyFactory.getInstance();
-                phy = factory.create( tree_file, new NHXParser() );
+                phys = factory.create( tree_file, new NHXParser() );
             } catch ( Exception e ) {
                     System.out.println("Error: " + e.toString());
                 }
         else if (fileType.equalsIgnoreCase("XML"))
             try {
                 PhylogenyFactory factory = ParserBasedPhylogenyFactory.getInstance();
-                phy = factory.create( new PhyloXmlParser(), tree_file );
+                phys = factory.create( new PhyloXmlParser(), tree_file );
             } catch ( Exception e ) {
                     System.out.println("Error: " + e.toString());
                }
         else if (fileType.equalsIgnoreCase("TOL"))
             try {
                 PhylogenyFactory factory = ParserBasedPhylogenyFactory.getInstance();
-                phy = factory.create( new TolParser(), tree_file );
+                phys = factory.create( new TolParser(), tree_file );
             } catch ( Exception e ) {
                 System.out.println("Error: " + e.toString());
             }
         else if (fileType.equalsIgnoreCase("NEXUS"))
             try {
                 PhylogenyFactory factory = ParserBasedPhylogenyFactory.getInstance();
-                phy = factory.create( new NexusPhylogeniesParser(), tree_file );
+                phys = factory.create( new NexusPhylogeniesParser(), tree_file );
             } catch ( Exception e ) {
                 System.out.println("Error: " + e.toString());
             }
         else {
-            System.out.println("No/wrong fileType specified for file: " + tree_file +" if you don't know the filetype, use openTree(tree_file)");
+            System.out.println("No/wrong fileType specified for file: " + tree_file +" if you don't know the filetype, use openTrees(tree_file)");
         }
-        return phy;
+        return phys;
         }
 
     /**
-     * openTree (File tree_file) takes one parameter, a file object containing
+     * openTrees (File tree_file) takes one parameter, a file object containing
      * a phylogenetic tree file. It will try to guess what format the tree is
      * in. Use this if you don't know ahead of time what the tree format is.
      * 
@@ -97,15 +95,75 @@ public class getTree {
      * @return
      * @throws Exception
      */
-    public Phylogeny [] openTree (File tree_file) throws Exception {
+    public Phylogeny [] openTrees (File tree_file) throws Exception {
         try {
             PhylogenyFactory factory = ParserBasedPhylogenyFactory.getInstance();
-            phy = factory.create( tree_file, ForesterUtil.createParserDependingOnFileType( tree_file, true ) );
+            phys = factory.create( tree_file, ForesterUtil.createParserDependingOnFileType( tree_file, true ) );
         } catch ( Exception e ) {
             System.out.println("Error: " + e.toString());
         }
-        return phy;
+        return phys;
     }
 
+    /**
+     * openTree takes
+     * 
+     * @param tree_file
+     * @param fileType
+     * @return
+     * @throws Exception
+     */
+    public Phylogeny openTree (File tree_file, String fileType) throws Exception {
+        if (fileType.equalsIgnoreCase("NHX"))
+            try {
+                PhylogenyFactory factory = ParserBasedPhylogenyFactory.getInstance();
+                phys = factory.create( tree_file, new NHXParser() );
+            } catch ( Exception e ) {
+                    System.out.println("Error: " + e.toString());
+                }
+        else if (fileType.equalsIgnoreCase("XML"))
+            try {
+                PhylogenyFactory factory = ParserBasedPhylogenyFactory.getInstance();
+                phys = factory.create( new PhyloXmlParser(), tree_file );
+            } catch ( Exception e ) {
+                    System.out.println("Error: " + e.toString());
+               }
+        else if (fileType.equalsIgnoreCase("TOL"))
+            try {
+                PhylogenyFactory factory = ParserBasedPhylogenyFactory.getInstance();
+                phys = factory.create( new TolParser(), tree_file );
+            } catch ( Exception e ) {
+                System.out.println("Error: " + e.toString());
+            }
+        else if (fileType.equalsIgnoreCase("NEXUS"))
+            try {
+                PhylogenyFactory factory = ParserBasedPhylogenyFactory.getInstance();
+                phys = factory.create( new NexusPhylogeniesParser(), tree_file );
+            } catch ( Exception e ) {
+                System.out.println("Error: " + e.toString());
+            }
+        else {
+            System.out.println("No/wrong fileType specified for file: " + tree_file +" if you don't know the filetype, use openTree(tree_file)");
+        }
+        Phylogeny my_phy = phys[ 0 ];
+        return my_phy;
+    }
 
+    /**
+     * 
+     * @param tree_file
+     * @return
+     * @throws Exception
+     */
+
+    public Phylogeny openTree (File tree_file) throws Exception {
+        try {
+            PhylogenyFactory factory = ParserBasedPhylogenyFactory.getInstance();
+            phys = factory.create( tree_file, ForesterUtil.createParserDependingOnFileType( tree_file, true ) );
+        } catch ( Exception e ) {
+            System.out.println("Error: " + e.toString());
+        }
+        Phylogeny my_phy = phys[ 0 ];
+        return my_phy;
+    }
 }
