@@ -18,6 +18,7 @@
 package nescent.phyloGeoRef;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import nescent.phyloGeoRef.geoData.parseCoords;
 import nescent.phyloGeoRef.tree.getTree;
@@ -30,13 +31,31 @@ import org.forester.phylogeny.Phylogeny;
  */
 public class magic {
 
-    List coordList;
-    //Phylogeny my_phy;
+    ArrayList coordList;
+    parseCoords pc;
+    getTree gt;
+    Phylogeny my_phy;
+    calc3Dtree c3dt;
 
-    public void toKML(File treeFile, File coordFile) {
-        coordList = parseCoords.parseCSV(coordFile);
-       Phylogeny my_phy = getTree.openTree(treeFile);
-        
+    public void toKML(File treeFile, File coordFile, String fileType, String metadata) {
+       
+       if ( metadata.equalsIgnoreCase("y") ) {
+           coordList = pc.parseCSVwithMetadata(coordFile);
+           
+       }
+       else {
+           coordList = pc.parseCSV(coordFile);
+       }
+
+       try {
+           my_phy = gt.openTree(treeFile);
+       } catch (Exception e) {
+           System.out.println("Error: " + e.toString() );
+       }
+
+       c3dt.assignNodeCoords(my_phy, coordList);
+
+       //Write KML!!
 
     }
 

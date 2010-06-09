@@ -20,7 +20,6 @@ package nescent.phyloGeoRef.geoData;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
 import java.math.BigDecimal;
 
 import au.com.bytecode.opencsv.CSVReader;
@@ -36,11 +35,11 @@ public class parseCoords {
 
     //static List coordList;
     static String leafName;
-    static String leafLat;
-    static String leafLong;
+    static BigDecimal leafLat;
+    static BigDecimal leafLong;
     static String metadata;
 
-    ArrayList latLongArr = new ArrayList();
+    ArrayList latLongArrLst = new ArrayList();
 
     public ArrayList parseCSV(File infile) {
         try {
@@ -48,16 +47,16 @@ public class parseCoords {
             String [] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 leafName = nextLine[0];
-                leafLat = nextLine[1];
-                leafLong = nextLine[2];
+                leafLat = new BigDecimal(nextLine[1]);
+                leafLong = new BigDecimal(nextLine[2]);
                 Triple latLong = new Triple(leafName, leafLat, leafLong);
-                latLongArr.add(latLong);
+                latLongArrLst.add(latLong);
             }
 
         } catch (Exception e) {
             System.out.println("Error: " + e.toString());
         }
-        return latLongArr;
+        return latLongArrLst;
     }
 
     public ArrayList parseCSV(File infile, int skipLines) {
@@ -67,16 +66,16 @@ public class parseCoords {
             String [] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 leafName = nextLine[0];
-                leafLat = nextLine[1];
-                leafLong = nextLine[2];
+                leafLat = new BigDecimaal(nextLine[1]);
+                leafLong = new BigDecimal(nextLine[2]);
                 Triple latLong = new Triple(leafName, leafLat, leafLong);
-                latLongArr.add(latLong);
+                latLongArrLst.add(latLong);
             }
 
         } catch (Exception e) {
             System.out.println("Error: " + e.toString());
         }
-        return latLongArr;
+        return latLongArrLst;
     }
 
 
@@ -86,16 +85,16 @@ public class parseCoords {
             String [] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 leafName = nextLine[0];
-                leafLat = nextLine[1];
-                leafLong = nextLine[2];
+                leafLat = new BigDecimal(nextLine[1]);
+                leafLong = new BigDecimal(nextLine[2]);
                 Triple latLong = new Triple(leafName, leafLat, leafLong);
-                latLongArr.add(latLong);
+                latLongArrLst.add(latLong);
             }
 
         } catch (Exception e) {
             System.out.println("Error: " + e.toString());
         }
-        return latLongArr;
+        return latLongArrLst;
     }
 
 
@@ -112,15 +111,15 @@ public class parseCoords {
             while ((nextLine = reader.readNext()) != null) {
                 //do something with
                 leafName = nextLine[0];
-                leafLat = nextLine[1];
-                leafLong = nextLine[2];
+                leafLat = new BigDecimal(nextLine[1]);
+                leafLong = new BigDecimal(nextLine[2]);
                 Triple latLong = new Triple(leafName, leafLat, leafLong);
-                latLongArr.add(latLong);
+                latLongArrLst.add(latLong);
             }
         } catch (Exception e) {
             System.out.println("Error: " + e.toString());
         }
-        return latLongArr;
+        return latLongArrLst;
     }
 
     
@@ -136,15 +135,15 @@ public class parseCoords {
             String [] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 leafName = nextLine[0];
-                leafLat = nextLine[1];
-                leafLong = nextLine[2];
+                leafLat = new BigDecimal(nextLine[1]);
+                leafLong = new BigDecimal(nextLine[2]);
                 Triple latLong = new Triple(leafName, leafLat, leafLong);
-                latLongArr.add(latLong);
+                latLongArrLst.add(latLong);
             }
         } catch (Exception e) {
             System.out.println("Error: " + e.toString());
         }
-        return latLongArr;
+        return latLongArrLst;
     }
 
 
@@ -161,15 +160,15 @@ public class parseCoords {
             String [] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 leafName = nextLine[0];
-                leafLat = nextLine[1];
-                leafLong = nextLine[2];
+                leafLat = new BigDecimal(nextLine[1]);
+                leafLong = new BigDecimal(nextLine[2]);
                 Triple latLong = new Triple(leafName, leafLat, leafLong);
-                latLongArr.add(latLong);
+                latLongArrLst.add(latLong);
             }
         } catch (Exception e) {
             System.out.println("Error: " + e.toString());
         }
-        return latLongArr;
+        return latLongArrLst;
     }
 
 
@@ -179,17 +178,17 @@ public class parseCoords {
             String [] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 leafName = nextLine[0];
-                leafLat = nextLine[1];
-                leafLong = nextLine[2];
+                leafLat = new BigDecimal(nextLine[1]);
+                leafLong = new BigDecimal(nextLine[2]);
                 metadata = nextLine[3];
                 Quad latLong = new Quad(leafName, leafLat, leafLong, metadata);
-                latLongArr.add(latLong);
+                latLongArrLst.add(latLong);
             }
 
         } catch (Exception e) {
             System.out.println("Error: " + e.toString());
         }
-        return latLongArr;
+        return latLongArrLst;
     }
 
     public ArrayList parseCSVwithMetadata(File infile, int skipLines) {
@@ -199,17 +198,17 @@ public class parseCoords {
             String [] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 leafName = nextLine[0];
-                leafLat = nextLine[1];
-                leafLong = nextLine[2];
+                leafLat = new BigDecimal(nextLine[1]);
+                leafLong = new BigDecimal(nextLine[2]);
                 metadata = nextLine[3];
                 Quad latLong = new Quad(leafName, leafLat, leafLong, metadata);
-                latLongArr.add(latLong);
+                latLongArrLst.add(latLong);
             }
 
         } catch (Exception e) {
             System.out.println("Error: " + e.toString());
         }
-        return latLongArr;
+        return latLongArrLst;
     }
 
 
@@ -219,17 +218,17 @@ public class parseCoords {
             String [] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 leafName = nextLine[0];
-                leafLat = nextLine[1];
-                leafLong = nextLine[2];
+                leafLat = new BigDecimal(nextLine[1]);
+                leafLong = new BigDecimal(nextLine[2]);
                 metadata = nextLine[3];
                 Quad latLong = new Quad(leafName, leafLat, leafLong, metadata);
-                latLongArr.add(latLong);
+                latLongArrLst.add(latLong);
             }
 
         } catch (Exception e) {
             System.out.println("Error: " + e.toString());
         }
-        return latLongArr;
+        return latLongArrLst;
     }
 
 
@@ -246,16 +245,16 @@ public class parseCoords {
             while ((nextLine = reader.readNext()) != null) {
                 //do something with
                 leafName = nextLine[0];
-                leafLat = nextLine[1];
-                leafLong = nextLine[2];
+                leafLat = new BigDecimal(nextLine[1]);
+                leafLong = new BigDecimal(nextLine[2]);
                 metadata = nextLine[3];
                 Quad latLong = new Quad(leafName, leafLat, leafLong, metadata);
-                latLongArr.add(latLong);
+                latLongArrLst.add(latLong);
             }
         } catch (Exception e) {
             System.out.println("Error: " + e.toString());
         }
-        return latLongArr;
+        return latLongArrLst;
     }
 
 
@@ -271,16 +270,16 @@ public class parseCoords {
             String [] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 leafName = nextLine[0];
-                leafLat = nextLine[1];
-                leafLong = nextLine[2];
+                leafLat = new BigDecimal(nextLine[1]);
+                leafLong = new BigDecimal(nextLine[2]);
                 metadata = nextLine[3];
                 Quad latLong = new Quad(leafName, leafLat, leafLong, metadata);
-                latLongArr.add(latLong);
+                latLongArrLst.add(latLong);
             }
         } catch (Exception e) {
             System.out.println("Error: " + e.toString());
         }
-        return latLongArr;
+        return latLongArrLst;
     }
 
 
@@ -297,16 +296,16 @@ public class parseCoords {
             String [] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 leafName = nextLine[0];
-                leafLat = nextLine[1];
-                leafLong = nextLine[2];
+                leafLat = new BigDecimal(nextLine[1]);
+                leafLong = new BigDecimal(nextLine[2]);
                 metadata = nextLine[3];
                 Quad latLong = new Quad(leafName, leafLat, leafLong, metadata);
-                latLongArr.add(latLong);
+                latLongArrLst.add(latLong);
             }
         } catch (Exception e) {
             System.out.println("Error: " + e.toString());
         }
-        return latLongArr;
+        return latLongArrLst;
     }
     
 }
