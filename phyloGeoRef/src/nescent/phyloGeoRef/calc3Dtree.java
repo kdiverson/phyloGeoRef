@@ -26,6 +26,7 @@ import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
 import org.forester.phylogeny.data.Distribution;
 import org.forester.phylogeny.data.NodeData;
+import org.forester.phylogeny.data.Taxonomy;
 import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
 import org.forester.phylogeny.iterators.ExternalForwardIterator;
 import org.forester.phylogeny.PhylogenyMethods;
@@ -37,36 +38,51 @@ import org.forester.phylogeny.PhylogenyMethods;
 public class calc3Dtree {
 
     private void assignExtenalNodeDistribution (Phylogeny my_phy, ArrayList coordList) {
-        //calc lat long
-        BigDecimal [] latLong = new BigDecimal [countNodes(my_phy)];
-        //function that determins the lat and long of each node
-        //assigns lat and long to the leafs from the coord file
-        //external nodes are leafs
-        int x = 0;
-        int y = 1;
-        //Triple speciesCoord;
-        //ListIterator li = coordList.listIterator();
-        for( PhylogenyNodeIterator ext_it = my_phy.iteratorExternalForward(); ext_it.hasNext();) {
-            PhylogenyNode node = ext_it.next();
-            NodeData data = node.getNodeData();
-            Distribution dist = data.getDistribution();
-            //hack, replace with listIterator?
-            //for item in coordList
-            for(ListIterator li = coordList.listIterator(); li.hasNext();) {
-                dist.setAltitude(BigDecimal.ZERO);
-                speciesCoord = li.next();
 
-                if (data.getTaxonomy() == coordList) {
+            //Might return object instead of Triple or Quad 
+            if (coordList.get(0) instanceof Triple) {
+                for(ListIterator<Triple> li = coordList.listIterator(); li.hasNext();) {
+                    Triple item = li.next();
+
+                    String species = (String) item.getFirst();
+                    BigDecimal lat = (BigDecimal) item.getSecond();
+                    BigDecimal lng = (BigDecimal) item.getThird();
+
+                    PhylogenyNode node = my_phy.getNode(species);//ext_it.next();
+                    NodeData data = node.getNodeData();
+                    Distribution dist = data.getDistribution();
+
+                    dist.setLatitude(lat); //from geo coord file
+                    dist.setLongitude(lng); //from geo coord file
+                    dist.setAltitude(BigDecimal.ZERO);//always 0
 
                 }
             }
-            
-            dist.setLatitude(); //from geo coord file
-            dist.setLongitude(); //from geo coord file
-            dist.setAltitude(BigDecimal.ZERO);//always 0
-            x++;
-            y++;
-        }
+
+            else if (coordList.get(0) instanceof Quad){
+                for(ListIterator<Quad> li = coordList.listIterator(); li.hasNext();) {
+                    Quad item = li.next();
+
+                    String species = (String) item.getFirst();
+                    BigDecimal lat = (BigDecimal) item.getSecond();
+                    BigDecimal lng = (BigDecimal) item.getThird();
+                    //Should decide what to do with this
+                    String metadata = (String) item.getFourth();
+
+                    PhylogenyNode node = my_phy.getNode(species);//ext_it.next();
+                    NodeData data = node.getNodeData();
+                    Distribution dist = data.getDistribution();
+
+                    dist.setLatitude(lat); //from geo coord file
+                    dist.setLongitude(lng); //from geo coord file
+                    dist.setAltitude(BigDecimal.ZERO);//always 0
+
+                }
+            }
+
+            else{
+                System.out.println("Something wrong with coordList: didn't find type Triple or Quad");
+            }
 
     }
 
@@ -78,11 +94,33 @@ public class calc3Dtree {
         return latLong;
     }
 
-    private void calcNodeAltitude(PhylogenyNode node) {
+    private void assignLatLong(Phylogeny my_phy, PhylogenyNode node) {
+        
+        BigDecimal lat = null;
+        BigDecimal lng = null;
+        
+        //linear strech algorithm from GeoPhyloBuilder 1.1
+        //converts a non-ultrametric tree to an altrametric tree
+        //right now all we can do is ignore branch lengths
+        short nLtip = PhylogenyMethods.calculateMaxBranchesToLeaf(node);
+        double nLroot = PhylogenyMethods.calculateDistanceToRoot(node);
+        int maxLtree = PhylogenyMethods.calculateMaxDepth(my_phy);
+        short zMult = 1;
+        
+        double nodeZ = (nLtip/(nLroot/nLtip)*maxLtree)*zMult;
+
+        
+
+        NodeData data = node.getNodeData();
+        Distribution dist = data.getDistribution();
+        dist.setLatitude(lat);
+        dist.setLongitude(lng);
+
+    }
+
+    private void assignNodeAltitude(PhylogenyNode node) {
         //calc altitude for leafs, nodeAltitude = a + ((n-1)*b)
         //BigDecimal [] alt = new BigDecimal [countNodes(my_phy)];
-        //int n = countNodes(my_phy);//FIX -> SHOULD BE DISTANCE TO ROOT NOT TOTAL NODES!
-        //PhylogenyMethods pm = new PhylogenyMethods();
         double n = PhylogenyMethods.calculateDistanceToRoot(node);
         int a = 198000; //from Janies et al. 2007
         int b = 66000; //from Janies et al. 2007
@@ -105,6 +143,9 @@ public class calc3Dtree {
             PhylogenyNode node = ext_it.next();
             NodeData data = node.getNodeData();
             Distribution dist = data.getDistribution();
+
+            //assignNodeAltitude(node);
+
             //Algorithm: Each external node, "leaf" is assigned a lat/long from the coordlist
             //all subsequent nodes are then placed in the middle of the child nodes at altitude alt.
 
@@ -130,7 +171,7 @@ public class calc3Dtree {
                 dist.setLongitude(firstChildLong.add(lastChildLong).divide(two));
             }
 
-            calcNodeAltitude(node);
+            assignNodeAltitude(node);
         }
 
 
@@ -142,43 +183,52 @@ public class calc3Dtree {
     }
 
 
-    public void assignNodeCoords(Phylogeny my_phy, ArrayList coordList) {
-        if (my_phy.isCompletelyBinary()) {
-            assignBinaryNodes(my_phy, coordList);
-        }
-        
-        int x = 0;
-        int y = 0;
-        int z = 1;
+    public void assignMultipleObservations (Phylogeny my_phy, ArrayList coordList) {
+        //similar to other assignNode functions but altitude needs to change; leaves should be at
+        //some nonzero altitude, then assignment can continue as normal.
 
-        //calc3Dtree c3dt;
-        //this loop iterated through each node
+        //
         for( PhylogenyNodeIterator ext_it = my_phy.iteratorPostorder(); ext_it.hasNext();) {
             PhylogenyNode node = ext_it.next();
             NodeData data = node.getNodeData();
             Distribution dist = data.getDistribution();
 
-            //my_phy.getNode(nameFromCoordListFile) -> get the node with the name in coordList[0[0]]
+            if (node.isExternal() )
+                dist.setAltitude(new BigDecimal("198000"));
+            
+            else{
+                assignNodeAltitude(node);
+                assignLatLong(my_phy, node);
+            }
 
-            //ONLY RELEVANT TO LEAFS IE EXTERNAL NODES!!!
+
+        }
+        
+    }
+
+    public void assignNodeCoords(Phylogeny my_phy, ArrayList coordList) {
+        if (my_phy.isCompletelyBinary()) {
+            assignBinaryNodes(my_phy, coordList);
+        }
+
+        assignExtenalNodeDistribution(my_phy, coordList);
+
+        //this loop iterated through each node
+        for( PhylogenyNodeIterator ext_it = my_phy.iteratorPostorder(); ext_it.hasNext();) {
+            PhylogenyNode node = ext_it.next();
+            NodeData data = node.getNodeData();
+
             //coordlist is an array of triples (or quads) like this: [(species,lat,long,metadata), (species2, lat, long, metadata)]
             //iterate through coordList [(species,lat,long,metadata), (species2, lat, long, metadata)]
 
             //this assumes we already assigned external nodes
-            if ( !data.isHasDistribution() ) {
-                //alt =
-                lat
-                longt
-                
-                //calcNodeAltitude(my_phy, node);
-                //calcLat(my_phy, node)
-                dist.setLatitude(coordList[y]);
-                dist.setLongitude(latLong[z]);
+            if ( !node.isExternal() ) {
+                //Distribution dist = data.getDistribution();
 
-                x++;
-                y++;
-                z++;
+                assignLatLong(my_phy, node);
+
             }
+            assignNodeAltitude(node);
 
         }
     }
@@ -203,3 +253,19 @@ public class calc3Dtree {
 //                        ).multiply(firstChildLat.subtract(lastChildLat) ).add(
 //                        ( firstChildLong.subtract(lastChildLong)
 //                        ).multiply(firstChildLong.subtract(lastChildLong)) ).doubleValue() );
+
+        //calc lat long
+        //BigDecimal [] latLong = new BigDecimal [countNodes(my_phy)];
+        //function that determins the lat and long of each node
+        //assigns lat and long to the leafs from the coord file
+        //external nodes are leafs
+
+        //Triple speciesCoord;
+        //ListIterator li = coordList.listIterator();
+        //MAY NOT NEED TO ITERATE THROGUH NODES. CAN JUST CALL THE NODE BY SPECIES NAME!!!
+        //for( PhylogenyNodeIterator ext_it = my_phy.iteratorExternalForward(); ext_it.hasNext();) {
+//            PhylogenyNode node = my_phy.getNode(null);//ext_it.next();
+//            NodeData data = node.getNodeData();
+//            Distribution dist = data.getDistribution();
+//            Taxonomy tax = data.getTaxonomy();
+//            String name = tax.getScientificName();

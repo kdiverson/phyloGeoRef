@@ -41,7 +41,7 @@ public class parseCoords {
 
     ArrayList latLongArrLst = new ArrayList();
 
-    public ArrayList parseCSV(File infile) {
+    public ArrayList<Triple> parseCSV(File infile) {
         try {
             CSVReader reader = new CSVReader(new FileReader(infile));
             String [] nextLine;
@@ -59,14 +59,14 @@ public class parseCoords {
         return latLongArrLst;
     }
 
-    public ArrayList parseCSV(File infile, int skipLines) {
+    public ArrayList<Triple> parseCSV(File infile, int skipLines) {
 
         try {
             CSVReader reader = new CSVReader(new FileReader(infile), ',', '\'', skipLines);
             String [] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 leafName = nextLine[0];
-                leafLat = new BigDecimaal(nextLine[1]);
+                leafLat = new BigDecimal(nextLine[1]);
                 leafLong = new BigDecimal(nextLine[2]);
                 Triple latLong = new Triple(leafName, leafLat, leafLong);
                 latLongArrLst.add(latLong);
@@ -79,7 +79,7 @@ public class parseCoords {
     }
 
 
-    public List parseTSV(File infile) {
+    public ArrayList<Triple> parseTSV(File infile) {
         try {
             CSVReader reader = new CSVReader(new FileReader(infile), '\t', '\'');
             String [] nextLine;
@@ -104,7 +104,7 @@ public class parseCoords {
      * @param skipLines
      * @return
      */
-    public ArrayList parseTSV(File infile, int skipLines) {
+    public ArrayList<Triple> parseTSV(File infile, int skipLines) {
         try {
             CSVReader reader = new CSVReader(new FileReader(infile), '\t', '\'', skipLines);
             String [] nextLine;
@@ -129,7 +129,7 @@ public class parseCoords {
      * @param delim
      * @return
      */
-    public ArrayList parseDelim(File infile, char delim) {
+    public ArrayList<Triple> parseDelim(File infile, char delim) {
         try {
             CSVReader reader = new CSVReader(new FileReader(infile), delim, '\'');
             String [] nextLine;
@@ -154,7 +154,7 @@ public class parseCoords {
      * @param skipLines
      * @return
      */
-    public ArrayList parseDelim(File infile, char delim, int skipLines) {
+    public ArrayList<Triple> parseDelim(File infile, char delim, int skipLines) {
         try {
             CSVReader reader = new CSVReader(new FileReader(infile), delim, '\'', skipLines);
             String [] nextLine;
@@ -172,7 +172,7 @@ public class parseCoords {
     }
 
 
-    public ArrayList parseCSVwithMetadata(File infile) {
+    public ArrayList<Quad> parseCSVwithMetadata(File infile) {
         try {
             CSVReader reader = new CSVReader(new FileReader(infile));
             String [] nextLine;
@@ -191,7 +191,7 @@ public class parseCoords {
         return latLongArrLst;
     }
 
-    public ArrayList parseCSVwithMetadata(File infile, int skipLines) {
+    public ArrayList<Quad> parseCSVwithMetadata(File infile, int skipLines) {
 
         try {
             CSVReader reader = new CSVReader(new FileReader(infile), ',', '\'', skipLines);
@@ -212,7 +212,7 @@ public class parseCoords {
     }
 
 
-    public List parseTSVwithMetadata(File infile) {
+    public List<Quad> parseTSVwithMetadata(File infile) {
         try {
             CSVReader reader = new CSVReader(new FileReader(infile), '\t', '\'');
             String [] nextLine;
@@ -238,7 +238,7 @@ public class parseCoords {
      * @param skipLines
      * @return
      */
-    public ArrayList parseTSVwithMetadata(File infile, int skipLines) {
+    public ArrayList<Quad> parseTSVwithMetadata(File infile, int skipLines) {
         try {
             CSVReader reader = new CSVReader(new FileReader(infile), '\t', '\'', skipLines);
             String [] nextLine;
@@ -264,7 +264,7 @@ public class parseCoords {
      * @param delim
      * @return
      */
-    public ArrayList parseDelimWithMetadata(File infile, char delim) {
+    public ArrayList<Quad> parseDelimWithMetadata(File infile, char delim) {
         try {
             CSVReader reader = new CSVReader(new FileReader(infile), delim, '\'');
             String [] nextLine;
@@ -290,7 +290,7 @@ public class parseCoords {
      * @param skipLines
      * @return
      */
-    public ArrayList parseDelimWithMetadata(File infile, char delim, int skipLines) {
+    public ArrayList<Quad> parseDelimWithMetadata(File infile, char delim, int skipLines) {
         try {
             CSVReader reader = new CSVReader(new FileReader(infile), delim, '\'', skipLines);
             String [] nextLine;
