@@ -56,8 +56,19 @@ public class testMain {
         File treeFile = new File(intreeFile);
         //File coordFile = new File(incoordFile);
 
+        try {
+           my_phy = gt.openTree(treeFile);
+       } catch (Exception e) {
+           System.out.println("Error: " + e.toString() );
+       }
 
-        testAssignCoords(treeFile, coordFile, metadata);
+        coordList = pc.parseCSV(coordFile);
+        
+        c3dt.lazyAssignNodeCoords(my_phy, coordList);
+
+        my_phy.printExtNodes();
+
+        //testAssignCoords(treeFile, coordFile, metadata);
 
     }
 

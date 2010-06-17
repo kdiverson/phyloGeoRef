@@ -39,7 +39,6 @@ public class calc3Dtree {
 
     private void assignExtenalNodeDistribution (Phylogeny my_phy, ArrayList coordList) {
 
-            //Might return object instead of Triple or Quad 
             if (coordList.get(0) instanceof Triple) {
                 for(ListIterator<Triple> li = coordList.listIterator(); li.hasNext();) {
                     Triple item = li.next();
@@ -101,8 +100,8 @@ public class calc3Dtree {
 
     private void assignLatLong(Phylogeny my_phy, PhylogenyNode node) {
         
-        BigDecimal lat = null;
-        BigDecimal lng = null;
+        BigDecimal lat = BigDecimal.TEN;
+        BigDecimal lng = BigDecimal.TEN;
         
         //linear strech algorithm from GeoPhyloBuilder 1.1
         //converts a non-ultrametric tree to an ultrametric tree
@@ -135,7 +134,8 @@ public class calc3Dtree {
         BigDecimal alt = BigDecimal.valueOf(theAlt);//new BigDecimal(theAlt);
 
         NodeData data = node.getNodeData();
-        node.getNodeData().setDistribution(new Distribution(""));
+        //Don't need this if alt has already been assigned
+        //node.getNodeData().setDistribution(new Distribution(""));
         Distribution dist = data.getDistribution();
         dist.setAltitude(alt);
 
@@ -146,7 +146,7 @@ public class calc3Dtree {
         
         assignExtenalNodeDistribution(my_phy, coordList);
 
-        for( PhylogenyNodeIterator ext_it = my_phy.iteratorPostorder(); ext_it.hasNext();) {
+        for( PhylogenyNodeIterator ext_it = my_phy.iteratorPreorder(); ext_it.hasNext();) {
             PhylogenyNode node = ext_it.next();
             NodeData data = node.getNodeData();
             node.getNodeData().setDistribution(new Distribution(""));
@@ -160,16 +160,17 @@ public class calc3Dtree {
             //if my_phy.isRooted() do this else root then do this
 
 
-            //FIX THIS - can't use data.hasDistribution, need to check if node is external
-            if ( !data.isHasDistribution() ) {
+            if ( !node.isExternal() ) {
                 PhylogenyNode firstChild = node.getFirstChildNode();
                 NodeData fcn = firstChild.getNodeData();
+                //firstChild.getNodeData().setDistribution(new Distribution(""));
                 Distribution fcd = fcn.getDistribution();
                 BigDecimal firstChildLat = fcd.getLatitude();
                 BigDecimal firstChildLong = fcd.getLongitude();
 
                 PhylogenyNode lastChild = node.getLastChildNode();
                 NodeData lcn = lastChild.getNodeData();
+                //lastChild.getNodeData().setDistribution(new Distribution(""));
                 Distribution lcd = lcn.getDistribution();
                 BigDecimal lastChildLat = lcd.getLatitude();
                 BigDecimal lastChildLong = lcd.getLongitude();
