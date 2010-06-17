@@ -15,13 +15,13 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package nescent.phyloGeoRef;
-
 import java.io.File;
+import java.io.Console;
 import java.util.ArrayList;
 
 import nescent.phyloGeoRef.geoData.parseCoords;
 import nescent.phyloGeoRef.tree.getTree;
+import nescent.phyloGeoRef.calc3Dtree;
 
 import org.forester.phylogeny.Phylogeny;
 
@@ -29,19 +29,43 @@ import org.forester.phylogeny.Phylogeny;
  *
  * @author Kathryn Iverson <kd.iverson at gmail.com>
  */
-public class magic {
+public class testMain {   
+    
+    static ArrayList coordList;
+    static parseCoords pc = new parseCoords();
+    static getTree gt = new getTree();
+    static Phylogeny my_phy = new Phylogeny();
+    static calc3Dtree c3dt = new calc3Dtree();
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
 
-    ArrayList coordList;
-    parseCoords pc;
-    getTree gt;
-    Phylogeny my_phy;
-    calc3Dtree c3dt;
+//        Console c = System.console();
+//        if (c == null) {
+//            System.err.println("No console.");
+//            System.exit(1);
+//        }
 
-    public void toKML(File treeFile, String coordFile, String fileType, String metadata) {
-       
+        String intreeFile = args[0];//c.readLine("Enter tree File: ");
+        String coordFile = args[1];//c.readLine("Enter coordinate File: ");
+        String metadata = args[2];//c.readLine("Does this file have metadata (y/n): ");
+
+        File treeFile = new File(intreeFile);
+        //File coordFile = new File(incoordFile);
+
+
+        testAssignCoords(treeFile, coordFile, metadata);
+
+    }
+
+    public static void testAssignCoords(File treeFile, String coordFile, String metadata) {
+
        if ( metadata.equalsIgnoreCase("y") ) {
            coordList = pc.parseCSVwithMetadata(coordFile);
-           
+
        }
        else {
            coordList = pc.parseCSV(coordFile);
@@ -56,7 +80,6 @@ public class magic {
        c3dt.assignNodeCoords(my_phy, coordList);
 
        //Write KML!!
-
     }
 
 }

@@ -50,8 +50,12 @@ public class calc3Dtree {
 
                     PhylogenyNode node = my_phy.getNode(species);//ext_it.next();
                     NodeData data = node.getNodeData();
+                    node.getNodeData().setDistribution(new Distribution(""));
                     Distribution dist = data.getDistribution();
 
+                    //String desc = new String();
+
+                    //Distribution dist = new Distribution(desc);
                     dist.setLatitude(lat); //from geo coord file
                     dist.setLongitude(lng); //from geo coord file
                     dist.setAltitude(BigDecimal.ZERO);//always 0
@@ -71,6 +75,7 @@ public class calc3Dtree {
 
                     PhylogenyNode node = my_phy.getNode(species);//ext_it.next();
                     NodeData data = node.getNodeData();
+                    node.getNodeData().setDistribution(new Distribution(""));
                     Distribution dist = data.getDistribution();
 
                     dist.setLatitude(lat); //from geo coord file
@@ -100,7 +105,7 @@ public class calc3Dtree {
         BigDecimal lng = null;
         
         //linear strech algorithm from GeoPhyloBuilder 1.1
-        //converts a non-ultrametric tree to an altrametric tree
+        //converts a non-ultrametric tree to an ultrametric tree
         //right now all we can do is ignore branch lengths
         short nLtip = PhylogenyMethods.calculateMaxBranchesToLeaf(node);
         double nLroot = PhylogenyMethods.calculateDistanceToRoot(node);
@@ -112,6 +117,7 @@ public class calc3Dtree {
         
 
         NodeData data = node.getNodeData();
+        node.getNodeData().setDistribution(new Distribution(""));
         Distribution dist = data.getDistribution();
         dist.setLatitude(lat);
         dist.setLongitude(lng);
@@ -129,6 +135,7 @@ public class calc3Dtree {
         BigDecimal alt = BigDecimal.valueOf(theAlt);//new BigDecimal(theAlt);
 
         NodeData data = node.getNodeData();
+        node.getNodeData().setDistribution(new Distribution(""));
         Distribution dist = data.getDistribution();
         dist.setAltitude(alt);
 
@@ -142,6 +149,7 @@ public class calc3Dtree {
         for( PhylogenyNodeIterator ext_it = my_phy.iteratorPostorder(); ext_it.hasNext();) {
             PhylogenyNode node = ext_it.next();
             NodeData data = node.getNodeData();
+            node.getNodeData().setDistribution(new Distribution(""));
             Distribution dist = data.getDistribution();
 
             //assignNodeAltitude(node);
@@ -151,6 +159,8 @@ public class calc3Dtree {
 
             //if my_phy.isRooted() do this else root then do this
 
+
+            //FIX THIS - can't use data.hasDistribution, need to check if node is external
             if ( !data.isHasDistribution() ) {
                 PhylogenyNode firstChild = node.getFirstChildNode();
                 NodeData fcn = firstChild.getNodeData();
@@ -191,6 +201,7 @@ public class calc3Dtree {
         for( PhylogenyNodeIterator ext_it = my_phy.iteratorPostorder(); ext_it.hasNext();) {
             PhylogenyNode node = ext_it.next();
             NodeData data = node.getNodeData();
+            node.getNodeData().setDistribution(new Distribution(""));
             Distribution dist = data.getDistribution();
 
             if (node.isExternal() )
