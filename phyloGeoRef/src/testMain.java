@@ -18,12 +18,21 @@
 import java.io.File;
 import java.io.Console;
 import java.util.ArrayList;
+import java.math.BigDecimal;
 
 import nescent.phyloGeoRef.geoData.parseCoords;
 import nescent.phyloGeoRef.tree.getTree;
 import nescent.phyloGeoRef.calc3Dtree;
 
 import org.forester.phylogeny.Phylogeny;
+import org.forester.phylogeny.PhylogenyNode;
+import org.forester.phylogeny.data.Distribution;
+import org.forester.phylogeny.data.NodeData;
+import org.forester.phylogeny.data.Taxonomy;
+import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
+import org.forester.phylogeny.iterators.ExternalForwardIterator;
+import org.forester.phylogeny.PhylogenyMethods;
+
 
 /**
  *
@@ -66,7 +75,40 @@ public class testMain {
         
         c3dt.lazyAssignNodeCoords(my_phy, coordList);
 
-        my_phy.printExtNodes();
+        //my_phy.printExtNodes();
+        //System.out.println(my_phy.toString());
+
+//        for( PhylogenyNodeIterator ext_it = my_phy.iteratorExternalForward(); ext_it.hasNext();) {
+//            PhylogenyNode node = ext_it.next();//ext_it.next();
+//            NodeData data = node.getNodeData();
+//            Distribution dist = data.getDistribution();
+//            //Taxonomy tax = data.getTaxonomy();
+//            //String name = tax.getScientificName();
+//
+//            BigDecimal alt = dist.getAltitude();
+//            BigDecimal lat = dist.getLatitude();
+//            BigDecimal lng = dist.getLongitude();
+//
+//            System.out.println(alt.toString());
+//            System.out.println(lat.toString());
+//            System.out.println(lng.toString());
+//        }
+
+        for( PhylogenyNodeIterator ext_it = my_phy.iteratorPreorder(); ext_it.hasNext();) {
+            PhylogenyNode node = ext_it.next();
+            NodeData data = node.getNodeData();
+            Distribution dist = data.getDistribution();
+
+            BigDecimal alt = dist.getAltitude();
+            BigDecimal lat = dist.getLatitude();
+            BigDecimal lng = dist.getLongitude();
+
+            System.out.println(alt.toString());
+            System.out.println(lat.toString());
+            System.out.println(lng.toString());
+
+            //System.out.println(dist.toString());
+        }
 
         //testAssignCoords(treeFile, coordFile, metadata);
 

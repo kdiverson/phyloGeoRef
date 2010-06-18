@@ -149,8 +149,8 @@ public class calc3Dtree {
         for( PhylogenyNodeIterator ext_it = my_phy.iteratorPreorder(); ext_it.hasNext();) {
             PhylogenyNode node = ext_it.next();
             NodeData data = node.getNodeData();
-            node.getNodeData().setDistribution(new Distribution(""));
-            Distribution dist = data.getDistribution();
+            //node.getNodeData().setDistribution(new Distribution(""));
+            //Distribution dist = data.getDistribution();
 
             //assignNodeAltitude(node);
 
@@ -159,8 +159,12 @@ public class calc3Dtree {
 
             //if my_phy.isRooted() do this else root then do this
 
+            //int c = 0;
 
             if ( !node.isExternal() ) {
+                node.getNodeData().setDistribution(new Distribution(""));
+                Distribution dist = data.getDistribution();
+
                 PhylogenyNode firstChild = node.getFirstChildNode();
                 NodeData fcn = firstChild.getNodeData();
                 //firstChild.getNodeData().setDistribution(new Distribution(""));
@@ -180,6 +184,11 @@ public class calc3Dtree {
                 //Assigns the node a lat/long pair that is in the midpoint of the two children
                 dist.setLatitude(firstChildLat.add(lastChildLat).divide(two));
                 dist.setLongitude(firstChildLong.add(lastChildLong).divide(two));
+
+                //c++;
+                //System.out.print(c);
+
+                //System.out.println(dist.toString());
             }
 
             assignNodeAltitude(node);
