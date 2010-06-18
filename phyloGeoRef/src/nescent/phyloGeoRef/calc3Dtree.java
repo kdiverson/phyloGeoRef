@@ -235,6 +235,7 @@ public class calc3Dtree {
         assignExtenalNodeDistribution(my_phy, coordList);
 
         //this loop iterated through each node
+
         for( PhylogenyNodeIterator ext_it = my_phy.iteratorPostorder(); ext_it.hasNext();) {
             PhylogenyNode node = ext_it.next();
             NodeData data = node.getNodeData();
@@ -242,11 +243,54 @@ public class calc3Dtree {
             //coordlist is an array of triples (or quads) like this: [(species,lat,long,metadata), (species2, lat, long, metadata)]
             //iterate through coordList [(species,lat,long,metadata), (species2, lat, long, metadata)]
 
+            ArrayList childCoordsLat = new ArrayList();
+            ArrayList childCoordsLong = new ArrayList();
+            BigDecimal latSum = BigDecimal.ZERO;
+            BigDecimal longSum = BigDecimal.ZERO;
+            int c = 0;
+
             //this assumes we already assigned external nodes
             if ( !node.isExternal() ) {
-                //Distribution dist = data.getDistribution();
+                node.getNodeData().setDistribution(new Distribution(""));
+                Distribution dist = data.getDistribution();
 
-                assignLatLong(my_phy, node);
+                for (int i=0; i < node.getNumberOfDescendants(); i++){
+                    //do mean calcs
+                    PhylogenyNode childNode = node.getChildNode(i);
+                    //childNode.getNodeData().setDistribution(new Distribution(""));
+                    NodeData childData = childNode.getNodeData();
+                    Distribution childDist = childData.getDistribution();
+                    BigDecimal childLat = childDist.getLatitude();
+                    BigDecimal childLong = childDist.getLongitude();
+
+                    childCoordsLat.add(childLat);
+                    childCoordsLong.add(childLong);
+
+                    latSum = latSum.add(childLat);
+                    longSum = longSum.add(childLong);
+
+                    c++;
+
+                }
+
+
+                BigDecimal count = new BigDecimal(c);
+                BigDecimal meanLat = latSum.divide(count,BigDecimal.ROUND_CEILING);
+                BigDecimal meanLong = longSum.divide(count,BigDecimal.ROUND_CEILING);
+
+//                BigDecimal sum = BigDecimal.ZERO;
+//                
+//                for (int i = 0; i < childCoordsLat.size(); i++) {
+//                    //i = BigDecimal.valueOf(i);
+//                    sum += childCoordsLat.get(i);
+//                }
+
+                dist.setLatitude(meanLat);
+                dist.setLongitude(meanLong);
+                
+
+                //maybe get rid of this function and just do the calculation here
+                //assignLatLong(my_phy, node);
 
             }
             assignNodeAltitude(node);

@@ -73,7 +73,9 @@ public class testMain {
 
         coordList = pc.parseCSV(coordFile);
         
-        c3dt.lazyAssignNodeCoords(my_phy, coordList);
+        //c3dt.lazyAssignNodeCoords(my_phy, coordList);
+
+        c3dt.assignNodeCoords(my_phy, coordList);
 
         //my_phy.printExtNodes();
         //System.out.println(my_phy.toString());
