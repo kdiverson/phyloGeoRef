@@ -105,6 +105,7 @@ public class testMain {
             BigDecimal lat = dist.getLatitude();
             BigDecimal lng = dist.getLongitude();
 
+            System.out.println(node.getNodeName());
             System.out.println(alt.toString());
             System.out.println(lat.toString());
             System.out.println(lng.toString());

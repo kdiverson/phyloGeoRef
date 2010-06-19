@@ -235,6 +235,9 @@ public class calc3Dtree {
         assignExtenalNodeDistribution(my_phy, coordList);
 
         //this loop iterated through each node
+        //IMPLEMNTS MEAN POSITION ALGORITHM
+        //Basic idea: get the mean of the lat and long of all the decendents of each node
+        //then assigns the mean to the node
 
         for( PhylogenyNodeIterator ext_it = my_phy.iteratorPostorder(); ext_it.hasNext();) {
             PhylogenyNode node = ext_it.next();
@@ -257,7 +260,6 @@ public class calc3Dtree {
                 for (int i=0; i < node.getNumberOfDescendants(); i++){
                     //do mean calcs
                     PhylogenyNode childNode = node.getChildNode(i);
-                    //childNode.getNodeData().setDistribution(new Distribution(""));
                     NodeData childData = childNode.getNodeData();
                     Distribution childDist = childData.getDistribution();
                     BigDecimal childLat = childDist.getLatitude();
@@ -273,24 +275,12 @@ public class calc3Dtree {
 
                 }
 
-
                 BigDecimal count = new BigDecimal(c);
                 BigDecimal meanLat = latSum.divide(count,BigDecimal.ROUND_CEILING);
                 BigDecimal meanLong = longSum.divide(count,BigDecimal.ROUND_CEILING);
 
-//                BigDecimal sum = BigDecimal.ZERO;
-//                
-//                for (int i = 0; i < childCoordsLat.size(); i++) {
-//                    //i = BigDecimal.valueOf(i);
-//                    sum += childCoordsLat.get(i);
-//                }
-
                 dist.setLatitude(meanLat);
                 dist.setLongitude(meanLong);
-                
-
-                //maybe get rid of this function and just do the calculation here
-                //assignLatLong(my_phy, node);
 
             }
             assignNodeAltitude(node);
