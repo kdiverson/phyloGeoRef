@@ -17,10 +17,36 @@
 
 package nescent.phyloGeoRef.kml;
 
+import de.micromata.opengis.kml.v_2_2_0.Kml;
+import de.micromata.opengis.kml.v_2_2_0.KmlFactory;
+import java.io.File;
+import java.io.FileNotFoundException;
+import org.forester.phylogeny.Phylogeny;
+import org.forester.phylogeny.PhylogenyNode;
+import org.forester.phylogeny.data.Distribution;
+import org.forester.phylogeny.data.NodeData;
+import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
+
 /**
  *
  * @author Kathryn Iverson <kd.iverson at gmail.com>
  */
 public class kmlWriter {
+    public void createPlacemark(Phylogeny my_phy, String fileName) throws FileNotFoundException {
+        
+        final Kml kml = new Kml();
+        
+        for( PhylogenyNodeIterator ext_it = my_phy.iteratorPostorder(); ext_it.hasNext();) {
+            PhylogenyNode node = ext_it.next();
+            NodeData data = node.getNodeData();
+            Distribution dist = data.getDistribution();
+            kml.createAndSetPlacemark().withName(node.getNodeName()).withOpen(Boolean.TRUE).createAndSetPoint()
+                    .addToCoordinates(dist.getLatitude().doubleValue(), dist.getLongitude().doubleValue());
+
+        }
+
+        kml.marshal(new File(fileName));
+    }
+    
 
 }

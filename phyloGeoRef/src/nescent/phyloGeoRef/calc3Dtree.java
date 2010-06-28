@@ -234,7 +234,6 @@ public class calc3Dtree {
 
         assignExtenalNodeDistribution(my_phy, coordList);
 
-        //this loop iterated through each node
         //IMPLEMNTS MEAN POSITION ALGORITHM
         //Basic idea: get the mean of the lat and long of all the decendents of each node
         //then assigns the mean to the node
@@ -246,6 +245,7 @@ public class calc3Dtree {
             //coordlist is an array of triples (or quads) like this: [(species,lat,long,metadata), (species2, lat, long, metadata)]
             //iterate through coordList [(species,lat,long,metadata), (species2, lat, long, metadata)]
 
+            //
             ArrayList childCoordsLat = new ArrayList();
             ArrayList childCoordsLong = new ArrayList();
             BigDecimal latSum = BigDecimal.ZERO;

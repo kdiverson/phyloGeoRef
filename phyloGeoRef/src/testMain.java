@@ -17,12 +17,16 @@
 
 import java.io.File;
 import java.io.Console;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.math.BigDecimal;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import nescent.phyloGeoRef.geoData.parseCoords;
 import nescent.phyloGeoRef.tree.getTree;
 import nescent.phyloGeoRef.calc3Dtree;
+import nescent.phyloGeoRef.kml.kmlWriter;
 
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
@@ -45,6 +49,7 @@ public class testMain {
     static getTree gt = new getTree();
     static Phylogeny my_phy = new Phylogeny();
     static calc3Dtree c3dt = new calc3Dtree();
+    static kmlWriter kmlw = new kmlWriter();
     
     /**
      * @param args the command line arguments
@@ -112,8 +117,12 @@ public class testMain {
 
             //System.out.println(dist.toString());
         }
-
-        //testAssignCoords(treeFile, coordFile, metadata);
+        try {
+            //testAssignCoords(treeFile, coordFile, metadata);
+            kmlw.createPlacemark(my_phy, "testfile.kml");
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(testMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 
