@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/36/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal
+END
+Department.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/Department.java
+END
+Premise.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/Premise.java
+END
+ThoroughfarePostDirection.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/ThoroughfarePostDirection.java
+END
+DependentLocality.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/DependentLocality.java
+END
+AdministrativeArea.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/AdministrativeArea.java
+END
+PremiseNumber.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/PremiseNumber.java
+END
+SubPremise.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/SubPremise.java
+END
+AddressLines.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/AddressLines.java
+END
+Locality.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/Locality.java
+END
+PostalRoute.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/PostalRoute.java
+END
+ThoroughfareLeadingType.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/ThoroughfareLeadingType.java
+END
+ThoroughfareNumberPrefix.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/ThoroughfareNumberPrefix.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/5/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/package-info.java
+END
+MailStop.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/MailStop.java
+END
+ThoroughfareTrailingType.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/ThoroughfareTrailingType.java
+END
+PostalCode.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/PostalCode.java
+END
+Thoroughfare.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/36/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/Thoroughfare.java
+END
+Firm.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/Firm.java
+END
+ThoroughfareName.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/ThoroughfareName.java
+END
+BuildingName.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/BuildingName.java
+END
+PostOffice.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/PostOffice.java
+END
+PremiseNumberSuffix.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/PremiseNumberSuffix.java
+END
+CountryName.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/CountryName.java
+END
+ThoroughfarePreDirection.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/ThoroughfarePreDirection.java
+END
+ThoroughfareNumber.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/ThoroughfareNumber.java
+END
+XAL.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/XAL.java
+END
+ThoroughfareNumberSuffix.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/ThoroughfareNumberSuffix.java
+END
+AddressDetails.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/AddressDetails.java
+END
+PremiseNumberPrefix.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/PremiseNumberPrefix.java
+END
+LargeMailUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/LargeMailUser.java
+END
+AddressLine.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/AddressLine.java
+END
+PostBox.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/PostBox.java
+END

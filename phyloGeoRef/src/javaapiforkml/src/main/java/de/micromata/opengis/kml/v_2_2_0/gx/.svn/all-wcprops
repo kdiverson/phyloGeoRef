@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/36/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/gx
+END
+Playlist.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/36/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/gx/Playlist.java
+END
+TourPrimitive.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/gx/TourPrimitive.java
+END
+FlyToMode.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/5/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/gx/FlyToMode.java
+END
+LatLonQuad.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/gx/LatLonQuad.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/5/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/gx/package-info.java
+END
+Wait.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/gx/Wait.java
+END
+SoundCue.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/gx/SoundCue.java
+END
+AnimatedUpdate.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/gx/AnimatedUpdate.java
+END
+Tour.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/gx/Tour.java
+END
+TourControl.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/34/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/gx/TourControl.java
+END
+PlayMode.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/5/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/gx/PlayMode.java
+END
+FlyTo.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/36/trunk/src/main/java/de/micromata/opengis/kml/v_2_2_0/gx/FlyTo.java
+END

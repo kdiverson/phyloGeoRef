@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/29/trunk/src/main/resources/schema
+END
+xmlrootelemets.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/5/trunk/src/main/resources/schema/xmlrootelemets.xsd
+END
+xmlrootelemets.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/5/trunk/src/main/resources/schema/xmlrootelemets.xml
+END
+kmljavadocs.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/5/trunk/src/main/resources/schema/kmljavadocs.xsd
+END
+kmljavadocs.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/21/trunk/src/main/resources/schema/kmljavadocs.xml
+END

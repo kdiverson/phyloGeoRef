@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 22
+/svn/!svn/ver/38/trunk
+END
+NOTICE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/9/trunk/NOTICE.txt
+END
+LICENSE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/9/trunk/LICENSE.txt
+END
+KmlSampleGoogleTest.txt
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/17/trunk/KmlSampleGoogleTest.txt
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/34/trunk/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/34/trunk/.project
+END
+pom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/37/trunk/pom.xml
+END
