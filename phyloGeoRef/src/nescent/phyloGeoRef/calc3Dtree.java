@@ -124,6 +124,8 @@ public class calc3Dtree {
     }
 
     private void assignNodeAltitude(PhylogenyNode node) {
+
+
         //calc altitude for leafs, nodeAltitude = a + ((n-1)*b)
         //BigDecimal [] alt = new BigDecimal [countNodes(my_phy)];
         double n = PhylogenyMethods.calculateDistanceToRoot(node);
@@ -140,6 +142,27 @@ public class calc3Dtree {
         dist.setAltitude(alt);
 
         //return alt;
+    }
+
+    private void assignNodeAltitude(PhylogenyNode node, Phylogeny my_phy){
+
+        //linear strech algorithm from GeoPhyloBuilder 1.1
+        //converts a non-ultrametric tree to an ultrametric tree
+        //right now all we can do is ignore branch lengths
+        short nLtip = PhylogenyMethods.calculateMaxBranchesToLeaf(node);
+        double nLroot = PhylogenyMethods.calculateDistanceToRoot(node);
+        int maxLtree = PhylogenyMethods.calculateMaxDepth(my_phy);
+        short zMult = 1;
+
+        double nodeZ = (nLtip/(nLroot/nLtip)*maxLtree)*zMult;
+
+        BigDecimal alt = BigDecimal.valueOf(nodeZ);
+        
+        NodeData data = node.getNodeData();
+        Distribution dist = data.getDistribution();
+        dist.setAltitude(alt);
+
+
     }
 
     private void assignBinaryNodes (Phylogeny my_phy, ArrayList coordList) {

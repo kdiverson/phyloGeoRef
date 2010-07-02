@@ -52,15 +52,32 @@ public class kmlWriter {
 
             //createAnd
             Placemark placemark = folder.createAndAddPlacemark();
-            // use the style for each continent
-            placemark.withName(node.getNodeName()).createAndSetLookAt().withLongitude(dist.getLatitude().doubleValue()).withLatitude(dist.getLongitude().doubleValue()).withAltitude(dist.getAltitude().doubleValue());
 
-            placemark.createAndSetPoint().addToCoordinates(dist.getLatitude().doubleValue(), dist.getLongitude().doubleValue()); // set coordinates
+            String coords = dist.getLatitude().toString() + ", " + dist.getLongitude().toString();
+            
+            if (!node.isRoot()) {
+                PhylogenyNode parentNode = node.getParent();
+                NodeData parentData = parentNode.getNodeData();
+                Distribution parentDist = parentData.getDistribution();
+                String parentCoord = parentDist.getLatitude().toString() + ", " + parentDist.getLongitude().toString();
+                
+                placemark.createAndSetLineString().withExtrude(false).withTessellate(true).addToCoordinates(coords).addToCoordinates(parentCoord);
 
-//            kml.createAndSetPlacemark().withName(node.getNodeName()).withOpen(Boolean.TRUE).createAndSetPoint()
-//                    .addToCoordinates(dist.getLatitude().doubleValue(), dist.getLongitude().doubleValue());
+            }
 
-            System.out.println(kml.toString());
+
+
+            //need start and end coords
+
+            //placemark.withName(node.getNodeName()).createAndSetPoint().addToCoordinates(dist.getLatitude().doubleValue(), dist.getLongitude().doubleValue());
+            //.createAndSetLookAt().withLongitude(dist.getLatitude().doubleValue())
+//                    .withLatitude(dist.getLongitude().doubleValue())
+//                    .withAltitude(dist.getAltitude().doubleValue());
+
+            // set coordinates
+            //placemark.createAndSetPoint().addToCoordinates(dist.getLatitude().doubleValue(), dist.getLongitude().doubleValue());
+
+            //System.out.println(kml.toString());
 
         }
 
