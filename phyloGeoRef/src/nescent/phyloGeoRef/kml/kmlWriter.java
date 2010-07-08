@@ -54,15 +54,17 @@ public class kmlWriter {
             Placemark placemarkLines = folder.createAndAddPlacemark();
             Placemark placemarkPoints = folder.createAndAddPlacemark();
 
-            String coords = dist.getLatitude().toString() + ", " + dist.getLongitude().toString();
+            String coords = dist.getLatitude().toString() + ", " + dist.getLongitude().toString() + ", " + dist.getAltitude().toString();
             
             if (!node.isRoot()) {
                 PhylogenyNode parentNode = node.getParent();
                 NodeData parentData = parentNode.getNodeData();
                 Distribution parentDist = parentData.getDistribution();
                 String parentCoord = parentDist.getLatitude().toString() + ", " + parentDist.getLongitude().toString() + ", " + parentDist.getAltitude().toString();
-                
-                placemarkLines.createAndSetLineString().withExtrude(false).withTessellate(true).withAltitudeMode(AltitudeMode.ABSOLUTE)
+
+
+
+                placemarkLines.createAndSetLineString().withExtrude(false).withTessellate(false).withAltitudeMode(AltitudeMode.ABSOLUTE)
                         .addToCoordinates(coords).addToCoordinates(parentCoord);
 
             }

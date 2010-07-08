@@ -171,7 +171,7 @@ public class calc3Dtree {
             //double test = nodeZ;
             //BigDecimal t = new BigDecimal("123");
             System.out.println(nodeZ);
-            BigDecimal alt = BigDecimal.valueOf(nodeZ);
+            BigDecimal alt = BigDecimal.valueOf(nodeZ*10000);
             
             dist.setAltitude(alt);
         }
