@@ -52,9 +52,6 @@ public class calc3Dtree {
                     node.getNodeData().setDistribution(new Distribution(""));
                     Distribution dist = data.getDistribution();
 
-                    //String desc = new String();
-
-                    //Distribution dist = new Distribution(desc);
                     dist.setLatitude(lat); //from geo coord file
                     dist.setLongitude(lng); //from geo coord file
                     dist.setAltitude(BigDecimal.ZERO);//always 0
@@ -113,8 +110,6 @@ public class calc3Dtree {
         
         double nodeZ = (nLtip/(nLroot/nLtip)*maxLtree)*zMult;
 
-        
-
         NodeData data = node.getNodeData();
         node.getNodeData().setDistribution(new Distribution(""));
         Distribution dist = data.getDistribution();
@@ -125,43 +120,63 @@ public class calc3Dtree {
 
     private void assignNodeAltitude(PhylogenyNode node) {
 
-
-        //calc altitude for leafs, nodeAltitude = a + ((n-1)*b)
-        //BigDecimal [] alt = new BigDecimal [countNodes(my_phy)];
-        double n = PhylogenyMethods.calculateDistanceToRoot(node);
-        int a = 198000; //from Janies et al. 2007
-        int b = 66000; //from Janies et al. 2007
-        double theAlt = a + ((n-1)*b);
-        //alt = BigDecimal.valueOf(theAlt);
-        BigDecimal alt = BigDecimal.valueOf(theAlt);//new BigDecimal(theAlt);
-
         NodeData data = node.getNodeData();
         //Don't need this if alt has already been assigned
         //node.getNodeData().setDistribution(new Distribution(""));
         Distribution dist = data.getDistribution();
-        dist.setAltitude(alt);
 
-        //return alt;
+        if (node.isInternal()) {
+            //calc altitude for leafs, nodeAltitude = a + ((n-1)*b)
+            //BigDecimal [] alt = new BigDecimal [countNodes(my_phy)];
+            //double n = PhylogenyMethods.calculateDistanceToRoot(node);
+            double n = node.getNumberOfParents();
+            int a = 198000; //from Janies et al. 2007
+            int b = 66000; //from Janies et al. 2007
+            double theAlt = a + ((n-1)*b);
+            //alt = BigDecimal.valueOf(theAlt);
+            BigDecimal alt = BigDecimal.valueOf(theAlt);//new BigDecimal(theAlt);
+
+            dist.setAltitude(alt);
+
+            System.out.println(n);
+        }
+        else if (node.isExternal() ) dist.setAltitude(BigDecimal.ZERO);
+        //else if (node.isRoot()) dist.setAltitude(BigDecimal.valueOf(1000000));
+
     }
 
-    private void assignNodeAltitude(PhylogenyNode node, Phylogeny my_phy){
+    private void assignNodeAltitude(PhylogenyNode node, int maxLtree){
 
-        //linear strech algorithm from GeoPhyloBuilder 1.1
-        //converts a non-ultrametric tree to an ultrametric tree
-        //right now all we can do is ignore branch lengths
-        short nLtip = PhylogenyMethods.calculateMaxBranchesToLeaf(node);
-        double nLroot = PhylogenyMethods.calculateDistanceToRoot(node);
-        int maxLtree = PhylogenyMethods.calculateMaxDepth(my_phy);
-        short zMult = 1;
-
-        double nodeZ = (nLtip/(nLroot/nLtip)*maxLtree)*zMult;
-
-        BigDecimal alt = BigDecimal.valueOf(nodeZ);
-        
         NodeData data = node.getNodeData();
         Distribution dist = data.getDistribution();
-        dist.setAltitude(alt);
 
+        if (node.isInternal()) {
+            //linear strech algorithm from GeoPhyloBuilder 1.1
+            //converts a non-ultrametric tree to an ultrametric tree
+            //right now all we can do is ignore branch lengths
+            //short nLtip = PhylogenyMethods.calculateMaxBranchesToLeaf(node);
+            //double nLtip = (double) nLt;
+            int nLtip = node.getNumberOfDescendants();
+            double nLroot = node.getNumberOfParents();
+            //double nLroot = PhylogenyMethods.calculateDistanceToRoot(node);
+
+            short zMult = 1;
+
+            System.out.println(nLtip);
+            System.out.println(nLroot);
+            System.out.println((nLtip/(nLroot/nLtip)*maxLtree)*zMult);
+
+            double nodeZ = (nLtip/(nLroot/nLtip)*maxLtree)*zMult;
+
+            //double test = nodeZ;
+            //BigDecimal t = new BigDecimal("123");
+            System.out.println(nodeZ);
+            BigDecimal alt = BigDecimal.valueOf(nodeZ);
+            
+            dist.setAltitude(alt);
+        }
+
+        else dist.setAltitude(BigDecimal.ZERO);
 
     }
 
@@ -172,17 +187,9 @@ public class calc3Dtree {
         for( PhylogenyNodeIterator ext_it = my_phy.iteratorPreorder(); ext_it.hasNext();) {
             PhylogenyNode node = ext_it.next();
             NodeData data = node.getNodeData();
-            //node.getNodeData().setDistribution(new Distribution(""));
-            //Distribution dist = data.getDistribution();
-
-            //assignNodeAltitude(node);
 
             //Algorithm: Each external node, "leaf" is assigned a lat/long from the coordlist
             //all subsequent nodes are then placed in the middle of the child nodes at altitude alt.
-
-            //if my_phy.isRooted() do this else root then do this
-
-            //int c = 0;
 
             if ( !node.isExternal() ) {
                 node.getNodeData().setDistribution(new Distribution(""));
@@ -190,14 +197,12 @@ public class calc3Dtree {
 
                 PhylogenyNode firstChild = node.getFirstChildNode();
                 NodeData fcn = firstChild.getNodeData();
-                //firstChild.getNodeData().setDistribution(new Distribution(""));
                 Distribution fcd = fcn.getDistribution();
                 BigDecimal firstChildLat = fcd.getLatitude();
                 BigDecimal firstChildLong = fcd.getLongitude();
 
                 PhylogenyNode lastChild = node.getLastChildNode();
                 NodeData lcn = lastChild.getNodeData();
-                //lastChild.getNodeData().setDistribution(new Distribution(""));
                 Distribution lcd = lcn.getDistribution();
                 BigDecimal lastChildLat = lcd.getLatitude();
                 BigDecimal lastChildLong = lcd.getLongitude();
@@ -208,15 +213,10 @@ public class calc3Dtree {
                 dist.setLatitude(firstChildLat.add(lastChildLat).divide(two));
                 dist.setLongitude(firstChildLong.add(lastChildLong).divide(two));
 
-                //c++;
-                //System.out.print(c);
-
-                //System.out.println(dist.toString());
             }
 
             assignNodeAltitude(node);
         }
-
 
     }
 
@@ -245,7 +245,6 @@ public class calc3Dtree {
                 assignLatLong(my_phy, node);
             }
 
-
         }
         
     }
@@ -268,7 +267,6 @@ public class calc3Dtree {
             //coordlist is an array of triples (or quads) like this: [(species,lat,long,metadata), (species2, lat, long, metadata)]
             //iterate through coordList [(species,lat,long,metadata), (species2, lat, long, metadata)]
 
-            //
             ArrayList childCoordsLat = new ArrayList();
             ArrayList childCoordsLong = new ArrayList();
             BigDecimal latSum = BigDecimal.ZERO;
@@ -306,7 +304,10 @@ public class calc3Dtree {
                 dist.setLongitude(meanLong);
 
             }
-            assignNodeAltitude(node);
+            int maxLtree = PhylogenyMethods.calculateMaxDepth(my_phy);
+            System.out.println(maxLtree);
+            assignNodeAltitude(node, maxLtree);
+            //assignNodeAltitude(node);
 
         }
     }

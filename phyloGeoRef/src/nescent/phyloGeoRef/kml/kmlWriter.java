@@ -17,6 +17,7 @@
 
 package nescent.phyloGeoRef.kml;
 
+import de.micromata.opengis.kml.v_2_2_0.AltitudeMode;
 import de.micromata.opengis.kml.v_2_2_0.Kml;
 import de.micromata.opengis.kml.v_2_2_0.KmlFactory;
 import de.micromata.opengis.kml.v_2_2_0.Document;
@@ -50,8 +51,8 @@ public class kmlWriter {
             NodeData data = node.getNodeData();
             Distribution dist = data.getDistribution();
 
-            //createAnd
-            Placemark placemark = folder.createAndAddPlacemark();
+            Placemark placemarkLines = folder.createAndAddPlacemark();
+            Placemark placemarkPoints = folder.createAndAddPlacemark();
 
             String coords = dist.getLatitude().toString() + ", " + dist.getLongitude().toString();
             
@@ -59,30 +60,37 @@ public class kmlWriter {
                 PhylogenyNode parentNode = node.getParent();
                 NodeData parentData = parentNode.getNodeData();
                 Distribution parentDist = parentData.getDistribution();
-                String parentCoord = parentDist.getLatitude().toString() + ", " + parentDist.getLongitude().toString();
+                String parentCoord = parentDist.getLatitude().toString() + ", " + parentDist.getLongitude().toString() + ", " + parentDist.getAltitude().toString();
                 
-                placemark.createAndSetLineString().withExtrude(false).withTessellate(true).addToCoordinates(coords).addToCoordinates(parentCoord);
+                placemarkLines.createAndSetLineString().withExtrude(false).withTessellate(true).withAltitudeMode(AltitudeMode.ABSOLUTE)
+                        .addToCoordinates(coords).addToCoordinates(parentCoord);
 
             }
+
+            if (node.isExternal()) {
+                placemarkPoints.withName(node.getNodeName()).createAndSetPoint().addToCoordinates(dist.getLatitude().doubleValue(),
+                        dist.getLongitude().doubleValue(),dist.getAltitude().doubleValue());
+            }
+
+        }        
+
+        kml.marshal(new File(fileName));
+    }
+    
+}
+
+
 
 
 
             //need start and end coords
 
-            //placemark.withName(node.getNodeName()).createAndSetPoint().addToCoordinates(dist.getLatitude().doubleValue(), dist.getLongitude().doubleValue());
+            //placemarkLines.withName(node.getNodeName()).createAndSetPoint().addToCoordinates(dist.getLatitude().doubleValue(), dist.getLongitude().doubleValue());
             //.createAndSetLookAt().withLongitude(dist.getLatitude().doubleValue())
 //                    .withLatitude(dist.getLongitude().doubleValue())
 //                    .withAltitude(dist.getAltitude().doubleValue());
 
             // set coordinates
-            //placemark.createAndSetPoint().addToCoordinates(dist.getLatitude().doubleValue(), dist.getLongitude().doubleValue());
+            //placemarkLines.createAndSetPoint().addToCoordinates(dist.getLatitude().doubleValue(), dist.getLongitude().doubleValue());
 
             //System.out.println(kml.toString());
-
-        }
-
-        kml.marshal(new File(fileName));
-    }
-    
-
-}
