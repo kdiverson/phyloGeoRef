@@ -70,15 +70,13 @@ public class kmlWriter {
                 Distribution parentDist = parentData.getDistribution();
                 String parentCoord = parentDist.getLatitude().toString() + ", " + parentDist.getLongitude().toString() + ", " + parentDist.getAltitude().toString();
 
-
-
                 placemarkLines.withStyleUrl("#linestyleExample").createAndSetLineString().withExtrude(false).withTessellate(false).withAltitudeMode(AltitudeMode.ABSOLUTE)
                         .addToCoordinates(coords).addToCoordinates(parentCoord);
 
             }
 
             if (node.isExternal()) {
-                placemarkPoints.withName(node.getNodeName()).createAndSetPoint().addToCoordinates(dist.getLatitude().doubleValue(),
+                placemarkPoints.withName(node.getNodeName()).withDescription(node.getNodeName()).createAndSetPoint().addToCoordinates(dist.getLatitude().doubleValue(),
                         dist.getLongitude().doubleValue(),dist.getAltitude().doubleValue());
             }
 

@@ -23,6 +23,7 @@
             </Placemark>
             <Placemark>
                 <name>B</name>
+                <description>B</description>
                 <Point>
                     <coordinates>-6.129627,42.865584</coordinates>
                 </Point>
@@ -39,6 +40,7 @@
             </Placemark>
             <Placemark>
                 <name>A</name>
+                <description>A</description>
                 <Point>
                     <coordinates>-0.011702,43.177874</coordinates>
                 </Point>
@@ -55,6 +57,7 @@
             </Placemark>
             <Placemark>
                 <name>C</name>
+                <description>C</description>
                 <Point>
                     <coordinates>9.869384,45.786672</coordinates>
                 </Point>
@@ -71,6 +74,7 @@
             </Placemark>
             <Placemark>
                 <name>E</name>
+                <description>E</description>
                 <Point>
                     <coordinates>20.602788,40.217594</coordinates>
                 </Point>
@@ -109,6 +113,7 @@
             </Placemark>
             <Placemark>
                 <name>D</name>
+                <description>D</description>
                 <Point>
                     <coordinates>14.106559,41.798603</coordinates>
                 </Point>
@@ -125,6 +130,7 @@
             </Placemark>
             <Placemark>
                 <name>F</name>
+                <description>F</description>
                 <Point>
                     <coordinates>21.094837,42.583038</coordinates>
                 </Point>
@@ -141,6 +147,7 @@
             </Placemark>
             <Placemark>
                 <name>G</name>
+                <description>G</description>
                 <Point>
                     <coordinates>15.048859,46.898472</coordinates>
                 </Point>
@@ -157,6 +164,7 @@
             </Placemark>
             <Placemark>
                 <name>H</name>
+                <description>H</description>
                 <Point>
                     <coordinates>16.6239034,44.723789</coordinates>
                 </Point>
