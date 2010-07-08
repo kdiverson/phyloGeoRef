@@ -3,10 +3,17 @@
     <Document>
         <name>Test Example1</name>
         <open xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">true</open>
+        <Style id="linestyleExample">
+            <LineStyle>
+                <color>7f0000ff</color>
+                <width>7.0</width>
+            </LineStyle>
+        </Style>
         <Folder>
             <name>test tree</name>
             <open xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">true</open>
             <Placemark>
+                <styleUrl>#linestyleExample</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -20,7 +27,9 @@
                     <coordinates>-6.129627,42.865584</coordinates>
                 </Point>
             </Placemark>
+            <Placemark/>
             <Placemark>
+                <styleUrl>#linestyleExample</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -34,7 +43,9 @@
                     <coordinates>-0.011702,43.177874</coordinates>
                 </Point>
             </Placemark>
+            <Placemark/>
             <Placemark>
+                <styleUrl>#linestyleExample</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -48,7 +59,9 @@
                     <coordinates>9.869384,45.786672</coordinates>
                 </Point>
             </Placemark>
+            <Placemark/>
             <Placemark>
+                <styleUrl>#linestyleExample</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -62,7 +75,9 @@
                     <coordinates>20.602788,40.217594</coordinates>
                 </Point>
             </Placemark>
+            <Placemark/>
             <Placemark>
+                <styleUrl>#linestyleExample</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -71,7 +86,9 @@
                 </LineString>
             </Placemark>
             <Placemark/>
+            <Placemark/>
             <Placemark>
+                <styleUrl>#linestyleExample</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -80,7 +97,9 @@
                 </LineString>
             </Placemark>
             <Placemark/>
+            <Placemark/>
             <Placemark>
+                <styleUrl>#linestyleExample</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -94,7 +113,9 @@
                     <coordinates>14.106559,41.798603</coordinates>
                 </Point>
             </Placemark>
+            <Placemark/>
             <Placemark>
+                <styleUrl>#linestyleExample</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -108,7 +129,9 @@
                     <coordinates>21.094837,42.583038</coordinates>
                 </Point>
             </Placemark>
+            <Placemark/>
             <Placemark>
+                <styleUrl>#linestyleExample</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -122,7 +145,9 @@
                     <coordinates>15.048859,46.898472</coordinates>
                 </Point>
             </Placemark>
+            <Placemark/>
             <Placemark>
+                <styleUrl>#linestyleExample</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -136,7 +161,9 @@
                     <coordinates>16.6239034,44.723789</coordinates>
                 </Point>
             </Placemark>
+            <Placemark/>
             <Placemark>
+                <styleUrl>#linestyleExample</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -145,7 +172,9 @@
                 </LineString>
             </Placemark>
             <Placemark/>
+            <Placemark/>
             <Placemark>
+                <styleUrl>#linestyleExample</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -154,7 +183,9 @@
                 </LineString>
             </Placemark>
             <Placemark/>
+            <Placemark/>
             <Placemark>
+                <styleUrl>#linestyleExample</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -162,6 +193,8 @@
                     <coordinates>16.2860841,42.997844,160000.0 5.9228831,42.984478,360000.0</coordinates>
                 </LineString>
             </Placemark>
+            <Placemark/>
+            <Placemark/>
             <Placemark/>
             <Placemark/>
             <Placemark/>

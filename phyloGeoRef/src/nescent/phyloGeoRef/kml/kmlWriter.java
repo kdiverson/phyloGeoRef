@@ -23,8 +23,11 @@ import de.micromata.opengis.kml.v_2_2_0.KmlFactory;
 import de.micromata.opengis.kml.v_2_2_0.Document;
 import de.micromata.opengis.kml.v_2_2_0.Folder;
 import de.micromata.opengis.kml.v_2_2_0.Placemark;
+import de.micromata.opengis.kml.v_2_2_0.Style;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.math.BigDecimal;
+import java.math.MathContext;
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
 import org.forester.phylogeny.data.Distribution;
@@ -45,6 +48,10 @@ public class kmlWriter {
         // create a Folder
         Folder folder = doc.createAndAddFolder();
         folder.withName("test tree").withOpen(true);
+
+        final Style style = doc.createAndAddStyle().withId("linestyleExample");
+
+        style.createAndSetLineStyle().withColor("7f0000ff").withWidth(7.0d);
         
         for( PhylogenyNodeIterator ext_it = my_phy.iteratorPostorder(); ext_it.hasNext();) {
             PhylogenyNode node = ext_it.next();
@@ -53,6 +60,7 @@ public class kmlWriter {
 
             Placemark placemarkLines = folder.createAndAddPlacemark();
             Placemark placemarkPoints = folder.createAndAddPlacemark();
+            Placemark placemarkRoot = folder.createAndAddPlacemark();
 
             String coords = dist.getLatitude().toString() + ", " + dist.getLongitude().toString() + ", " + dist.getAltitude().toString();
             
@@ -64,7 +72,7 @@ public class kmlWriter {
 
 
 
-                placemarkLines.createAndSetLineString().withExtrude(false).withTessellate(false).withAltitudeMode(AltitudeMode.ABSOLUTE)
+                placemarkLines.withStyleUrl("#linestyleExample").createAndSetLineString().withExtrude(false).withTessellate(false).withAltitudeMode(AltitudeMode.ABSOLUTE)
                         .addToCoordinates(coords).addToCoordinates(parentCoord);
 
             }
@@ -73,6 +81,15 @@ public class kmlWriter {
                 placemarkPoints.withName(node.getNodeName()).createAndSetPoint().addToCoordinates(dist.getLatitude().doubleValue(),
                         dist.getLongitude().doubleValue(),dist.getAltitude().doubleValue());
             }
+
+//            if (node.isRoot() ){
+//                BigDecimal newLat = new BigDecimal("1000");
+//                BigDecimal newLong = new BigDecimal("1000");
+//                BigDecimal newAlt = new BigDecimal("1000");
+//                String rootCoords = (dist.getLatitude().add(newLat).toString() + ", " + dist.getLongitude().add(newLong).toString() + ", " + dist.getAltitude().add(newAlt).toString());
+//                placemarkRoot.createAndSetLineString().withExtrude(false).withTessellate(false).withAltitudeMode(AltitudeMode.ABSOLUTE)
+//                        .addToCoordinates(coords).addToCoordinates(rootCoords);
+//            }
 
         }        
 
