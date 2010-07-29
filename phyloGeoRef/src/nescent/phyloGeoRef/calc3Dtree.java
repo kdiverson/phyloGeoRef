@@ -19,6 +19,7 @@ package nescent.phyloGeoRef;
 
 import java.lang.Math;
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.ListIterator;
 import java.util.ArrayList;
 
@@ -47,7 +48,7 @@ public class calc3Dtree {
                     BigDecimal lat = (BigDecimal) item.getSecond();
                     BigDecimal lng = (BigDecimal) item.getThird();
 
-                    PhylogenyNode node = my_phy.getNode(species);//ext_it.next();
+                    PhylogenyNode node = my_phy.getNode(species);//ext_it.next(); look into fuzzy matching
                     NodeData data = node.getNodeData();
                     node.getNodeData().setDistribution(new Distribution(""));
                     Distribution dist = data.getDistribution();
@@ -77,6 +78,7 @@ public class calc3Dtree {
                     dist.setLatitude(lat); //from geo coord file
                     dist.setLongitude(lng); //from geo coord file
                     dist.setAltitude(BigDecimal.ZERO);//always 0
+                    dist.setDescription(metadata);
 
                 }
             }
@@ -171,7 +173,7 @@ public class calc3Dtree {
             //double test = nodeZ;
             //BigDecimal t = new BigDecimal("123");
             System.out.println(nodeZ);
-            BigDecimal alt = BigDecimal.valueOf(nodeZ*10000);
+            BigDecimal alt = BigDecimal.valueOf(nodeZ*100000);
             
             dist.setAltitude(alt);
         }
@@ -180,7 +182,7 @@ public class calc3Dtree {
 
     }
 
-    private void assignBinaryNodes (Phylogeny my_phy, ArrayList coordList) {
+    public void assignBinaryNodes (Phylogeny my_phy, ArrayList coordList) {
         
         assignExtenalNodeDistribution(my_phy, coordList);
 
@@ -296,9 +298,13 @@ public class calc3Dtree {
 
                 }
 
+
                 BigDecimal count = new BigDecimal(c);
+                //BigDecimal latAbs = latSum.abs();
+                //BigDecimal longAbs = longSum.abs();
                 BigDecimal meanLat = latSum.divide(count,BigDecimal.ROUND_CEILING);
                 BigDecimal meanLong = longSum.divide(count,BigDecimal.ROUND_CEILING);
+
 
                 dist.setLatitude(meanLat);
                 dist.setLongitude(meanLong);

@@ -62,22 +62,22 @@ public class kmlWriter {
             Placemark placemarkPoints = folder.createAndAddPlacemark();
             Placemark placemarkRoot = folder.createAndAddPlacemark();
 
-            String coords = dist.getLatitude().toString() + ", " + dist.getLongitude().toString() + ", " + dist.getAltitude().toString();
+            String coords = dist.getLongitude().toString() + ", " + dist.getLatitude().toString() + ", " + dist.getAltitude().toString();
             
             if (!node.isRoot()) {
                 PhylogenyNode parentNode = node.getParent();
                 NodeData parentData = parentNode.getNodeData();
                 Distribution parentDist = parentData.getDistribution();
-                String parentCoord = parentDist.getLatitude().toString() + ", " + parentDist.getLongitude().toString() + ", " + parentDist.getAltitude().toString();
+                String parentCoord = parentDist.getLongitude().toString() + ", " + parentDist.getLatitude().toString() + ", " + parentDist.getAltitude().toString();
 
-                placemarkLines.withStyleUrl("#linestyleExample").createAndSetLineString().withExtrude(false).withTessellate(false).withAltitudeMode(AltitudeMode.ABSOLUTE)
+                placemarkLines.withStyleUrl("#linestyleExample").createAndSetLineString().withExtrude(true).withTessellate(true).withAltitudeMode(AltitudeMode.CLAMP_TO_GROUND)
                         .addToCoordinates(coords).addToCoordinates(parentCoord);
 
             }
 
             if (node.isExternal()) {
-                placemarkPoints.withName(node.getNodeName()).withDescription(node.getNodeName()).createAndSetPoint().addToCoordinates(dist.getLatitude().doubleValue(),
-                        dist.getLongitude().doubleValue(),dist.getAltitude().doubleValue());
+                placemarkPoints.withName(node.getNodeName()).withDescription(node.getNodeName()).createAndSetPoint().addToCoordinates(dist.getLongitude().doubleValue(),
+                        dist.getLatitude().doubleValue(),dist.getAltitude().doubleValue());
             }
 
 //            if (node.isRoot() ){

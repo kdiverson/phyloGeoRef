@@ -1,0 +1,12 @@
+K 10
+svn:ignore
+V 66
+Doxyfile
+org
+.classpath
+.project
+.settings
+dir_conflicts.prej
+bin
+
+END

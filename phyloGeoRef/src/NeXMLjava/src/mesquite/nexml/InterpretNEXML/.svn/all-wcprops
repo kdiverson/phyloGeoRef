@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/nexml/!svn/ver/1182/trunk/nexml/java/src/mesquite/nexml/InterpretNEXML
+END
+InterpretNEXML.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/nexml/!svn/ver/1180/trunk/nexml/java/src/mesquite/nexml/InterpretNEXML/InterpretNEXML.java
+END
+PredicateHandlerImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/nexml/!svn/ver/1080/trunk/nexml/java/src/mesquite/nexml/InterpretNEXML/PredicateHandlerImpl.java
+END
+HyperlinkHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/nexml/!svn/ver/1080/trunk/nexml/java/src/mesquite/nexml/InterpretNEXML/HyperlinkHandler.java
+END
+TaxonLinkHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/nexml/!svn/ver/1080/trunk/nexml/java/src/mesquite/nexml/InterpretNEXML/TaxonLinkHandler.java
+END
+predicateHandlerMapping.properties
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/nexml/!svn/ver/1117/trunk/nexml/java/src/mesquite/nexml/InterpretNEXML/predicateHandlerMapping.properties
+END
+TaxonUIDHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/nexml/!svn/ver/1080/trunk/nexml/java/src/mesquite/nexml/InterpretNEXML/TaxonUIDHandler.java
+END
+ObjectConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/nexml/!svn/ver/1182/trunk/nexml/java/src/mesquite/nexml/InterpretNEXML/ObjectConverter.java
+END
+PredicateHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/nexml/!svn/ver/1080/trunk/nexml/java/src/mesquite/nexml/InterpretNEXML/PredicateHandler.java
+END

@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/nexml/!svn/ver/1304/trunk/nexml/java/src/org/nexml/model
+END
+Tree.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/nexml/!svn/ver/998/trunk/nexml/java/src/org/nexml/model/Tree.java
+END
+CompoundCharacterState.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/CompoundCharacterState.java
+END
+CategoricalMatrix.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/nexml/!svn/ver/1058/trunk/nexml/java/src/org/nexml/model/CategoricalMatrix.java
+END
+MatrixCell.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/MatrixCell.java
+END
+Matrix.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/nexml/!svn/ver/1304/trunk/nexml/java/src/org/nexml/model/Matrix.java
+END
+Edge.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/Edge.java
+END
+DocumentFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/DocumentFactory.java
+END
+UncertainCharacterState.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/nexml/!svn/ver/910/trunk/nexml/java/src/org/nexml/model/UncertainCharacterState.java
+END
+OTU.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/nexml/!svn/ver/999/trunk/nexml/java/src/org/nexml/model/OTU.java
+END
+MolecularMatrix.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/nexml/!svn/ver/1086/trunk/nexml/java/src/org/nexml/model/MolecularMatrix.java
+END
+CharacterStateSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/CharacterStateSet.java
+END
+OTULinkable.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/OTULinkable.java
+END
+Annotation.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/nexml/!svn/ver/1136/trunk/nexml/java/src/org/nexml/model/Annotation.java
+END
+TreeBlock.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/TreeBlock.java
+END
+NexmlWritable.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/NexmlWritable.java
+END
+Document.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/nexml/!svn/ver/1151/trunk/nexml/java/src/org/nexml/model/Document.java
+END
+IntEdge.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/IntEdge.java
+END
+NetworkObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/nexml/!svn/ver/1088/trunk/nexml/java/src/org/nexml/model/NetworkObject.java
+END
+PolymorphicCharacterState.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/nexml/!svn/ver/910/trunk/nexml/java/src/org/nexml/model/PolymorphicCharacterState.java
+END
+Node.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/Node.java
+END
+Annotatable.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/nexml/!svn/ver/1136/trunk/nexml/java/src/org/nexml/model/Annotatable.java
+END
+Network.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/nexml/!svn/ver/1087/trunk/nexml/java/src/org/nexml/model/Network.java
+END
+FloatEdge.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/FloatEdge.java
+END
+OTUs.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/OTUs.java
+END
+ContinuousMatrix.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/nexml/!svn/ver/952/trunk/nexml/java/src/org/nexml/model/ContinuousMatrix.java
+END
+Character.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/Character.java
+END
+OTUsLinkable.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/OTUsLinkable.java
+END
+CharacterState.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/nexml/!svn/ver/1136/trunk/nexml/java/src/org/nexml/model/CharacterState.java
+END
+CharacterLinkable.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/nexml/!svn/ver/884/trunk/nexml/java/src/org/nexml/model/CharacterLinkable.java
+END
