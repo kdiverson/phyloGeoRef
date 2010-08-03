@@ -86,6 +86,7 @@ public class testMain {
 
         c3dt.assignNodeCoords(my_phy, coordList);
 
+
         //my_phy.printExtNodes();
         //System.out.println(my_phy.toString());
 
