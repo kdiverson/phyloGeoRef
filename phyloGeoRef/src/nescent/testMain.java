@@ -29,6 +29,7 @@ import nescent.phyloGeoRef.geoData.parseCoords;
 import nescent.phyloGeoRef.tree.getTree;
 import nescent.phyloGeoRef.calc3Dtree;
 import nescent.phyloGeoRef.kml.kmlWriter;
+import nescent.phyloGeoRef.tree.NeXMLtoPhyObj;
 
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
@@ -52,6 +53,7 @@ public class testMain {
     static Phylogeny my_phy = new Phylogeny();
     static calc3Dtree c3dt = new calc3Dtree();
     static kmlWriter kmlw = new kmlWriter();
+    static NeXMLtoPhyObj ntp = new NeXMLtoPhyObj();
     
     /**
      * @param args the command line arguments
@@ -79,12 +81,18 @@ public class testMain {
        }
 
         coordList = pc.parseCSV(coordFile);
-        
-        //c3dt.lazyAssignNodeCoords(my_phy, coordList);
 
-        //c3dt.assignBinaryNodes(my_phy, coordList);
+       //c3dt.lazyAssignNodeCoords(my_phy, coordList);
+       //c3dt.assignBinaryNodes(my_phy, coordList);
+       //c3dt.assignNodeCoords(my_phy, coordList);
+       c3dt.assignMaridianCoords(my_phy, coordList);
+       //c3dt.assignMultipleObservations(my_phy, coordList);
 
-        c3dt.assignNodeCoords(my_phy, coordList);
+//        try {
+//            ntp.parseFloatTree(treeFile);
+//        } catch (Throwable ex) {
+//            Logger.getLogger(testMain.class.getName()).log(Level.SEVERE, null, ex);
+//        }
 
 
         //my_phy.printExtNodes();
@@ -120,11 +128,11 @@ public class testMain {
             System.out.println(lat.toString());
             System.out.println(lng.toString());
 
-            //System.out.println(dist.toString());
+            System.out.println(dist.toString());
         }
         try {
             //testAssignCoords(treeFile, coordFile, metadata);
-            kmlw.createKML(my_phy, "testfile.kml");
+            kmlw.createKML(my_phy, "testfile.kml", false);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(testMain.class.getName()).log(Level.SEVERE, null, ex);
         }

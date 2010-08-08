@@ -33,9 +33,6 @@ import java.util.Set;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import junit.framework.Assert;
-
-import org.junit.Test;
 import org.xml.sax.SAXException;
 
 import org.nexml.model.Document;
@@ -116,12 +113,15 @@ public class NeXMLtoPhyObj {
                     PhylogenyNode phyChild = new PhylogenyNode(treeNode.toString());
 
                     //if phyphyNode != terminal
-                    phyChild.setParent(phyNode);
 
-                    phyChild.setName(treeNode.getLabel());
+                    if (node.isRoot()) {
+                        phyChild.setParent(my_phy.getRoot());
+                    }
 
+                    else phyChild.setParent(phyNode);
                     
-
+                    phyChild.setName(treeNode.getLabel());
+                    
                     //phyChild.getFirstChildNode();
 
                     //my_phy.addAsSibling(phyChild);

@@ -39,9 +39,13 @@ import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
  * @author Kathryn Iverson <kd.iverson at gmail.com>
  */
 public class kmlWriter {
-    public void createKML(Phylogeny my_phy, String fileName) throws FileNotFoundException {
+    public void createKML(Phylogeny my_phy, String fileName, boolean tesselate) throws FileNotFoundException {
         
         final Kml kml = new Kml();
+        
+        AltitudeMode altMode = AltitudeMode.ABSOLUTE;
+
+        if (tesselate) altMode = AltitudeMode.CLAMP_TO_GROUND;
 
         Document doc = kml.createAndSetDocument().withName("Test Example1").withOpen(true);
 
@@ -70,7 +74,7 @@ public class kmlWriter {
                 Distribution parentDist = parentData.getDistribution();
                 String parentCoord = parentDist.getLongitude().toString() + ", " + parentDist.getLatitude().toString() + ", " + parentDist.getAltitude().toString();
 
-                placemarkLines.withStyleUrl("#linestyleExample").createAndSetLineString().withExtrude(true).withTessellate(true).withAltitudeMode(AltitudeMode.CLAMP_TO_GROUND)
+                placemarkLines.withStyleUrl("#linestyleExample").createAndSetLineString().withExtrude(false).withTessellate(tesselate).withAltitudeMode(altMode)
                         .addToCoordinates(coords).addToCoordinates(parentCoord);
 
             }

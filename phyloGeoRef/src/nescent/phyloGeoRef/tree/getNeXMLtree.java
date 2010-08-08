@@ -23,9 +23,6 @@ import java.util.Properties;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import junit.framework.Assert;
-
-import org.junit.Test;
 import org.xml.sax.SAXException;
 
 import org.nexml.model.Document;
