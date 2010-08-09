@@ -432,25 +432,14 @@ public class calc3Dtree {
                     BigDecimal childLat = childDist.getLatitude();
                     BigDecimal childLong = childDist.getLongitude();
 
-//                    if (i+1 < node.getNumberOfDescendants()) {
-//                        PhylogenyNode nextChild = node.getChildNode(i+1);
-//                        NodeData nextChildData = nextChild.getNodeData();
-//                        Distribution nextChildDist = nextChildData.getDistribution();
-//
-//                        if (childLong.floatValue() < 0 && nextChildDist.getLongitude().floatValue() > 0) {
-//                            xmeridian = true;
-//                            System.out.println("crossing the xmeridian...");
-//                        }
-//                    }
-
                     List<PhylogenyNode> decendents = node.getDescendants();
                     //int neg = 0;
 
-                    for (PhylogenyNode decendent : decendents) {
-                        NodeData decendentData = decendent.getNodeData();
-                        Distribution decendentDist = decendentData.getDistribution();
+                    for (PhylogenyNode descendent : decendents) {
+                        NodeData descendentData = descendent.getNodeData();
+                        Distribution descendentDist = descendentData.getDistribution();
 
-                        if (decendentDist.getLongitude().floatValue() < 0 && decendentDist.getLongitude().floatValue() < -90) {
+                        if (descendentDist.getLongitude().floatValue() < 0 && descendentDist.getLongitude().floatValue() < -90) {
                             neg++;
                             System.out.println("crossing the meridian...");
                             System.out.println(neg);
@@ -491,7 +480,6 @@ public class calc3Dtree {
                     if (midPtSign == -1) meanLong = meanLong.negate();
 
                 }
-
 
                 dist.setLatitude(meanLat);
                 dist.setLongitude(meanLong);
@@ -539,3 +527,15 @@ public class calc3Dtree {
 //            Distribution dist = data.getDistribution();
 //            Taxonomy tax = data.getTaxonomy();
 //            String name = tax.getScientificName();
+
+
+//                    if (i+1 < node.getNumberOfDescendants()) {
+//                        PhylogenyNode nextChild = node.getChildNode(i+1);
+//                        NodeData nextChildData = nextChild.getNodeData();
+//                        Distribution nextChildDist = nextChildData.getDistribution();
+//
+//                        if (childLong.floatValue() < 0 && nextChildDist.getLongitude().floatValue() > 0) {
+//                            xmeridian = true;
+//                            System.out.println("crossing the xmeridian...");
+//                        }
+//                    }

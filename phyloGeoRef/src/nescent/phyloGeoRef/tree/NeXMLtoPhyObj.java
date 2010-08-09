@@ -61,7 +61,7 @@ import org.forester.phylogeny.PhylogenyMethods;
  */
 public class NeXMLtoPhyObj {
 
-	public void parseFloatTree(File intreeFile) throws Throwable {
+	public Phylogeny parseFloatTree(File intreeFile) throws Throwable {
 
 		Phylogeny my_phy = new Phylogeny();
 
@@ -99,6 +99,8 @@ public class NeXMLtoPhyObj {
             //for every node in the tree
             for (Node node : tree.getNodes()) {
 
+                //if (node.isRoot()) continue;
+
                 //create a new phylogeny node for each node in the tree
                 PhylogenyNode phyNode = new PhylogenyNode(node.toString());
                 
@@ -130,6 +132,8 @@ public class NeXMLtoPhyObj {
                 //lastNode = ;
             }
         }
+
+        return my_phy;
 	}
 
 	public void parseIntTree(File intreeFile) throws Throwable {

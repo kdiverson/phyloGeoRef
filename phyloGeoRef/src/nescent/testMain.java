@@ -72,13 +72,17 @@ public class testMain {
         String metadata = args[2];//c.readLine("Does this file have metadata (y/n): ");
 
         File treeFile = new File(intreeFile);
-        //File coordFile = new File(incoordFile);
-
         try {
-           my_phy = gt.openTree(treeFile);
-       } catch (Exception e) {
-           System.out.println("Error: " + e.toString() );
-       }
+            my_phy = ntp.parseFloatTree(treeFile);
+        } catch (Throwable ex) {
+            Logger.getLogger(testMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+//        try {
+//           my_phy = gt.openTree(treeFile);
+//       } catch (Exception e) {
+//           System.out.println("Error: " + e.toString() );
+//       }
 
         coordList = pc.parseCSV(coordFile);
 
