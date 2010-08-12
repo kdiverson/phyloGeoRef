@@ -49,5 +49,5 @@ Using geoPhyloRef:
 
 The best way to integrate geoPhyloRef into your project is to use the package within your code. I've tried to provide helpful comments for all the functions that explain how and when to use them. There are also some javadocs for the functions that I've written. The docs for the other code I've used in my library can be found at their respective websites although if you're using this library you shouldn't have to know anything about the other libraries I've included. There should be functions within geoPhyloRef to allow access to data objects created by these other libraries.
 
-That's it! Go ahead and have some fun. There's a tutorial with a simple example on the github wiki: http://wiki.github.com/kdiverson/phyloGeoRef/
+That's it! Go ahead and have some fun. There's a tutorial with a simple example on the github wiki: http://wiki.github.com/kdiverson/phyloGeoRef/tutorial
 
