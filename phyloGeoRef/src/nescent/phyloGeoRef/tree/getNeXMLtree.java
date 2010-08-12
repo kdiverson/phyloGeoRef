@@ -30,7 +30,8 @@ import org.nexml.model.Document;
 import org.nexml.model.DocumentFactory;
 
 /**
- *
+ *This class defines functions to parse NeXML trees. These have been merged with
+ * NeXMLtoPhyObj so this class can probably be deleted.
  * @author Kathryn Iverson <kd.iverson at gmail.com>
  */
 public class getNeXMLtree {

@@ -28,7 +28,7 @@ import nescent.phyloGeoRef.Triple;
 import nescent.phyloGeoRef.Quad;
 
 /**
- *coords should be stored as big decimals in an array of big decimals
+ * coords should be stored as big decimals in an array of big decimals
  * @author Kathryn Iverson <kd.iverson at gmail.com>
  */
 public class parseCoords {
@@ -40,6 +40,12 @@ public class parseCoords {
     static String metadata;
 
     ArrayList latLongArrLst = new ArrayList();
+
+    /**
+     * Parse a csv file with no header or metadata
+     * @param infile
+     * @return
+     */
 
     public ArrayList<Triple> parseCSV(String infile) {
         try {
@@ -58,6 +64,13 @@ public class parseCoords {
         }
         return latLongArrLst;
     }
+
+    /**
+     * Parse a csv file skipping x lines, where x is parameter skiplines and no metadata
+     * @param infile
+     * @param skipLines
+     * @return
+     */
 
     public ArrayList<Triple> parseCSV(String infile, int skipLines) {
 
@@ -79,6 +92,12 @@ public class parseCoords {
     }
 
 
+    /**
+     * parse a tsv file with no header lines or metadata.
+     * @param infile
+     * @return
+     */
+
     public ArrayList<Triple> parseTSV(String infile) {
         try {
             CSVReader reader = new CSVReader(new FileReader(infile), '\t', '\'');
@@ -99,7 +118,7 @@ public class parseCoords {
 
 
     /**
-     *
+     * prase a tsv file skipping x lines where x is parameter skiplines and no metadata
      * @param infile
      * @param skipLines
      * @return
@@ -124,7 +143,8 @@ public class parseCoords {
 
     
     /**
-     * 
+     * parse a file that is deliminated by "delim" ie a semicolon deliminated file
+     * with no metadata or headers
      * @param infile
      * @param delim
      * @return
@@ -148,7 +168,7 @@ public class parseCoords {
 
 
     /**
-     *
+     * parse a deliminated file with a header and no metadata
      * @param infile
      * @param delim
      * @param skipLines
@@ -172,6 +192,12 @@ public class parseCoords {
     }
 
 
+    /**
+     * parse a csv file with metadata and no header
+     * @param infile
+     * @return
+     */
+
     public ArrayList<Quad> parseCSVwithMetadata(String infile) {
         try {
             CSVReader reader = new CSVReader(new FileReader(infile));
@@ -190,6 +216,13 @@ public class parseCoords {
         }
         return latLongArrLst;
     }
+
+    /**
+     * parse a csv file with metadata and header line(s)
+     * @param infile
+     * @param skipLines
+     * @return
+     */
 
     public ArrayList<Quad> parseCSVwithMetadata(String infile, int skipLines) {
 
@@ -212,6 +245,12 @@ public class parseCoords {
     }
 
 
+    /**
+     * parse a tsv file with metadata and no header lines
+     * @param infile
+     * @return
+     */
+
     public List<Quad> parseTSVwithMetadata(String infile) {
         try {
             CSVReader reader = new CSVReader(new FileReader(infile), '\t', '\'');
@@ -233,7 +272,7 @@ public class parseCoords {
 
 
     /**
-     *
+     * parse a tsv file with metadata and header lines
      * @param infile
      * @param skipLines
      * @return
@@ -259,7 +298,7 @@ public class parseCoords {
 
 
     /**
-     *
+     * parse a deliminated file with metadata
      * @param infile
      * @param delim
      * @return
@@ -284,7 +323,7 @@ public class parseCoords {
 
 
     /**
-     *
+     * parse a deliminated file with metadata and header line(s)
      * @param infile
      * @param delim
      * @param skipLines

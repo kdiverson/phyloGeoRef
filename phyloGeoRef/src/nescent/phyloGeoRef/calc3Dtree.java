@@ -30,10 +30,18 @@ import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
 import org.forester.phylogeny.PhylogenyMethods;
 
 /**
- *
+ *This class handles the calculations of the trees.
+ * 
  * @author Kathryn Iverson <kd.iverson at gmail.com>
  */
 public class calc3Dtree {
+
+    /**
+     * This function assigns coordinates to the external nodes (leafs) from the coordfile
+     * 
+     * @param my_phy
+     * @param coordList
+     */
 
     private void assignExtenalNodeDistribution (Phylogeny my_phy, ArrayList coordList) {
 
@@ -86,36 +94,6 @@ public class calc3Dtree {
 
     }
 
-//    private BigDecimal [] calcNodeLatLong (Phylogeny my_phy) {
-//        //calc lat long latLong[lat,long,lat,long...]
-//        BigDecimal [] latLong = new BigDecimal [countNodes(my_phy)];
-//        //function that determins the lat and long of each node
-//
-//        return latLong;
-//    }
-
-//    private void assignLatLong(Phylogeny my_phy, PhylogenyNode node) {
-//
-//        BigDecimal lat = BigDecimal.TEN;
-//        BigDecimal lng = BigDecimal.TEN;
-//
-//        //linear strech algorithm from GeoPhyloBuilder 1.1
-//        //converts a non-ultrametric tree to an ultrametric tree
-//        //right now all we can do is ignore branch lengths
-//        short nLtip = PhylogenyMethods.calculateMaxBranchesToLeaf(node);
-//        double nLroot = PhylogenyMethods.calculateDistanceToRoot(node);
-//        int maxLtree = PhylogenyMethods.calculateMaxDepth(my_phy);
-//        short zMult = 1;
-//
-//        double nodeZ = (nLtip/(nLroot/nLtip)*maxLtree)*zMult;
-//
-//        NodeData data = node.getNodeData();
-//        node.getNodeData().setDistribution(new Distribution(""));
-//        Distribution dist = data.getDistribution();
-//        dist.setLatitude(lat);
-//        dist.setLongitude(lng);
-//
-//    }
 
     private void assignNodeAltitude(PhylogenyNode node) {
 
@@ -391,6 +369,13 @@ public class calc3Dtree {
         }
     }
 
+    /**
+     * This function has a feature that checks if any nodes have children that cross the 180 meridian.
+     * If so, it will do a special calculation to determine the midpoint.
+     * @param my_phy
+     * @param coordList
+     */
+
     public void assignMaridianCoords (Phylogeny my_phy, ArrayList coordList) {
         if (my_phy.isCompletelyBinary()) {
             assignBinaryNodes(my_phy, coordList);
@@ -539,3 +524,34 @@ public class calc3Dtree {
 //                            System.out.println("crossing the xmeridian...");
 //                        }
 //                    }
+
+//    private BigDecimal [] calcNodeLatLong (Phylogeny my_phy) {
+//        //calc lat long latLong[lat,long,lat,long...]
+//        BigDecimal [] latLong = new BigDecimal [countNodes(my_phy)];
+//        //function that determins the lat and long of each node
+//
+//        return latLong;
+//    }
+
+//    private void assignLatLong(Phylogeny my_phy, PhylogenyNode node) {
+//
+//        BigDecimal lat = BigDecimal.TEN;
+//        BigDecimal lng = BigDecimal.TEN;
+//
+//        //linear strech algorithm from GeoPhyloBuilder 1.1
+//        //converts a non-ultrametric tree to an ultrametric tree
+//        //right now all we can do is ignore branch lengths
+//        short nLtip = PhylogenyMethods.calculateMaxBranchesToLeaf(node);
+//        double nLroot = PhylogenyMethods.calculateDistanceToRoot(node);
+//        int maxLtree = PhylogenyMethods.calculateMaxDepth(my_phy);
+//        short zMult = 1;
+//
+//        double nodeZ = (nLtip/(nLroot/nLtip)*maxLtree)*zMult;
+//
+//        NodeData data = node.getNodeData();
+//        node.getNodeData().setDistribution(new Distribution(""));
+//        Distribution dist = data.getDistribution();
+//        dist.setLatitude(lat);
+//        dist.setLongitude(lng);
+//
+//    }

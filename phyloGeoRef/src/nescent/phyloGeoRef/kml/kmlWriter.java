@@ -35,10 +35,23 @@ import org.forester.phylogeny.data.NodeData;
 import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
 
 /**
- *
+ * This class defines a function to write the tree to a kml file for Google Earth.
+ * Here style elements can be defined.
  * @author Kathryn Iverson <kd.iverson at gmail.com>
  */
 public class kmlWriter {
+
+    /**
+     * This is the main create kml function. It takes the phylogeny object, the name
+     * of the kml file to be created and a boolean tesselate value. This should be set to
+     * true for cosmopolitan trees. This creates a flat tree on the surface of the earth
+     * rather than a 3D tree.
+     * @param my_phy
+     * @param fileName
+     * @param tesselate
+     * @throws FileNotFoundException
+     */
+
     public void createKML(Phylogeny my_phy, String fileName, boolean tesselate) throws FileNotFoundException {
         
         final Kml kml = new Kml();
