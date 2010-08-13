@@ -83,8 +83,11 @@ public class testMain {
        } catch (Exception e) {
            System.out.println("Error: " + e.toString() );
        }
+<<<<<<< HEAD
 
         if (metadata.equals("y")) coordList = pc.parseCSVwithMetadata(coordFile);
+=======
+>>>>>>> 827b09faffee81b39ea2e80702ac1352f94856b9
 
         else coordList = pc.parseCSV(coordFile);
 
