@@ -18,14 +18,14 @@
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
                     <altitudeMode>absolute</altitudeMode>
-                    <coordinates>133.865584,-23.129627 148.090851,3.0279857,3600000.0</coordinates>
+                    <coordinates>42.865584,-6.129627 42.984478,5.9228831,3600000.0</coordinates>
                 </LineString>
             </Placemark>
             <Placemark>
                 <name>B</name>
                 <description>B</description>
                 <Point>
-                    <coordinates>133.865584,-23.129627</coordinates>
+                    <coordinates>42.865584,-6.129627</coordinates>
                 </Point>
             </Placemark>
             <Placemark/>
@@ -35,14 +35,14 @@
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
                     <altitudeMode>absolute</altitudeMode>
-                    <coordinates>139.177874,-27.011702 165.731207,-4.3225,1600000.0</coordinates>
+                    <coordinates>43.177874,-0.011702 43.090004,7.612192,1600000.0</coordinates>
                 </LineString>
             </Placemark>
             <Placemark>
                 <name>A</name>
                 <description>A</description>
                 <Point>
-                    <coordinates>139.177874,-27.011702</coordinates>
+                    <coordinates>43.177874,-0.011702</coordinates>
                 </Point>
             </Placemark>
             <Placemark/>
@@ -52,14 +52,14 @@
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
                     <altitudeMode>absolute</altitudeMode>
-                    <coordinates>142.786672,-5.869384 -167.715461,18.366702,1600000.0</coordinates>
+                    <coordinates>45.786672,9.869384 43.002133,15.236086,1600000.0</coordinates>
                 </LineString>
             </Placemark>
             <Placemark>
                 <name>C</name>
                 <description>C</description>
                 <Point>
-                    <coordinates>142.786672,-5.869384</coordinates>
+                    <coordinates>45.786672,9.869384</coordinates>
                 </Point>
             </Placemark>
             <Placemark/>
@@ -69,14 +69,14 @@
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
                     <altitudeMode>absolute</altitudeMode>
-                    <coordinates>-118.217594,42.602788 -167.715461,18.366702,1600000.0</coordinates>
+                    <coordinates>40.217594,20.602788 43.002133,15.236086,1600000.0</coordinates>
                 </LineString>
             </Placemark>
             <Placemark>
                 <name>E</name>
                 <description>E</description>
                 <Point>
-                    <coordinates>-118.217594,42.602788</coordinates>
+                    <coordinates>40.217594,20.602788</coordinates>
                 </Point>
             </Placemark>
             <Placemark/>
@@ -86,7 +86,7 @@
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
                     <altitudeMode>absolute</altitudeMode>
-                    <coordinates>-167.715461,18.366702,1600000.0 165.731207,-4.3225,1600000.0</coordinates>
+                    <coordinates>43.002133,15.236086,1600000.0 43.090004,7.612192,1600000.0</coordinates>
                 </LineString>
             </Placemark>
             <Placemark/>
@@ -97,7 +97,7 @@
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
                     <altitudeMode>absolute</altitudeMode>
-                    <coordinates>165.731207,-4.3225,1600000.0 148.090851,3.0279857,3600000.0</coordinates>
+                    <coordinates>43.090004,7.612192,1600000.0 42.984478,5.9228831,3600000.0</coordinates>
                 </LineString>
             </Placemark>
             <Placemark/>
@@ -108,14 +108,14 @@
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
                     <altitudeMode>absolute</altitudeMode>
-                    <coordinates>108.798603,45.106559 144.67576,36.5360841,1600000.0</coordinates>
+                    <coordinates>41.798603,14.106559 42.997844,16.2860841,1600000.0</coordinates>
                 </LineString>
             </Placemark>
             <Placemark>
                 <name>D</name>
                 <description>D</description>
                 <Point>
-                    <coordinates>108.798603,45.106559</coordinates>
+                    <coordinates>41.798603,14.106559</coordinates>
                 </Point>
             </Placemark>
             <Placemark/>
@@ -125,14 +125,14 @@
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
                     <altitudeMode>absolute</altitudeMode>
-                    <coordinates>-100.583038,41.094837 -179.447084,27.9656091,1600000.0</coordinates>
+                    <coordinates>42.583038,21.094837 44.197085,18.4656091,1600000.0</coordinates>
                 </LineString>
             </Placemark>
             <Placemark>
                 <name>F</name>
                 <description>F</description>
                 <Point>
-                    <coordinates>-100.583038,41.094837</coordinates>
+                    <coordinates>42.583038,21.094837</coordinates>
                 </Point>
             </Placemark>
             <Placemark/>
@@ -142,14 +142,14 @@
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
                     <altitudeMode>absolute</altitudeMode>
-                    <coordinates>-99.898472,19.048859 101.68887,14.8363812,1600000.0</coordinates>
+                    <coordinates>46.898472,15.048859 45.811131,15.8363812,1600000.0</coordinates>
                 </LineString>
             </Placemark>
             <Placemark>
                 <name>G</name>
                 <description>G</description>
                 <Point>
-                    <coordinates>-99.898472,19.048859</coordinates>
+                    <coordinates>46.898472,15.048859</coordinates>
                 </Point>
             </Placemark>
             <Placemark/>
@@ -159,14 +159,14 @@
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
                     <altitudeMode>absolute</altitudeMode>
-                    <coordinates>-56.723789,10.6239034 101.68887,14.8363812,1600000.0</coordinates>
+                    <coordinates>44.723789,16.6239034 45.811131,15.8363812,1600000.0</coordinates>
                 </LineString>
             </Placemark>
             <Placemark>
                 <name>H</name>
                 <description>H</description>
                 <Point>
-                    <coordinates>-56.723789,10.6239034</coordinates>
+                    <coordinates>44.723789,16.6239034</coordinates>
                 </Point>
             </Placemark>
             <Placemark/>
@@ -176,7 +176,7 @@
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
                     <altitudeMode>absolute</altitudeMode>
-                    <coordinates>101.68887,14.8363812,1600000.0 -179.447084,27.9656091,1600000.0</coordinates>
+                    <coordinates>45.811131,15.8363812,1600000.0 44.197085,18.4656091,1600000.0</coordinates>
                 </LineString>
             </Placemark>
             <Placemark/>
@@ -187,7 +187,7 @@
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
                     <altitudeMode>absolute</altitudeMode>
-                    <coordinates>-179.447084,27.9656091,1600000.0 144.67576,36.5360841,1600000.0</coordinates>
+                    <coordinates>44.197085,18.4656091,1600000.0 42.997844,16.2860841,1600000.0</coordinates>
                 </LineString>
             </Placemark>
             <Placemark/>
@@ -198,7 +198,7 @@
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
                     <altitudeMode>absolute</altitudeMode>
-                    <coordinates>144.67576,36.5360841,1600000.0 148.090851,3.0279857,3600000.0</coordinates>
+                    <coordinates>42.997844,16.2860841,1600000.0 42.984478,5.9228831,3600000.0</coordinates>
                 </LineString>
             </Placemark>
             <Placemark/>

@@ -72,19 +72,21 @@ public class testMain {
         String metadata = args[2];//c.readLine("Does this file have metadata (y/n): ");
 
         File treeFile = new File(intreeFile);
-        try {
-            my_phy = ntp.parseFloatTree(treeFile);
-        } catch (Throwable ex) {
-            Logger.getLogger(testMain.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
 //        try {
-//           my_phy = gt.openTree(treeFile);
-//       } catch (Exception e) {
-//           System.out.println("Error: " + e.toString() );
-//       }
+//            my_phy = ntp.parseFloatTree(treeFile);
+//        } catch (Throwable ex) {
+//            Logger.getLogger(testMain.class.getName()).log(Level.SEVERE, null, ex);
+//        }
 
-        coordList = pc.parseCSV(coordFile);
+        try {
+           my_phy = gt.openTree(treeFile);
+       } catch (Exception e) {
+           System.out.println("Error: " + e.toString() );
+       }
+
+        if (metadata.equals("y")) coordList = pc.parseCSVwithMetadata(coordFile);
+
+        else coordList = pc.parseCSV(coordFile);
 
        //c3dt.lazyAssignNodeCoords(my_phy, coordList);
        //c3dt.assignBinaryNodes(my_phy, coordList);
