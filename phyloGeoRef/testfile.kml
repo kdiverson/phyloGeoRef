@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
     <Document>
-        <name>Test Example1</name>
+        <name>document</name>
         <open xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">true</open>
-        <Style id="linestyleExample">
+        <Style id="test">
             <LineStyle>
-                <color>7f0000ff</color>
+                <color>7f000000</color>
                 <width>7.0</width>
             </LineStyle>
         </Style>
         <Folder>
-            <name>test tree</name>
+            <name>folder</name>
             <open xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">true</open>
             <Placemark>
-                <styleUrl>#linestyleExample</styleUrl>
+                <styleUrl>#test</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -30,7 +30,7 @@
             </Placemark>
             <Placemark/>
             <Placemark>
-                <styleUrl>#linestyleExample</styleUrl>
+                <styleUrl>#test</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -47,7 +47,7 @@
             </Placemark>
             <Placemark/>
             <Placemark>
-                <styleUrl>#linestyleExample</styleUrl>
+                <styleUrl>#test</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -64,7 +64,7 @@
             </Placemark>
             <Placemark/>
             <Placemark>
-                <styleUrl>#linestyleExample</styleUrl>
+                <styleUrl>#test</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -81,7 +81,7 @@
             </Placemark>
             <Placemark/>
             <Placemark>
-                <styleUrl>#linestyleExample</styleUrl>
+                <styleUrl>#test</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -92,7 +92,7 @@
             <Placemark/>
             <Placemark/>
             <Placemark>
-                <styleUrl>#linestyleExample</styleUrl>
+                <styleUrl>#test</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -103,7 +103,7 @@
             <Placemark/>
             <Placemark/>
             <Placemark>
-                <styleUrl>#linestyleExample</styleUrl>
+                <styleUrl>#test</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -120,7 +120,7 @@
             </Placemark>
             <Placemark/>
             <Placemark>
-                <styleUrl>#linestyleExample</styleUrl>
+                <styleUrl>#test</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -137,7 +137,7 @@
             </Placemark>
             <Placemark/>
             <Placemark>
-                <styleUrl>#linestyleExample</styleUrl>
+                <styleUrl>#test</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -154,7 +154,7 @@
             </Placemark>
             <Placemark/>
             <Placemark>
-                <styleUrl>#linestyleExample</styleUrl>
+                <styleUrl>#test</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -171,7 +171,7 @@
             </Placemark>
             <Placemark/>
             <Placemark>
-                <styleUrl>#linestyleExample</styleUrl>
+                <styleUrl>#test</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -182,7 +182,7 @@
             <Placemark/>
             <Placemark/>
             <Placemark>
-                <styleUrl>#linestyleExample</styleUrl>
+                <styleUrl>#test</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>
@@ -193,7 +193,7 @@
             <Placemark/>
             <Placemark/>
             <Placemark>
-                <styleUrl>#linestyleExample</styleUrl>
+                <styleUrl>#test</styleUrl>
                 <LineString>
                     <extrude xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</extrude>
                     <tessellate xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">false</tessellate>

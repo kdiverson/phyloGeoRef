@@ -41,18 +41,53 @@ import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
  */
 public class kmlWriter {
 
+    boolean tesselate = false;
+    String color = "7f0000ff";
+    String folderName = "folder";
+    String documentName = "document";
+    String styleID = "lineStyle";
+    boolean extruded = false;
+
+    public kmlWriter setTesselate(boolean val) {
+        this.tesselate = val;
+        return this;
+    }
+
+    public kmlWriter setColor(String val){
+        this.color = val;
+        return this;
+    }
+
+    public kmlWriter setFolderName(String val) {
+        this.folderName = val;
+        return this;
+    }
+
+    public kmlWriter setDocumentName (String val) {
+        this.documentName = val;
+        return this;
+    }
+
+    public kmlWriter setStyleID (String val) {
+        this.styleID = val;
+        return this;
+    }
+
+    public kmlWriter setExtruded (boolean val) {
+        this.extruded = val;
+        return this;
+    }
+
     /**
-     * This is the main create kml function. It takes the phylogeny object, the name
-     * of the kml file to be created and a boolean tesselate value. This should be set to
-     * true for cosmopolitan trees. This creates a flat tree on the surface of the earth
-     * rather than a 3D tree.
+     * This is the main create kml function. It takes the phylogeny object and the name
+     * of the kml file to be created.
+     * 
      * @param my_phy
      * @param fileName
-     * @param tesselate
      * @throws FileNotFoundException
      */
 
-    public void createKML(Phylogeny my_phy, String fileName, boolean tesselate) throws FileNotFoundException {
+    public void createKML(Phylogeny my_phy, String fileName) throws FileNotFoundException {
         
         final Kml kml = new Kml();
         
@@ -60,15 +95,15 @@ public class kmlWriter {
 
         if (tesselate) altMode = AltitudeMode.CLAMP_TO_GROUND;
 
-        Document doc = kml.createAndSetDocument().withName("Test Example1").withOpen(true);
+        Document doc = kml.createAndSetDocument().withName(documentName).withOpen(true);
 
         // create a Folder
         Folder folder = doc.createAndAddFolder();
-        folder.withName("test tree").withOpen(true);
+        folder.withName(folderName).withOpen(true);
 
-        final Style style = doc.createAndAddStyle().withId("linestyleExample");
+        final Style style = doc.createAndAddStyle().withId(styleID);
 
-        style.createAndSetLineStyle().withColor("7f0000ff").withWidth(7.0d);
+        style.createAndSetLineStyle().withColor(color).withWidth(7.0d);
         
         for( PhylogenyNodeIterator ext_it = my_phy.iteratorPostorder(); ext_it.hasNext();) {
             PhylogenyNode node = ext_it.next();
@@ -87,7 +122,7 @@ public class kmlWriter {
                 Distribution parentDist = parentData.getDistribution();
                 String parentCoord = parentDist.getLongitude().toString() + ", " + parentDist.getLatitude().toString() + ", " + parentDist.getAltitude().toString();
 
-                placemarkLines.withStyleUrl("#linestyleExample").createAndSetLineString().withExtrude(false).withTessellate(tesselate).withAltitudeMode(altMode)
+                placemarkLines.withStyleUrl("#" + styleID).createAndSetLineString().withExtrude(extruded).withTessellate(tesselate).withAltitudeMode(altMode)
                         .addToCoordinates(coords).addToCoordinates(parentCoord);
 
             }
@@ -97,15 +132,6 @@ public class kmlWriter {
                         dist.getLatitude().doubleValue(),dist.getAltitude().doubleValue());
             }
 
-//            if (node.isRoot() ){
-//                BigDecimal newLat = new BigDecimal("1000");
-//                BigDecimal newLong = new BigDecimal("1000");
-//                BigDecimal newAlt = new BigDecimal("1000");
-//                String rootCoords = (dist.getLatitude().add(newLat).toString() + ", " + dist.getLongitude().add(newLong).toString() + ", " + dist.getAltitude().add(newAlt).toString());
-//                placemarkRoot.createAndSetLineString().withExtrude(false).withTessellate(false).withAltitudeMode(AltitudeMode.ABSOLUTE)
-//                        .addToCoordinates(coords).addToCoordinates(rootCoords);
-//            }
-
         }        
 
         kml.marshal(new File(fileName));
@@ -114,7 +140,14 @@ public class kmlWriter {
 }
 
 
-
+//            if (node.isRoot() ){
+//                BigDecimal newLat = new BigDecimal("1000");
+//                BigDecimal newLong = new BigDecimal("1000");
+//                BigDecimal newAlt = new BigDecimal("1000");
+//                String rootCoords = (dist.getLatitude().add(newLat).toString() + ", " + dist.getLongitude().add(newLong).toString() + ", " + dist.getAltitude().add(newAlt).toString());
+//                placemarkRoot.createAndSetLineString().withExtrude(false).withTessellate(false).withAltitudeMode(AltitudeMode.ABSOLUTE)
+//                        .addToCoordinates(coords).addToCoordinates(rootCoords);
+//            }
 
 
             //need start and end coords

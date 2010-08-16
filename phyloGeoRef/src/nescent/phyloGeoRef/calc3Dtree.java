@@ -95,6 +95,11 @@ public class calc3Dtree {
     }
 
 
+    /**
+     * This implements the Janies et al. 2007 height algorithm
+     * @param node
+     */
+
     private void assignNodeAltitude(PhylogenyNode node) {
 
         NodeData data = node.getNodeData();
@@ -371,12 +376,13 @@ public class calc3Dtree {
 
     /**
      * This function has a feature that checks if any nodes have children that cross the 180 meridian.
-     * If so, it will do a special calculation to determine the midpoint.
+     * If so, it will do a special calculation to determine the midpoint. It is safe to use this
+     * function even if your tree doesn't cross the 180 meridian.
      * @param my_phy
      * @param coordList
      */
 
-    public void assignMaridianCoords (Phylogeny my_phy, ArrayList coordList) {
+    public void assignMeridianCoords (Phylogeny my_phy, ArrayList coordList) {
         if (my_phy.isCompletelyBinary()) {
             assignBinaryNodes(my_phy, coordList);
         }

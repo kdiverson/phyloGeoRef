@@ -86,13 +86,12 @@ public class testMain {
 
         if (metadata.equals("y")) coordList = pc.parseCSVwithMetadata(coordFile);
 
-
         else coordList = pc.parseCSV(coordFile);
 
        //c3dt.lazyAssignNodeCoords(my_phy, coordList);
        //c3dt.assignBinaryNodes(my_phy, coordList);
        //c3dt.assignNodeCoords(my_phy, coordList);
-       c3dt.assignMaridianCoords(my_phy, coordList);
+       c3dt.assignMeridianCoords(my_phy, coordList);
        //c3dt.assignMultipleObservations(my_phy, coordList);
 
 //        try {
@@ -139,7 +138,9 @@ public class testMain {
         }
         try {
             //testAssignCoords(treeFile, coordFile, metadata);
-            kmlw.createKML(my_phy, "testfile.kml", false);
+            
+            kmlw.setColor("7f000000").setTesselate(false).setExtruded(false).setStyleID("test").createKML(my_phy, "testfile.kml");
+            //kmlw.createKML(my_phy, "testfile.kml");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(testMain.class.getName()).log(Level.SEVERE, null, ex);
         }
