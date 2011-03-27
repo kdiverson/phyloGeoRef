@@ -5,7 +5,7 @@
         <open xmlns:ns5="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.w3.org/2001/XMLSchema" ns5:type="ns6:boolean">true</open>
         <Style id="test">
             <LineStyle>
-                <color>7f000000</color>
+                <color>7f0000ff</color>
                 <width>7.0</width>
             </LineStyle>
         </Style>

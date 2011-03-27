@@ -139,7 +139,7 @@ public class testMain {
         try {
             //testAssignCoords(treeFile, coordFile, metadata);
             
-            kmlw.setColor("7f000000").setTesselate(false).setExtruded(false).setStyleID("test").createKML(my_phy, "testfile.kml");
+            kmlw.setTesselate(false).setExtruded(false).setStyleID("test").createKML(my_phy, "testfile.kml");
             //kmlw.createKML(my_phy, "testfile.kml");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(testMain.class.getName()).log(Level.SEVERE, null, ex);
