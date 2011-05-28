@@ -31,7 +31,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import org.biojava3.phylo.CheckTreeAccuracy;
+//To Do: Temporarily commented as it has no use. Need to get the complete biojava package.
+//import org.biojava3.phylo.CheckTreeAccuracy;
 
 import org.forester.io.writers.PhylogenyWriter;
 import org.forester.phylogeny.Phylogeny;
@@ -113,8 +114,9 @@ public class nj {
         DistanceMatrix[] matrices = null;
         DistanceMatrix distanceMatrix = null;
         try {
-            matrices = parser.parse( infile );            
-            distanceMatrix = CheckTreeAccuracy.copyMatrix(matrices[0]);         
+            matrices = parser.parse( infile );
+            //To Do: Temporarily Commented. See the imports at the top.
+            //distanceMatrix = CheckTreeAccuracy.copyMatrix(matrices[0]);
         }
         catch ( final IOException e ) {
             ForesterUtil.fatalError( PRG_NAME, "failed to read from infile [" + infile + "]: " + e.getMessage() );
@@ -133,8 +135,9 @@ public class nj {
         final long end_time = new Date().getTime();
 
         Phylogeny p = ps.get(0);
-        CheckTreeAccuracy checkTreeAccuracy = new CheckTreeAccuracy();
-        checkTreeAccuracy.process(p,distanceMatrix );
+        //To Do: Temporarily Commented. See the imports at the top.
+        //CheckTreeAccuracy checkTreeAccuracy = new CheckTreeAccuracy();
+        //checkTreeAccuracy.process(p,distanceMatrix );
 
         final PhylogenyWriter w = new PhylogenyWriter();
         try {

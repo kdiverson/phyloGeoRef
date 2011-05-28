@@ -15,13 +15,13 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package nescent.phyloGeoRef;
+package nescent.phylogeoref;
 
 import java.io.File;
 import java.util.ArrayList;
 
-import nescent.phyloGeoRef.geoData.parseCoords;
-import nescent.phyloGeoRef.tree.getTree;
+import nescent.phylogeoref.geoData.parseCoords;
+import nescent.phylogeoref.tree.getTree;
 
 import org.forester.phylogeny.Phylogeny;
 

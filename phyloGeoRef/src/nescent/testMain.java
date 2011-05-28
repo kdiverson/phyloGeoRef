@@ -25,11 +25,11 @@ import java.math.BigDecimal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import nescent.phyloGeoRef.geoData.parseCoords;
-import nescent.phyloGeoRef.tree.getTree;
-import nescent.phyloGeoRef.calc3Dtree;
-import nescent.phyloGeoRef.kml.kmlWriter;
-import nescent.phyloGeoRef.tree.NeXMLtoPhyObj;
+import nescent.phylogeoref.geoData.parseCoords;
+import nescent.phylogeoref.tree.getTree;
+import nescent.phylogeoref.calc3Dtree;
+import nescent.phylogeoref.kml.kmlWriter;
+import nescent.phylogeoref.tree.NeXMLtoPhyObj;
 
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
@@ -67,9 +67,9 @@ public class testMain {
 //            System.exit(1);
 //        }
 
-        String intreeFile = args[0];//c.readLine("Enter tree File: ");
-        String coordFile = args[1];//c.readLine("Enter coordinate File: ");
-        String metadata = args[2];//c.readLine("Does this file have metadata (y/n): ");
+        String intreeFile ="src\\testTree.nwk"; //args[0];//c.readLine("Enter tree File: ");
+        String coordFile = "src\\testCoords.csv";//args[1];//c.readLine("Enter coordinate File: ");
+        String metadata = "n";//args[2];//c.readLine("Does this file have metadata (y/n): ");
 
         File treeFile = new File(intreeFile);
 //        try {

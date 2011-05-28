@@ -15,7 +15,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package nescent.phyloGeoRef.geoData;
+package nescent.phylogeoref.geoData;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -24,8 +24,8 @@ import java.math.BigDecimal;
 
 import au.com.bytecode.opencsv.CSVReader;
 
-import nescent.phyloGeoRef.Triple;
-import nescent.phyloGeoRef.Quad;
+import nescent.phylogeoref.Triple;
+import nescent.phylogeoref.Quad;
 
 /**
  * coords should be stored as big decimals in an array of big decimals

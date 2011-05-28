@@ -15,7 +15,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package nescent.phyloGeoRef;
+package nescent.phylogeoref;
 
 import java.math.BigDecimal;
 import java.util.ListIterator;
@@ -110,8 +110,8 @@ public class calc3Dtree {
         if (node.isInternal()) {
             //calc altitude for leafs, nodeAltitude = a + ((n-1)*b)
             //BigDecimal [] alt = new BigDecimal [countNodes(my_phy)];
-            //double n = PhylogenyMethods.calculateDistanceToRoot(node);
-            double n = node.getNumberOfParents();
+            double n = PhylogenyMethods.calculateDistanceToRoot(node);
+            //double n = node.getNumberOfParents();
             int a = 198000; //from Janies et al. 2007
             int b = 66000; //from Janies et al. 2007
             double theAlt = a + ((n-1)*b);

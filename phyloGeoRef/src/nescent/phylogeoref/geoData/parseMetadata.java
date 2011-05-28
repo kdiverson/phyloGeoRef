@@ -15,12 +15,12 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package nescent.phyloGeoRef.tree;
+package nescent.phylogeoref.geoData;
 
 /**
  *
  * @author Kathryn Iverson <kd.iverson at gmail.com>
  */
-public class returnTree {
+public class parseMetadata {
 
 }
