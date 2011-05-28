@@ -1,3 +1,0 @@
-hyperlink=mesquite.nexml.InterpretNEXML.HyperlinkHandler
-taxonUID=mesquite.nexml.InterpretNEXML.TaxonUIDHandler
-has_External_Reference=mesquite.nexml.InterpretNEXML.TaxonLinkHandler

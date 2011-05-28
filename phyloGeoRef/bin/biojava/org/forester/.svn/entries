@@ -1,70 +1,0 @@
-10
-
-dir
-4683
-http://svn.github.com/biojava/biojava.git/biojava3-phylo/src/main/java/org/forester
-http://svn.github.com/biojava/biojava.git
-
-
-
-2010-05-21T15:25:15.000000Z
-4683
-andreas
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-bf2b9e70-7d1b-b6df-c6ef-ce57b7db7bff
-
-sdi
-dir
-
-test
-dir
-
-tools
-dir
-
-surfacing
-dir
-
-development
-dir
-
-application
-dir
-
-go
-dir
-
-io
-dir
-
-datastructures
-dir
-
-pccx
-dir
-
-phylogenyinference
-dir
-
-util
-dir
-
-archaeopteryx
-dir
-
-phylogeny
-dir
-

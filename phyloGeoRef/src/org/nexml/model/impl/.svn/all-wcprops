@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/nexml/!svn/ver/1664/trunk/nexml/java/src/org/nexml/model/impl
+END
+FloatNetworkImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/impl/FloatNetworkImpl.java
+END
+PolymorphicCharacterStateImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/impl/PolymorphicCharacterStateImpl.java
+END
+NodeImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/impl/NodeImpl.java
+END
+FloatTreeImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/nexml/!svn/ver/1063/trunk/nexml/java/src/org/nexml/model/impl/FloatTreeImpl.java
+END
+OTUsImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/nexml/!svn/ver/1349/trunk/nexml/java/src/org/nexml/model/impl/OTUsImpl.java
+END
+OTUsLinkableImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/impl/OTUsLinkableImpl.java
+END
+CategoricalMatrixImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/nexml/!svn/ver/1608/trunk/nexml/java/src/org/nexml/model/impl/CategoricalMatrixImpl.java
+END
+SetManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/impl/SetManager.java
+END
+MatrixImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/nexml/!svn/ver/1348/trunk/nexml/java/src/org/nexml/model/impl/MatrixImpl.java
+END
+EdgeImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/nexml/!svn/ver/1313/trunk/nexml/java/src/org/nexml/model/impl/EdgeImpl.java
+END
+IntNetworkImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/impl/IntNetworkImpl.java
+END
+TreeBlockImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/nexml/!svn/ver/1350/trunk/nexml/java/src/org/nexml/model/impl/TreeBlockImpl.java
+END
+NexmlWritableImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/nexml/!svn/ver/1664/trunk/nexml/java/src/org/nexml/model/impl/NexmlWritableImpl.java
+END
+MolecularCharacterStateSetImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/nexml/!svn/ver/1320/trunk/nexml/java/src/org/nexml/model/impl/MolecularCharacterStateSetImpl.java
+END
+DocumentImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/nexml/!svn/ver/1347/trunk/nexml/java/src/org/nexml/model/impl/DocumentImpl.java
+END
+IntEdgeImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/impl/IntEdgeImpl.java
+END
+AnnotatableImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/nexml/!svn/ver/1327/trunk/nexml/java/src/org/nexml/model/impl/AnnotatableImpl.java
+END
+NetworkImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/nexml/!svn/ver/1083/trunk/nexml/java/src/org/nexml/model/impl/NetworkImpl.java
+END
+FloatEdgeImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/nexml/!svn/ver/1135/trunk/nexml/java/src/org/nexml/model/impl/FloatEdgeImpl.java
+END
+ContinuousMatrixImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/nexml/!svn/ver/1608/trunk/nexml/java/src/org/nexml/model/impl/ContinuousMatrixImpl.java
+END
+CharacterImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/impl/CharacterImpl.java
+END
+CharacterStateImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/impl/CharacterStateImpl.java
+END
+TreeImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/nexml/!svn/ver/1306/trunk/nexml/java/src/org/nexml/model/impl/TreeImpl.java
+END
+CompoundCharacterStateImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/impl/CompoundCharacterStateImpl.java
+END
+MatrixCellImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/impl/MatrixCellImpl.java
+END
+UncertainCharacterStateImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/impl/UncertainCharacterStateImpl.java
+END
+OTUImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/impl/OTUImpl.java
+END
+MolecularMatrixImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/nexml/!svn/ver/1331/trunk/nexml/java/src/org/nexml/model/impl/MolecularMatrixImpl.java
+END
+OTULinkableImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/impl/OTULinkableImpl.java
+END
+CharacterStateSetImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/nexml/!svn/ver/1142/trunk/nexml/java/src/org/nexml/model/impl/CharacterStateSetImpl.java
+END
+AnnotationImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/nexml/!svn/ver/1607/trunk/nexml/java/src/org/nexml/model/impl/AnnotationImpl.java
+END
+IntTreeImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/nexml/!svn/ver/1004/trunk/nexml/java/src/org/nexml/model/impl/IntTreeImpl.java
+END
