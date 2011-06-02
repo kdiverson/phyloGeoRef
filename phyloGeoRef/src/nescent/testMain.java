@@ -25,9 +25,9 @@ import java.math.BigDecimal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import nescent.phylogeoref.geoData.ParseCoords;
-import nescent.phylogeoref.tree.getTree;
-import nescent.phylogeoref.Calc3Dtree;
+import nescent.phylogeoref.geodata.ParseCoords;
+import nescent.phylogeoref.tree.GetTree;
+import nescent.phylogeoref.Calc3DTree;
 import nescent.phylogeoref.kml.KmlWriter;
 import nescent.phylogeoref.tree.NeXMLtoPhyObj;
 
@@ -49,9 +49,9 @@ public class testMain {
     
     static ArrayList coordList;
     static ParseCoords pc = new ParseCoords();
-    static getTree gt = new getTree();
+    static GetTree gt = new GetTree();
     static Phylogeny my_phy = new Phylogeny();
-    static Calc3Dtree c3dt = new Calc3Dtree();
+    static Calc3DTree c3dt = new Calc3DTree();
     static KmlWriter kmlw = new KmlWriter();
     static NeXMLtoPhyObj ntp = new NeXMLtoPhyObj();
     
