@@ -29,13 +29,13 @@ import org.forester.phylogeny.Phylogeny;
  *
  * @author Kathryn Iverson <kd.iverson at gmail.com>
  */
-public class magic {
+public class Magic {
 
     ArrayList coordList;
     parseCoords pc;
     getTree gt;
     Phylogeny my_phy;
-    calc3Dtree c3dt;
+    Calc3Dtree c3dt;
 
     public void toKML(File treeFile, String coordFile, String fileType, String metadata) {
        

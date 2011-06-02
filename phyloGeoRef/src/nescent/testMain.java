@@ -25,10 +25,10 @@ import java.math.BigDecimal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import nescent.phylogeoref.geoData.parseCoords;
+import nescent.phylogeoref.geoData.ParseCoords;
 import nescent.phylogeoref.tree.getTree;
-import nescent.phylogeoref.calc3Dtree;
-import nescent.phylogeoref.kml.kmlWriter;
+import nescent.phylogeoref.Calc3Dtree;
+import nescent.phylogeoref.kml.KmlWriter;
 import nescent.phylogeoref.tree.NeXMLtoPhyObj;
 
 import org.forester.phylogeny.Phylogeny;
@@ -48,11 +48,11 @@ import org.forester.phylogeny.PhylogenyMethods;
 public class testMain {   
     
     static ArrayList coordList;
-    static parseCoords pc = new parseCoords();
+    static ParseCoords pc = new ParseCoords();
     static getTree gt = new getTree();
     static Phylogeny my_phy = new Phylogeny();
-    static calc3Dtree c3dt = new calc3Dtree();
-    static kmlWriter kmlw = new kmlWriter();
+    static Calc3Dtree c3dt = new Calc3Dtree();
+    static KmlWriter kmlw = new KmlWriter();
     static NeXMLtoPhyObj ntp = new NeXMLtoPhyObj();
     
     /**

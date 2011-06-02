@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2010 Kathryn Iverson <kd.iverson at gmail.com>
+ *  Copyright (C) 2011 apurv
  * 
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -15,12 +15,21 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package nescent.phylogeoref.geoData;
+package nescent;
+
+import java.io.File;
 
 /**
  *
- * @author Kathryn Iverson <kd.iverson at gmail.com>
+ * @author apurv
  */
-public class ParseMetadata {
+public class TestMain2011 {
+
+    public static void main(String...args){
+
+        String inTreeFile ="src\\testTree.xml";
+        File treeFile = new File(inTreeFile);
+        
+    }
 
 }

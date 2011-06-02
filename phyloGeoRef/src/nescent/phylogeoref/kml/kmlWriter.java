@@ -39,7 +39,7 @@ import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
  * Here style elements can be defined.
  * @author Kathryn Iverson <kd.iverson at gmail.com>
  */
-public class kmlWriter {
+public class KmlWriter {
 
     boolean tesselate = false;
     String color = "7f0000ff";
@@ -48,32 +48,32 @@ public class kmlWriter {
     String styleID = "lineStyle";
     boolean extruded = false;
 
-    public kmlWriter setTesselate(boolean val) {
+    public KmlWriter setTesselate(boolean val) {
         this.tesselate = val;
         return this;
     }
 
-    public kmlWriter setColor(String val){
+    public KmlWriter setColor(String val){
         this.color = val;
         return this;
     }
 
-    public kmlWriter setFolderName(String val) {
+    public KmlWriter setFolderName(String val) {
         this.folderName = val;
         return this;
     }
 
-    public kmlWriter setDocumentName (String val) {
+    public KmlWriter setDocumentName (String val) {
         this.documentName = val;
         return this;
     }
 
-    public kmlWriter setStyleID (String val) {
+    public KmlWriter setStyleID (String val) {
         this.styleID = val;
         return this;
     }
 
-    public kmlWriter setExtruded (boolean val) {
+    public KmlWriter setExtruded (boolean val) {
         this.extruded = val;
         return this;
     }

@@ -31,7 +31,7 @@ import nescent.phylogeoref.Quad;
  * coords should be stored as big decimals in an array of big decimals
  * @author Kathryn Iverson <kd.iverson at gmail.com>
  */
-public class parseCoords {
+public class ParseCoords {
 
     //static List coordList;
     static String leafName;

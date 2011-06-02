@@ -34,7 +34,7 @@ import org.forester.phylogeny.PhylogenyMethods;
  * 
  * @author Kathryn Iverson <kd.iverson at gmail.com>
  */
-public class calc3Dtree {
+public class Calc3Dtree {
 
     /**
      * This function assigns coordinates to the external nodes (leafs) from the coordfile
