@@ -21,7 +21,6 @@ import static java.lang.System.out;
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
 import org.forester.phylogeny.data.Identifier;
-import org.nexml.model.Annotation;
 import org.nexml.model.FloatEdge;
 import org.nexml.model.Network;
 import org.nexml.model.Node;
@@ -37,14 +36,14 @@ public class PhylogenyFactory {
      * @param network The network from which the new Phylogeny Object is to be constructed.
      * @return A new Phylogeny object.
      */
-    public static Phylogeny newPhylogeny(Network<FloatEdge> network){
+    public static Phylogeny newInstance(Network<FloatEdge> network){
 
         Phylogeny phylogeny = new Phylogeny();
 
         phylogeny.setName(network.getLabel());
 
-        //TODO: This needs to be checked whether the id is analogous to Identifier.
-        phylogeny.setIdentifier(new Identifier(network.getId()));
+        String phyId = network.getId(); 
+        //TODO: This is unmapped to since there is no id attribute in a phylogeny.
         
         phylogeny.setRooted(true);
 

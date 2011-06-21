@@ -1,0 +1,99 @@
+<nex:nexml about="#nex_nexml1" generator="Bio::Phylo::Project v.0.36_1660" version="0.9" xsi:schemaLocation="http://www.nexml.org/2009 http://www.nexml.org/2009/nexml.xsd">
+<meta content="2011-05-22T09:19:18" datatype="xsd:date" id="meta18" property="dc:date" xsi:type="nex:LiteralMeta"/>
+<otus id="otus19">
+
+
+<otu id="otu21" label="A">
+<meta content="835" datatype="xsd:long" id="meta1710" property="tb:identifier.taxon" xsi:type="nex:LiteralMeta"/>
+<meta content="2038" datatype="xsd:long" id="meta1709" property="tb:identifier.taxonVariant" xsi:type="nex:LiteralMeta"/>
+<meta content="Alligator mississippiensis" datatype="xsd:string" id="meta1708" property="skos:prefLabel" xsi:type="nex:LiteralMeta"/>
+<meta href="http://purl.uniprot.org/taxonomy/8496" id="meta1707" rel="skos:closeMatch" xsi:type="nex:ResourceMeta"/>
+<meta content="Alligator mississipiensis" datatype="xsd:string" id="meta1706" property="skos:altLabel" xsi:type="nex:LiteralMeta"/>
+<meta href="http://www.ubio.org/authority/metadata.php?lsid=urn:lsid:ubio.org:namebank:2813218" id="meta1705" rel="skos:closeMatch" xsi:type="nex:ResourceMeta"/>
+<meta href="http://purl.org/phylo/treebase/phylows/study/TB2:S2108" id="meta1704" rel="rdfs:isDefinedBy" xsi:type="nex:ResourceMeta"/>
+</otu>
+
+<otu id="otu20" label="B">
+<meta content="11782" datatype="xsd:long" id="meta1716" property="tb:identifier.taxon" xsi:type="nex:LiteralMeta"/>
+<meta content="28069" datatype="xsd:long" id="meta1715" property="tb:identifier.taxonVariant" xsi:type="nex:LiteralMeta"/>
+<meta href="http://purl.uniprot.org/taxonomy/94835" id="meta1714" rel="skos:closeMatch" xsi:type="nex:ResourceMeta"/>
+<meta href="http://www.ubio.org/authority/metadata.php?lsid=urn:lsid:ubio.org:namebank:2539857" id="meta1713" rel="skos:closeMatch" xsi:type="nex:ResourceMeta"/>
+<meta href="http://purl.org/phylo/treebase/phylows/study/TB2:S2108" id="meta1712" rel="rdfs:isDefinedBy" xsi:type="nex:ResourceMeta"/>
+</otu>
+
+<otu id="otu23" label="C"/>
+<otu id="otu22" label="D"/>
+<otu id="otu24" label="E"/>
+<otu id="otu25" label="F"/>
+<otu id="otu26" label="G"/>
+<otu id="otu27" label="H"/>
+</otus>
+<trees id="trees2" otus="otus19">
+<tree id="tree3" xsi:type="nex:FloatTree">
+<node id="node4" root="true"/>
+
+<node id="node5" label="B" otu="otu20" xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
+<meta id="uid2" property="dwc:decimalLongitude" content="-6.129627" xsi:type="nex:LiteralMeta" datatype="xsd:double"/>
+<meta id="uid2" property="dwc:decimalLatitude" content="42.865584" xsi:type="nex:LiteralMeta" datatype="xsd:double"/>
+</node>
+
+<node id="node6"/>
+<node id="node11"/>
+
+<node id="node7" label="A" otu="otu21" xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
+<meta id="uid2" property="dwc:decimalLongitude" content="-0.011702" xsi:type="nex:LiteralMeta" datatype="xsd:double"/>
+<meta id="uid2" property="dwc:decimalLatitude" content="43.177874" xsi:type="nex:LiteralMeta" datatype="xsd:double"/>
+</node>
+
+<node id="node8"/>
+
+<node id="node12" label="D" otu="otu22" xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
+<meta id="uid2" property="dwc:decimalLongitude" content="14.106559" xsi:type="nex:LiteralMeta" datatype="xsd:double"/>
+<meta id="uid2" property="dwc:decimalLatitude" content="41.798603" xsi:type="nex:LiteralMeta" datatype="xsd:double"/>
+</node>
+
+<node id="node13"/>
+
+<node id="node9" label="C" otu="otu23" xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
+<meta id="uid2" property="dwc:decimalLongitude" content="9.869384" xsi:type="nex:LiteralMeta" datatype="xsd:double"/>
+<meta id="uid2" property="dwc:decimalLatitude" content="45.786672" xsi:type="nex:LiteralMeta" datatype="xsd:double"/>
+</node>
+
+<node id="node10" label="E" otu="otu24" xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
+<meta id="uid2" property="dwc:decimalLongitude" content="20.602788" xsi:type="nex:LiteralMeta" datatype="xsd:double"/>
+<meta id="uid2" property="dwc:decimalLatitude" content="40.217594" xsi:type="nex:LiteralMeta" datatype="xsd:double"/>
+</node>
+
+<node id="node14" label="F" otu="otu25" xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
+<meta id="uid2" property="dwc:decimalLongitude" content="21.094837" xsi:type="nex:LiteralMeta" datatype="xsd:double"/>
+<meta id="uid2" property="dwc:decimalLatitude" content="42.583038" xsi:type="nex:LiteralMeta" datatype="xsd:double"/>
+</node>
+
+<node id="node15"/>
+
+<node id="node16" label="G" otu="otu26" xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
+<meta id="uid2" property="dwc:decimalLongitude" content="15.048859" xsi:type="nex:LiteralMeta" datatype="xsd:double"/>
+<meta id="uid2" property="dwc:decimalLatitude" content="46.898472" xsi:type="nex:LiteralMeta" datatype="xsd:double"/>
+</node>
+
+<node id="node17" label="H" otu="otu27" xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
+<meta id="uid2" property="dwc:decimalLongitude" content="16.6239034" xsi:type="nex:LiteralMeta" datatype="xsd:double"/>
+<meta id="uid2" property="dwc:decimalLatitude" content="44.723789" xsi:type="nex:LiteralMeta" datatype="xsd:double"/>
+</node>
+
+<edge id="edge5" length="1.67" source="node4" target="node5"/>
+<edge id="edge6" source="node4" target="node6"/>
+<edge id="edge11" source="node4" target="node11"/>
+<edge id="edge7" length="2.56" source="node6" target="node7"/>
+<edge id="edge8" source="node6" target="node8"/>
+<edge id="edge12" length=".34" source="node11" target="node12"/>
+<edge id="edge13" source="node11" target="node13"/>
+<edge id="edge9" length=".66" source="node8" target="node9"/>
+<edge id="edge10" length=".56" source="node8" target="node10"/>
+<edge id="edge14" length="1.67" source="node13" target="node14"/>
+<edge id="edge15" source="node13" target="node15"/>
+<edge id="edge16" length="4.23" source="node15" target="node16"/>
+<edge id="edge17" length="1.2" source="node15" target="node17"/>
+</tree>
+</trees>
+</nex:nexml>

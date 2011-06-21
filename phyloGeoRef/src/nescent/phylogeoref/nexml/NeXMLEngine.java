@@ -20,6 +20,8 @@ package nescent.phylogeoref.nexml;
 import static java.lang.System.out;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import nescent.phylogeoref.nexml.exception.LocationNotFoundException;
 import nescent.phylogeoref.nexml.utility.PhyloUtility;
 import nescent.phylogeoref.nexml.utility.PhylogenyFactory;
 import org.forester.phylogeny.Phylogeny;
@@ -28,7 +30,7 @@ import org.nexml.model.Edge;
 import org.nexml.model.FloatEdge;
 import org.nexml.model.Network;
 import org.nexml.model.Node;
-import org.nexml.model.Tree;
+
 
 /**
  * Provides methods that can construct a Phylogeny object from a Tree or Network.
@@ -36,44 +38,77 @@ import org.nexml.model.Tree;
  */
 public class NeXMLEngine {
 
+    private Map<String,PhylogenyNode> map = null;
+
+    /**
+     * Should be strictly called after invoking the method
+     * constructPhylogenyFromNetwork()
+     * @return
+     */
+    public Map<String, PhylogenyNode> getMap() {
+        return map;
+    }
 
     
     /**
      * Constructs the Phylogeny object representation of the network
+     *
      * @param network represents the tree from which the Phylogeny object is to be constructed.
      * @return the fully built Phylogeny object representing this tree.
      */
     public Phylogeny constructPhylogenyFromNetwork(Network<FloatEdge> network){
 
-        Phylogeny phy = PhylogenyFactory.newPhylogeny(network);
-        Map<Node,PhylogenyNode> map= new HashMap<Node,PhylogenyNode>();
+        Phylogeny phy = PhylogenyFactory.newInstance(network);
+        map= new HashMap<String,PhylogenyNode>();
 
-        map.put(PhyloUtility.getRootNode(network), phy.getRoot());
+        Node rootNode = PhyloUtility.getRootNode(network);
+
+        map.put(rootNode.getLabel(), phy.getRoot());
         
         for(Node node:network.getNodes()){
             if(node.isRoot()){
                 continue;
             }
             PhylogenyNode phyNode = PhyloUtility.toPhylogenyNode(node);
-            map.put(node, phyNode);
+
+            if(!node.getLabel().equals("")){
+                map.put(node.getLabel(), phyNode);
+            }
+
         }
 
         for(Edge edge:network.getEdges()){
             Node sourceNode = edge.getSource();
             Node targetNode = edge.getTarget();
             
-            PhylogenyNode phySourceNode = map.get(sourceNode);
-            PhylogenyNode phyTargetNode = map.get(targetNode);
+            PhylogenyNode phySourceNode = map.get(sourceNode.getLabel());
+            PhylogenyNode phyTargetNode = map.get(targetNode.getLabel());
 
             phySourceNode.addAsChild(phyTargetNode);
 
             PhyloUtility.setDistanceToParent(edge, phyTargetNode);
         }
 
-        return phy;
+        //Attach the metadata information that is available from the NeXML file.
+        for(Node node:network.getNodes()){
+            PhylogenyNode phyNode = map.get(node.getLabel());
+            this.attachMetadataFromNeXML(node, phyNode);
+        }
         
+        return phy;        
     }
 
+    /**
+     * Finds any metadata attached to the node in the NeXML and attaches to the PhylogenyNode.
+     * @param node
+     * @param phyNode
+     */
+    private void attachMetadataFromNeXML(Node node, PhylogenyNode phyNode){
+        PhyloUtility.attachOtherMetadata(node, phyNode);
 
-
+        if(phyNode.isExternal()){
+            PhyloUtility.attachLocationMetadata(node, phyNode);
+        }
+    }
+      
 }

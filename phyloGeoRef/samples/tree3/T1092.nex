@@ -1,0 +1,203 @@
+#NEXUS
+
+[!This data set was downloaded from TreeBASE, a relational database of phylogenetic knowledge. TreeBASE has been supported by the NSF, Harvard University, Yale University, SDSC and UC Davis. Please do not remove this acknowledgment from the Nexus file.
+
+
+Downloaded on June 13, 2011; 22:40 GMT
+
+TreeBASE (cc) 1994-2008
+
+Study reference:
+Hackett S., Kimball R., Reddy S., Bowie R., Braun E., Braun M., Chojnowski J., Cox
+W., Han K., Harshman J., Huddleston C., Marks B., Miglia K., Moore W., Sheldon
+F., Steadman D., Witt C., & Yuri T. 2008. A Phylogenomic study of birds reveals
+their evolutionary history. Science, 20(588): 1763-1768.
+
+TreeBASE Study URI:  http://purl.org/phylo/treebase/phylows/study/TB2:S2108]
+
+BEGIN TAXA;
+        TITLE  TaxonLabelSet13794;
+        DIMENSIONS NTAX=171;
+        TAXLABELS
+            Acanthisitta_chloris
+            Aegotheles_insignis
+            Aerodramus_vanikorensis
+            Alcedo_leucogaster
+            Alectura_lathami
+            Alisterus_scapularis
+            Alligator_mississippiensis
+            Anas_platyrhynchos
+            Anhinga_anhinga
+            Anser_erythropus
+            Anseranas_semipalmata
+            Apteryx_australis
+            Aramus_guarauna
+            Ardea_herodias
+            Arenaria_interpres
+            Aythya_americana
+            Balaeniceps_rex
+            Batrachostomus_septimus
+            Biziura_lobata
+            Bombycilla_garrulus
+            Brachypteracias_squamigera
+            Bucco_macrodactylus
+            Bucorvus_abyssinicus
+            Burhinus_bistriatus
+            Buteo_jamaicensis
+            Cacatua_sulphurea
+            Capito_niger
+            Caprimulgus_longirostris
+            Cariama_cristata
+            Casuarius_casuarius
+            Cathartes_aura
+            Centropus_viridis
+            Chalcopsitta_cardinalis
+            Charadrius_vociferus
+            Chauna_torquata
+            Choriotis_kori
+            Ciconia_ciconia
+            Climacteris_erythrops
+            Coccyzus_americanus
+            Cochlearius_cochlearius
+            Colibri_coruscans
+            Colinus_cristatus
+            Colius_colius
+            Columba_livia
+            Columbina_passerina
+            Coracias_caudata
+            Corvus_corone
+            Corythaeola_cristata
+            Coturnix_coturnix
+            Coua_cristata
+            Crax_alector
+            Crotophaga_sulcirostris
+            Crypturellus_soui
+            Cuculus_canorus
+            Daptrius_ater
+            Dendrocolaptes_certhia
+            Diomedea_nigripes
+            Dromaius_novaehollandiae
+            Dromas_ardeola
+            Dryocopus_pileatus
+            Eudocimus_albus
+            Eudromia_elegans
+            Eudyptula_minor
+            Eupodotis_ruficrista
+            Eurostopodus_macrotis
+            Eurypyga_helias
+            Falco_mexicanus
+            Fregata_magnificens
+            Fringilla_montifringilla
+            Galbula_albirostris
+            Gallus_gallus
+            Gampsonyx_swainsonii
+            Gavia_immer
+            Gavialis_gangeticus
+            Geococcyx_californianus
+            Geotrygon_montana
+            Grallaria_varia
+            Grus_canadensis
+            Haematopus_ostralegus
+            Heliornis_fulica
+            Hemiprocne_mystacea
+            Herpetotheres_cachinnans
+            Himantornis_haematopus
+            Indicator_maculatus
+            Jacana_jacana
+            Larus_marinus
+            Leptosomus_discolor
+            Malacorhynchus_membranaceus
+            Malurus_melanocephalus
+            Megalaima_virens
+            Megapodius_eremita
+            Menura_novaehollandiae
+            Merops_nubicus
+            Mesitornis_unicolor
+            Micrastur_semitorquatus
+            Micropsitta_finschii
+            Mionectes_macconnelli
+            Momotus_momota
+            Monias_benschi
+            Morus_bassanus
+            Nothoprocta_perdicaria
+            Numida_meleagris
+            Nyctibius_bracteatus
+            Nyctibius_grandis
+            Oceanites_oceanicus
+            Oceanodroma_tethys
+            Opisthocomus_hoazin
+            Otidiphaps_nobilis
+            Oxyura_jamaicensis
+            Pandion_haliaetus
+            Passer_montanus
+            Pedionomus_torquatus
+            Pelecanoides_urinatrix
+            Pelecanus_occidentalis
+            Phaenicophaeus_curvirostris
+            Phaethon_lepturus
+            Phaethon_rubricauda
+            Phaethornis_griseogularis
+            Phalacrocorax_carbo
+            Pharomachrus_auriceps
+            Phegornis_mitchellii
+            Phodilus_badius
+            Phoenicopterus_chilensis
+            Phoeniculus_purpureus
+            Picathartes_gymnocephalus
+            Pipra_coronata
+            Pitta_guajana
+            Platycercus_elegans
+            Ploceus_cucullatus
+            Podargus_strigoides
+            Podiceps_auritus
+            Psittacula_alexandri
+            Psittacus_erithacus
+            Psophia_crepitans
+            Pterocles_namaqua
+            Puffinus_griseus
+            Rallus_limicola
+            Regulus_calendula
+            Rhea_americana
+            Rhynochetos_jubatus
+            Rollulus_rouloul
+            Rostratula_benghalensis
+            Sagittarius_serpentarius
+            Sapayoa_aenigma
+            Sarcoramphus_papa
+            Sarothrura_elegans
+            Scopus_umbretta
+            Scytalopus_magellanicus
+            Smithornis_rufolateralis
+            Speotyto_cunicularia
+            Steatornis_caripensis
+            Streptoprocne_zonaris
+            Strix_occidentalis
+            Struthio_camelus
+            Sylvia_nana
+            Syrrhaptes_paradoxus
+            Tauraco_erythrolophus
+            Thamnophilus_nigrocinereus
+            Thinocorus_orbignyianus
+            Tinamus_guttatus
+            Tockus_camurus
+            Todus_angustirostris
+            Treron_vernans
+            Trogon_personatus
+            Turdus_falklandii
+            Turnix_sylvatica
+            Tyrannus_tyrannus
+            Tyto_alba
+            Upupa_epops
+            Urocolius_indicus
+            Vidua_chalybeata
+            ;
+END;
+
+BEGIN TREES;
+      TITLE Tb9160;
+      LINK TAXA = TaxonLabelSet13794;
+      TREE Fig._2 = [&R] ((Gavialis_gangeticus,Alligator_mississippiensis),((Struthio_camelus,((((Dromaius_novaehollandiae,Casuarius_casuarius),Apteryx_australis),((Tinamus_guttatus,Crypturellus_soui),(Eudromia_elegans,Nothoprocta_perdicaria))),Rhea_americana)),((((Megapodius_eremita,Alectura_lathami),(Crax_alector,(Numida_meleagris,((Rollulus_rouloul,(Coturnix_coturnix,Gallus_gallus)),Colinus_cristatus)))),(Chauna_torquata,(Anseranas_semipalmata,(Oxyura_jamaicensis,(((Anas_platyrhynchos,Aythya_americana),Biziura_lobata),(Malacorhynchus_membranaceus,Anser_erythropus)))))),(((((Cariama_cristata,(((Micrastur_semitorquatus,Herpetotheres_cachinnans),(Daptrius_ater,Falco_mexicanus)),((Acanthisitta_chloris,((((Malurus_melanocephalus,(Corvus_corone,((((Bombycilla_garrulus,Regulus_calendula),((Vidua_chalybeata,Ploceus_cucullatus),(Passer_montanus,Fringilla_montifringilla))),(Sylvia_nana,Turdus_falklandii)),Picathartes_gymnocephalus))),Climacteris_erythrops),Menura_novaehollandiae),((Sapayoa_aenigma,(Pitta_guajana,Smithornis_rufolateralis)),((((Scytalopus_magellanicus,Dendrocolaptes_certhia),Grallaria_varia),Thamnophilus_nigrocinereus),((Mionectes_macconnelli,Tyrannus_tyrannus),Pipra_coronata))))),(Cacatua_sulphurea,(Psittacus_erithacus,((Platycercus_elegans,Chalcopsitta_cardinalis),(Micropsitta_finschii,(Alisterus_scapularis,Psittacula_alexandri)))))))),(((Sarcoramphus_papa,Cathartes_aura),(((Gampsonyx_swainsonii,Buteo_jamaicensis),Pandion_haliaetus),Sagittarius_serpentarius)),((Leptosomus_discolor,((Pharomachrus_auriceps,Trogon_personatus),(((((Brachypteracias_squamigera,Coracias_caudata),(Todus_angustirostris,(Alcedo_leucogaster,Momotus_momota))),Merops_nubicus),((Galbula_albirostris,Bucco_macrodactylus),((Capito_niger,Megalaima_virens),(Indicator_maculatus,Dryocopus_pileatus)))),((Phoeniculus_purpureus,Upupa_epops),(Tockus_camurus,Bucorvus_abyssinicus))))),((Colius_colius,Urocolius_indicus),((Phodilus_badius,Tyto_alba),(Speotyto_cunicularia,Strix_occidentalis)))))),(((Turnix_sylvatica,(Dromas_ardeola,Larus_marinus)),(((Rostratula_benghalensis,Jacana_jacana),(Pedionomus_torquatus,Thinocorus_orbignyianus)),Arenaria_interpres)),((Haematopus_ostralegus,(Phegornis_mitchellii,Charadrius_vociferus)),Burhinus_bistriatus))),(Opisthocomus_hoazin,(((Eupodotis_ruficrista,Choriotis_kori),(((Crotophaga_sulcirostris,Geococcyx_californianus),((Centropus_viridis,Coua_cristata),(Cuculus_canorus,(Phaenicophaeus_curvirostris,Coccyzus_americanus)))),(((Aramus_guarauna,Grus_canadensis),Psophia_crepitans),((Himantornis_haematopus,Rallus_limicola),(Sarothrura_elegans,Heliornis_fulica))))),((((((((Puffinus_griseus,Pelecanoides_urinatrix),Oceanodroma_tethys),Diomedea_nigripes),Oceanites_oceanicus),Eudyptula_minor),(Ciconia_ciconia,((Fregata_magnificens,((Phalacrocorax_carbo,Anhinga_anhinga),Morus_bassanus)),((Eudocimus_albus,(Ardea_herodias,Cochlearius_cochlearius)),(Pelecanus_occidentalis,(Scopus_umbretta,Balaeniceps_rex)))))),Gavia_immer),(Corythaeola_cristata,Tauraco_erythrolophus))))),(((Rhynochetos_jubatus,Eurypyga_helias),(((Nyctibius_bracteatus,Nyctibius_grandis),Steatornis_caripensis),((Podargus_strigoides,Batrachostomus_septimus),((Caprimulgus_longirostris,Eurostopodus_macrotis),(Aegotheles_insignis,((Phaethornis_griseogularis,Colibri_coruscans),((Aerodramus_vanikorensis,Streptoprocne_zonaris),Hemiprocne_mystacea))))))),((Podiceps_auritus,Phoenicopterus_chilensis),((Phaethon_rubricauda,Phaethon_lepturus),((Pterocles_namaqua,Syrrhaptes_paradoxus),((Monias_benschi,Mesitornis_unicolor),((Columbina_passerina,Otidiphaps_nobilis),(Treron_vernans,(Columba_livia,Geotrygon_montana))))))))))));
+[!  TreeBASE tree URI: http://purl.org/phylo/treebase/phylows/tree/TB2:Tr1092]
+
+
+END;
