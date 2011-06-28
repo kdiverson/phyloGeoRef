@@ -15,15 +15,15 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package nescent.phylogeoref.nexml;
+package nescent.phylogeoref.reader;
 
 import static java.lang.System.out;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import nescent.phylogeoref.nexml.exception.LocationNotFoundException;
-import nescent.phylogeoref.nexml.utility.PhyloUtility;
-import nescent.phylogeoref.nexml.utility.PhylogenyFactory;
+import nescent.phylogeoref.reader.exception.LocationNotFoundException;
+import nescent.phylogeoref.reader.utility.PhyloUtility;
+import nescent.phylogeoref.reader.utility.PhylogenyFactory;
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
 import org.nexml.model.Edge;
@@ -39,6 +39,7 @@ import org.nexml.model.Node;
 public class NeXMLEngine {
 
     private Map<String,PhylogenyNode> map = null;
+    private Map<String,PhylogenyMould> mouldMap = null;
 
     /**
      * Should be strictly called after invoking the method
@@ -63,7 +64,7 @@ public class NeXMLEngine {
 
         Node rootNode = PhyloUtility.getRootNode(network);
 
-        map.put(rootNode.getLabel(), phy.getRoot());
+        map.put(rootNode.getId(), phy.getRoot());
         
         for(Node node:network.getNodes()){
             if(node.isRoot()){
@@ -71,9 +72,8 @@ public class NeXMLEngine {
             }
             PhylogenyNode phyNode = PhyloUtility.toPhylogenyNode(node);
 
-            if(!node.getLabel().equals("")){
-                map.put(node.getLabel(), phyNode);
-            }
+            map.put(node.getId(), phyNode);
+
 
         }
 
@@ -81,8 +81,8 @@ public class NeXMLEngine {
             Node sourceNode = edge.getSource();
             Node targetNode = edge.getTarget();
             
-            PhylogenyNode phySourceNode = map.get(sourceNode.getLabel());
-            PhylogenyNode phyTargetNode = map.get(targetNode.getLabel());
+            PhylogenyNode phySourceNode = map.get(sourceNode.getId());
+            PhylogenyNode phyTargetNode = map.get(targetNode.getId());
 
             phySourceNode.addAsChild(phyTargetNode);
 
@@ -91,10 +91,10 @@ public class NeXMLEngine {
 
         //Attach the metadata information that is available from the NeXML file.
         for(Node node:network.getNodes()){
-            PhylogenyNode phyNode = map.get(node.getLabel());
+            PhylogenyNode phyNode = map.get(node.getId());
             this.attachMetadataFromNeXML(node, phyNode);
         }
-        
+
         return phy;        
     }
 

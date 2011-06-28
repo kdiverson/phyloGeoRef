@@ -26,10 +26,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import nescent.phylogeoref.geodata.ParseCoords;
-import nescent.phylogeoref.tree.GetTree;
+import nescent.phylogeoref.reader.MultiFormatReader;
 import nescent.phylogeoref.Calc3DTree;
 import nescent.phylogeoref.kml.KmlWriter;
-import nescent.phylogeoref.tree.NeXMLtoPhyObj;
 
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
@@ -49,11 +48,10 @@ public class testMain {
     
     static ArrayList coordList;
     static ParseCoords pc = new ParseCoords();
-    static GetTree gt = new GetTree();
+    static MultiFormatReader gt = new MultiFormatReader();
     static Phylogeny my_phy = new Phylogeny();
     static Calc3DTree c3dt = new Calc3DTree();
     static KmlWriter kmlw = new KmlWriter();
-    static NeXMLtoPhyObj ntp = new NeXMLtoPhyObj();
     
     /**
      * @param args the command line arguments
@@ -77,9 +75,8 @@ public class testMain {
 //        } catch (Throwable ex) {
 //            Logger.getLogger(testMain.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-
         try {
-           my_phy = gt.openTree(treeFile);
+           my_phy = gt.readPhylogeny(treeFile);
        } catch (Exception e) {
            System.out.println("Error: " + e.toString() );
        }
@@ -158,7 +155,7 @@ public class testMain {
        }
 
        try {
-           my_phy = gt.openTree(treeFile);
+           my_phy = gt.readPhylogeny(treeFile);
        } catch (Exception e) {
            System.out.println("Error: " + e.toString() );
        }

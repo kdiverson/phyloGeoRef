@@ -15,7 +15,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package nescent.phylogeoref.nexml.utility;
+package nescent.phylogeoref.reader.utility;
 
 import java.math.BigDecimal;
 import static java.lang.System.out;
@@ -87,7 +87,7 @@ public class PhyloUtility {
         
         int id = getNumberFromMetaId(node.getId());
 
-        //TODO: This can't be uncommented because setNodeId() method is protected.
+        //TODO: This can't be uncommented because setNodeId() is automatically managed.
         //phyNode.setNodeId(id);
      
         return phyNode;
@@ -161,7 +161,8 @@ public class PhyloUtility {
      * @param phyNode
      */
     public static void attachOtherMetadata(Node node, PhylogenyNode phyNode){
-        
+
+        //TODO: This needs to be checked. Works well now so not to worry.
         URI namespaceURI = URI.create("http://purl.org/PHYLO/TREEBASE/PHYLOWS/study/TB2:");
         OTU otu= node.getOTU();
 

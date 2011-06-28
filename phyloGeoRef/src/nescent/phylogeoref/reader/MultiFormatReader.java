@@ -15,7 +15,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package nescent.phylogeoref.tree;
+package nescent.phylogeoref.reader;
 
 import java.io.*;
 
@@ -35,7 +35,7 @@ import org.forester.util.ForesterUtil;
  * This class gets a tree
  *
  */
-public class GetTree {
+public class MultiFormatReader implements TreeReader{
 
     Phylogeny [] phys;// = null;
 
@@ -160,14 +160,30 @@ public class GetTree {
      * @throws Exception
      */
 
-    public Phylogeny openTree (File tree_file) throws Exception {
+    @Override
+    public Phylogeny readPhylogeny (File tree_file){
+
+        Phylogeny my_phy = null;
         try {
             PhylogenyFactory factory = ParserBasedPhylogenyFactory.getInstance();
             phys = factory.create( tree_file, ForesterUtil.createParserDependingOnFileType( tree_file, true ) );
+            my_phy = phys[ 0 ];
+        } catch ( Exception e ) {
+            System.out.println("Error: " + e.toString());
+        }        
+        return my_phy;
+    }
+
+    @Override
+    public Phylogeny[] readPhylogenyArray (File tree_file){
+
+        
+        try {
+            PhylogenyFactory factory = ParserBasedPhylogenyFactory.getInstance();
+            phys = factory.create( tree_file, ForesterUtil.createParserDependingOnFileType( tree_file, true ) );            
         } catch ( Exception e ) {
             System.out.println("Error: " + e.toString());
         }
-        Phylogeny my_phy = phys[ 0 ];
-        return my_phy;
+        return phys;
     }
 }

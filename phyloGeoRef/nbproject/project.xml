@@ -10,12 +10,17 @@
             <test-roots/>
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>accomodate</word>
             <word>args</word>
             <word>Clade</word>
+            <word>csv</word>
             <word>enum</word>
             <word>metadata</word>
             <word>nexml</word>
+            <word>org</word>
+            <word>phy</word>
             <word>phylogenies</word>
+            <word>Phylogenifies</word>
             <word>txt</word>
         </spellchecker-wordlist>
     </configuration>

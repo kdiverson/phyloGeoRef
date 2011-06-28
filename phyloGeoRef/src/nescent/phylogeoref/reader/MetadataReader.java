@@ -15,20 +15,12 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package nescent.phylogeoref.nexml.exception;
+package nescent.phylogeoref.reader;
 
 /**
- * Signals that the coordinates of an external node have not been specified in the input file.
+ * Superclass for all metadata reader class.
  * @author apurv
  */
-public class LocationNotFoundException extends Exception{
-
-    public LocationNotFoundException(String id, String label){
-        this( "Location metadata not found for node (id = "+id+", label = "+label+")" );
-    }
-
-    public LocationNotFoundException(String msg){
-        super(msg);
-    }
-
+public interface MetadataReader {
+    public String[] readLine();
 }

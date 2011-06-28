@@ -21,7 +21,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import nescent.phylogeoref.geodata.ParseCoords;
-import nescent.phylogeoref.tree.GetTree;
+import nescent.phylogeoref.reader.MultiFormatReader;
 
 import org.forester.phylogeny.Phylogeny;
 
@@ -33,7 +33,7 @@ public class Magic {
 
     ArrayList coordList;
     ParseCoords pc;
-    GetTree gt;
+    MultiFormatReader gt;
     Phylogeny my_phy;
     Calc3DTree c3dt;
 
@@ -48,7 +48,7 @@ public class Magic {
        }
 
        try {
-           my_phy = gt.openTree(treeFile);
+           my_phy = gt.readPhylogeny(treeFile);
        } catch (Exception e) {
            System.out.println("Error: " + e.toString() );
        }

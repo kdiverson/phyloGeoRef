@@ -15,7 +15,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package nescent.phylogeoref.nexml.utility;
+package nescent.phylogeoref.reader.utility;
 
 import static java.lang.System.out;
 import org.forester.phylogeny.Phylogeny;
