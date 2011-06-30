@@ -18,6 +18,7 @@
 package nescent.phylogeoref.reader;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import org.forester.phylogeny.PhylogenyNode;
@@ -32,6 +33,9 @@ public class PhylogenyMould {
 
     private PhylogenyNode node; //The Node with which this mould is associated.
     private Map<String, String> propertyMap; //The map which will contain all the secondary properties.
+
+    //TODO: Implemetation for multiple observations yet to be done.
+    private int numObservations;    //The number of observations of this species.
 
     public PhylogenyMould(){
         propertyMap = new HashMap<String, String>();

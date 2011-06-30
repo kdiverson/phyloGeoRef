@@ -103,7 +103,7 @@ public class KmlWriter {
 
         final Style style = doc.createAndAddStyle().withId(styleID);
 
-        style.createAndSetLineStyle().withColor(color).withWidth(7.0d);
+        style.createAndSetLineStyle().withColor(color).withWidth(3.0d);
         
         for( PhylogenyNodeIterator ext_it = my_phy.iteratorPostorder(); ext_it.hasNext();) {
             PhylogenyNode node = ext_it.next();

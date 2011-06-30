@@ -250,11 +250,11 @@ public class PhylogenyKitchen {
     /**
      * Gets the value of the property as a String. Null if the property is not present.
      * @param propName
-     * @return null if the index for that property was not specified or was zero.
+     * @return "" if the index for that property was not specified or was zero.
      */
     private String get(String propName){
         int colNo = index(propName);
-        String value = null;
+        String value = "";
         if(colNo != NaN){
             value = properties[colNo];
         }
@@ -290,9 +290,7 @@ public class PhylogenyKitchen {
         setNodeData(node.getNodeData());
 
         // If the user has specified a colums to be taken as clade.
-        if(cladeColorMap !=null){
-            setBranchData(node.getBranchData());
-        }
+        setBranchData(node.getBranchData());
         
     }
 
@@ -323,11 +321,15 @@ public class PhylogenyKitchen {
     private void setBranchData(BranchData branchData){
 
         String clade = getCladeValue();
+
+        //If no clade has been specfied then assign the same color to all nodes.
         if(cladeColorMap == null){
             Color constantColor = Color.ORANGE;
             BranchColor bc = new BranchColor(constantColor);
             branchData.setBranchColor(bc);
+            return;
         }
+
         if(cladeColorMap.containsKey(clade)){
             BranchColor bc = cladeColorMap.get(clade);
             branchData.setBranchColor(bc);

@@ -266,6 +266,7 @@ public class PhylogenyMethods {
     }
 
     public static int calculateMaxDepth( final Phylogeny phy ) {
+        
         int max = 0;
         for( final PhylogenyNodeIterator iter = phy.iteratorExternalForward(); iter.hasNext(); ) {
             final PhylogenyNode node = iter.next();

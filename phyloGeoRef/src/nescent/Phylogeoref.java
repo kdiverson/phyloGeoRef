@@ -18,10 +18,13 @@
 package nescent;
 
 import java.io.File;
+import nescent.phylogeoref.kml.KmlWriter;
+import nescent.phylogeoref.processor.PhylogenyProcessor;
 import nescent.phylogeoref.reader.GrandUnifiedReader;
 import nescent.phylogeoref.reader.MultiFormatReader;
 import nescent.phylogeoref.reader.NeXMLReader;
 import nescent.phylogeoref.reader.UniversalTreeReader;
+import org.forester.phylogeny.Phylogeny;
 
 /**
  * Main class
@@ -39,19 +42,37 @@ public class Phylogeoref {
         //File treeFile = new File("samples\\treeExperimental\\testTree.xml");
         //File inTree=new File("samples\\tree3\\T1092.xml");
         //File inTree=new File("samples\\tree1\\testTree.xml");
+
+        //File treeFile = new File("samples\\tree1\\testTree.xml");
+        //File metaFile = new File("src\\testCoordsmeta2.csv");
     
         File treeFile = new File("samples\\mammals\\mammalsTree.xml");
-        File metaFile = new File("samples\\mammals\\mammals_in_tree.txt");        
+        File metaFile = new File("samples\\mammals\\mammals_in_tree.txt");
 
         File[] metaFiles = new File[]{metaFile};
 
+
         GrandUnifiedReader gur = new GrandUnifiedReader();
         gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim('\t').setCladeDiv(0);
+        //gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(',').setCladeDiv(0);
+
+
+
         gur.setArgs(5,3,4,1,2);
+        //gur.setArgs(1,2,3);
 
         gur.buildUnifiedPhylogeny();
+        
+        Phylogeny phy = gur.getPhylogeny();
+        Phylogeny phyArray[] =  gur.getPhylogenyArray();
 
+        PhylogenyProcessor processor = new PhylogenyProcessor();
+        for(Phylogeny phylogeny:phyArray){
+            processor.phylogenify(phylogeny);
+        }
 
+        KmlWriter kmlw = new KmlWriter();
+        kmlw.setTesselate(false).setExtruded(false).setStyleID("test").createKML(phyArray[0], "mojo.kml");
         
 
     }    
