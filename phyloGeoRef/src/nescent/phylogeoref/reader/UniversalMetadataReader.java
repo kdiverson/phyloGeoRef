@@ -18,11 +18,8 @@
 package nescent.phylogeoref.reader;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
 
 /**
  * Reads metadata from all types of files.
@@ -31,32 +28,9 @@ import java.util.logging.SimpleFormatter;
 public class UniversalMetadataReader implements MetadataReader{
 
 
-    private final static Logger LOGGER = Logger.getLogger(PhylogenyKitchen.class.getName());
+    private final static Logger LOGGER = Logger.getLogger("nescent");
 
-    static{
-        setupLogger(); //Setup the logger at class load
-    }
-
-   /**
-    * Sets up the logger.
-    */
-    private static void setupLogger(){
-        LOGGER.setLevel(Level.ALL);
-        try {
-
-            FileHandler fhandler = new FileHandler("Logfile.txt");
-            SimpleFormatter sformatter = new SimpleFormatter();
-            fhandler.setFormatter(sformatter);
-            LOGGER.addHandler(fhandler);
-
-        } catch (IOException ex) {
-            LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
-        } catch (SecurityException ex) {
-            LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
-        }
-    }
-
-    
+        
 
     private char delim;
     private File metaFile;

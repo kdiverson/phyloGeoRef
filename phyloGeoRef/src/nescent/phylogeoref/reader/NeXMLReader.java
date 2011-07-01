@@ -20,24 +20,15 @@ package nescent.phylogeoref.reader;
 import static java.lang.System.out;
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
-import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
 import javax.xml.parsers.ParserConfigurationException;
 import org.forester.phylogeny.Phylogeny;
-import org.forester.phylogeny.PhylogenyNode;
 import org.nexml.model.Document;
 import org.nexml.model.DocumentFactory;
-import org.nexml.model.Edge;
 import org.nexml.model.FloatEdge;
-import org.nexml.model.IntEdge;
 import org.nexml.model.Network;
-import org.nexml.model.Node;
-import org.nexml.model.Tree;
 import org.nexml.model.TreeBlock;
 import org.xml.sax.SAXException;
 
@@ -50,33 +41,9 @@ import org.xml.sax.SAXException;
  */
 public class NeXMLReader implements TreeReader{
 
-    private final static Logger LOGGER = Logger.getLogger(PhylogenyKitchen.class.getName());
+    private final static Logger LOGGER = Logger.getLogger("nescent");
 
-    static{
-        setupLogger(); //Setup the logger at class load
-    }
-
-    /**
-     * Sets up the LOGGER.
-     */
-    private static void setupLogger(){
-        LOGGER.setLevel(Level.ALL);
-        try {
-
-            FileHandler fhandler = new FileHandler("Logfile.txt");
-            SimpleFormatter sformatter = new SimpleFormatter();
-            fhandler.setFormatter(sformatter);
-            LOGGER.addHandler(fhandler);
-
-        } catch (IOException ex) {
-            LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
-        } catch (SecurityException ex) {
-            LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
-        }
-    }
-
-
-
+    
     private NeXMLEngine engine;
 
     public NeXMLReader(){

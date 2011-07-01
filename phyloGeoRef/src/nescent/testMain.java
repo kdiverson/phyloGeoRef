@@ -28,7 +28,7 @@ import java.util.logging.Logger;
 import nescent.phylogeoref.geodata.ParseCoords;
 import nescent.phylogeoref.reader.MultiFormatReader;
 import nescent.phylogeoref.Calc3DTree;
-import nescent.phylogeoref.kml.KmlWriter;
+import nescent.phylogeoref.writer.KmlWriter;
 
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;

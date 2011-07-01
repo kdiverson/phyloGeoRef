@@ -18,15 +18,12 @@
 package nescent.phylogeoref.reader;
 
 import java.io.File;
-import java.io.IOException;
 import static java.lang.System.out;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
 import nescent.phylogeoref.reader.exception.LocationNotFoundException;
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
@@ -37,40 +34,16 @@ import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
 /**
  * Reads the raw, skeletal tree structure from a treeFile.
  * Cooks it along with metadata from metaFile
- * Validates the cooked phylogeny.
+ * Validates the cooked phylogeny.<br>
  *
  * @author apurv
  */
 public class GrandUnifiedReader {
 
 
-    private final static Logger LOGGER = Logger.getLogger(PhylogenyKitchen.class.getName());
+    private final static Logger LOGGER = Logger.getLogger("nescent");
 
-    static{
-        setupLogger(); //Setup the logger at class load
-    }
-
-   /**
-    * Sets up the logger.
-    */
-    private static void setupLogger(){
-        LOGGER.setLevel(Level.ALL);
-        try {
-
-            FileHandler fhandler = new FileHandler("Logfile.txt");
-            SimpleFormatter sformatter = new SimpleFormatter();
-            fhandler.setFormatter(sformatter);
-            LOGGER.addHandler(fhandler);
-
-        } catch (IOException ex) {
-            LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
-        } catch (SecurityException ex) {
-            LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
-        }
-    }
-
-
-
+   
 
     private File treeFile;
     private File[] metaFile;
@@ -79,6 +52,7 @@ public class GrandUnifiedReader {
     private int cladeDiv;  // Clade Classifier.
 
     private Integer[] args;
+    private Map mouldMapArray[] = null;
 
     //Values to be returned by this class.
     Phylogeny[] phylogenies = null;    
@@ -104,14 +78,40 @@ public class GrandUnifiedReader {
         if (phylogenies !=null)
                 return phylogenies;
         else
-            throw new NullPointerException("getPhylogenies() should be called after buildUnifiedPhylogeny()");
+            throw new NullPointerException("getPhylogenyArray() should be called after buildUnifiedPhylogeny()");
     }
 
     public Phylogeny getPhylogeny()throws NullPointerException {
         if (phylogenies !=null)
                 return phylogenies[0];
         else
-            throw new NullPointerException("getPhylogenies() should be called after buildUnifiedPhylogeny()");
+            throw new NullPointerException("getPhylogeny() should be called after buildUnifiedPhylogeny()");
+    }
+
+    /**
+     *
+     * @return the array of mould maps which contain label, mould binding for each labeled node.
+     * @throws NullPointerException
+     */
+    public Map[] getMouldMaps()throws NullPointerException{
+        if(mouldMapArray != null){
+            return mouldMapArray;
+        }else{
+            throw new NullPointerException("getMouldMaps() should be called after buildUnifiedPhylogeny()");
+        }
+    }
+
+    /**
+     * 
+     * @return the first map in the array of mould maps.
+     * @throws NullPointerException
+     */
+    public Map getMouldMap()throws NullPointerException{
+        if(mouldMapArray != null){
+            return mouldMapArray[0];
+        }else{
+            throw new NullPointerException("getMouldMaps() should be called after buildUnifiedPhylogeny()");
+        }
     }
 
     /**
@@ -210,15 +210,16 @@ public class GrandUnifiedReader {
         UniversalTreeReader utr = new UniversalTreeReader();
         phylogenies = utr.readPhylogenyArray(treeFile);
 
+        mouldMapArray = new HashMap[phylogenies.length];
         int i = 0;
         //Iterate over each phylogeny and cook it up in the kitchen to get
         //full fledged phylogenies.
         for(Phylogeny phylogeny:phylogenies){
 
-            Map<String,PhylogenyMould> map = buildMouldMap(phylogeny);
+            mouldMapArray[i] = buildMouldMap(phylogeny);
 
             // Prepare a new kitchen
-            PhylogenyKitchen kitchen = new PhylogenyKitchen(metaFile[i], phylogeny, map, delim, cladeDiv);
+            PhylogenyKitchen kitchen = new PhylogenyKitchen(metaFile[i], phylogeny, mouldMapArray[i], delim, cladeDiv);
 
             // Set the recipe by matching the column values.
             kitchen.setRecipe(args);

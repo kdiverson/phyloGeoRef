@@ -18,12 +18,16 @@
 package nescent;
 
 import java.io.File;
-import nescent.phylogeoref.kml.KmlWriter;
+import java.io.IOException;
+import java.util.Map;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 import nescent.phylogeoref.processor.PhylogenyProcessor;
 import nescent.phylogeoref.reader.GrandUnifiedReader;
-import nescent.phylogeoref.reader.MultiFormatReader;
-import nescent.phylogeoref.reader.NeXMLReader;
-import nescent.phylogeoref.reader.UniversalTreeReader;
+import nescent.phylogeoref.reader.PhylogenyKitchen;
+import nescent.phylogeoref.writer.KmlWriter;
 import org.forester.phylogeny.Phylogeny;
 
 /**
@@ -31,6 +35,31 @@ import org.forester.phylogeny.Phylogeny;
  * @author apurv
  */
 public class Phylogeoref {
+
+    private final static Logger LOGGER = Logger.getLogger("nescent");
+
+    static{
+        setupLogger(); //Setup the logger at class load
+    }
+
+   /**
+    * Sets up the logger.
+    */
+    private static void setupLogger(){
+        LOGGER.setLevel(Level.ALL);
+        try {
+                FileHandler fhandler = new FileHandler("Logfile.txt");
+                SimpleFormatter sformatter = new SimpleFormatter();
+                fhandler.setFormatter(sformatter);
+                LOGGER.addHandler(fhandler);
+
+        } catch (IOException ex) {
+            LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
+        } catch (SecurityException ex) {
+            LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
+        }
+    }
+
 
     /**
      * Utility main method, used for testing this file during development.
@@ -65,6 +94,7 @@ public class Phylogeoref {
         
         Phylogeny phy = gur.getPhylogeny();
         Phylogeny phyArray[] =  gur.getPhylogenyArray();
+        Map mouldMapArray[] = gur.getMouldMaps();
 
         PhylogenyProcessor processor = new PhylogenyProcessor();
         for(Phylogeny phylogeny:phyArray){

@@ -6,7 +6,7 @@
         <Style id="test">
             <LineStyle>
                 <color>7f0000ff</color>
-                <width>7.0</width>
+                <width>3.0</width>
             </LineStyle>
         </Style>
         <Folder>
