@@ -21,7 +21,7 @@ import java.io.File;
 import org.forester.phylogeny.Phylogeny;
 
 /**
- * Superclass for all tree file readers.
+ * Super interface for all tree file readers.
  * @author apurv
  */
 public interface TreeReader {

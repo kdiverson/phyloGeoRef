@@ -26,8 +26,7 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 import nescent.phylogeoref.processor.PhylogenyProcessor;
 import nescent.phylogeoref.reader.GrandUnifiedReader;
-import nescent.phylogeoref.reader.PhylogenyKitchen;
-import nescent.phylogeoref.writer.KmlWriter;
+import nescent.phylogeoref.writer.AdvancedKmlWriter;
 import org.forester.phylogeny.Phylogeny;
 
 /**
@@ -82,7 +81,7 @@ public class Phylogeoref {
 
 
         GrandUnifiedReader gur = new GrandUnifiedReader();
-        gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim('\t').setCladeDiv(0);
+        gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim('\t').setCladeDiv(6);
         //gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(',').setCladeDiv(0);
 
 
@@ -97,13 +96,13 @@ public class Phylogeoref {
         Map mouldMapArray[] = gur.getMouldMaps();
 
         PhylogenyProcessor processor = new PhylogenyProcessor();
-        for(Phylogeny phylogeny:phyArray){
-            processor.phylogenify(phylogeny);
-        }
-
-        KmlWriter kmlw = new KmlWriter();
-        kmlw.setTesselate(false).setExtruded(false).setStyleID("test").createKML(phyArray[0], "mojo.kml");
+        AdvancedKmlWriter kmlw = new AdvancedKmlWriter("mojo.kml");
         
+        for(int i=0; i<phyArray.length; i++){
 
+            processor.phylogenify(phyArray[i]);
+            kmlw.createKML(phyArray[i], mouldMapArray[i]);
+            
+        }        
     }    
 }

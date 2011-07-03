@@ -36,8 +36,8 @@ import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
 public class PhylogenyProcessor {
 
     //To be used in the formula HTU height = a +(n-1)*b
-    private final static long a = 198000;
-    private final static long b =  66000;
+    private final static long a = 396000;
+    private final static long b = 132000;
 
 
     /**

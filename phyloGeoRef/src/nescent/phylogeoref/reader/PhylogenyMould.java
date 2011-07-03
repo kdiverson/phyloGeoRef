@@ -32,12 +32,17 @@ public class PhylogenyMould {
 
     private PhylogenyNode node; //The Node with which this mould is associated.
     private Map<String, String> propertyMap; //The map which will contain all the secondary properties.
+    private String clade; //The clade to which this node belongs. Null if no clade divison has been spec.
 
     //TODO: Implemetation for multiple observations yet to be done.
     private int numObservations;    //The number of observations of this species.
 
     public PhylogenyMould(){
         propertyMap = new HashMap<String, String>();
+    }
+
+    public String getClade(){
+        return clade;
     }
 
     /**
@@ -72,6 +77,10 @@ public class PhylogenyMould {
 
     public void setAssociatedNode(PhylogenyNode node) {
         this.node = node;
+    }
+
+    public void setClade(String cladeName){
+        clade = cladeName;
     }
 
 

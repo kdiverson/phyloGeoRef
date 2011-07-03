@@ -28,7 +28,7 @@ import java.util.logging.Logger;
 import nescent.phylogeoref.geodata.ParseCoords;
 import nescent.phylogeoref.reader.MultiFormatReader;
 import nescent.phylogeoref.Calc3DTree;
-import nescent.phylogeoref.writer.KmlWriter;
+import nescent.phylogeoref.writer.SimpleKmlWriter;
 
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
@@ -51,7 +51,7 @@ public class testMain {
     static MultiFormatReader gt = new MultiFormatReader();
     static Phylogeny my_phy = new Phylogeny();
     static Calc3DTree c3dt = new Calc3DTree();
-    static KmlWriter kmlw = new KmlWriter();
+    static SimpleKmlWriter kmlw = new SimpleKmlWriter( "testfile.kml");
     
     /**
      * @param args the command line arguments
@@ -136,7 +136,7 @@ public class testMain {
         try {
             //testAssignCoords(treeFile, coordFile, metadata);
             
-            kmlw.setTesselate(false).setExtruded(false).setStyleID("test").createKML(my_phy, "testfile.kml");
+            kmlw.setTesselate(false).setExtruded(false).setStyleID("test").createKML(my_phy);
             //kmlw.createKML(my_phy, "testfile.kml");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(testMain.class.getName()).log(Level.SEVERE, null, ex);

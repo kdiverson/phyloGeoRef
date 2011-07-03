@@ -18,7 +18,7 @@
 package nescent.phylogeoref.reader;
 
 /**
- * Superclass for all metadata reader class.
+ * Super interface for all metadata reader class.
  * @author apurv
  */
 public interface MetadataReader {

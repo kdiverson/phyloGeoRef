@@ -65,9 +65,9 @@ public class GrandUnifiedReader {
      * @param treeFile
      * @param metaFile
      * @param delim delimiter character e.g. '\t ',  '\s '
-     * @param cladeDiv  clade classifier e.g. {'g' for genus,  'f': family, 'o':order, 'c': class,'p': phylum}
+     * @param cladeDiv  The column whose values have to be taken as the clade.
      */
-    public GrandUnifiedReader(File treeFile, File[] metaFile, char delim, char cladeDiv) {
+    public GrandUnifiedReader(File treeFile, File[] metaFile, char delim, int cladeDiv) {
         this.treeFile = treeFile;
         this.metaFile = metaFile;
         this.delim = delim;
@@ -193,6 +193,7 @@ public class GrandUnifiedReader {
      */
 
     public GrandUnifiedReader setArgs(Integer...args) {
+        //TODO: Add checks here whether or not user is specifying the arguments correctly.
         this.args = args;
         return this;
     }

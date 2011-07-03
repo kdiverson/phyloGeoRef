@@ -262,9 +262,15 @@ public class PhylogenyKitchen {
 
         setNodeData(node.getNodeData());
 
-        // If the user has specified a colums to be taken as clade.
+        // If the user has specified a colums to be taken as clade, color this node.
         setBranchData(node.getBranchData());
-        
+
+        //Set the clade value if it is not null.
+        if(getCladeValue()!=null){
+            String name = node.getNodeName();
+            PhylogenyMould phyMould = map.get(name);
+            phyMould.setClade(getCladeValue());
+        }
     }
 
     /**
@@ -313,7 +319,6 @@ public class PhylogenyKitchen {
             branchData.setBranchColor(bc);
             
             cladeColorMap.put(clade, bc);
-            out.println("Putting clade "+clade+ " in colorMap");
         }
     }
         
