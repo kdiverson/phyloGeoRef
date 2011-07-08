@@ -19,6 +19,7 @@ package nescent;
 
 import java.io.File;
 import java.io.IOException;
+import static java.lang.System.out;
 import java.util.Map;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -28,6 +29,9 @@ import nescent.phylogeoref.processor.PhylogenyProcessor;
 import nescent.phylogeoref.reader.GrandUnifiedReader;
 import nescent.phylogeoref.writer.AdvancedKmlWriter;
 import org.forester.phylogeny.Phylogeny;
+import org.forester.phylogeny.PhylogenyNode;
+import org.forester.phylogeny.data.Distribution;
+import org.forester.phylogeny.data.NodeData;
 
 /**
  * Main class
@@ -67,9 +71,8 @@ public class Phylogeoref {
      */
     public static void main(String...args) throws Throwable{
 
-        //File treeFile = new File("samples\\treeExperimental\\testTree.xml");
-        //File inTree=new File("samples\\tree3\\T1092.xml");
-        //File inTree=new File("samples\\tree1\\testTree.xml");
+        //File treeFile = new File("samples\\treeHypothetical\\tree.nwk");
+        //File metaFile=new File("samples\\treeHypothetical\\test.csv");
 
         //File treeFile = new File("samples\\tree1\\testTree.xml");
         //File metaFile = new File("src\\testCoordsmeta2.csv");
@@ -83,7 +86,7 @@ public class Phylogeoref {
         GrandUnifiedReader gur = new GrandUnifiedReader();
         gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim('\t').setCladeDiv(6);
         //gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(',').setCladeDiv(0);
-
+        //gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(',').setCladeDiv(4);
 
 
         gur.setArgs(5,3,4,1,2);
@@ -101,8 +104,9 @@ public class Phylogeoref {
         for(int i=0; i<phyArray.length; i++){
 
             processor.phylogenify(phyArray[i]);
+
             kmlw.createKML(phyArray[i], mouldMapArray[i]);
             
-        }        
-    }    
+        }
+    }   
 }

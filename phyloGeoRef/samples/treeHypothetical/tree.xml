@@ -1,0 +1,106 @@
+<nex:nexml xmlns="http://www.nexml.org/2009" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:nex="http://www.nexml.org/2009" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" about="#nl1" generator="Bio::Phylo::Project v.0.38_1660" version="0.9" xsi:schemaLocation="http://www.nexml.org/2009 http://www.nexml.org/2009/nexml.xsd">
+<meta content="2011-07-08T03:31:23" datatype="xsd:date" id="ma43" property="dc:date" xsi:type="nex:LiteralMeta"/>
+<otus id="os44">
+<otu id="ou45" label="Taxa0"/>
+<otu id="ou49" label="Taxa1"/>
+<otu id="ou53" label="Taxa10"/>
+<otu id="ou58" label="Taxa11"/>
+<otu id="ou59" label="Taxa12"/>
+<otu id="ou60" label="Taxa13"/>
+<otu id="ou61" label="Taxa14"/>
+<otu id="ou62" label="Taxa15"/>
+<otu id="ou63" label="Taxa16"/>
+<otu id="ou64" label="Taxa17"/>
+<otu id="ou57" label="Taxa18"/>
+<otu id="ou56" label="Taxa19"/>
+<otu id="ou48" label="Taxa2"/>
+<otu id="ou50" label="Taxa3"/>
+<otu id="ou51" label="Taxa4"/>
+<otu id="ou52" label="Taxa5"/>
+<otu id="ou54" label="Taxa6"/>
+<otu id="ou55" label="Taxa7"/>
+<otu id="ou47" label="Taxa8"/>
+<otu id="ou46" label="Taxa9"/>
+</otus>
+<trees id="ts2" otus="os44">
+<tree id="te3" xsi:type="nex:FloatTree">
+<node id="ne4" root="true"/>
+<node id="ne5"/>
+<node id="ne42" label="Taxa0" otu="ou45"/>
+<node id="ne6"/>
+<node id="ne41" label="Taxa9" otu="ou46"/>
+<node id="ne7"/>
+<node id="ne40" label="Taxa8" otu="ou47"/>
+<node id="ne8"/>
+<node id="ne31"/>
+<node id="ne9"/>
+<node id="ne30" label="Taxa2" otu="ou48"/>
+<node id="ne32"/>
+<node id="ne35"/>
+<node id="ne10" label="Taxa1" otu="ou49"/>
+<node id="ne11"/>
+<node id="ne33" label="Taxa3" otu="ou50"/>
+<node id="ne34" label="Taxa4" otu="ou51"/>
+<node id="ne36" label="Taxa5" otu="ou52"/>
+<node id="ne37"/>
+<node id="ne12"/>
+<node id="ne29" label="Taxa10" otu="ou53"/>
+<node id="ne38" label="Taxa6" otu="ou54"/>
+<node id="ne39" label="Taxa7" otu="ou55"/>
+<node id="ne13"/>
+<node id="ne28" label="Taxa19" otu="ou56"/>
+<node id="ne14"/>
+<node id="ne27" label="Taxa18" otu="ou57"/>
+<node id="ne15"/>
+<node id="ne18"/>
+<node id="ne16" label="Taxa11" otu="ou58"/>
+<node id="ne17" label="Taxa12" otu="ou59"/>
+<node id="ne19"/>
+<node id="ne22"/>
+<node id="ne20" label="Taxa13" otu="ou60"/>
+<node id="ne21" label="Taxa14" otu="ou61"/>
+<node id="ne23" label="Taxa15" otu="ou62"/>
+<node id="ne24"/>
+<node id="ne25" label="Taxa16" otu="ou63"/>
+<node id="ne26" label="Taxa17" otu="ou64"/>
+<edge id="edge5" length="0.01991991489145702662" source="ne4" target="ne5"/>
+<edge id="edge42" length="0.01991991489145702662" source="ne4" target="ne42"/>
+<edge id="edge6" length="0.05540463900911093281" source="ne5" target="ne6"/>
+<edge id="edge41" length="0.06128830104526723777" source="ne5" target="ne41"/>
+<edge id="edge7" length="0.02465787007192255312" source="ne6" target="ne7"/>
+<edge id="edge40" length="0.16618144418524030681" source="ne6" target="ne40"/>
+<edge id="edge8" length="0.08719030564660754101" source="ne7" target="ne8"/>
+<edge id="edge31" length="0.01746312405023603756" source="ne7" target="ne31"/>
+<edge id="edge9" length="0.232323" source="ne8" target="ne9"/>
+<edge id="edge30" length="0.04513699220049741112" source="ne8" target="ne30"/>
+<edge id="edge32" length="0.02406456808142181519" source="ne31" target="ne32"/>
+<edge id="edge35" length="0.01777487601656749933" source="ne31" target="ne35"/>
+<edge id="edge10" length="0.05251222225263994792" source="ne9" target="ne10"/>
+<edge id="edge11" length="0.323232" source="ne9" target="ne11"/>
+<edge id="edge33" length="0.07487529181706194248" source="ne32" target="ne33"/>
+<edge id="edge34" length="0.03908812958892094597" source="ne32" target="ne34"/>
+<edge id="edge36" length="0.28642677355322920807" source="ne35" target="ne36"/>
+<edge id="edge37" length="0.02794028469814201915" source="ne35" target="ne37"/>
+<edge id="edge12" length="0.01991991489145702662" source="ne11" target="ne12"/>
+<edge id="edge29" length="0.01991991489145702662" source="ne11" target="ne29"/>
+<edge id="edge38" length="0.11970253310365001898" source="ne37" target="ne38"/>
+<edge id="edge39" length="0.02087695899816855230" source="ne37" target="ne39"/>
+<edge id="edge13" length="0.05540463900911093281" source="ne12" target="ne13"/>
+<edge id="edge28" length="0.06128830104526723777" source="ne12" target="ne28"/>
+<edge id="edge14" length="0.02465787007192255312" source="ne13" target="ne14"/>
+<edge id="edge27" length="0.16618144418524030681" source="ne13" target="ne27"/>
+<edge id="edge15" length="0.08719030564660754101" source="ne14" target="ne15"/>
+<edge id="edge18" length="0.01746312405023603756" source="ne14" target="ne18"/>
+<edge id="edge16" length="0.05251222225263994792" source="ne15" target="ne16"/>
+<edge id="edge17" length="0.04513699220049741112" source="ne15" target="ne17"/>
+<edge id="edge19" length="0.02406456808142181519" source="ne18" target="ne19"/>
+<edge id="edge22" length="0.01777487601656749933" source="ne18" target="ne22"/>
+<edge id="edge20" length="0.07487529181706194248" source="ne19" target="ne20"/>
+<edge id="edge21" length="0.03908812958892094597" source="ne19" target="ne21"/>
+<edge id="edge23" length="0.28642677355322920807" source="ne22" target="ne23"/>
+<edge id="edge24" length="0.02794028469814201915" source="ne22" target="ne24"/>
+<edge id="edge25" length="0.11970253310365001898" source="ne24" target="ne25"/>
+<edge id="edge26" length="0.02087695899816855230" source="ne24" target="ne26"/>
+</tree>
+</trees>
+</nex:nexml>

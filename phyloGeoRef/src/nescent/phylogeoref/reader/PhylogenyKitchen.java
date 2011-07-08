@@ -303,7 +303,7 @@ public class PhylogenyKitchen {
 
         //If no clade has been specfied then assign the same color to all nodes.
         if(cladeColorMap == null){
-            Color constantColor = Color.ORANGE;
+            Color constantColor = Color.RED;
             BranchColor bc = new BranchColor(constantColor);
             branchData.setBranchColor(bc);
             return;

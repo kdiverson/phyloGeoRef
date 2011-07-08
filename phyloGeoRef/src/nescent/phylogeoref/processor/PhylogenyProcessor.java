@@ -36,8 +36,8 @@ import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
 public class PhylogenyProcessor {
 
     //To be used in the formula HTU height = a +(n-1)*b
-    private final static long a = 396000;
-    private final static long b = 132000;
+    private final static long a = 594000;
+    private final static long b = 198000;
 
 
     /**
@@ -293,7 +293,7 @@ public class PhylogenyProcessor {
                         Color childColor = childBranchColor.getValue();
 
                         rSum+=childColor.getRed();
-                        gSum+=childColor.getBlue();
+                        gSum+=childColor.getGreen();
                         bSum+=childColor.getBlue();
 
                         numChildren++;

@@ -20,12 +20,14 @@ package nescent.phylogeoref.writer;
 import de.micromata.opengis.kml.v_2_2_0.Document;
 import de.micromata.opengis.kml.v_2_2_0.Folder;
 import de.micromata.opengis.kml.v_2_2_0.Placemark;
+import static java.lang.System.out;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import nescent.phylogeoref.reader.PhylogenyMould;
 import nescent.phylogeoref.writer.utility.KmlUtility;
 import org.forester.phylogeny.Phylogeny;
+import org.forester.phylogeny.PhylogenyMethods;
 import org.forester.phylogeny.PhylogenyNode;
 import org.forester.phylogeny.data.Distribution;
 import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
@@ -40,10 +42,13 @@ public class StaticKmlPainter implements KmlPainter{
     private HashMap<String,PhylogenyMould> mouldMap;           //the mould map with the currently drawn phylogeny.
     private Document document;
 
+    private HashMap<Integer,Folder> folderMap;
+
     public StaticKmlPainter(Phylogeny phylogeny, Map mouldMap, Document document) {
         this.phylogeny = phylogeny;
         this.mouldMap = (HashMap) mouldMap;
         this.document = document;
+        folderMap = new HashMap<Integer, Folder>();
     }
 
 
@@ -54,11 +59,32 @@ public class StaticKmlPainter implements KmlPainter{
             
             PhylogenyNode node = it.next();
             
+            //If the node is an external node, we'll draw it later.
             if(node.isExternal()){
                 continue;
             }
-        }
 
+            //Find the folder in which the current level is to be drawn.
+            Integer level = PhylogenyMethods.calculateDepth(node);
+            Folder folder = null;
+            if(folderMap.containsKey(level)){
+                folder = folderMap.get(level);
+            }else{
+                folder = KmlUtility.createFolder(document, "Level-"+level.toString(), level.toString());
+                folderMap.put(level, folder);
+            }
+
+            String name = node.getNodeName();
+            PhylogenyMould mould = mouldMap.get(name);
+
+            //If it's an internal node which does have a name, create a placemark for it.
+            if( !(name.equals("")) && !(name == null)){
+                KmlUtility.createHTUPlacemark(folder, node, mould);
+            }
+            KmlUtility.createHTUPlacemark(folder, node, mould);
+
+            drawEdges(folder, node);
+        }
         putExternalNodes();
     }
 
@@ -74,11 +100,27 @@ public class StaticKmlPainter implements KmlPainter{
 
             String name = node.getNodeName();
             PhylogenyMould mould = mouldMap.get(name);
-
+            
             //Create a placemark in folder for node having mould with it.
             KmlUtility.createExternalPlacemark(folder, node, mould);
+        }        
+    }
+
+    /**
+     * Draws all the edges from the node to its children.
+     * @param folder the folder in which everything at this level is to be drawn.
+     * @param node
+     * @param mould
+     */
+    private void drawEdges(Folder folder, PhylogenyNode node){
+
+        for (int i=0; i < node.getNumberOfDescendants(); i++){
+            
+            PhylogenyNode childNode = node.getChildNode(i);           
+            
+            KmlUtility.createBranch(folder, node, childNode);
+            
         }
-        
     }
 
     

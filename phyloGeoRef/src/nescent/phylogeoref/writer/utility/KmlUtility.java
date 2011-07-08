@@ -19,16 +19,22 @@ package nescent.phylogeoref.writer.utility;
 
 import de.micromata.opengis.kml.v_2_2_0.AltitudeMode;
 import de.micromata.opengis.kml.v_2_2_0.ColorMode;
+import de.micromata.opengis.kml.v_2_2_0.Coordinate;
 import de.micromata.opengis.kml.v_2_2_0.Document;
 import de.micromata.opengis.kml.v_2_2_0.Folder;
 import de.micromata.opengis.kml.v_2_2_0.Icon;
 import de.micromata.opengis.kml.v_2_2_0.IconStyle;
 import de.micromata.opengis.kml.v_2_2_0.LatLonAltBox;
+import de.micromata.opengis.kml.v_2_2_0.LineString;
+import de.micromata.opengis.kml.v_2_2_0.LineStyle;
 import de.micromata.opengis.kml.v_2_2_0.Lod;
+import de.micromata.opengis.kml.v_2_2_0.Pair;
 import de.micromata.opengis.kml.v_2_2_0.Placemark;
 import de.micromata.opengis.kml.v_2_2_0.Point;
 import de.micromata.opengis.kml.v_2_2_0.Region;
 import de.micromata.opengis.kml.v_2_2_0.Style;
+import de.micromata.opengis.kml.v_2_2_0.StyleMap;
+import de.micromata.opengis.kml.v_2_2_0.StyleState;
 import de.micromata.opengis.kml.v_2_2_0.ViewRefreshMode;
 import static java.lang.System.out;
 import java.awt.Color;
@@ -60,6 +66,9 @@ public class KmlUtility {
     private final static double MAX_FADE_EXTENT = 0;
 
     private final static double DELTA_L = 2.5;
+
+    //The color of the hypothetical taxonomic unit placemarks.
+    private final static String HTU_COLOR="ff0ff9ff";
 
     /**
      * Creates a new folder inside document with given folderName and description.
@@ -106,9 +115,11 @@ public class KmlUtility {
         outerFolder.withName(node.getNodeName());
 
         //Create the level 1 placemark. (outermost placemark)
-        Placemark outerPlacemark = outerFolder.createAndAddPlacemark();             
+        Placemark outerPlacemark = outerFolder.createAndAddPlacemark();
+        outerPlacemark.setDescription(node.getNodeName());
 
         Point p = outerPlacemark.createAndSetPoint();
+        p.setAltitudeMode(AltitudeMode.RELATIVE_TO_GROUND);
         p.addToCoordinates(longitude, latitude, altitude);
 
         //Specify a region inside this placemark.
@@ -125,11 +136,6 @@ public class KmlUtility {
         //Specify the icon with this placemark.
         Icon icon = iconStyle.createAndSetIcon();
         icon.setHref("http://maps.google.com/mapfiles/kml/paddle/wht-blank.png");
-        icon.setRefreshInterval(4);
-        icon.setViewRefreshMode(ViewRefreshMode.NEVER);
-        icon.setViewRefreshTime(4);
-        icon.setViewBoundScale(1);
-
 
         LatLonAltBox latlonBox = outerRegion.createAndSetLatLonAltBox();
         latlonBox.setEast(longitude + DELTA_L);
@@ -146,10 +152,10 @@ public class KmlUtility {
         lod.setMinFadeExtent(MIN_FADE_EXTENT);
         lod.setMaxFadeExtent(MAX_FADE_EXTENT);
 
-        createMiddlePlacemark(outerFolder, node, mould);
-        
+        createMiddlePlacemark(outerFolder, node, mould);     
     }
 
+    
     /**
      * Creates the middle level.
      * @param outerFolder
@@ -172,6 +178,7 @@ public class KmlUtility {
         middlePlacemark.setDescription(node.getNodeName());
 
         Point p = middlePlacemark.createAndSetPoint();
+        p.setAltitudeMode(AltitudeMode.RELATIVE_TO_GROUND);
         p.addToCoordinates(longitude, latitude, altitude);
 
         //Specify a region inside this placemark.
@@ -189,9 +196,6 @@ public class KmlUtility {
         Icon icon = iconStyle.createAndSetIcon();
         icon.setHref("http://maps.google.com/mapfiles/kml/paddle/wht-blank.png");
         icon.setRefreshInterval(4);
-        icon.setViewRefreshMode(ViewRefreshMode.NEVER);
-        icon.setViewRefreshTime(4);
-        icon.setViewBoundScale(1);        
 
         LatLonAltBox latlonBox = middleRegion.createAndSetLatLonAltBox();
         latlonBox.setEast(longitude + DELTA_L);
@@ -234,26 +238,40 @@ public class KmlUtility {
         innerPlacemark.setDescription(node.getNodeName());
 
         Point p = innerPlacemark.createAndSetPoint();
+        p.setAltitudeMode(AltitudeMode.RELATIVE_TO_GROUND);
         p.addToCoordinates(longitude, latitude, altitude);
 
         //Specify a region inside this placemark.
-        Region innerRegion = innerFolder.createAndSetRegion();
+        Region innerRegion = innerFolder.createAndSetRegion();     
 
-        //Specify the color of this placemark.
-        Style style = innerPlacemark.createAndAddStyle();
-        IconStyle iconStyle = style.createAndSetIconStyle();
-        String color = getColor(node);
-        iconStyle.setColor(color);
-        iconStyle.setColorMode(ColorMode.NORMAL);
-        iconStyle.setScale(0.90);
+        //Create a style map.
+        StyleMap styleMap = innerPlacemark.createAndAddStyleMap();
 
+        //Create the style for normal edge.
+        Pair pNormal = styleMap.createAndAddPair();
+        Style normalStyle = pNormal.createAndSetStyle();
+        pNormal.setKey(StyleState.NORMAL);
+        IconStyle normalIconStyle = normalStyle.createAndSetIconStyle();
+        String normalColor = getColor(node);
+        normalIconStyle.setColor(normalColor);
+        normalIconStyle.setColorMode(ColorMode.NORMAL);
+        normalIconStyle.setScale(1.00);
         //Specify the icon with this placemark.
-        Icon icon = iconStyle.createAndSetIcon();
-        icon.setHref("http://maps.google.com/mapfiles/kml/paddle/wht-blank.png");
-        icon.setRefreshInterval(4);
-        icon.setViewRefreshMode(ViewRefreshMode.NEVER);
-        icon.setViewRefreshTime(4);
-        icon.setViewBoundScale(1);
+        Icon normalIcon = normalIconStyle.createAndSetIcon();
+        normalIcon.setHref("http://maps.google.com/mapfiles/kml/paddle/wht-blank.png");
+        
+        //Create the style for highlighted edge.
+        Pair pHighlight = styleMap.createAndAddPair();
+        Style highlightStyle = pHighlight.createAndSetStyle();
+        pHighlight.setKey(StyleState.HIGHLIGHT);
+        IconStyle highlightIconStyle = highlightStyle.createAndSetIconStyle();
+        String highlightColor = getColor(node);
+        highlightIconStyle.setColor(highlightColor);
+        highlightIconStyle.setColorMode(ColorMode.NORMAL);
+        highlightIconStyle.setScale(2.00);
+        //Specify the icon with this placemark.
+        Icon highlightIcon = highlightIconStyle.createAndSetIcon();
+        highlightIcon.setHref("http://maps.google.com/mapfiles/kml/paddle/wht-blank.png");
 
         LatLonAltBox latlonBox = innerRegion.createAndSetLatLonAltBox();
         latlonBox.setEast(longitude + DELTA_L);
@@ -278,7 +296,7 @@ public class KmlUtility {
      * @param node
      * @return
      */
-    private static boolean hasValidLocation(PhylogenyNode node){
+    public static boolean hasValidLocation(PhylogenyNode node){
 
         double latitude = getLatitude(node);
         double longitude = getLongitude(node);
@@ -417,9 +435,142 @@ public class KmlUtility {
         if(i==-1){
             i = nameCopy.indexOf('_');
         }
-        condensedName = condensedName + nameCopy.substring(i+1);
+        
+        if(i==-1){
+            condensedName = nameCopy.substring(i+1);
+        }else{
+            condensedName = condensedName + nameCopy.substring(i+1);
+        }
 
         return condensedName;
+    }
+
+
+
+    /**
+     * Creates a placemark for an internal node.<br>
+     * These nodes represent the hypothetical taxonomic units.<br>
+     * @param folder
+     * @param node
+     * @param mould
+     */
+    public static void createHTUPlacemark(Folder folder, PhylogenyNode node, PhylogenyMould mould){
+
+        if(!hasValidLocation(node)){
+            return;
+        }
+
+        //Specify the position of the node.
+        double latitude = getLatitude(node);
+        double longitude = getLongitude(node);
+        double altitude = getAltitude(node);
+
+        //Create the level 1 folder.
+        Folder outerFolder = folder.createAndAddFolder();
+        outerFolder.withName(node.getNodeName());
+
+        //Create the level 1 placemark. (outermost placemark)
+        Placemark outerPlacemark = outerFolder.createAndAddPlacemark();
+        outerPlacemark.setName(node.getNodeName());
+
+        Point p = outerPlacemark.createAndSetPoint();
+        p.addToCoordinates(longitude, latitude, altitude);
+        p.setAltitudeMode(AltitudeMode.RELATIVE_TO_GROUND);
+
+        //TODO: No regions have been added to Hypothetical Taxa placemarks.
+        //      Can be added in future; at present, the HTU's dont have any names.
+
+        //Specify the color of this placemark.
+        Style style = outerPlacemark.createAndAddStyle();
+        IconStyle iconStyle = style.createAndSetIconStyle();
+        String color = HTU_COLOR;
+        iconStyle.setColor(color);
+        iconStyle.setColorMode(ColorMode.NORMAL);
+        iconStyle.setScale(0.50);
+
+        //Specify the icon with this placemark.
+        Icon icon = iconStyle.createAndSetIcon();
+        icon.setHref("http://maps.google.com/mapfiles/kml/shapes/shaded_dot.png");
+        icon.setRefreshInterval(4);
+        icon.setViewRefreshMode(ViewRefreshMode.NEVER);
+        icon.setViewRefreshTime(4);
+        icon.setViewBoundScale(1);
+    }
+
+
+    /**
+     * Creates the 3 edges from the parentNode to the childNode.
+     * @param folder
+     * @param parentNode
+     * @param childNode
+     */
+    public static void createBranch(Folder folder, PhylogenyNode parentNode, PhylogenyNode childNode){
+
+        String childColor = getColor(childNode);
+        LineString line = KmlToolkit.drawNewStyledLine(folder, childColor);
+        
+        createVerticalEdge(line, parentNode, childNode);
+        createCurvedEdge(line, parentNode, childNode);
+        //createVerticalEdgeFromParent(line, parentNode, childNode);
+    }
+
+    
+
+    /**
+     * Creates the vertical edge joining each child node to the curved edge connected to its parent.
+     * @param folder
+     * @param parentNode
+     * @param childNode
+     */
+    private static void createVerticalEdge(LineString line, PhylogenyNode parentNode, PhylogenyNode childNode){
+
+        double parentAlt = getAltitude(parentNode);
+        
+        double childLat = getLatitude(childNode);
+        double childLong = getLongitude(childNode);
+        double childAlt = getAltitude(childNode);
+
+        double sourceLat = childLat;
+        double sourceLong = childLong;
+        double sourceAlt = childAlt;
+
+        double destLat = childLat;
+        double destLong = childLong;//TODO:
+        double destAlt = parentAlt;//FRACTION*(parentAlt-childAlt) + childAlt;
+       
+        line.addToCoordinates(sourceLong, sourceLat, sourceAlt);
+        line.addToCoordinates(destLong, destLat, destAlt);
+    }
+
+
+    /**
+     * Appends the curved portion of the edge between the child and parent node to line.
+     * @param line
+     * @param parentNode
+     * @param childNode
+     */
+    private static void createCurvedEdge(LineString line, PhylogenyNode parentNode, PhylogenyNode childNode){
+
+        double childLat = getLatitude(childNode);
+        double childLong = getLongitude(childNode);
+        double childAlt = getAltitude(childNode);
+
+        double parentLat = getLatitude(parentNode);
+        double parentLong = getLongitude(parentNode);
+        double parentAlt = getAltitude(parentNode);
+
+        double sourceLat = childLat;
+        double sourceLong = childLong;//TODO:
+        double sourceAlt = parentAlt;//FRACTION*(parentAlt-childAlt) + childAlt;
+
+        double destLat = parentLat;
+        double destLong = parentLong;
+        double destAlt = parentAlt;//FRACTION*(parentAlt-childAlt) + childAlt;     
+
+        Coordinate fromCoord = new Coordinate(sourceLong, sourceLat, sourceAlt);
+        Coordinate toCoord = new Coordinate(destLong, destLat, destAlt);
+        
+        KmlToolkit.drawCurvedLine(line, fromCoord, toCoord);
     }    
 
 }
