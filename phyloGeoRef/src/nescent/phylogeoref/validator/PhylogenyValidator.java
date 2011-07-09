@@ -20,6 +20,8 @@ package nescent.phylogeoref.validator;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import nescent.phylogeoref.validator.exception.InvalidLatitudeException;
+import nescent.phylogeoref.validator.exception.InvalidLongitudeException;
 import nescent.phylogeoref.validator.exception.LocationNotFoundException;
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
@@ -38,7 +40,7 @@ public class PhylogenyValidator {
      * Validates the phylogeny by checking that all external nodes have been assigned coordinates.
      * @param phy
      */
-    private void validatePhylogeny(Phylogeny phy){
+    public void validatePhylogeny(Phylogeny phy){
 
         Set<PhylogenyNode> extNodeSet = phy.getExternalNodes();
 
@@ -46,18 +48,39 @@ public class PhylogenyValidator {
             try{
                 NodeData nodeData = node.getNodeData();
                 Distribution dist = nodeData.getDistribution();
+
+                String name = node.getNodeName();
+                Integer id = node.getNodeId();
+
                 if(dist != null){
-                    if(dist.getLatitude()==null || dist.getLongitude()==null ||dist.getAltitude()==null){
-                        Integer id = node.getNodeId();
-                        throw new LocationNotFoundException(id.toString(), node.getNodeName());
+                    if(dist.getLatitude()==null || dist.getLongitude()==null ||dist.getAltitude()==null){                        
+                        throw new LocationNotFoundException( id.toString(), name);
+                    }else{
+                        double latitude = dist.getLatitude().doubleValue();
+                        double longitude = dist.getLongitude().doubleValue();
+                        double altitude = dist.getAltitude().doubleValue();
+
+                        if(latitude>90 || latitude <-90){
+                            nodeData.setDistribution(null);
+                            throw new InvalidLatitudeException(id.toString(), name, latitude);
+                        }
+                        if(longitude>180 || longitude<-180){
+                            nodeData.setDistribution(null);
+                            throw new InvalidLongitudeException(id.toString(), name, longitude);
+                        }
                     }
                 }
-                else{
-                    Integer id = node.getNodeId();
-                    throw new LocationNotFoundException(id.toString(), node.getNodeName());
+                else{                    
+                    throw new LocationNotFoundException(id.toString(), name);
                 }
             }
             catch(LocationNotFoundException ex){
+                LOGGER.log(Level.INFO, ex.getMessage(), ex);
+            }
+            catch(InvalidLatitudeException ex){
+                LOGGER.log(Level.INFO, ex.getMessage(), ex);
+            }
+            catch(InvalidLongitudeException ex){
                 LOGGER.log(Level.INFO, ex.getMessage(), ex);
             }
         }

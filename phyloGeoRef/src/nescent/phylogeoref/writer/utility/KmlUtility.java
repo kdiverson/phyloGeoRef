@@ -146,7 +146,7 @@ public class KmlUtility {
         latlonBox.setSouth(latitude - DELTA_L);
         latlonBox.setMinAltitude(altitude);
         latlonBox.setMaxAltitude(altitude+DELTA_L);
-        latlonBox.setAltitudeMode(AltitudeMode.ABSOLUTE);
+        latlonBox.setAltitudeMode(AltitudeMode.RELATIVE_TO_GROUND);
 
         Lod lod = outerRegion.createAndSetLod();
         lod.setMinLodPixels(MIN_LOD_PIXELS_LEVEL_OUTER);
@@ -180,7 +180,7 @@ public class KmlUtility {
         middlePlacemark.setDescription(node.getNodeName());
 
         Point p = middlePlacemark.createAndSetPoint();
-        p.setAltitudeMode(AltitudeMode.ABSOLUTE);
+        p.setAltitudeMode(AltitudeMode.RELATIVE_TO_GROUND);
         p.addToCoordinates(longitude, latitude, altitude);
 
         //Specify a region inside this placemark.
@@ -240,7 +240,7 @@ public class KmlUtility {
         innerPlacemark.setDescription(node.getNodeName());
 
         Point p = innerPlacemark.createAndSetPoint();
-        p.setAltitudeMode(AltitudeMode.ABSOLUTE);
+        p.setAltitudeMode(AltitudeMode.RELATIVE_TO_GROUND);
         p.addToCoordinates(longitude, latitude, altitude);
 
         //Specify a region inside this placemark.

@@ -21,6 +21,7 @@ import de.micromata.opengis.kml.v_2_2_0.Document;
 import de.micromata.opengis.kml.v_2_2_0.Kml;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -67,7 +68,10 @@ public class AdvancedKmlWriter {
 
             //The last thing you need to do it is marhsal the graph object to a file object.
             kml.marshal(new File(fileName));
+            
         } catch (FileNotFoundException ex) {
+            LOGGER.log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
             LOGGER.log(Level.SEVERE, null, ex);
         }
     }

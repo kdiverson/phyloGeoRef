@@ -20,6 +20,7 @@ package nescent.phylogeoref.processor;
 import java.awt.Color;
 import static java.lang.System.out;
 import java.math.BigDecimal;
+import nescent.phylogeoref.validator.PhylogenyValidator;
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyMethods;
 import org.forester.phylogeny.PhylogenyNode;
@@ -40,6 +41,12 @@ public class PhylogenyProcessor {
     private final static long a = 198000;
     private final static long b =  66000;
 
+    private PhylogenyValidator validator;
+
+    public PhylogenyProcessor(){
+        validator = new PhylogenyValidator();
+    }
+
 
     /**
      * Phylogenifies the phylogeny
@@ -47,6 +54,8 @@ public class PhylogenyProcessor {
      */
     public void phylogenify(Phylogeny phylogeny){
 
+        validator.validatePhylogeny(phylogeny);
+        
         assignCoordinatesToInternalNodes(phylogeny);
         assignColorToInternalNodes(phylogeny);
     }
