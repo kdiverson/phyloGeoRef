@@ -89,7 +89,7 @@ public class Phylogeoref {
         //gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(',').setCladeDiv(4);
 
 
-        gur.setArgs(5,3,4,1,2);
+        gur.setArgs(5,4,3,1,2);
         //gur.setArgs(1,2,3);
 
         gur.buildUnifiedPhylogeny();

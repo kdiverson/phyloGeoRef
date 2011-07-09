@@ -15,7 +15,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package nescent.phylogeoref.reader.exception;
+package nescent.phylogeoref.validator.exception;
 
 /**
  * Signals that the coordinates of an external node have not been specified in the input file.

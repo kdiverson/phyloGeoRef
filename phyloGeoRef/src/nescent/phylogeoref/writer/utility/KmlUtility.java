@@ -66,6 +66,7 @@ public class KmlUtility {
     private final static double MAX_FADE_EXTENT = 0;
 
     private final static double DELTA_L = 2.5;
+    private final static double ELEVATION = 0;
 
     //The color of the hypothetical taxonomic unit placemarks.
     private final static String HTU_COLOR="ff0ff9ff";
@@ -110,6 +111,7 @@ public class KmlUtility {
         double longitude = getLongitude(node);
         double altitude = getAltitude(node);
 
+
         //Create the level 1 folder.
         Folder outerFolder = folder.createAndAddFolder();
         outerFolder.withName(node.getNodeName());
@@ -119,7 +121,7 @@ public class KmlUtility {
         outerPlacemark.setDescription(node.getNodeName());
 
         Point p = outerPlacemark.createAndSetPoint();
-        p.setAltitudeMode(AltitudeMode.RELATIVE_TO_GROUND);
+        p.setAltitudeMode(AltitudeMode.ABSOLUTE);
         p.addToCoordinates(longitude, latitude, altitude);
 
         //Specify a region inside this placemark.
@@ -178,7 +180,7 @@ public class KmlUtility {
         middlePlacemark.setDescription(node.getNodeName());
 
         Point p = middlePlacemark.createAndSetPoint();
-        p.setAltitudeMode(AltitudeMode.RELATIVE_TO_GROUND);
+        p.setAltitudeMode(AltitudeMode.ABSOLUTE);
         p.addToCoordinates(longitude, latitude, altitude);
 
         //Specify a region inside this placemark.
@@ -238,7 +240,7 @@ public class KmlUtility {
         innerPlacemark.setDescription(node.getNodeName());
 
         Point p = innerPlacemark.createAndSetPoint();
-        p.setAltitudeMode(AltitudeMode.RELATIVE_TO_GROUND);
+        p.setAltitudeMode(AltitudeMode.ABSOLUTE);
         p.addToCoordinates(longitude, latitude, altitude);
 
         //Specify a region inside this placemark.
@@ -358,7 +360,16 @@ public class KmlUtility {
         }else{
             altitude = dist.getAltitude().doubleValue();
         }
-        return altitude;
+
+        double elevation = getElevation(node);
+
+        return (altitude+elevation);
+    }
+
+    public static double getElevation(PhylogenyNode node){
+        double elevation = 0.0;
+        elevation = ELEVATION;
+        return elevation;
     }
 
     /**

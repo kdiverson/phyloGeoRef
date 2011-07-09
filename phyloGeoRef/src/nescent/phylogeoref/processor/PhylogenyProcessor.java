@@ -31,13 +31,14 @@ import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
 
 /**
  * Processes this phylogeny and assigns color and lat/long values to internal nodes.
+ * Also Validates the phylogeny.<br>
  * @author apurv
  */
 public class PhylogenyProcessor {
 
     //To be used in the formula HTU height = a +(n-1)*b
-    private final static long a = 594000;
-    private final static long b = 198000;
+    private final static long a = 198000;
+    private final static long b =  66000;
 
 
     /**

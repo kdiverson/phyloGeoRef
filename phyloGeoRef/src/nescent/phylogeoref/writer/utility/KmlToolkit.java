@@ -38,7 +38,7 @@ import static java.lang.System.out;
  */
 public class KmlToolkit {
 
-    private final static double LINE_WIDTH = 1.75d;
+    private final static double LINE_WIDTH = 1.00d;
     private final static double LINE_WIDTH_MULTIPLY_FACTOR = 3.00d;
 
     private final static int N = 36;
@@ -102,7 +102,7 @@ public class KmlToolkit {
             return;
         }
 
-        for(double f = 0; f<= 1.0; f+=q){
+        for(double f = 0; f< 1.0; f+=q){
 
             Coordinate coordinate = AMath.getIntermediateCoordinate(fromCoord,toCoord,d, f);
             double lat = coordinate.getLatitude();
@@ -111,6 +111,16 @@ public class KmlToolkit {
 
             line.addToCoordinates(lon, lat, alt);
         }
+
+        //Add the final point. Keeping it in the loop does not achieve the value f=1.0 always.
+        double f = 1.0;
+        Coordinate coordinate = AMath.getIntermediateCoordinate(fromCoord,toCoord,d, f);
+        double lat = coordinate.getLatitude();
+        double lon = coordinate.getLongitude();
+        double alt = coordinate.getAltitude();
+
+        line.addToCoordinates(lon, lat, alt);
+
     }
 
     /**

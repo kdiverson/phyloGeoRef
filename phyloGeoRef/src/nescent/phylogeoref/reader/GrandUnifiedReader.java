@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import nescent.phylogeoref.reader.exception.LocationNotFoundException;
+import nescent.phylogeoref.validator.exception.LocationNotFoundException;
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
 import org.forester.phylogeny.data.Distribution;
@@ -33,8 +33,7 @@ import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
 
 /**
  * Reads the raw, skeletal tree structure from a treeFile.
- * Cooks it along with metadata from metaFile
- * Validates the cooked phylogeny.<br>
+ * Cooks it along with metadata from metaFile 
  *
  * @author apurv
  */
@@ -229,7 +228,6 @@ public class GrandUnifiedReader {
             kitchen.cookDish();
             i++;
 
-            validatePhylogeny(phylogeny);
         }
     }
 
@@ -254,39 +252,7 @@ public class GrandUnifiedReader {
         }
         
         return mouldMap;
-    }
-
-       
-    /**
-     * Validates the phylogeny by checking that all external nodes have been assigned coordinates.
-     * @param phy
-     */
-    private void validatePhylogeny(Phylogeny phy){
-
-        Set<PhylogenyNode> extNodeSet = phy.getExternalNodes();
-
-        for(PhylogenyNode node:extNodeSet){
-            try{
-                NodeData nodeData = node.getNodeData();
-                Distribution dist = nodeData.getDistribution();
-                if(dist != null){
-                    if(dist.getLatitude()==null || dist.getLongitude()==null ||dist.getAltitude()==null){
-                        Integer id = node.getNodeId();
-                        throw new LocationNotFoundException(id.toString(), node.getNodeName());
-                    }
-                }
-                else{
-                    Integer id = node.getNodeId();
-                    throw new LocationNotFoundException(id.toString(), node.getNodeName());
-                }
-            }
-            catch(LocationNotFoundException ex){
-                LOGGER.log(Level.INFO, ex.getMessage(), ex);
-            }
-        }
-        
-
-    }
+    }                   
 
 
 }
