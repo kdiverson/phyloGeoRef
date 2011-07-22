@@ -71,6 +71,8 @@ public class KmlUtility {
     //The color of the hypothetical taxonomic unit placemarks.
     private final static String HTU_COLOR="ff0ff9ff";
 
+    private static HTMLParlour parlour = new HTMLParlour();
+
     /**
      * Creates a new folder inside document with given folderName and description.
      * @param document
@@ -118,7 +120,9 @@ public class KmlUtility {
 
         //Create the level 1 placemark. (outermost placemark)
         Placemark outerPlacemark = outerFolder.createAndAddPlacemark();
-        outerPlacemark.setDescription(node.getNodeName());
+
+        String description = parlour.prepareHTMLContent(node, mould);
+        outerPlacemark.setDescription(description);
 
         Point p = outerPlacemark.createAndSetPoint();
         p.setAltitudeMode(AltitudeMode.ABSOLUTE);
@@ -177,7 +181,9 @@ public class KmlUtility {
         //Create the level 2 placemark. (middle placemark)
         Placemark middlePlacemark = middleFolder.createAndAddPlacemark();
         middlePlacemark.setName(getCondensedName(node.getNodeName()));
-        middlePlacemark.setDescription(node.getNodeName());
+
+        String description = parlour.prepareHTMLContent(node, mould);
+        middlePlacemark.setDescription(description);
 
         Point p = middlePlacemark.createAndSetPoint();
         p.setAltitudeMode(AltitudeMode.RELATIVE_TO_GROUND);
@@ -237,7 +243,9 @@ public class KmlUtility {
         //Create the level 2 placemark. (middle placemark)
         Placemark innerPlacemark = innerFolder.createAndAddPlacemark();
         innerPlacemark.setName(node.getNodeName());
-        innerPlacemark.setDescription(node.getNodeName());
+
+        String description = parlour.prepareHTMLContent(node, mould);
+        innerPlacemark.setDescription(description);
 
         Point p = innerPlacemark.createAndSetPoint();
         p.setAltitudeMode(AltitudeMode.RELATIVE_TO_GROUND);

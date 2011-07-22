@@ -59,10 +59,10 @@ public class AdvancedKmlWriter {
     public void createKML(Phylogeny phy, Map mouldMap){
         try {
             if(isAnimated){
-                DynamicKmlPainter dynamicPainter = new DynamicKmlPainter(phy, mouldMap, document);
+                HierarchicalKmlPainter dynamicPainter = new HierarchicalKmlPainter(phy, mouldMap, document);
                 dynamicPainter.paintPhylogeny();
             }else{
-                StaticKmlPainter staticPainter = new StaticKmlPainter(phy, mouldMap, document);
+                LevelwiseKmlPainter staticPainter = new LevelwiseKmlPainter(phy, mouldMap, document);
                 staticPainter.paintPhylogeny();
             }
 
