@@ -23,6 +23,9 @@ package nescent.phylogeoref.writer;
  */
 public interface KmlPainter {
 
+    /**
+     * Paints a phylogeny on a kml.
+     */
     public void paintPhylogeny();
 
 }

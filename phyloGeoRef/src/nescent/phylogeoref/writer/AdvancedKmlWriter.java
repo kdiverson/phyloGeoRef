@@ -22,6 +22,7 @@ import de.micromata.opengis.kml.v_2_2_0.Kml;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import static java.lang.System.out;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -38,42 +39,87 @@ public class AdvancedKmlWriter {
     private String fileName;
     private final Kml kml;
     private Document document;
-    private boolean isAnimated;     //true value draws an animated kml.
+    private PaintStyle style;
     
 
     public AdvancedKmlWriter(String fileName){
         kml = new Kml();
         document = kml.createAndSetDocument().withName("Phylogeny").withOpen(true);
         this.fileName = fileName;
+        this.style = PaintStyle.LEVELWISE;
     }
 
-    public AdvancedKmlWriter(String fileName, boolean isAnimated){
+    public AdvancedKmlWriter(String fileName, PaintStyle style){
         this(fileName);
-        setAnimated(isAnimated);
+        this.style = style;
     }
 
-    public void setAnimated(boolean isAnimated){
-        this.isAnimated = isAnimated;
+    public void setStyle(PaintStyle style){
+        this.style = style;
     }
 
+    /**
+     * Outputs a normal .kml file visualizing the full phylogeny.
+     * @param phy
+     * @param mouldMap 
+     */
     public void createKML(Phylogeny phy, Map mouldMap){
         try {
-            if(isAnimated){
-                HierarchicalKmlPainter dynamicPainter = new HierarchicalKmlPainter(phy, mouldMap, document);
-                dynamicPainter.paintPhylogeny();
-            }else{
-                LevelwiseKmlPainter staticPainter = new LevelwiseKmlPainter(phy, mouldMap, document);
-                staticPainter.paintPhylogeny();
-            }
+            
+            createGraphObject(phy, mouldMap);
 
             //The last thing you need to do it is marhsal the graph object to a file object.
-            kml.marshal(new File(fileName));
+            kml.marshal(new File(fileName+".kml"));            
             
         } catch (FileNotFoundException ex) {
-            LOGGER.log(Level.SEVERE, null, ex);
+            LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
         } catch (IOException ex) {
-            LOGGER.log(Level.SEVERE, null, ex);
+            LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
         }
+    }
+    
+    /**
+     * Outputs a compressed .kmz file visualizing the full phylogeny.
+     * @param phy
+     * @param mouldMap 
+     */
+    public void createKMZ(Phylogeny phy, Map mouldMap){
+        try {
+            
+            createGraphObject(phy, mouldMap);
+
+            //The last thing you need to do it is marhsal the graph object to a file object.            
+            kml.marshalAsKmz( fileName+".kmz", kml);
+            
+        } catch (FileNotFoundException ex) {
+            LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
+        } catch (IOException ex) {
+            LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
+        }
+    }
+    
+    
+    
+    /**
+     * Creates the object representation of the tree.
+     * Also called as the graph object.
+     * 
+     * @param phy the phylogeny which is to be drawn.
+     * @param mouldMap a map which contains a mapping of nodes and their moulds in this phylogeny.
+     */
+    private void createGraphObject(Phylogeny phy, Map mouldMap){
+        
+        if(style == PaintStyle.HIERARCHICAL){                
+                HierarchicalKmlPainter hPainter = new HierarchicalKmlPainter(phy, mouldMap, document);
+                hPainter.paintPhylogeny();
+                
+            }else if(style == PaintStyle.LEVELWISE){                
+                LevelwiseKmlPainter lPainter = new LevelwiseKmlPainter(phy, mouldMap, document);
+                lPainter.paintPhylogeny();
+                
+            }else if(style == PaintStyle.ANIMATED){
+                
+            }        
     }
     
 

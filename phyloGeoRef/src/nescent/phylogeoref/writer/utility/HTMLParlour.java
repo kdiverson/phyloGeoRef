@@ -38,8 +38,7 @@ public class HTMLParlour {
     public String prepareHTMLContent(PhylogenyNode node, PhylogenyMould mould){
         StringBuilder content = new StringBuilder("");
         addHeading(node, content);
-
-        out.println(content);
+        
         return encloseInCDATA(content);
     }
 

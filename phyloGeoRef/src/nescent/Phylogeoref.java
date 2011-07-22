@@ -99,13 +99,13 @@ public class Phylogeoref {
         Map mouldMapArray[] = gur.getMouldMaps();
 
         PhylogenyProcessor processor = new PhylogenyProcessor();
-        AdvancedKmlWriter kmlw = new AdvancedKmlWriter("mojo.kml");
+        AdvancedKmlWriter kmlw = new AdvancedKmlWriter("mojo");
         
         for(int i=0; i<phyArray.length; i++){
 
             processor.phylogenify(phyArray[i]);
 
-            kmlw.createKML(phyArray[i], mouldMapArray[i]);
+            kmlw.createKMZ(phyArray[i], mouldMapArray[i]);
             
         }
     }   
