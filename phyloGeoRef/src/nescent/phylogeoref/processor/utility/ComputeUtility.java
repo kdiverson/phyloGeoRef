@@ -16,6 +16,7 @@
  */
 package nescent.phylogeoref.processor.utility;
 
+import static java.lang.System.out;
 import java.util.Arrays;
 import java.util.Vector;
 
@@ -25,6 +26,14 @@ import java.util.Vector;
  */
 public class ComputeUtility {
     
+    private static Double angleZero = Double.NaN;
+    private static Double angleMax = Double.NaN;
+    
+    /**
+     * Finds the mean coordinate of the vector posVector.
+     * @param posVector
+     * @return 
+     */
     public static double findMeanCoordinate(Vector<Double> posVector){
         double meanPos = 0.0;
         
@@ -78,6 +87,11 @@ public class ComputeUtility {
         Arrays.sort(quad2);
         Arrays.sort(quad3);
         Arrays.sort(quad4);
+        
+        out.println(Arrays.deepToString(quad1));///////////////////////
+        out.println(Arrays.deepToString(quad2));///////////////////////
+        out.println(Arrays.deepToString(quad3));///////////////////////
+        out.println(Arrays.deepToString(quad4));///////////////////////
                 
         
         //Find the two points that are maximally separated.
@@ -91,8 +105,71 @@ public class ComputeUtility {
         Double globalAngleZero = 0.0;
         Double globalAngleMax  = 0.0;
         
-        angularDistance = findMaxDistance12(quad1, quad2, localAngleZero, localAngleMax);
+        angularDistance = findMaxDistance12(quad1, quad2);
         
+        if(angularDistance > maxDistance){
+            maxDistance = angularDistance;
+            globalAngleMax = angleMax;
+            globalAngleZero = angleZero;
+            
+        }
+        
+        angularDistance = findMaxDistance14(quad1, quad4);
+
+        if(angularDistance > maxDistance){
+            maxDistance = angularDistance;
+            globalAngleMax = angleMax;
+            globalAngleZero = angleZero;
+            
+        }
+        
+        angularDistance = findMaxDistance23(quad2, quad3);
+
+        if(angularDistance > maxDistance){
+            maxDistance = angularDistance;
+            globalAngleMax = angleMax;
+            globalAngleZero = angleZero;
+            
+        }
+        
+        angularDistance = findMaxDistance34(quad3, quad4);
+
+        if(angularDistance > maxDistance){
+            maxDistance = angularDistance;
+            globalAngleMax = angleMax;
+            globalAngleZero = angleZero;
+            
+        }
+        
+        angularDistance = findMaxDistance13(quad1, quad3);
+
+        if(angularDistance > maxDistance){
+            maxDistance = angularDistance;
+            globalAngleMax = angleMax;
+            globalAngleZero = angleZero;
+            
+        }
+        
+        angularDistance = findMaxDistance24(quad2, quad4);
+
+        if(angularDistance > maxDistance){
+            maxDistance = angularDistance;
+            globalAngleMax = angleMax;
+            globalAngleZero = angleZero;
+            
+        }
+        
+        angularDistance = findMaxDistanceAA(quad1);
+
+        if(angularDistance > maxDistance){
+            maxDistance = angularDistance;
+            globalAngleMax = angleMax;
+            globalAngleZero = angleZero;
+            
+        }
+        
+        angularDistance = findMaxDistanceAA(quad2);
+
         if(angularDistance > maxDistance){
             maxDistance = angularDistance;
             globalAngleMax = localAngleMax;
@@ -100,90 +177,36 @@ public class ComputeUtility {
             
         }
         
-        angularDistance = findMaxDistance14(quad1, quad4, localAngleZero, localAngleMax);
-        
+        angularDistance = findMaxDistanceAA(quad3);
+
         if(angularDistance > maxDistance){
             maxDistance = angularDistance;
-            globalAngleMax = localAngleMax;
-            globalAngleZero = localAngleZero;
+            globalAngleMax = angleMax;
+            globalAngleZero = angleZero;
             
         }
         
-        angularDistance = findMaxDistance23(quad2, quad3, localAngleZero, localAngleMax);
-        
+        angularDistance = findMaxDistanceAA(quad4);
+
         if(angularDistance > maxDistance){
             maxDistance = angularDistance;
-            globalAngleMax = localAngleMax;
-            globalAngleZero = localAngleZero;
+            globalAngleMax = angleMax;
+            globalAngleZero = angleZero;
             
         }
         
-        angularDistance = findMaxDistance34(quad3, quad4, localAngleZero, localAngleMax);
+        //Transform the coordinates such that globalAngleMax is transformed to 0 with positive direction
+        //in the direction of least distance of globalAngleMax.
+        Vector<Double> transformedPosVector = getTransformedPosVector(posVector, angleZero, angleMax);                        
         
-        if(angularDistance > maxDistance){
-            maxDistance = angularDistance;
-            globalAngleMax = localAngleMax;
-            globalAngleZero = localAngleZero;
-            
-        }
-        
-        angularDistance = findMaxDistance13(quad1, quad3, localAngleZero, localAngleMax);
-        
-        if(angularDistance > maxDistance){
-            maxDistance = angularDistance;
-            globalAngleMax = localAngleMax;
-            globalAngleZero = localAngleZero;
-            
-        }
-        
-        angularDistance = findMaxDistance24(quad2, quad4, localAngleZero, localAngleMax);
-        
-        if(angularDistance > maxDistance){
-            maxDistance = angularDistance;
-            globalAngleMax = localAngleMax;
-            globalAngleZero = localAngleZero;
-            
-        }
-        
-        angularDistance = findMaxDistanceAA(quad1, localAngleZero, localAngleMax);
-        
-        if(angularDistance > maxDistance){
-            maxDistance = angularDistance;
-            globalAngleMax = localAngleMax;
-            globalAngleZero = localAngleZero;
-            
-        }
-        
-        angularDistance = findMaxDistanceAA(quad2, localAngleZero, localAngleMax);
-        
-        if(angularDistance > maxDistance){
-            maxDistance = angularDistance;
-            globalAngleMax = localAngleMax;
-            globalAngleZero = localAngleZero;
-            
-        }
-        
-        angularDistance = findMaxDistanceAA(quad3, localAngleZero, localAngleMax);
-        
-        if(angularDistance > maxDistance){
-            maxDistance = angularDistance;
-            globalAngleMax = localAngleMax;
-            globalAngleZero = localAngleZero;
-            
-        }
-        
-        angularDistance = findMaxDistanceAA(quad4, localAngleZero, localAngleMax);
-        
-        if(angularDistance > maxDistance){
-            maxDistance = angularDistance;
-            globalAngleMax = localAngleMax;
-            globalAngleZero = localAngleZero;
-            
-        }
-        
-        System.err.println("The maximally separated nodes are "+globalAngleZero+", "+globalAngleMax);
         
         return meanPos;
+    }
+    
+    private static Vector<Double> getTransformedPosVector(Vector<Double> posVector, Double globalAngleZero, Double globalAngleMax){
+        Vector<Double> transformedPosVector = new Vector<Double>();
+        
+        return transformedPosVector;
     }
     
     
@@ -213,9 +236,15 @@ public class ComputeUtility {
      * @param angleMax
      * @return 
      */
-    private static Double findMaxDistance12(Double[] quad1, Double[] quad2, Double angleZero, Double angleMax){
+    private static Double findMaxDistance12(Double[] quad1, Double[] quad2){
         
-        Double maxDistance = 0.0;
+        if(quad1.length == 0 || quad2.length == 0){
+            angleZero = Double.NaN;
+            angleMax = Double.NaN;
+            return Double.MIN_VALUE;
+        }
+        
+        Double maxDistance = Double.MIN_VALUE;
         angleZero = quad1[quad1.length-1];
         angleMax = quad2[0];
         
@@ -233,9 +262,15 @@ public class ComputeUtility {
      * @param angleMax
      * @return 
      */
-    private static Double findMaxDistance14(Double[] quad1, Double[] quad4, Double angleZero, Double angleMax){
+    private static Double findMaxDistance14(Double[] quad1, Double[] quad4){
         
-        Double maxDistance = 0.0;
+        if(quad1.length == 0 || quad4.length == 0){
+            angleZero = Double.NaN;
+            angleMax = Double.NaN;
+            return Double.MIN_VALUE;
+        }
+        
+        Double maxDistance = Double.MIN_VALUE;
         angleZero = quad1[0];
         angleMax = quad4[quad4.length-1];
         
@@ -252,9 +287,15 @@ public class ComputeUtility {
      * @param angleMax
      * @return 
      */
-    private static Double findMaxDistance34(Double[] quad3, Double[] quad4, Double angleZero, Double angleMax){
+    private static Double findMaxDistance34(Double[] quad3, Double[] quad4){
         
-        Double maxDistance = 0.0;
+        if(quad3.length == 0 || quad4.length == 0){
+            angleZero = Double.NaN;
+            angleMax = Double.NaN;
+            return Double.MIN_VALUE;
+        }
+        
+        Double maxDistance = Double.MIN_VALUE;
         angleZero = quad3[quad3.length-1];
         angleMax = quad4[0];
         
@@ -271,10 +312,16 @@ public class ComputeUtility {
      * @param angleMax
      * @return 
      */
-    private static Double findMaxDistance23(Double[] quad2, Double[] quad3, Double angleZero, Double angleMax){
+    private static Double findMaxDistance23(Double[] quad2, Double[] quad3){
         
-        Double maxDistance = 0.0;
-        angleZero = quad2[0];
+        if(quad2.length == 0 || quad3.length == 0){
+            angleZero = Double.NaN;
+            angleMax = Double.NaN;
+            return Double.MIN_VALUE;
+        }
+        
+        Double maxDistance = Double.MIN_VALUE;
+        angleZero = quad2[quad2.length-1];
         angleMax = quad3[0];
         
         maxDistance = findMinAngularDistance(angleZero, angleMax);
@@ -291,9 +338,16 @@ public class ComputeUtility {
      * @param angleMax
      * @return 
      */
-    private static Double findMaxDistance13(Double[] quad1, Double[] quad3, Double angleZero, Double angleMax){
+    private static Double findMaxDistance13(Double[] quad1, Double[] quad3){
         
-        Double maxDistance = 0.0;
+        
+        if(quad1.length == 0 || quad3.length == 0){
+            angleZero = Double.NaN;
+            angleMax = Double.NaN;
+            return Double.MIN_VALUE;
+        }
+        
+        Double maxDistance = Double.MIN_VALUE;
         angleZero = quad1[0];
         angleMax = quad3[0];                
         
@@ -311,6 +365,7 @@ public class ComputeUtility {
         
         maxDistance = findMinAngularDistance(angleZero, angleMax);
         
+        
         return maxDistance;
     }
     
@@ -323,12 +378,19 @@ public class ComputeUtility {
      * @param angleMax
      * @return 
      */
-    private static Double findMaxDistance24(Double[] quad2, Double[] quad4, Double angleZero, Double angleMax){
-        return findMaxDistance13(quad2, quad4, angleZero, angleMax);
+    private static Double findMaxDistance24(Double[] quad2, Double[] quad4){
+        
+        if(quad2.length == 0 || quad4.length == 0){
+            angleZero = Double.NaN;
+            angleMax = Double.NaN;
+            return Double.MIN_VALUE;
+        }
+        
+        return findMaxDistance13(quad2, quad4);
     }        
     
     /**
-     * Finds the closest value in quad that is closest in magnitude to angle.
+     * Finds the closest value in quad that is closest in distance to angle.
      * @param angle
      * @param quad
      * @return 
@@ -338,19 +400,43 @@ public class ComputeUtility {
         int l = 0;
         int u = quad.length-1;
         int mid = (l+u)/2;
-        while(l<u){
+        while(l<=u){
+            
             mid = (l+u)/2;
             if(angle> quad[mid]){
-                l=mid;
+                l=mid+1;
                 
             }else if(angle < quad[mid]){
-                u=mid;
+                u=mid-1;
                 
             }else{
-                break;
+                break;                
             }
         }
+        mid = (l+u)/2;
         closestAngle = quad[mid];
+        
+        
+        //IMP: The closestAngle obtained above is the angle just smaller than angle in the array quad.
+        //     As an additional correction we need to check which among quad[mid] and quad[mid+1] is closer to angle.
+        //     Also the case when size of quad is 1 is also handled.
+        //Begin Correction
+        if(mid+1 < quad.length){
+            Double closestAngle1 = quad[mid];
+            Double closestAngle2 = quad[mid+1];
+            Double distance1 = findMinAngularDistance(closestAngle1, angle);
+            Double distance2 = findMinAngularDistance(closestAngle2, angle);
+            if(distance1 < distance2){
+                closestAngle = closestAngle1;
+                
+            }else{
+                closestAngle = closestAngle2;
+                
+            }
+        }        
+        //End Correction
+        
+        
         return closestAngle;
     }
     
@@ -374,10 +460,17 @@ public class ComputeUtility {
      * @param angleMax
      * @return 
      */
-    private static Double findMaxDistanceAA(Double[] quadA, Double angleZero, Double angleMax){
+    private static Double findMaxDistanceAA(Double[] quadA){
+        
+        if(quadA.length == 0){
+            angleZero = Double.NaN;
+            angleMax = Double.NaN;
+            return Double.MIN_VALUE;
+        }
+        
         Double maxDistance = 0.0;
-        angleZero = quadA[0];
-        angleMax = quadA[quadA.length-1];
+        angleZero = quadA[0].doubleValue();
+        angleMax = quadA[quadA.length-1].doubleValue();
         
         maxDistance = findMinAngularDistance(angleZero, angleMax);
         
