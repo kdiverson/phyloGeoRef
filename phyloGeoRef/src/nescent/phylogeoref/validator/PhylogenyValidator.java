@@ -20,13 +20,16 @@ package nescent.phylogeoref.validator;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import nescent.phylogeoref.validator.exception.InvalidEdgeLengthException;
 import nescent.phylogeoref.validator.exception.InvalidLatitudeException;
 import nescent.phylogeoref.validator.exception.InvalidLongitudeException;
 import nescent.phylogeoref.validator.exception.LocationNotFoundException;
+import nescent.phylogeoref.validator.exception.MissingEdgeLengthException;
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
 import org.forester.phylogeny.data.Distribution;
 import org.forester.phylogeny.data.NodeData;
+import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
 
 /**
  * Validates a phylogeny.
@@ -35,12 +38,35 @@ import org.forester.phylogeny.data.NodeData;
 public class PhylogenyValidator {
 
     private final static Logger LOGGER = Logger.getLogger("nescent");
+    
+    /**
+     * A true value denotes a tree with edge lengths specified is to be validated.
+     */
+    private boolean weightedTree;
+    
+    public PhylogenyValidator(boolean weightedTree){
+        this.weightedTree = weightedTree;
+    }
 
     /**
      * Validates the phylogeny by checking that all external nodes have been assigned coordinates.
      * @param phy
      */
     public void validatePhylogeny(Phylogeny phy){
+        
+        checkExternalNodeLocations(phy);
+        
+        if(weightedTree){
+            checkEdgeLengths(phy);
+        }        
+    }
+
+
+    /**
+     * Checks to see if all the external nodes have been assigned valid locations.
+     * @param phy 
+     */
+    private void checkExternalNodeLocations(Phylogeny phy){
 
         Set<PhylogenyNode> extNodeSet = phy.getExternalNodes();
 
@@ -85,5 +111,45 @@ public class PhylogenyValidator {
             }
         }
     }
+    
+    
+    /**
+     * Checks whether a weighted tree has all its edge lengths specified.
+     * @param phylogeny 
+     */
+    private void checkEdgeLengths(Phylogeny phylogeny){
+        
+        for( PhylogenyNodeIterator it = phylogeny.iteratorPostorder(); it.hasNext();) {
+                        
+            try{
+                PhylogenyNode node = it.next();
+                double edgeLength = node.getDistanceToParent();
+                
+                //Edge length from the root node is undefined.
+                if(node.isRoot()){
+                    continue;
+                }
+
+                if(edgeLength <= 0.0){
+                    String name = node.getNodeName();
+                    Integer id = node.getNodeId();
+
+                    if(edgeLength == 0.0){
+                        throw new MissingEdgeLengthException(id.toString(), name);   
+                        
+                    }else if(edgeLength < 0 ){
+                        throw new InvalidEdgeLengthException(id.toString(), name);
+                    }
+                }
+                                
+            }catch (MissingEdgeLengthException ex){
+                LOGGER.log(Level.SEVERE,ex.getMessage(),ex);
+                
+            }catch (InvalidEdgeLengthException ex){
+                LOGGER.log(Level.SEVERE,ex.getMessage(),ex);
+                
+            }
+        }
+    }    
 
 }

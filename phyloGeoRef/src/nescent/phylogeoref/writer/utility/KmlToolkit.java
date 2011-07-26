@@ -41,7 +41,7 @@ public class KmlToolkit {
     private final static double LINE_WIDTH = 1.00d;
     private final static double LINE_WIDTH_MULTIPLY_FACTOR = 3.00d;
 
-    private final static int N = 36;
+    private final static int N = 72;
     private final static double ARC_QUANTUM = Math.PI/N;
 
 

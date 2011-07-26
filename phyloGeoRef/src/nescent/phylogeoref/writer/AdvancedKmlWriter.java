@@ -36,21 +36,19 @@ public class AdvancedKmlWriter {
 
     private final static Logger LOGGER = Logger.getLogger("nescent");
 
-    private String fileName;
     private final Kml kml;
     private Document document;
     private PaintStyle style;
     
 
-    public AdvancedKmlWriter(String fileName){
+    public AdvancedKmlWriter(){
         kml = new Kml();
         document = kml.createAndSetDocument().withName("Phylogeny").withOpen(true);
-        this.fileName = fileName;
         this.style = PaintStyle.LEVELWISE;
     }
 
-    public AdvancedKmlWriter(String fileName, PaintStyle style){
-        this(fileName);
+    public AdvancedKmlWriter( PaintStyle style){
+        this();
         this.style = style;
     }
 
@@ -62,8 +60,9 @@ public class AdvancedKmlWriter {
      * Outputs a normal .kml file visualizing the full phylogeny.
      * @param phy
      * @param mouldMap 
+     * @param fileName
      */
-    public void createKML(Phylogeny phy, Map mouldMap){
+    public void createKML(Phylogeny phy, Map mouldMap, String fileName){
         try {
             
             createGraphObject(phy, mouldMap);
@@ -82,8 +81,9 @@ public class AdvancedKmlWriter {
      * Outputs a compressed .kmz file visualizing the full phylogeny.
      * @param phy
      * @param mouldMap 
+     * @param fileName
      */
-    public void createKMZ(Phylogeny phy, Map mouldMap){
+    public void createKMZ(Phylogeny phy, Map mouldMap, String fileName){
         try {
             
             createGraphObject(phy, mouldMap);
@@ -110,16 +110,16 @@ public class AdvancedKmlWriter {
     private void createGraphObject(Phylogeny phy, Map mouldMap){
         
         if(style == PaintStyle.HIERARCHICAL){                
-                HierarchicalKmlPainter hPainter = new HierarchicalKmlPainter(phy, mouldMap, document);
-                hPainter.paintPhylogeny();
+            HierarchicalKmlPainter hPainter = new HierarchicalKmlPainter(phy, mouldMap, document);
+            hPainter.paintPhylogeny();
                 
-            }else if(style == PaintStyle.LEVELWISE){                
-                LevelwiseKmlPainter lPainter = new LevelwiseKmlPainter(phy, mouldMap, document);
-                lPainter.paintPhylogeny();
+        }else if(style == PaintStyle.LEVELWISE){
+            LevelwiseKmlPainter lPainter = new LevelwiseKmlPainter(phy, mouldMap, document);
+            lPainter.paintPhylogeny();
                 
-            }else if(style == PaintStyle.ANIMATED){
+        }else if(style == PaintStyle.ANIMATED){
                 
-            }        
+        }        
     }
     
 

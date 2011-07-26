@@ -24,6 +24,7 @@ import de.micromata.opengis.kml.v_2_2_0.Document;
 import de.micromata.opengis.kml.v_2_2_0.Folder;
 import de.micromata.opengis.kml.v_2_2_0.Icon;
 import de.micromata.opengis.kml.v_2_2_0.IconStyle;
+import de.micromata.opengis.kml.v_2_2_0.LabelStyle;
 import de.micromata.opengis.kml.v_2_2_0.LatLonAltBox;
 import de.micromata.opengis.kml.v_2_2_0.LineString;
 import de.micromata.opengis.kml.v_2_2_0.LineStyle;
@@ -49,28 +50,9 @@ import org.forester.phylogeny.data.NodeData;
  * Provides the necessary utility functions while painting a kml.
  * @author apurv
  */
-public class KmlUtility {
+public class KmlUtility implements KmlConstants{
 
-    private final static double UNDEFINED = -1.0d;
-
-    private final static double MIN_LOD_PIXELS_LEVEL_OUTER = 0;
-    private final static double MAX_LOD_PIXELS_LEVEL_OUTER = 127;
     
-    private final static double MIN_LOD_PIXELS_LEVEL_MIDDLE = 128;
-    private final static double MAX_LOD_PIXELS_LEVEL_MIDDLE = 1024;
-
-    private final static double MIN_LOD_PIXELS_LEVEL_INTERNAL = 1025;
-    private final static double MAX_LOD_PIXELS_LEVEL_INTERNAL = -1;
-    
-    private final static double MIN_FADE_EXTENT = 0;
-    private final static double MAX_FADE_EXTENT = 0;
-
-    private final static double DELTA_L = 2.5;
-    private final static double ELEVATION = 0;
-
-    //The color of the hypothetical taxonomic unit placemarks.
-    private final static String HTU_COLOR="ff0ff9ff";
-
     private static HTMLParlour parlour = new HTMLParlour();
 
     /**
@@ -141,7 +123,7 @@ public class KmlUtility {
 
         //Specify the icon with this placemark.
         Icon icon = iconStyle.createAndSetIcon();
-        icon.setHref("http://maps.google.com/mapfiles/kml/paddle/wht-blank.png");
+        icon.setHref(PLACEMARK_ICON_HREF);
 
         LatLonAltBox latlonBox = outerRegion.createAndSetLatLonAltBox();
         latlonBox.setEast(longitude + DELTA_L);
@@ -202,8 +184,11 @@ public class KmlUtility {
 
         //Specify the icon with this placemark.
         Icon icon = iconStyle.createAndSetIcon();
-        icon.setHref("http://maps.google.com/mapfiles/kml/paddle/wht-blank.png");
+        icon.setHref(PLACEMARK_ICON_HREF);
         icon.setRefreshInterval(4);
+        
+        LabelStyle labelStyle = style.createAndSetLabelStyle();        
+        labelStyle.setScale(0.75);
 
         LatLonAltBox latlonBox = middleRegion.createAndSetLatLonAltBox();
         latlonBox.setEast(longitude + DELTA_L);
@@ -257,7 +242,7 @@ public class KmlUtility {
         //Create a style map.
         StyleMap styleMap = innerPlacemark.createAndAddStyleMap();
 
-        //Create the style for normal edge.
+        //Create the style for normal state.
         Pair pNormal = styleMap.createAndAddPair();
         Style normalStyle = pNormal.createAndSetStyle();
         pNormal.setKey(StyleState.NORMAL);
@@ -268,9 +253,16 @@ public class KmlUtility {
         normalIconStyle.setScale(1.00);
         //Specify the icon with this placemark.
         Icon normalIcon = normalIconStyle.createAndSetIcon();
-        normalIcon.setHref("http://maps.google.com/mapfiles/kml/paddle/wht-blank.png");
+        normalIcon.setHref(PLACEMARK_ICON_HREF);
         
-        //Create the style for highlighted edge.
+        LabelStyle normalLabelStyle = normalStyle.createAndSetLabelStyle();
+        normalLabelStyle.setColor(normalColor);
+        normalLabelStyle.setColorMode(ColorMode.NORMAL);
+        normalLabelStyle.setScale(1.0);
+        
+        
+        
+        //Create the style for highlighted state.
         Pair pHighlight = styleMap.createAndAddPair();
         Style highlightStyle = pHighlight.createAndSetStyle();
         pHighlight.setKey(StyleState.HIGHLIGHT);
@@ -281,8 +273,15 @@ public class KmlUtility {
         highlightIconStyle.setScale(2.00);
         //Specify the icon with this placemark.
         Icon highlightIcon = highlightIconStyle.createAndSetIcon();
-        highlightIcon.setHref("http://maps.google.com/mapfiles/kml/paddle/wht-blank.png");
-
+        highlightIcon.setHref(PLACEMARK_ICON_HREF);
+        
+        
+        LabelStyle highlightLabelStyle = highlightStyle.createAndSetLabelStyle();
+        highlightLabelStyle.setColor(highlightColor);
+        highlightLabelStyle.setColorMode(ColorMode.NORMAL);
+        highlightLabelStyle.setScale(1.5);     
+        
+        
         LatLonAltBox latlonBox = innerRegion.createAndSetLatLonAltBox();
         latlonBox.setEast(longitude + DELTA_L);
         latlonBox.setWest(longitude - DELTA_L);
@@ -404,6 +403,16 @@ public class KmlUtility {
                 decimalToHex(c.getRed());
         return color;
     }
+    
+    /**
+     * Gets the lighter shade corresponding to the given color.
+     * @param color
+     * @return 
+     */
+    private static String getLighterShade(String color){
+        String lighterShade = color.substring(2);
+        return "dd"+lighterShade;
+    }
 
 
     /**
@@ -509,7 +518,7 @@ public class KmlUtility {
 
         //Specify the icon with this placemark.
         Icon icon = iconStyle.createAndSetIcon();
-        icon.setHref("http://maps.google.com/mapfiles/kml/shapes/shaded_dot.png");
+        icon.setHref(HTU_ICON_HREF);
         icon.setRefreshInterval(4);
         icon.setViewRefreshMode(ViewRefreshMode.NEVER);
         icon.setViewRefreshTime(4);
@@ -529,8 +538,7 @@ public class KmlUtility {
         LineString line = KmlToolkit.drawNewStyledLine(folder, childColor);
         
         createVerticalEdge(line, parentNode, childNode);
-        createCurvedEdge(line, parentNode, childNode);
-        //createVerticalEdgeFromParent(line, parentNode, childNode);
+        createCurvedEdge(line, parentNode, childNode);        
     }
 
     

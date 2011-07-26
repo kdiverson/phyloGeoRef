@@ -25,6 +25,7 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
+import nescent.phylogeoref.processor.CPhylogenyProcessor;
 import nescent.phylogeoref.processor.PhylogenyProcessor;
 import nescent.phylogeoref.reader.GrandUnifiedReader;
 import nescent.phylogeoref.writer.AdvancedKmlWriter;
@@ -99,13 +100,13 @@ public class Phylogeoref {
         Map mouldMapArray[] = gur.getMouldMaps();
 
         PhylogenyProcessor processor = new PhylogenyProcessor();
-        AdvancedKmlWriter kmlw = new AdvancedKmlWriter("mojo");
+        AdvancedKmlWriter kmlw = new AdvancedKmlWriter();
         
         for(int i=0; i<phyArray.length; i++){
 
             processor.phylogenify(phyArray[i]);
 
-            kmlw.createKMZ(phyArray[i], mouldMapArray[i]);
+            kmlw.createKMZ(phyArray[i], mouldMapArray[i], "mojo");
             
         }
     }   
