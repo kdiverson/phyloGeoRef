@@ -56,8 +56,8 @@ public class ComputeUtilityTest {
         posVector.add(-40.0);
         posVector.add(100.0);
 
-        double expResult = 0.0;
-        double result = ComputeUtility.findMeanCoordinate(posVector);
+        double expResult = 18.0;
+        double result = ComputeUtility.findMeanPosition(posVector);
         assertEquals(expResult, result, 0.0);
         
         //fail("The test case is a prototype.");
@@ -84,8 +84,8 @@ public class ComputeUtilityTest {
         posVector.add(-105.0);
         posVector.add(140.0);
 
-        double expResult = 0.0;
-        double result = ComputeUtility.findMeanCoordinate(posVector);
+        double expResult = -19.545454545454547;
+        double result = ComputeUtility.findMeanPosition(posVector);
         assertEquals(expResult, result, 0.0);
         
         //fail("The test case is a prototype.");
@@ -111,8 +111,8 @@ public class ComputeUtilityTest {
         posVector.add(-120.0);
         posVector.add(160.0);
 
-        double expResult = 0.0;
-        double result = ComputeUtility.findMeanCoordinate(posVector);
+        double expResult = 152.22222222222223;
+        double result = ComputeUtility.findMeanPosition(posVector);
         assertEquals(expResult, result, 0.0);
         
         //fail("The test case is a prototype.");

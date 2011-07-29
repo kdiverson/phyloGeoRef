@@ -147,7 +147,7 @@ public class CPhylogenyProcessor {
         if(numValidChildren == 0){
             meanLat = UNDEFINED;
         }else{
-            meanLat = ComputeUtility.findMeanCoordinate(latVector);
+            meanLat = ComputeUtility.findMeanPosition(latVector);
         }
 
         return meanLat;
@@ -191,7 +191,7 @@ public class CPhylogenyProcessor {
         if(numValidChildren == 0){
             meanLon = UNDEFINED;
         }else{
-            meanLon = ComputeUtility.findMeanCoordinate(lonVector);
+            meanLon = ComputeUtility.findMeanPosition(lonVector);
         }
 
         return meanLon;

@@ -25,61 +25,84 @@ import java.util.Vector;
  * @author apurv
  */
 public class ComputeUtility {
-    
+    /**
+     * Temporary variable for storing the immediate result of calculations.
+     */
     private static Double angleZero = Double.NaN;
-    private static Double angleMax = Double.NaN;
     
     /**
-     * Finds the mean coordinate of the vector posVector.
+     * Temporary variable for storing the immediate result of calculations.
+     */
+    private static Double angleMax = Double.NaN;
+    
+    
+    /**
+     * Finds the mean position.
      * @param posVector
      * @return 
      */
-    public static double findMeanCoordinate(Vector<Double> posVector){
+    public static double findMeanPosition(Vector<Double> posVector){
+        return computeMeanPosition(posVector, null);
+    }
+    
+    /**
+     * Finds the weighted mean position.
+     * @param posVector
+     * @param wVector the weight vector.
+     * @return 
+     */
+    public static double findMeanPosition(Vector<Double> posVector, Vector<Double> timeVector){
+        double meanPos = 0.0;
+        Vector<Double> wtVector = getWeightVector(timeVector);
+        meanPos = computeMeanPosition(posVector, wtVector);
+        return meanPos;
+    }
+              
+    
+    /**
+     * Computes the mean coordinate of the vector posVector.
+     * @param posVector
+     * @return 
+     */
+    private static double computeMeanPosition(Vector<Double> posVector, Vector<Double> wVector){
         double meanPos = 0.0;
         
         //Create 4 buckets, 1 for each quadrant of the circle.
         
-        Vector<Double> bucket1 = new Vector<Double>();      //    0  <= x  <  90
-        Vector<Double> bucket2 = new Vector<Double>();      //  -90  <= x  <   0
-        Vector<Double> bucket3 = new Vector<Double>();      // -180  <= x  < -90
-        Vector<Double> bucket4 = new Vector<Double>();      //   90  <= x  < 180
+        Vector bucket[] = new Vector[5];
+        
+        bucket[0] = null;                      //This is a dummy bucket,just to match the index with the exact quad. No.
+        bucket[1] = new Vector<Double>();      //    0  <= x  <  90
+        bucket[2] = new Vector<Double>();      //   90  <= x  < 180
+        bucket[3] = new Vector<Double>();      // -180  <= x  < -90
+        bucket[4] = new Vector<Double>();      //  -90  <= x  <   0
         
         //Iterate over the posVector and classify each of the positions in respective buckets.
         
         for(Double position:posVector){
             
-            if(position>=0){
-                
-                if(position > 90){
-                    bucket4.add(position);
-                    
-                }else{
-                    bucket1.add(position);
-                }                
-                
-            }else if(position<0){
-                
-                if(position < -90){
-                    bucket3.add(position);
-                    
-                }else{
-                    bucket2.add(position);
-                }
+            //Change 180.0 to -180.0 so that there is no ambiguity.
+            if(position == 180){
+                posVector.remove(position);
+                posVector.add(-180.0);
             }
-        }
-        
+            
+            int qNo = getQuadNumber(position);
+            bucket[qNo].add(position);            
+            
+        }        
         
         //Create arrays out of the 4 buckets.
         
-        Double[] quad1 = new Double[bucket1.size()];
-        Double[] quad2 = new Double[bucket2.size()];
-        Double[] quad3 = new Double[bucket3.size()];
-        Double[] quad4 = new Double[bucket4.size()];
+        Double[] quad1 = new Double[bucket[1].size()];
+        Double[] quad2 = new Double[bucket[2].size()];
+        Double[] quad3 = new Double[bucket[3].size()];
+        Double[] quad4 = new Double[bucket[4].size()];
         
-        bucket1.toArray(quad1);
-        bucket2.toArray(quad2);
-        bucket3.toArray(quad3);
-        bucket4.toArray(quad4);
+        bucket[1].toArray(quad1);
+        bucket[2].toArray(quad2);
+        bucket[3].toArray(quad3);
+        bucket[4].toArray(quad4);
         
         
         // Sort the arrays.
@@ -98,10 +121,11 @@ public class ComputeUtility {
         Double maxDistance = Double.MIN_VALUE;
         Double angularDistance = -1.0;
         
-        //The angle of two points that are maximally separated.
+        //The angle of two points that are maximally separated in any single comparison.
         Double localAngleZero = 0.0;
         Double localAngleMax  = 0.0;
         
+        //The angle of two points that are maximally separated across all comparison.
         Double globalAngleZero = 0.0;
         Double globalAngleMax  = 0.0;
         
@@ -195,18 +219,141 @@ public class ComputeUtility {
             
         }
         
+        out.println("Max separation"+globalAngleZero+", "+globalAngleMax+" ... "+maxDistance);
+        
         //Transform the coordinates such that globalAngleMax is transformed to 0 with positive direction
-        //in the direction of least distance of globalAngleMax.
-        Vector<Double> transformedPosVector = getTransformedPosVector(posVector, angleZero, angleMax);                        
+        //in the direction of least distance of globalAngleMax.        
         
+        Vector<Double> tPosVector = null;
         
+        if (maxDistance == 180.0){
+            tPosVector = transformPosVector(posVector, globalAngleZero, globalAngleMax);
+            
+        }else{
+            tPosVector = transformPosVector(posVector, globalAngleZero, globalAngleMax, maxDistance);
+            
+        }
+        
+        double transMeanPos = 0.0;
+        //Compute the mean in the transformed frame of reference.
+        if(wVector == null){
+            transMeanPos = computeMean(tPosVector);
+            out.println("Trans mean pos = "+transMeanPos);/////////////////////////////////////
+            
+        }else{
+            transMeanPos = computeWeightedMean(tPosVector, wVector);
+            
+        }
+        
+        //Transform back
+        meanPos = unTransform(transMeanPos, globalAngleZero, globalAngleMax, maxDistance);
+        
+        out.println();
+        out.println(Arrays.deepToString(posVector.toArray()));
+        out.println(Arrays.deepToString(tPosVector.toArray()));
+        out.println("mean position is "+meanPos);
         return meanPos;
     }
     
-    private static Vector<Double> getTransformedPosVector(Vector<Double> posVector, Double globalAngleZero, Double globalAngleMax){
-        Vector<Double> transformedPosVector = new Vector<Double>();
+    
+    /**
+     * Transforms the positions in posVector by placing the origin at gAngleZero with
+     * positive direction towards gAngleMax.
+     * @param posVector
+     * @param gAngleZero
+     * @param gAngleMax
+     * @param maxDistance should be < 180.0
+     * @return 
+     */
+    private static Vector<Double> transformPosVector(Vector<Double> posVector, Double gAngleZero, Double gAngleMax,
+                                                        Double maxDistance){
+        Vector<Double> tPosVector = new Vector<Double>();
         
-        return transformedPosVector;
+        for(Double position:posVector){
+            double d1 = findMinAngularDistance(gAngleZero, position);
+            double d2 = findMinAngularDistance(gAngleMax, position);
+            
+            if(d1+d2 == maxDistance){
+                tPosVector.add(d1);
+                
+            }else{
+                tPosVector.add(-1.0*d1);
+            }
+        }
+        
+        return tPosVector;
+    }
+    
+    /**
+     * Transforms the positions in posVector by placing the origin at gAngleZero with
+     * positive direction towards gAngleMax.
+     * 
+     * This assumes maxDistance = 180.0
+     * 
+     * @param posVector
+     * @param gAngleZero
+     * @param gAngleMax
+     * @return 
+     */
+    private static Vector<Double> transformPosVector(Vector<Double> posVector, Double gAngleZero, Double gAngleMax){
+        
+        Vector<Double> tPosVector = new Vector<Double>();
+        
+        posVector.remove(-10.0);
+        
+        int sgn = getSignOf180(posVector, gAngleZero, gAngleMax);
+        
+        for(Double position:posVector){
+            double d = findMinAngularDistance(gAngleZero, position);            
+            
+            if(position.compareTo(gAngleMax) == 0){
+                tPosVector.add(sgn*Math.abs(d));
+            }
+            else if(position >= gAngleZero || position < gAngleMax){
+                tPosVector.add(d);
+                
+            }else if(position < gAngleZero || position > gAngleMax){
+                tPosVector.add(-1.0 * d);
+                
+            }
+        }
+        
+        return tPosVector;
+    }
+    
+    /**
+     * Finds the sign of gAngleMax in transformed coordinates when maxDistance = 180.0
+     * @param posVector
+     * @param gAngleZero
+     * @param gAngleMax
+     * @return 
+     */
+    private static int getSignOf180(Vector<Double> posVector, Double gAngleZero, Double gAngleMax){
+        int sgn = 1;
+        int positives = 0;
+        int negatives = 0;
+        
+        for(Double position:posVector){
+            if(position.compareTo(gAngleZero)==0 || position.compareTo(gAngleMax)==0){
+                continue;
+            }
+            else if(position > gAngleZero || position < gAngleMax){
+                positives++;
+                
+            }else if(position < gAngleZero || position > gAngleMax){
+                negatives++;
+            }
+        }
+        
+        out.println(positives);//////////////////////////////////////////////////////////////////////////////
+        out.println(negatives);//////////////////////////////////////////////////////////////////////////////
+        
+        if(positives>negatives){
+            sgn =  1;
+        }else{
+            sgn = -1;
+        }
+        return sgn;
     }
     
     
@@ -476,7 +623,173 @@ public class ComputeUtility {
         
         return maxDistance;
     }
+    
+    
+    
+    /**
+     * Finds the quadrant in which this position belongs.
+     * @param position
+     * @return 
+     */
+    private static int getQuadNumber(Double position){
+       int qNo = -1;
+       int[] constant = new int[]{360,0,0};
+       int sgn = (int) Math.signum(position);
+       double absPosition = position + constant[sgn+1];
+       qNo = (int) (absPosition/90.0);       
+       
+       return qNo+1;
+    }
+    
+    /**
+     * Finds the angle obtained by moving a distance of delta_x from x in a clockwise direction
+     * if delta_x is positive and anticlockwise direction is delta_x is negative.
+     * @param x
+     * @param delta_x
+     * @return the transformed angle obtained after clockwise addition.
+     */
+    private static Double add(Double x, Double delta_x){
+        Double y = null;
+        if(delta_x > 0){
+            y = addClockwise(x, delta_x);
+            
+        }else if(delta_x < 0){
+            y = addAntiClockwise(x, Math.abs(delta_x));
+            
+        }else{
+            y = x;
+        }
+        return y;        
+    }
+    
+    /**
+     * Finds the angle obtained by moving a distance of delta_x from x in a clockwise direction.
+     * @param x
+     * @param delta_x magnitude of the clockwise shift.
+     * @return the transformed angle obtained after clockwise addition.
+     */
+    private static Double addClockwise(Double x, Double delta_x){
+        Double y = null;
+        delta_x = delta_x % 360;
+        
+        if(x+delta_x>180.0){
+            y = (x+delta_x) - 360;
+            
+        }else{
+            y = x + delta_x;
+            
+        }
+        return y;
+    }
+    
+    /**
+     * Finds the angle obtained by moving a distance of delta_x from x in a anti-clockwise direction.
+     * @param x
+     * @param delta_x magnitude of the anti-clockwise shift.
+     * @return the transformed angle obtained after anti-clockwise addition.
+     */
+    private static Double addAntiClockwise(Double x, Double delta_x){
+        Double y = null;
+        delta_x = delta_x % 360;
+        
+        if(x-delta_x<-180.0){
+            y = (x - delta_x) + 360;
+                    
+        }else{
+            y = x - delta_x;
+            
+        }
+        return y;
+    }
+    
+    /**
+     * Computes the normal mean.
+     * @param tPosVector
+     * @return 
+     */
+    private static double computeMean(Vector<Double> tPosVector) {
+        double meanPos = 0.0;
+        double sum = 0.0;
+        int n = 0;
+        for(Double position: tPosVector){
+            sum+=position;
+            n++;
+        }
+        meanPos = sum/n;
+        return meanPos;
+    }
+    
 
-
+    /**
+     * Computes the weighted mean.
+     * @param tPosVector
+     * @param wVector
+     * @return 
+     */
+    private static double computeWeightedMean(Vector<Double> tPosVector, Vector<Double> wVector) {
+        double meanPos = 0.0;
+        double sum = 0.0;
+        double sumW = 0.0;
+        
+        for(int i=0; i<=tPosVector.size();i++){
+            Double position = tPosVector.elementAt(i);
+            Double weight = wVector.elementAt(i);
+            sum+= position*weight;
+            sumW+=weight;
+        }
+        meanPos = sum/sumW;
+        return meanPos;
+    }
+    
+    
+    /**
+     * Normalizes the tVector.
+     * @param tVector
+     * @return 
+     */
+    private static Vector<Double> getWeightVector(Vector<Double> tVector){
+        Vector<Double> wVector = new Vector<Double>();
+        for(Double position:tVector){
+            wVector.add(1.0/position);
+        }
+        return wVector;
+    }
+    
+    /**
+     * Does the reverse transformation of an angle.
+     * @param tMeanPos
+     * @param gAngleZero
+     * @param gAngleMax
+     * @param maxDistance
+     * @return 
+     */
+    private static double unTransform(Double tMeanPos, Double gAngleZero, Double gAngleMax, Double maxDistance){
+        double meanPos = 0.0;
+        if(maxDistance == 180.0){
+            meanPos = add(gAngleZero, tMeanPos);
+            
+        }else{
+            //Find the candidate mean postions.
+            double cMean1 = addClockwise(gAngleZero, Math.abs(tMeanPos));
+            double cMean2 = addAntiClockwise(gAngleZero, Math.abs(tMeanPos));
+            
+            //Find which one lies between gAngleZero and gAngleMax
+            double d1 = findMinAngularDistance(gAngleZero, cMean1);
+            double d2 = findMinAngularDistance(cMean1, gAngleMax);
+            
+            if(d1+d2 == maxDistance){
+                meanPos = cMean1;
+            }
+            
+            d1 = findMinAngularDistance(gAngleZero, cMean2);
+            d2 = findMinAngularDistance(cMean2, gAngleMax);
+            
+            if(d1+d2 == maxDistance){
+                meanPos = cMean2;
+            }            
+        }
+        return meanPos;
+    }
+        
     
 }
