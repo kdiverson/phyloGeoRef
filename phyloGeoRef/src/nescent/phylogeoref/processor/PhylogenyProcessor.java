@@ -21,6 +21,7 @@ import java.awt.Color;
 import static java.lang.System.out;
 import java.math.BigDecimal;
 import java.util.Vector;
+import nescent.phylogeoref.processor.utility.ComputeUtility;
 import nescent.phylogeoref.validator.PhylogenyValidator;
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyMethods;
@@ -41,11 +42,22 @@ public class PhylogenyProcessor {
     //To be used in the formula HTU height = a +(n-1)*b
     private final static long a = 198000;
     private final static long b =  66000;
+    
+    //Do not change this value, same value has also been used in KmlUtility.
+    private final static double UNDEFINED = -1.0d;
 
     private PhylogenyValidator validator;
+    private boolean weightedAvg;
 
     public PhylogenyProcessor(){
-        validator = new PhylogenyValidator(false);
+        this.weightedAvg = false;
+        validator = new PhylogenyValidator(this.weightedAvg);        
+    }
+    
+    public PhylogenyProcessor(boolean weightedAvg){
+        this();
+        this.weightedAvg = weightedAvg;
+        validator = new PhylogenyValidator(this.weightedAvg);
     }
 
 
@@ -82,33 +94,9 @@ public class PhylogenyProcessor {
                 data.setDistribution(new Distribution(node.getNodeName()));
                 Distribution dist = data.getDistribution();
 
-                double meanLat = 0.0;
-                double meanLong = 0.0;
-
-                double meanLat1 = findMeanChildLatitude(node);
-                double meanLat2 = findDiametricallyOppositeAngle(meanLat1);
-
-                double sumLat1 = findSumOfAngularDistancesToMeanLat(node, meanLat1);
-                double sumLat2 = findSumOfAngularDistancesToMeanLat(node, meanLat2);
-
-                if(sumLat1<sumLat2){
-                    meanLat = meanLat1;
-                }else{
-                    meanLat = meanLat2;
-                }             
-                
-                double meanLong1 = findMeanChildLongitude(node);
-                double meanLong2 = findDiametricallyOppositeAngle(meanLong1);
-
-                double sumLong1 = findSumOfAngularDistancesToMeanLong(node, meanLong1);
-                double sumLong2 = findSumOfAngularDistancesToMeanLong(node, meanLong2);
-
-                if(sumLong1<sumLong2){
-                    meanLong = meanLong1;
-                }else{
-                    meanLong = meanLong2;
-                }
-
+                double meanLat = findMeanChildLatitude(node);
+                double meanLong = findMeanChildLongitude(node);
+                                                
                 dist.setLatitude(new BigDecimal(meanLat));
                 dist.setLongitude(new BigDecimal(meanLong));
 
@@ -132,10 +120,13 @@ public class PhylogenyProcessor {
     private double findMeanChildLatitude(PhylogenyNode node){
 
         double meanLat = 0.0;
-        double latSum = 0;
-        int numChildren = 0;
+        int numValidChildren = 0;
+        
+        int numChildren = node.getNumberOfDescendants();
+        
+        Vector<Double> latVector = new Vector<Double>();
 
-        for (int i=0; i < node.getNumberOfDescendants(); i++){
+        for (int i=0; i < numChildren ; i++){
             PhylogenyNode childNode = node.getChildNode(i);
             NodeData childData = childNode.getNodeData();
             Distribution childDist = childData.getDistribution();
@@ -144,14 +135,20 @@ public class PhylogenyProcessor {
 
             if(childDist != null){
                 childLat = childDist.getLatitude();
-                numChildren++;
+                
+                if(childLat.doubleValue() != UNDEFINED){
+                    numValidChildren++;
+                    latVector.add(childLat.doubleValue());
+                }
             }
-            latSum+= childLat.doubleValue();
 
         }
-
-        //TODO: Handle case for childCount=0 maybe because all children have missing location.
-        meanLat = latSum/numChildren;
+        
+        if(numValidChildren == 0){
+            meanLat = UNDEFINED;
+        }else{
+            meanLat = ComputeUtility.findMeanPosition(latVector);
+        }
 
         return meanLat;
     }
@@ -166,118 +163,41 @@ public class PhylogenyProcessor {
      */
     private double findMeanChildLongitude(PhylogenyNode node){
 
-        double meanLong = 0.0;
-        double longSum = 0;
-        int numChildren = 0;
+        double meanLon = 0.0;
+        int numValidChildren = 0;
+        
+        int numChildren = node.getNumberOfDescendants();
+        
+        Vector<Double> lonVector = new Vector<Double>();
 
-        for (int i=0; i < node.getNumberOfDescendants(); i++){
+        for (int i=0; i < numChildren ; i++){
             PhylogenyNode childNode = node.getChildNode(i);
             NodeData childData = childNode.getNodeData();
             Distribution childDist = childData.getDistribution();
 
-            BigDecimal childLong = BigDecimal.ZERO;
+            BigDecimal childLon = BigDecimal.ZERO;
 
             if(childDist != null){
-                childLong = childDist.getLongitude();
-                numChildren++;
+                childLon = childDist.getLongitude();
+                
+                if(childLon.doubleValue() != UNDEFINED){
+                    numValidChildren++;
+                    lonVector.add(childLon.doubleValue());
+                }
             }
-            
-            Vector<PhylogenyNode> bucket1 = new Vector<PhylogenyNode>();
-            
-            longSum+= childLong.doubleValue();
 
         }
-
-        //TODO: Handle case for childCount=0 maybe because all children have missing location.
-        meanLong = longSum/numChildren;
-        return meanLong;
-    }
-
-    /**
-     * Finds the sum of minimum angular latitude distances to all child nodes from their mean.
-     * @param node
-     * @param meanLat
-     * @return
-     */
-    private double findSumOfAngularDistancesToMeanLat(PhylogenyNode node, double meanLat){
-        double sum =0.0;
-
-        for (int i=0; i < node.getNumberOfDescendants(); i++){
-            PhylogenyNode childNode = node.getChildNode(i);
-            NodeData childData = childNode.getNodeData();
-            Distribution childDist = childData.getDistribution();
-
-            BigDecimal childLat = BigDecimal.ZERO;
-
-            if(childDist != null){
-                childLat = childDist.getLatitude();
-            }
-            sum+= findMinimumAngularDistance(childLat.doubleValue(), meanLat);
-        }
-        return sum;        
-    }
-
-
-
-    /**
-     * Finds the sum of minimum angular longitude distances to all child nodes from their mean.
-     * @param node
-     * @param meanLong
-     * @return
-     */
-    private double findSumOfAngularDistancesToMeanLong(PhylogenyNode node, double meanLong){
-        double sum =0.0;
-
-        for (int i=0; i < node.getNumberOfDescendants(); i++){
-            PhylogenyNode childNode = node.getChildNode(i);
-            NodeData childData = childNode.getNodeData();
-            Distribution childDist = childData.getDistribution();
-
-            BigDecimal childLong = BigDecimal.ZERO;
-
-            if(childDist != null){
-                childLong = childDist.getLongitude();
-            }
-            sum+= findMinimumAngularDistance(childLong.doubleValue(), meanLong);
-        }
-        return sum;
-    }
-
-
-    
-    /**
-     * Finds the diametrically opposite angle to this angle.<br>
-     * The diametrically opposite angle to 2.5 is -177.5
-     * @param angle
-     * @return
-     */
-    private double findDiametricallyOppositeAngle(double angle){
-        double oppAngle = 0.0;
-        oppAngle = -1*Math.signum(angle)*(180-Math.abs(angle));
-        return oppAngle;
-    }
-
-    
-    /**
-     * Finds the minimum angular distance between two angles.
-     * @param angle1
-     * @param angle2
-     * @return
-     */
-    private double findMinimumAngularDistance(double angle1, double angle2){
-        double angDistance = 0.0;
-        if(Math.signum(angle2) == Math.signum(angle1)){
-            angDistance = Math.abs(angle2-angle1);
+        
+        if(numValidChildren == 0){
+            meanLon = UNDEFINED;
         }else{
-            double sumAngle = Math.abs(angle1)+Math.abs(angle2);
-            angDistance = Math.min(sumAngle, 360-sumAngle);
+            meanLon = ComputeUtility.findMeanPosition(lonVector);
         }
-        return angDistance;
+
+        return meanLon;
     }
 
-
-
-
+    
 
     
     /**
