@@ -121,10 +121,9 @@ public class PhylogenyProcessor {
 
         double meanLat = 0.0;
         int numValidChildren = 0;
+        double sigmaLat = 0.0;
         
-        int numChildren = node.getNumberOfDescendants();
-        
-        Vector<Double> latVector = new Vector<Double>();
+        int numChildren = node.getNumberOfDescendants();      
 
         for (int i=0; i < numChildren ; i++){
             PhylogenyNode childNode = node.getChildNode(i);
@@ -138,7 +137,7 @@ public class PhylogenyProcessor {
                 
                 if(childLat.doubleValue() != UNDEFINED){
                     numValidChildren++;
-                    latVector.add(childLat.doubleValue());
+                    sigmaLat += childLat.doubleValue();
                 }
             }
 
@@ -147,7 +146,7 @@ public class PhylogenyProcessor {
         if(numValidChildren == 0){
             meanLat = UNDEFINED;
         }else{
-            meanLat = ComputeUtility.findMeanPosition(latVector);
+            meanLat = sigmaLat/numValidChildren;
         }
 
         return meanLat;

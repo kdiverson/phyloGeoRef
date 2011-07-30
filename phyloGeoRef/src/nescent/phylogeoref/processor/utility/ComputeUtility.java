@@ -35,6 +35,10 @@ public class ComputeUtility {
      */
     private static Double angleMax = Double.NaN;
     
+    /**
+     * The permissible error in equality comparisons.
+     */
+    private static double ERROR = 0.0000000000001;
     
     /**
      * Finds the mean position.
@@ -111,6 +115,7 @@ public class ComputeUtility {
         Arrays.sort(quad3);
         Arrays.sort(quad4);
         
+        out.println("\n\n\n\n");
         out.println(Arrays.deepToString(quad1));///////////////////////
         out.println(Arrays.deepToString(quad2));///////////////////////
         out.println(Arrays.deepToString(quad3));///////////////////////
@@ -119,11 +124,7 @@ public class ComputeUtility {
         
         //Find the two points that are maximally separated.
         Double maxDistance = Double.MIN_VALUE;
-        Double angularDistance = -1.0;
-        
-        //The angle of two points that are maximally separated in any single comparison.
-        Double localAngleZero = 0.0;
-        Double localAngleMax  = 0.0;
+        Double angularDistance = -1.0;                
         
         //The angle of two points that are maximally separated across all comparison.
         Double globalAngleZero = 0.0;
@@ -137,6 +138,7 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
+out.println("ang distance 12 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);////////////
         
         angularDistance = findMaxDistance14(quad1, quad4);
 
@@ -146,7 +148,8 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
-        
+out.println("ang distance 14 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//
+
         angularDistance = findMaxDistance23(quad2, quad3);
 
         if(angularDistance > maxDistance){
@@ -155,7 +158,8 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
-        
+out.println("ang distance 23 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//
+
         angularDistance = findMaxDistance34(quad3, quad4);
 
         if(angularDistance > maxDistance){
@@ -164,6 +168,7 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
+out.println("ang distance 34 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//        
         
         angularDistance = findMaxDistance13(quad1, quad3);
 
@@ -173,6 +178,7 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
+out.println("ang distance 13 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//        
         
         angularDistance = findMaxDistance24(quad2, quad4);
 
@@ -182,6 +188,7 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
+out.println("ang distance 24 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//
         
         angularDistance = findMaxDistanceAA(quad1);
 
@@ -191,15 +198,17 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
+out.println("ang distance 11 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//        
         
         angularDistance = findMaxDistanceAA(quad2);
 
         if(angularDistance > maxDistance){
             maxDistance = angularDistance;
-            globalAngleMax = localAngleMax;
-            globalAngleZero = localAngleZero;
+            globalAngleMax = angleMax;
+            globalAngleZero = angleZero;
             
         }
+out.println("ang distance 22 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//        
         
         angularDistance = findMaxDistanceAA(quad3);
 
@@ -209,6 +218,7 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
+out.println("ang distance 33 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//        
         
         angularDistance = findMaxDistanceAA(quad4);
 
@@ -218,6 +228,7 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
+out.println("ang distance 44 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//        
         
         out.println("Max separation"+globalAngleZero+", "+globalAngleMax+" ... "+maxDistance);
         
@@ -248,7 +259,6 @@ public class ComputeUtility {
         //Transform back
         meanPos = unTransform(transMeanPos, globalAngleZero, globalAngleMax, maxDistance);
         
-        out.println();
         out.println(Arrays.deepToString(posVector.toArray()));
         out.println(Arrays.deepToString(tPosVector.toArray()));
         out.println("mean position is "+meanPos);
@@ -273,7 +283,7 @@ public class ComputeUtility {
             double d1 = findMinAngularDistance(gAngleZero, position);
             double d2 = findMinAngularDistance(gAngleMax, position);
             
-            if(d1+d2 == maxDistance){
+            if(((d1+d2)-maxDistance) <= ERROR){
                 tPosVector.add(d1);
                 
             }else{
@@ -392,8 +402,8 @@ public class ComputeUtility {
         }
         
         Double maxDistance = Double.MIN_VALUE;
-        angleZero = quad1[quad1.length-1];
-        angleMax = quad2[0];
+        angleZero = quad1[0];
+        angleMax = quad2[quad2.length-1];
         
         maxDistance = findMinAngularDistance(angleZero, angleMax);
         
@@ -418,8 +428,8 @@ public class ComputeUtility {
         }
         
         Double maxDistance = Double.MIN_VALUE;
-        angleZero = quad1[0];
-        angleMax = quad4[quad4.length-1];
+        angleZero = quad1[quad1.length-1];
+        angleMax = quad4[0];
         
         maxDistance = findMinAngularDistance(angleZero, angleMax);
         
@@ -443,8 +453,8 @@ public class ComputeUtility {
         }
         
         Double maxDistance = Double.MIN_VALUE;
-        angleZero = quad3[quad3.length-1];
-        angleMax = quad4[0];
+        angleZero = quad3[0];
+        angleMax = quad4[quad4.length-1];
         
         maxDistance = findMinAngularDistance(angleZero, angleMax);
         
@@ -468,8 +478,8 @@ public class ComputeUtility {
         }
         
         Double maxDistance = Double.MIN_VALUE;
-        angleZero = quad2[quad2.length-1];
-        angleMax = quad3[0];
+        angleZero = quad2[0];
+        angleMax = quad3[quad3.length-1];
         
         maxDistance = findMinAngularDistance(angleZero, angleMax);
         
@@ -596,7 +606,11 @@ public class ComputeUtility {
      */
     private static double findDiametricallyOppositeAngle(double angle){
         double oppAngle = 0.0;
-        oppAngle = -1*Math.signum(angle)*(180-Math.abs(angle));
+        double sgn = Math.signum(angle);
+        if(sgn == 0){
+            sgn+=1.0;
+        }
+        oppAngle = -1*sgn*(180-Math.abs(angle));
         return oppAngle;
     }
     
@@ -773,22 +787,39 @@ public class ComputeUtility {
             double cMean1 = addClockwise(gAngleZero, Math.abs(tMeanPos));
             double cMean2 = addAntiClockwise(gAngleZero, Math.abs(tMeanPos));
             
+            out.println("CMean1 = "+cMean1);//////////////////////////////////////////
+            out.println("CMean2 = "+cMean2);//////////////////////////////////////////
+            
             //Find which one lies between gAngleZero and gAngleMax
             double d1 = findMinAngularDistance(gAngleZero, cMean1);
             double d2 = findMinAngularDistance(cMean1, gAngleMax);
+            out.println(d1+" + "+ "d2 "+d2+" == "+(d1+d2)+", whereas"+maxDistance);///////////////////
             
-            if(d1+d2 == maxDistance){
+            if(((d1+d2)-maxDistance) <= ERROR){
                 meanPos = cMean1;
+                out.println("1) d1 = "+d1+" + "+ "d2 "+d2+" == "+maxDistance);///////////////////
             }
             
             d1 = findMinAngularDistance(gAngleZero, cMean2);
             d2 = findMinAngularDistance(cMean2, gAngleMax);
+            out.println(d1+" + "+ "d2 "+d2+" == "+(d1+d2)+", whereas"+maxDistance);///////////////////
             
-            if(d1+d2 == maxDistance){
+            if( ((d1+d2)-maxDistance) <= ERROR){
                 meanPos = cMean2;
-            }            
+                out.println("2) d1 = "+d1+" + "+ "d2 "+d2+" == "+maxDistance);///////////////////
+            }
         }
+        out.println("local mean pos "+meanPos);
         return meanPos;
+    }
+    
+    public static void main(String args[]){
+        Vector<Double> posVector = new Vector<Double>();
+        posVector.add(132.0);
+        posVector.add(145.0);
+        
+        double mean = findMeanPosition(posVector);
+        out.println(mean);
     }
         
     
