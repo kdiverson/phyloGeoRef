@@ -113,13 +113,7 @@ public class ComputeUtility {
         Arrays.sort(quad1);
         Arrays.sort(quad2);
         Arrays.sort(quad3);
-        Arrays.sort(quad4);
-        
-        out.println("\n\n\n\n");
-        out.println(Arrays.deepToString(quad1));///////////////////////
-        out.println(Arrays.deepToString(quad2));///////////////////////
-        out.println(Arrays.deepToString(quad3));///////////////////////
-        out.println(Arrays.deepToString(quad4));///////////////////////
+        Arrays.sort(quad4);                
                 
         
         //Find the two points that are maximally separated.
@@ -130,6 +124,7 @@ public class ComputeUtility {
         Double globalAngleZero = 0.0;
         Double globalAngleMax  = 0.0;
         
+        
         angularDistance = findMaxDistance12(quad1, quad2);
         
         if(angularDistance > maxDistance){
@@ -138,7 +133,7 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
-out.println("ang distance 12 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);////////////
+        
         
         angularDistance = findMaxDistance14(quad1, quad4);
 
@@ -148,7 +143,7 @@ out.println("ang distance 12 "+angularDistance+" b/w "+globalAngleZero+", "+glob
             globalAngleZero = angleZero;
             
         }
-out.println("ang distance 14 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//
+
 
         angularDistance = findMaxDistance23(quad2, quad3);
 
@@ -158,7 +153,7 @@ out.println("ang distance 14 "+angularDistance+" b/w "+globalAngleZero+", "+glob
             globalAngleZero = angleZero;
             
         }
-out.println("ang distance 23 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//
+
 
         angularDistance = findMaxDistance34(quad3, quad4);
 
@@ -168,7 +163,7 @@ out.println("ang distance 23 "+angularDistance+" b/w "+globalAngleZero+", "+glob
             globalAngleZero = angleZero;
             
         }
-out.println("ang distance 34 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//        
+
         
         angularDistance = findMaxDistance13(quad1, quad3);
 
@@ -178,7 +173,7 @@ out.println("ang distance 34 "+angularDistance+" b/w "+globalAngleZero+", "+glob
             globalAngleZero = angleZero;
             
         }
-out.println("ang distance 13 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//        
+
         
         angularDistance = findMaxDistance24(quad2, quad4);
 
@@ -188,7 +183,7 @@ out.println("ang distance 13 "+angularDistance+" b/w "+globalAngleZero+", "+glob
             globalAngleZero = angleZero;
             
         }
-out.println("ang distance 24 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//
+
         
         angularDistance = findMaxDistanceAA(quad1);
 
@@ -198,7 +193,7 @@ out.println("ang distance 24 "+angularDistance+" b/w "+globalAngleZero+", "+glob
             globalAngleZero = angleZero;
             
         }
-out.println("ang distance 11 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//        
+
         
         angularDistance = findMaxDistanceAA(quad2);
 
@@ -208,7 +203,7 @@ out.println("ang distance 11 "+angularDistance+" b/w "+globalAngleZero+", "+glob
             globalAngleZero = angleZero;
             
         }
-out.println("ang distance 22 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//        
+
         
         angularDistance = findMaxDistanceAA(quad3);
 
@@ -218,7 +213,7 @@ out.println("ang distance 22 "+angularDistance+" b/w "+globalAngleZero+", "+glob
             globalAngleZero = angleZero;
             
         }
-out.println("ang distance 33 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//        
+
         
         angularDistance = findMaxDistanceAA(quad4);
 
@@ -227,10 +222,8 @@ out.println("ang distance 33 "+angularDistance+" b/w "+globalAngleZero+", "+glob
             globalAngleMax = angleMax;
             globalAngleZero = angleZero;
             
-        }
-out.println("ang distance 44 "+angularDistance+" b/w "+globalAngleZero+", "+globalAngleMax+" maxDist = "+maxDistance);//        
-        
-        out.println("Max separation"+globalAngleZero+", "+globalAngleMax+" ... "+maxDistance);
+        }     
+
         
         //Transform the coordinates such that globalAngleMax is transformed to 0 with positive direction
         //in the direction of least distance of globalAngleMax.        
@@ -248,8 +241,7 @@ out.println("ang distance 44 "+angularDistance+" b/w "+globalAngleZero+", "+glob
         double transMeanPos = 0.0;
         //Compute the mean in the transformed frame of reference.
         if(wVector == null){
-            transMeanPos = computeMean(tPosVector);
-            out.println("Trans mean pos = "+transMeanPos);/////////////////////////////////////
+            transMeanPos = computeMean(tPosVector);            
             
         }else{
             transMeanPos = computeWeightedMean(tPosVector, wVector);
@@ -745,7 +737,7 @@ out.println("ang distance 44 "+angularDistance+" b/w "+globalAngleZero+", "+glob
         double sum = 0.0;
         double sumW = 0.0;
         
-        for(int i=0; i<=tPosVector.size();i++){
+        for(int i=0; i<=tPosVector.size()-1;i++){
             Double position = tPosVector.elementAt(i);
             Double weight = wVector.elementAt(i);
             sum+= position*weight;

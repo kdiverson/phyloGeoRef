@@ -26,7 +26,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 import nescent.phylogeoref.processor.PhylogenyProcessor;
-import nescent.phylogeoref.processor.PhylogenyProcessor;
+import nescent.phylogeoref.processor.ProcessorFactory;
+import nescent.phylogeoref.processor.UnweightedPhylogenyProcessor;
+import nescent.phylogeoref.processor.UnweightedPhylogenyProcessor;
 import nescent.phylogeoref.reader.GrandUnifiedReader;
 import nescent.phylogeoref.writer.AdvancedKmlWriter;
 import org.forester.phylogeny.Phylogeny;
@@ -99,7 +101,7 @@ public class Phylogeoref {
         Phylogeny phyArray[] =  gur.getPhylogenyArray();
         Map mouldMapArray[] = gur.getMouldMaps();
 
-        PhylogenyProcessor processor = new PhylogenyProcessor();
+        PhylogenyProcessor processor = ProcessorFactory.getInstance(true);
         AdvancedKmlWriter kmlw = new AdvancedKmlWriter();
         
         for(int i=0; i<phyArray.length; i++){
