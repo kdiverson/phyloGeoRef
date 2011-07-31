@@ -216,6 +216,7 @@ public class WeightedPhylogenyProcessor implements PhylogenyProcessor{
             int bSum = 0;
 
             if ( node.isInternal() ) {
+                double sigmaWt = 0.0;
 
                 for (int i=0; i < node.getNumberOfDescendants(); i++){
 
@@ -224,19 +225,29 @@ public class WeightedPhylogenyProcessor implements PhylogenyProcessor{
 
                     if(childBranchColor !=null){
                         Color childColor = childBranchColor.getValue();
+                        double time = childNode.getDistanceToParent();
+                        double weight = 1.0/time;
+                        
+                        sigmaWt+= weight;
 
-                        rSum+=childColor.getRed();
-                        gSum+=childColor.getGreen();
-                        bSum+=childColor.getBlue();
+                        rSum+= weight*childColor.getRed();
+                        gSum+= weight*childColor.getGreen();
+                        bSum+= weight*childColor.getBlue();
 
                         numChildren++;
                     }                    
                 }
 
                 //TODO: Handle the case if num of children is zero.
-                int meanR = rSum/numChildren;
-                int meanG = gSum/numChildren;
-                int meanB = bSum/numChildren;
+                int meanR = 0;
+                int meanG = 0;
+                int meanB = 0;
+                
+                if(numChildren > 0){
+                    meanR = (int) (rSum/sigmaWt);
+                    meanG = (int) (gSum/sigmaWt);
+                    meanB = (int) (bSum/sigmaWt);
+                }
 
                 Color meanColor = new Color(meanR,meanG,meanB);
                 BranchData branchData = node.getBranchData();

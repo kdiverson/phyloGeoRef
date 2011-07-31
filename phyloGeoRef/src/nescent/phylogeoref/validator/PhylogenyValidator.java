@@ -58,7 +58,7 @@ public class PhylogenyValidator {
         
         if(weightedTree){
             checkEdgeLengths(phy);
-        }        
+        }
     }
 
 
@@ -119,11 +119,22 @@ public class PhylogenyValidator {
      */
     private void checkEdgeLengths(Phylogeny phylogeny){
         
+        System.out.println("\n\n");/////////////////////
+        
         for( PhylogenyNodeIterator it = phylogeny.iteratorPostorder(); it.hasNext();) {
                         
             try{
                 PhylogenyNode node = it.next();
                 double edgeLength = node.getDistanceToParent();
+                
+                /////////////////////////////////////
+                if(node.isInternal()){
+                    int lolz = node.getNumberOfDescendants();
+                    if( lolz ==1)
+                        System.out.println("lolz");/////////////////////
+                }
+                
+                ////////////////////////////////////
                 
                 //Edge length from the root node is undefined.
                 if(node.isRoot()){
@@ -144,9 +155,11 @@ public class PhylogenyValidator {
                                 
             }catch (MissingEdgeLengthException ex){
                 LOGGER.log(Level.SEVERE,ex.getMessage(),ex);
+                System.exit(1);
                 
             }catch (InvalidEdgeLengthException ex){
                 LOGGER.log(Level.SEVERE,ex.getMessage(),ex);
+                System.exit(1);
                 
             }
         }
