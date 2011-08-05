@@ -25,6 +25,8 @@ import nescent.phylogeoref.validator.exception.InvalidLatitudeException;
 import nescent.phylogeoref.validator.exception.InvalidLongitudeException;
 import nescent.phylogeoref.validator.exception.LocationNotFoundException;
 import nescent.phylogeoref.validator.exception.MissingEdgeLengthException;
+import nescent.phylogeoref.validator.exception.SingleChildException;
+import nescent.phylogeoref.validator.exception.ZeroChildException;
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
 import org.forester.phylogeny.data.Distribution;
@@ -59,6 +61,8 @@ public class PhylogenyValidator {
         if(weightedTree){
             checkEdgeLengths(phy);
         }
+        
+        checkStructure(phy);
     }
 
 
@@ -117,24 +121,13 @@ public class PhylogenyValidator {
      * Checks whether a weighted tree has all its edge lengths specified.
      * @param phylogeny 
      */
-    private void checkEdgeLengths(Phylogeny phylogeny){
-        
-        System.out.println("\n\n");/////////////////////
+    private void checkEdgeLengths(Phylogeny phylogeny){        
         
         for( PhylogenyNodeIterator it = phylogeny.iteratorPostorder(); it.hasNext();) {
                         
             try{
                 PhylogenyNode node = it.next();
-                double edgeLength = node.getDistanceToParent();
-                
-                /////////////////////////////////////
-                if(node.isInternal()){
-                    int lolz = node.getNumberOfDescendants();
-                    if( lolz ==1)
-                        System.out.println("lolz");/////////////////////
-                }
-                
-                ////////////////////////////////////
+                double edgeLength = node.getDistanceToParent();                                
                 
                 //Edge length from the root node is undefined.
                 if(node.isRoot()){
@@ -163,6 +156,49 @@ public class PhylogenyValidator {
                 
             }
         }
-    }    
+    }
+    
+    
+    //TODO: Handle the case when a node has only one child node or no child.
+    
+    /**
+     * Checks the basic structure of a tree.
+     * Cases handled.
+     * 
+     * 1) An internal node with only 1 child is considered an invalid case.
+     * 2) An internal node with zero child is considered an invalid case,
+     * 
+     * @param phylogeny 
+     */
+    private void checkStructure(Phylogeny phylogeny){        
+        for( PhylogenyNodeIterator it = phylogeny.iteratorPostorder(); it.hasNext();) {
+                        
+            try{
+                PhylogenyNode node = it.next();
+                String label = node.getNodeName();
+                Integer id = node.getNodeId();
+                
+                if(node.isInternal()){
+                    int numChildren = node.getNumberOfDescendants();
+                    
+                    if(numChildren == 0){
+                        throw new ZeroChildException(id.toString(), label);
+                        
+                    }else if(numChildren == 1){
+                        throw new SingleChildException(id.toString(), label);
+                        
+                    }
+                }
+                
+            }catch(ZeroChildException ex){
+                LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
+                System.exit(1);
+                
+            }catch(SingleChildException ex){
+                LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
+                
+            }
+        }
+    }
 
 }

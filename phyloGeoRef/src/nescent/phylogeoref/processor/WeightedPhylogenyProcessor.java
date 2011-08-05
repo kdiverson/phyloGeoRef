@@ -187,10 +187,14 @@ public class WeightedPhylogenyProcessor implements PhylogenyProcessor{
 
         }
         
-        if(numValidChildren == 0){
-            meanLon = UNDEFINED;
+        if(numValidChildren > 1){
+            meanLon = ComputeUtility.findMeanPosition(lonVector);
+            
+        }else if( numValidChildren == 1 ){
+            meanLon = node.getChildNode1().getNodeData().getDistribution().getLongitude().doubleValue();
+            
         }else{
-            meanLon = ComputeUtility.findMeanPosition(lonVector, timeVector);
+            meanLon = UNDEFINED;
         }
 
         return meanLon;
@@ -237,21 +241,31 @@ public class WeightedPhylogenyProcessor implements PhylogenyProcessor{
                         numChildren++;
                     }                    
                 }
-
-                //TODO: Handle the case if num of children is zero.
+                
                 int meanR = 0;
                 int meanG = 0;
                 int meanB = 0;
                 
-                if(numChildren > 0){
+                if(numChildren > 1){
                     meanR = (int) (rSum/sigmaWt);
                     meanG = (int) (gSum/sigmaWt);
                     meanB = (int) (bSum/sigmaWt);
+                    
+                    Color meanColor = new Color(meanR,meanG,meanB);
+                    BranchData branchData = node.getBranchData();
+                    branchData.setBranchColor(new BranchColor(meanColor));
+                    
+                }else if( numChildren == 1 ){
+                    PhylogenyNode childNode = node.getChildNode1();
+                    BranchColor childBranchColor = childNode.getBranchData().getBranchColor();
+                    
+                    if(childBranchColor !=null){
+                        Color childColor = childBranchColor.getValue();
+                        BranchData branchData = node.getBranchData();
+                        branchData.setBranchColor(new BranchColor(childColor));
+                        
+                    }
                 }
-
-                Color meanColor = new Color(meanR,meanG,meanB);
-                BranchData branchData = node.getBranchData();
-                branchData.setBranchColor(new BranchColor(meanColor));
             }   
         }
     }

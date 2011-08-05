@@ -180,10 +180,14 @@ public class UnweightedPhylogenyProcessor implements PhylogenyProcessor{
 
         }
         
-        if(numValidChildren == 0){
-            meanLon = UNDEFINED;
-        }else{
+        if(numValidChildren > 1){
             meanLon = ComputeUtility.findMeanPosition(lonVector);
+            
+        }else if( numValidChildren == 1 ){
+            meanLon = node.getChildNode1().getNodeData().getDistribution().getLongitude().doubleValue();
+            
+        }else{
+            meanLon = UNDEFINED;
         }
 
         return meanLon;
@@ -226,15 +230,28 @@ public class UnweightedPhylogenyProcessor implements PhylogenyProcessor{
                     }                    
                 }
 
-                //TODO: Handle the case if num of children is zero.
-                int meanR = rSum/numChildren;
-                int meanG = gSum/numChildren;
-                int meanB = bSum/numChildren;
+                if(numChildren > 1){
+                    int meanR = rSum/numChildren;
+                    int meanG = gSum/numChildren;
+                    int meanB = bSum/numChildren;
 
-                Color meanColor = new Color(meanR,meanG,meanB);
-                BranchData branchData = node.getBranchData();
-                branchData.setBranchColor(new BranchColor(meanColor));
-            }   
+                    Color meanColor = new Color(meanR,meanG,meanB);
+                    BranchData branchData = node.getBranchData();
+                    branchData.setBranchColor(new BranchColor(meanColor));
+                    
+                }else if(numChildren == 1){
+                    PhylogenyNode childNode = node.getChildNode1();
+                    BranchColor childBranchColor = childNode.getBranchData().getBranchColor();
+                    
+                    if(childBranchColor !=null){
+                        Color childColor = childBranchColor.getValue();
+                        BranchData branchData = node.getBranchData();
+                        branchData.setBranchColor(new BranchColor(childColor));
+                        
+                    }                    
+                }
+                
+            }
         }
     }
 

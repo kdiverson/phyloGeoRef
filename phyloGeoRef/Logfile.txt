@@ -1,264 +1,341 @@
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Amblysomus_robustus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Anoura_luismanueli in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Antechinus_agilis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Antechinus_subtropicus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Arielulus_aureocollaris in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Arielulus_torquatus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Artibeus_incomitatus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Avahi_unicolor in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Bradypus_pygmaeus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Caenolestes_condorensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Callicebus_coimbrai in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Callithrix_acariensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Callithrix_humilis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Callithrix_manicorensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Callithrix_marcai in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Callithrix_mauesi in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Callithrix_nigriceps in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Callithrix_saterei in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Callosciurus_erythraeus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Carollia_colombiana in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Cebus_kaapori in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Cercocebus_sanjei in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Chaerephon_tomensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Cheirogaleus_minusculus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Cheirogaleus_ravus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Cryptochloris_wintoni in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Cryptochloris_zyli in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Dendrolagus_mbaiso in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Emballonura_serii in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Murina_ryukyuana in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Myotis_annamiticus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Myotis_csorbai in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Myotis_gomantongensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Myotis_yanbarensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Eremitalpa_granti in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Galago_rondoensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Gazella_arabica in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Glauconycteris_curryae in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Hipposideros_edwardshilli in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Hipposideros_hypophyllus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Hipposideros_madurae in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Hipposideros_orbiculus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Hipposideros_rotalis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Hipposideros_sorenseni in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Lasiurus_ebenus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Lonchorhina_inusitata in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Macaca_siberu in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Mazama_bororo in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Melonycteris_fardoulisi in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Microcebus_berthae in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Microcebus_ravelobensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Microcebus_sambiranensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Microcebus_tavaratra in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Microgale_fotsifotsy in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Microgale_gymnorhyncha in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Microgale_monticola in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Microgale_nasoloi in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Microgale_soricoides in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Micronycteris_brosseti in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Micronycteris_matses in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Micronycteris_sanborni in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Miniopterus_gleni in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Miopithecus_ogouensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Muntiacus_puhoatensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Muntiacus_putaoensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Muntiacus_truongsonensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Muntiacus_vuquangensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Nesolagus_timminsi in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Nyctimene_keasti in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Nyctimene_sanctacrucis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Nyctophilus_nebulosus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Ochotona_hoffmanni in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Ochotona_nigritia in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Otomops_johnstonei in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Paraechinus_nudiventris in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Paulamys_naso in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Petrogale_coenensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Petrogale_mareeba in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Petrogale_sharmani in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Phalanger_alexandrae in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Phalanger_matabiru in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Phalanger_rothschildi in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Plecotus_balensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Pseudantechinus_roryi in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Pseudochirulus_schlegeli in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Pseudoryx_nghetinhensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Pteralopex_taki in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Pteropus_banakrisi in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Rhinolophus_convexus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Rhinolophus_maendeleo in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Rhinolophus_sakejiensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Rhogeessa_hussoni in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Saccopteryx_antioquensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sciurus_aberti in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Pygathrix_cinerea in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sminthopsis_bindi in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sminthopsis_boullangerensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sminthopsis_fuliginosus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_alaskanus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_bedfordiae in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_camtschatica in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_cansulus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_cylindricauda in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_emarginatus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_gaspensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_kozlovi in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_lyelli in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_macrodon in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_milleri in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_oreopolus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_planiceps in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_pribilofensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_saussurei in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_sclateri in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_sinalis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_sonomae in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_stizodon in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_thibetanus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_ventralis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sorex_veraepacis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Spilocuscus_papuensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sturnira_mistratensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sylvilagus_obscurus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Sylvilagus_varynaensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Thomomys_clusius in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Thomomys_idahoensis in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Thylamys_velutinus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Thylogale_calabyi in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Thyroptera_lavali in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Trachypithecus_ebenus in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Uromys_imperator in the metaFile
-Aug 1, 2011 4:54:45 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
+Aug 5, 2011 11:32:09 AM nescent.phylogeoref.reader.PhylogenyKitchen cookDish
 CONFIG: Ignored node named Zaglossus_attenboroughi in the metaFile
+Aug 5, 2011 11:32:10 AM nescent.phylogeoref.validator.PhylogenyValidator checkStructure
+SEVERE: Invalid number of children of node (id = 4335, label = )
+nescent.phylogeoref.validator.exception.SingleChildException: Invalid number of children of node (id = 4335, label = )
+	at nescent.phylogeoref.validator.PhylogenyValidator.checkStructure(PhylogenyValidator.java:189)
+	at nescent.phylogeoref.validator.PhylogenyValidator.validatePhylogeny(PhylogenyValidator.java:66)
+	at nescent.phylogeoref.processor.WeightedPhylogenyProcessor.phylogenify(WeightedPhylogenyProcessor.java:65)
+	at nescent.Phylogeoref.main(Phylogeoref.java:104)
+Aug 5, 2011 11:32:10 AM nescent.phylogeoref.validator.PhylogenyValidator checkStructure
+SEVERE: Invalid number of children of node (id = 3756, label = )
+nescent.phylogeoref.validator.exception.SingleChildException: Invalid number of children of node (id = 3756, label = )
+	at nescent.phylogeoref.validator.PhylogenyValidator.checkStructure(PhylogenyValidator.java:189)
+	at nescent.phylogeoref.validator.PhylogenyValidator.validatePhylogeny(PhylogenyValidator.java:66)
+	at nescent.phylogeoref.processor.WeightedPhylogenyProcessor.phylogenify(WeightedPhylogenyProcessor.java:65)
+	at nescent.Phylogeoref.main(Phylogeoref.java:104)
+Aug 5, 2011 11:32:10 AM nescent.phylogeoref.validator.PhylogenyValidator checkStructure
+SEVERE: Invalid number of children of node (id = 6143, label = )
+nescent.phylogeoref.validator.exception.SingleChildException: Invalid number of children of node (id = 6143, label = )
+	at nescent.phylogeoref.validator.PhylogenyValidator.checkStructure(PhylogenyValidator.java:189)
+	at nescent.phylogeoref.validator.PhylogenyValidator.validatePhylogeny(PhylogenyValidator.java:66)
+	at nescent.phylogeoref.processor.WeightedPhylogenyProcessor.phylogenify(WeightedPhylogenyProcessor.java:65)
+	at nescent.Phylogeoref.main(Phylogeoref.java:104)
+Aug 5, 2011 11:32:10 AM nescent.phylogeoref.validator.PhylogenyValidator checkStructure
+SEVERE: Invalid number of children of node (id = 2014, label = )
+nescent.phylogeoref.validator.exception.SingleChildException: Invalid number of children of node (id = 2014, label = )
+	at nescent.phylogeoref.validator.PhylogenyValidator.checkStructure(PhylogenyValidator.java:189)
+	at nescent.phylogeoref.validator.PhylogenyValidator.validatePhylogeny(PhylogenyValidator.java:66)
+	at nescent.phylogeoref.processor.WeightedPhylogenyProcessor.phylogenify(WeightedPhylogenyProcessor.java:65)
+	at nescent.Phylogeoref.main(Phylogeoref.java:104)
+Aug 5, 2011 11:32:10 AM nescent.phylogeoref.validator.PhylogenyValidator checkStructure
+SEVERE: Invalid number of children of node (id = 5595, label = )
+nescent.phylogeoref.validator.exception.SingleChildException: Invalid number of children of node (id = 5595, label = )
+	at nescent.phylogeoref.validator.PhylogenyValidator.checkStructure(PhylogenyValidator.java:189)
+	at nescent.phylogeoref.validator.PhylogenyValidator.validatePhylogeny(PhylogenyValidator.java:66)
+	at nescent.phylogeoref.processor.WeightedPhylogenyProcessor.phylogenify(WeightedPhylogenyProcessor.java:65)
+	at nescent.Phylogeoref.main(Phylogeoref.java:104)
+Aug 5, 2011 11:32:10 AM nescent.phylogeoref.validator.PhylogenyValidator checkStructure
+SEVERE: Invalid number of children of node (id = 3239, label = )
+nescent.phylogeoref.validator.exception.SingleChildException: Invalid number of children of node (id = 3239, label = )
+	at nescent.phylogeoref.validator.PhylogenyValidator.checkStructure(PhylogenyValidator.java:189)
+	at nescent.phylogeoref.validator.PhylogenyValidator.validatePhylogeny(PhylogenyValidator.java:66)
+	at nescent.phylogeoref.processor.WeightedPhylogenyProcessor.phylogenify(WeightedPhylogenyProcessor.java:65)
+	at nescent.Phylogeoref.main(Phylogeoref.java:104)
+Aug 5, 2011 11:32:10 AM nescent.phylogeoref.validator.PhylogenyValidator checkStructure
+SEVERE: Invalid number of children of node (id = 6024, label = )
+nescent.phylogeoref.validator.exception.SingleChildException: Invalid number of children of node (id = 6024, label = )
+	at nescent.phylogeoref.validator.PhylogenyValidator.checkStructure(PhylogenyValidator.java:189)
+	at nescent.phylogeoref.validator.PhylogenyValidator.validatePhylogeny(PhylogenyValidator.java:66)
+	at nescent.phylogeoref.processor.WeightedPhylogenyProcessor.phylogenify(WeightedPhylogenyProcessor.java:65)
+	at nescent.Phylogeoref.main(Phylogeoref.java:104)
+Aug 5, 2011 11:32:10 AM nescent.phylogeoref.validator.PhylogenyValidator checkStructure
+SEVERE: Invalid number of children of node (id = 5881, label = )
+nescent.phylogeoref.validator.exception.SingleChildException: Invalid number of children of node (id = 5881, label = )
+	at nescent.phylogeoref.validator.PhylogenyValidator.checkStructure(PhylogenyValidator.java:189)
+	at nescent.phylogeoref.validator.PhylogenyValidator.validatePhylogeny(PhylogenyValidator.java:66)
+	at nescent.phylogeoref.processor.WeightedPhylogenyProcessor.phylogenify(WeightedPhylogenyProcessor.java:65)
+	at nescent.Phylogeoref.main(Phylogeoref.java:104)
+Aug 5, 2011 11:32:10 AM nescent.phylogeoref.validator.PhylogenyValidator checkStructure
+SEVERE: Invalid number of children of node (id = 1515, label = )
+nescent.phylogeoref.validator.exception.SingleChildException: Invalid number of children of node (id = 1515, label = )
+	at nescent.phylogeoref.validator.PhylogenyValidator.checkStructure(PhylogenyValidator.java:189)
+	at nescent.phylogeoref.validator.PhylogenyValidator.validatePhylogeny(PhylogenyValidator.java:66)
+	at nescent.phylogeoref.processor.WeightedPhylogenyProcessor.phylogenify(WeightedPhylogenyProcessor.java:65)
+	at nescent.Phylogeoref.main(Phylogeoref.java:104)
+Aug 5, 2011 11:32:10 AM nescent.phylogeoref.validator.PhylogenyValidator checkStructure
+SEVERE: Invalid number of children of node (id = 1315, label = )
+nescent.phylogeoref.validator.exception.SingleChildException: Invalid number of children of node (id = 1315, label = )
+	at nescent.phylogeoref.validator.PhylogenyValidator.checkStructure(PhylogenyValidator.java:189)
+	at nescent.phylogeoref.validator.PhylogenyValidator.validatePhylogeny(PhylogenyValidator.java:66)
+	at nescent.phylogeoref.processor.WeightedPhylogenyProcessor.phylogenify(WeightedPhylogenyProcessor.java:65)
+	at nescent.Phylogeoref.main(Phylogeoref.java:104)
+Aug 5, 2011 11:32:10 AM nescent.phylogeoref.validator.PhylogenyValidator checkStructure
+SEVERE: Invalid number of children of node (id = 3678, label = )
+nescent.phylogeoref.validator.exception.SingleChildException: Invalid number of children of node (id = 3678, label = )
+	at nescent.phylogeoref.validator.PhylogenyValidator.checkStructure(PhylogenyValidator.java:189)
+	at nescent.phylogeoref.validator.PhylogenyValidator.validatePhylogeny(PhylogenyValidator.java:66)
+	at nescent.phylogeoref.processor.WeightedPhylogenyProcessor.phylogenify(WeightedPhylogenyProcessor.java:65)
+	at nescent.Phylogeoref.main(Phylogeoref.java:104)
