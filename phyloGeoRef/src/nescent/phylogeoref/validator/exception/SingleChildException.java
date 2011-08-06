@@ -23,6 +23,7 @@ package nescent.phylogeoref.validator.exception;
 public class SingleChildException extends InvalidChildrenException{
     
     public SingleChildException(String id, String label){
-        super( "Invalid number of children of node (id = "+id+", label = "+label+")" );
+        super( "Node (id = "+id+", label = "+label+") has a single child. \n"
+                + "\t Assigning parent node the coordinates of the child node." );        
     }
 }

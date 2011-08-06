@@ -393,11 +393,12 @@ public class KmlUtility implements KmlConstants{
     }
 
     /**
-     * Converts a RGB color to a hex color.
+     * Converts a RGB color to a hex color in kml compliant form.
+     * In kml colors are specified in the format aabbggrr.
      * @param c
      * @return
      */
-    private static String rgbToHex(Color c){
+    public static String rgbToHex(Color c){
         String color = null;
         color = decimalToHex(c.getAlpha()) + decimalToHex(c.getBlue()) + decimalToHex(c.getGreen())+
                 decimalToHex(c.getRed());

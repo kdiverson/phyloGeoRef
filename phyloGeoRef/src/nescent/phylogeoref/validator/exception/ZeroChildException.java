@@ -23,6 +23,6 @@ package nescent.phylogeoref.validator.exception;
 public class ZeroChildException extends InvalidChildrenException{
     
     public ZeroChildException(String id, String label){
-        super(id, label);
+        super( "Node (id = "+id+", label = "+label+") has no child." );
     }
 }

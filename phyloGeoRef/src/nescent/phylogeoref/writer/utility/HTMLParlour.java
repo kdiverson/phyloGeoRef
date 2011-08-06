@@ -17,9 +17,13 @@
 
 package nescent.phylogeoref.writer.utility;
 
+import java.awt.Color;
 import static java.lang.System.out;
 import nescent.phylogeoref.reader.PhylogenyMould;
+import nescent.phylogeoref.writer.utility.KmlUtility;
 import org.forester.phylogeny.PhylogenyNode;
+import org.forester.phylogeny.data.BranchColor;
+import org.forester.phylogeny.data.BranchData;
 
 /**
  * Prepares a well formed HTML content for the given PhylogenyNode which has the given PhylogenyMould
@@ -38,6 +42,7 @@ public class HTMLParlour {
     public String prepareHTMLContent(PhylogenyNode node, PhylogenyMould mould){
         StringBuilder content = new StringBuilder("");
         addHeading(node, content);
+        addTable(node, mould, content);
         
         return encloseInCDATA(content);
     }
@@ -48,14 +53,78 @@ public class HTMLParlour {
      * @return
      */
     private String encloseInCDATA(StringBuilder innerContent){
-        String content = "<![CDATA[ " + innerContent + " ]] >";
+        String content = "<![CDATA[\n" + innerContent + "";
         return content;
     }
 
+    /**
+     * Puts the name of the taxonomic unit in the content.
+     * @param node
+     * @param content 
+     */
     private void addHeading(PhylogenyNode node, StringBuilder content){
-        content = content.append("<h1>");
-        content = content.append(node.getNodeName());
-        content = content.append("</h1>");
+        BranchData bData = node.getBranchData();
+        BranchColor bColor = bData.getBranchColor();
+        Color c = bColor.getValue();        
+        String kmlColor = KmlUtility.rgbToHex(c);
+        String rgbColor = getRGBColor(kmlColor);
+        
+        content = content.append("<h2>");
+        content = content.append("<font color=\"#"+rgbColor+"\"  align=\"right\">");
+        content = content.append(getFormattedBiologicalName(node.getNodeName()));
+        content = content.append("</font>");
+        content = content.append("</h2>");
+    }
+    
+    /**
+     * Returns the formatted biological name of a taxonomic unit.
+     * @param name
+     * @return 
+     */
+    private String getFormattedBiologicalName(String name){
+        String fName = null;
+        int i = name.indexOf(' ');
+        
+        //Find the separator.
+        if(i == -1){
+            i = name.indexOf('_');
+        }
+        
+        if(i == -1){
+            i = name.indexOf('.');
+        }
+        
+        //If the separator is not among '.' or '_' or ' ' then take the entire name as it is.
+        if(i == -1){
+            fName = name.substring(0);
+            
+        }else{
+            String sFirst = name.substring(i+1,i+2);            
+            fName = name.substring(0,i) +" "+ sFirst.toUpperCase() +name.substring(i+2, name.length());
+            
+        }
+        
+        return fName;
+    }
+    
+    /**
+     * Finds the rgb color equivalent of a kml color which is in bgr format.
+     * @param color
+     * @return 
+     */
+    private String getRGBColor(String color){
+        String rgbColor = "";        
+        String blue = color.substring(2,4);
+        String green = color.substring(4,6);
+        String red = color.substring(6,8);
+        rgbColor = red + green + blue;
+        return rgbColor;
+    }
+    
+    
+    private void addTable(PhylogenyNode node, PhylogenyMould mould, StringBuilder content){
+        
+        content = content.append("table bgcolor=\"#000000\" ");        
     }
 
 }
