@@ -19,8 +19,8 @@ package nescent.phylogeoref.writer.utility;
 
 import java.awt.Color;
 import static java.lang.System.out;
+import java.util.Set;
 import nescent.phylogeoref.reader.PhylogenyMould;
-import nescent.phylogeoref.writer.utility.KmlUtility;
 import org.forester.phylogeny.PhylogenyNode;
 import org.forester.phylogeny.data.BranchColor;
 import org.forester.phylogeny.data.BranchData;
@@ -32,6 +32,11 @@ import org.forester.phylogeny.data.BranchData;
  * @author apurv
  */
 public class HTMLParlour {
+    
+    /**
+     * Used in HTML table to differentiate consecutive lines.
+     */
+    boolean lineFlag = true;
 
     /**
      * Prepares the html content.
@@ -42,7 +47,10 @@ public class HTMLParlour {
     public String prepareHTMLContent(PhylogenyNode node, PhylogenyMould mould){
         StringBuilder content = new StringBuilder("");
         addHeading(node, content);
-        addTable(node, mould, content);
+        addId(node, content);        
+        addPropertiesTable(node, mould, content);
+        addLineBreak(content);
+        addPropertiesTable(node, content);
         
         return encloseInCDATA(content);
     }
@@ -74,6 +82,132 @@ public class HTMLParlour {
         content = content.append(getFormattedBiologicalName(node.getNodeName()));
         content = content.append("</font>");
         content = content.append("</h2>");
+    }
+    
+    /**
+     * Puts the id of the taxonomic unit in the content.
+     * @param node
+     * @param builder 
+     */
+    private void addId(PhylogenyNode node, StringBuilder content){
+        Integer id = node.getNodeId();
+        content = content.append("(");
+        content = content.append(id.toString());
+        content = content.append(")");
+    }
+    
+    /**
+     * Puts a table with all the attributes and their values in the content.
+     * @param node
+     * @param mould
+     * @param content 
+     */
+    private void addPropertiesTable(PhylogenyNode node, StringBuilder content){
+        
+        content = content.append("<table bgcolor=\"#000000\"  border=\"1\"  >");
+        
+        Double latitude = node.getNodeData().getDistribution().getLatitude().doubleValue();
+        addRow("Latitude",latitude.toString(), content );
+        
+        Double longitude = node.getNodeData().getDistribution().getLongitude().doubleValue();
+        addRow("Longitude",longitude.toString(), content );
+        
+        BranchData bData= node.getBranchData();
+        BranchColor bColor = bData.getBranchColor();
+        if(bColor!=null){
+            Color c = bColor.getValue();
+            String color = getStringRepresentation(c);
+            addRow("Color", color, content);
+        }
+        
+        Double distParent = node.getDistanceToParent();
+        if(distParent != 0.0){
+            addRow("Distance To Parent", distParent.toString(), content);
+        }
+        
+        //TODO: Add the confidence value to the table.
+        
+                
+        content = content.append("</table>");
+    }
+    
+    /**
+     * Extracts all the properties from the phylogeny node and its mould and places it in the html table.
+     * @param node
+     * @param mould
+     * @param content 
+     */
+    private void addPropertiesTable(PhylogenyNode node, PhylogenyMould mould, StringBuilder content){
+        
+        content = content.append("<table bgcolor=\"#000000\">");
+        Set<String> propertyNames = mould.getAllPropertyNames();
+        
+        out.println("Name_____"+node.getNodeName());/////////////////////////////
+        
+        for(String propertyName:propertyNames){
+            String propertyValue = mould.accessValue(propertyName);
+            addRow(propertyName, propertyValue, content);
+            out.println(propertyName+", "+propertyValue);////////////////////////////////////////////////////
+        }
+        out.println("length"+content.length());///////////////////
+        out.println("\n");////////////////////////////////////////
+        
+        content = content.append("</table>");
+    }
+    
+    /**
+     * Adds a row in the html table.
+     * @param key
+     * @param value 
+     */
+    private void addRow(String key, String value, StringBuilder content){
+        
+        if(lineFlag){
+            content = content.append("<tr>");
+            
+            content = content.append("<td bgcolor=\"#009900\">");
+            content = content.append("<font color=\"ffff00\" align=\"right\" >");
+            content = content.append(key);
+            content = content.append("</font>");
+            content = content.append("</td>");
+            
+            content = content.append("<td>");
+            content = content.append("<font color=\"ffffff\" align=\"right\">");
+            content = content.append(value);
+            content = content.append("</font>");
+            content = content.append("</td>");
+            
+            content = content.append("</tr>");
+            
+            lineFlag = false;
+            
+        }else{
+            content = content.append("<tr>");
+            
+            content = content.append("<td bgcolor=\"#0000ff\">");
+            content = content.append("<font color=\"dddddd\" align=\"right\" >");
+            content = content.append(key);
+            content = content.append("</font>");
+            content = content.append("</td>");
+            
+            content = content.append("<td>");
+            content = content.append("<font color=\"ffffff\" align=\"right\">");
+            content = content.append(value);
+            content = content.append("</font>");
+            content = content.append("</td>");
+            
+            content = content.append("</tr>");
+            
+            lineFlag = true;
+        }
+    }
+    
+    /**
+     * Adds an html line break to content.
+     * @param content 
+     */
+    private void addLineBreak(StringBuilder content){
+        content = content.append("<br>");
     }
     
     /**
@@ -121,10 +255,18 @@ public class HTMLParlour {
         return rgbColor;
     }
     
-    
-    private void addTable(PhylogenyNode node, PhylogenyMould mould, StringBuilder content){
-        
-        content = content.append("table bgcolor=\"#000000\" ");        
+    /**
+     * Finds and returns the string representation of the given color.
+     * @param c
+     * @return 
+     */
+    private String getStringRepresentation(Color c){
+        String color = null;
+        Integer r = c.getRed();
+        Integer g = c.getBlue();
+        Integer b = c.getBlue();
+        color = "(r="+r.toString()+", g="+g.toString()+", b="+b.toString()+")";
+        return color;
     }
 
 }

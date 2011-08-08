@@ -140,7 +140,7 @@ public class KmlUtility implements KmlConstants{
         lod.setMinFadeExtent(MIN_FADE_EXTENT);
         lod.setMaxFadeExtent(MAX_FADE_EXTENT);
 
-        createMiddlePlacemark(outerFolder, node, mould);     
+        createMiddlePlacemark(outerFolder, node, mould, description);     
     }
 
     
@@ -150,7 +150,7 @@ public class KmlUtility implements KmlConstants{
      * @param node
      * @param mould
      */
-    private static void createMiddlePlacemark(Folder outerFolder, PhylogenyNode node, PhylogenyMould mould){
+    private static void createMiddlePlacemark(Folder outerFolder, PhylogenyNode node, PhylogenyMould mould, String desc){
 
         //Specify the position of the node.
         double latitude = getLatitude(node);
@@ -164,7 +164,7 @@ public class KmlUtility implements KmlConstants{
         Placemark middlePlacemark = middleFolder.createAndAddPlacemark();
         middlePlacemark.setName(getCondensedName(node.getNodeName()));
 
-        String description = parlour.prepareHTMLContent(node, mould);
+        String description = desc;
         middlePlacemark.setDescription(description);
 
         Point p = middlePlacemark.createAndSetPoint();
@@ -205,7 +205,7 @@ public class KmlUtility implements KmlConstants{
         lod.setMinFadeExtent(MIN_FADE_EXTENT);
         lod.setMaxFadeExtent(MAX_FADE_EXTENT);
         
-        createInternalPlacemark(middleFolder, node, mould);
+        createInternalPlacemark(middleFolder, node, mould, desc);
     }
 
 
@@ -215,7 +215,7 @@ public class KmlUtility implements KmlConstants{
      * @param node
      * @param mould
      */
-    private static void createInternalPlacemark(Folder middleFolder, PhylogenyNode node, PhylogenyMould mould){
+    private static void createInternalPlacemark(Folder middleFolder, PhylogenyNode node, PhylogenyMould mould, String desc){
 
         //Specify the position of the node.
         double latitude = getLatitude(node);
@@ -229,7 +229,7 @@ public class KmlUtility implements KmlConstants{
         Placemark innerPlacemark = innerFolder.createAndAddPlacemark();
         innerPlacemark.setName(node.getNodeName());
 
-        String description = parlour.prepareHTMLContent(node, mould);
+        String description = desc;
         innerPlacemark.setDescription(description);
 
         Point p = innerPlacemark.createAndSetPoint();

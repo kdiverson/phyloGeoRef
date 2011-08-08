@@ -41,6 +41,12 @@ public class ComputeUtility {
     private static double ERROR = 0.0000000000001;
     
     /**
+     * All initializations are done to this value.
+     * Also used as a minimum value for distances.
+     */
+    private static double UNDEFINED = -1.0;
+    
+    /**
      * Finds the mean position.
      * @param posVector
      * @return 
@@ -117,7 +123,7 @@ public class ComputeUtility {
                 
         
         //Find the two points that are maximally separated.
-        Double maxDistance = Double.MIN_VALUE;
+        Double maxDistance = -1.0;
         Double angularDistance = -1.0;                
         
         //The angle of two points that are maximally separated across all comparison.
@@ -143,7 +149,7 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
-
+        
 
         angularDistance = findMaxDistance23(quad2, quad3);
 
@@ -153,7 +159,7 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
-
+        
 
         angularDistance = findMaxDistance34(quad3, quad4);
 
@@ -163,7 +169,7 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
-
+        
         
         angularDistance = findMaxDistance13(quad1, quad3);
 
@@ -173,7 +179,7 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
-
+        
         
         angularDistance = findMaxDistance24(quad2, quad4);
 
@@ -183,7 +189,7 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
-
+        
         
         angularDistance = findMaxDistanceAA(quad1);
 
@@ -193,7 +199,7 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
-
+        
         
         angularDistance = findMaxDistanceAA(quad2);
 
@@ -203,7 +209,7 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
-
+        
         
         angularDistance = findMaxDistanceAA(quad3);
 
@@ -213,7 +219,7 @@ public class ComputeUtility {
             globalAngleZero = angleZero;
             
         }
-
+        
         
         angularDistance = findMaxDistanceAA(quad4);
 
@@ -222,8 +228,9 @@ public class ComputeUtility {
             globalAngleMax = angleMax;
             globalAngleZero = angleZero;
             
-        }     
-
+        }
+        
+        //TODO: Put additional check for maximum distance here. Exit if inconsistent value found.
         
         //Transform the coordinates such that globalAngleMax is transformed to 0 with positive direction
         //in the direction of least distance of globalAngleMax.        
@@ -247,7 +254,7 @@ public class ComputeUtility {
             transMeanPos = computeWeightedMean(tPosVector, wVector);
             
         }
-        
+                
         //Transform back
         meanPos = unTransform(transMeanPos, globalAngleZero, globalAngleMax, maxDistance);
         
@@ -390,10 +397,10 @@ public class ComputeUtility {
         if(quad1.length == 0 || quad2.length == 0){
             angleZero = Double.NaN;
             angleMax = Double.NaN;
-            return Double.MIN_VALUE;
+            return UNDEFINED;
         }
         
-        Double maxDistance = Double.MIN_VALUE;
+        Double maxDistance = UNDEFINED;
         angleZero = quad1[0];
         angleMax = quad2[quad2.length-1];
         
@@ -416,10 +423,10 @@ public class ComputeUtility {
         if(quad1.length == 0 || quad4.length == 0){
             angleZero = Double.NaN;
             angleMax = Double.NaN;
-            return Double.MIN_VALUE;
+            return UNDEFINED;
         }
         
-        Double maxDistance = Double.MIN_VALUE;
+        Double maxDistance = UNDEFINED;
         angleZero = quad1[quad1.length-1];
         angleMax = quad4[0];
         
@@ -441,10 +448,10 @@ public class ComputeUtility {
         if(quad3.length == 0 || quad4.length == 0){
             angleZero = Double.NaN;
             angleMax = Double.NaN;
-            return Double.MIN_VALUE;
+            return UNDEFINED;
         }
         
-        Double maxDistance = Double.MIN_VALUE;
+        Double maxDistance = UNDEFINED;
         angleZero = quad3[0];
         angleMax = quad4[quad4.length-1];
         
@@ -466,10 +473,10 @@ public class ComputeUtility {
         if(quad2.length == 0 || quad3.length == 0){
             angleZero = Double.NaN;
             angleMax = Double.NaN;
-            return Double.MIN_VALUE;
+            return UNDEFINED;
         }
         
-        Double maxDistance = Double.MIN_VALUE;
+        Double maxDistance = UNDEFINED;
         angleZero = quad2[0];
         angleMax = quad3[quad3.length-1];
         
@@ -493,10 +500,10 @@ public class ComputeUtility {
         if(quad1.length == 0 || quad3.length == 0){
             angleZero = Double.NaN;
             angleMax = Double.NaN;
-            return Double.MIN_VALUE;
+            return UNDEFINED;
         }
         
-        Double maxDistance = Double.MIN_VALUE;
+        Double maxDistance = UNDEFINED;
         angleZero = quad1[0];
         angleMax = quad3[0];                
         
@@ -532,7 +539,7 @@ public class ComputeUtility {
         if(quad2.length == 0 || quad4.length == 0){
             angleZero = Double.NaN;
             angleMax = Double.NaN;
-            return Double.MIN_VALUE;
+            return UNDEFINED;
         }
         
         return findMaxDistance13(quad2, quad4);
@@ -618,10 +625,10 @@ public class ComputeUtility {
         if(quadA.length == 0){
             angleZero = Double.NaN;
             angleMax = Double.NaN;
-            return Double.MIN_VALUE;
+            return UNDEFINED;
         }
         
-        Double maxDistance = 0.0;
+        Double maxDistance = UNDEFINED;
         angleZero = quadA[0].doubleValue();
         angleMax = quadA[quadA.length-1].doubleValue();
         
@@ -805,12 +812,22 @@ public class ComputeUtility {
         return meanPos;
     }
     
+    
+    
+    //TODO: Delete this test case.
     public static void main(String args[]){
         Vector<Double> posVector = new Vector<Double>();
-        posVector.add(132.0);
-        posVector.add(145.0);
+        double a1=132.0;
+        double a2=132.0;
+        double a3=132.0;
+        
+        posVector.add(a1);
+        posVector.add(a2);
+        posVector.add(a3);
         
         double mean = findMeanPosition(posVector);
+        double dist = findMinAngularDistance(a1, a2);
+        out.println(dist);
         out.println(mean);
     }
         

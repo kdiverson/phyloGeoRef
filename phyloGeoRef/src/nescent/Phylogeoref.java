@@ -76,18 +76,21 @@ public class Phylogeoref {
         //File metaFile = new File("src\\testCoordsmeta2.csv");
     
         File treeFile = new File("samples\\mammals\\mammalsTree.xml");
-        File metaFile = new File("samples\\mammals\\mammals_in_tree.txt");
-
+        //File metaFile = new File("samples\\mammals\\mammals_in_tree.txt");
+        File metaFile = new File("samples\\mammals\\Mammals_in_tree_pantheria.csv");
+        
         File[] metaFiles = new File[]{metaFile};
 
 
         GrandUnifiedReader gur = new GrandUnifiedReader();
-        gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim('\t').setCladeDiv(6);
+        //gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim('\t').setCladeDiv(6);
+        gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(',').setCladeDiv(6);
         //gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(',').setCladeDiv(0);
         //gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(',').setCladeDiv(4);
 
 
-        gur.setArgs(5,4,3,1,2);
+        //gur.setArgs(5,4,3,1,2);
+        gur.setArgs(5,4,3,0,1,0); 
         //gur.setArgs(1,2,3);
 
         gur.buildUnifiedPhylogeny();
@@ -95,8 +98,9 @@ public class Phylogeoref {
         Phylogeny phy = gur.getPhylogeny();
         Phylogeny phyArray[] =  gur.getPhylogenyArray();
         Map mouldMapArray[] = gur.getMouldMaps();
+        
 
-        PhylogenyProcessor processor = ProcessorFactory.getInstance(true);
+        PhylogenyProcessor processor = ProcessorFactory.getInstance(false);
         AdvancedKmlWriter kmlw = new AdvancedKmlWriter();
         
         for(int i=0; i<phyArray.length; i++){
