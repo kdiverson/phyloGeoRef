@@ -39,7 +39,7 @@ import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
 public class LevelwiseKmlPainter implements KmlPainter{
 
     private Phylogeny phylogeny;    //the phylogeny currently being drawn.
-    private HashMap<String,PhylogenyMould> mouldMap;           //the mould map with the currently drawn phylogeny.
+    private HashMap<String,PhylogenyMould> mouldMap;//the mould map associated with the currently drawn phylogeny.
     private Document document;
 
     private HashMap<Integer,Folder> folderMap;
@@ -86,20 +86,33 @@ public class LevelwiseKmlPainter implements KmlPainter{
 
     /**
      * Puts the placemarks for external nodes in a separate folder named "Taxon Label".
+     * Places the members of different clades in separate folder.
      */
     private void putExternalNodes(){      
         //Create a folder to put all the tip nodes.
         Folder folder = KmlUtility.createFolder(document, "Taxon Label", "Contains the leaf obeservations");
         Set<PhylogenyNode> extNodeSet = phylogeny.getExternalNodes();
+        HashMap<String, Folder> cladeFolderMap = new HashMap<String, Folder>();
 
         for(PhylogenyNode node:extNodeSet){
-
+            
             String name = node.getNodeName();
             PhylogenyMould mould = mouldMap.get(name);
             
+            Folder cladeFolder = null;
+            String clade = mould.getClade();
+            
+            if(cladeFolderMap.containsKey(clade)){
+                cladeFolder = cladeFolderMap.get(clade);
+                
+            }else{
+                cladeFolder = KmlUtility.createFolder(folder, clade, "Contains members of the clade "+clade);
+                cladeFolderMap.put(clade, cladeFolder);
+            }
+            
             //Create a placemark in folder for node having mould with it.
-            KmlUtility.createExternalPlacemark(folder, node, mould);
-        }        
+            KmlUtility.createExternalPlacemark(cladeFolder, node, mould);
+        }
     }
 
     /**

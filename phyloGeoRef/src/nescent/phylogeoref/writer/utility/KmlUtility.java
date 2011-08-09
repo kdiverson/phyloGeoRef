@@ -68,6 +68,20 @@ public class KmlUtility implements KmlConstants{
         folder.withDescription(description);
         return folder;
     }
+    
+    /**
+     * Creates a new inner folder inside the specified outer folder with the given description.
+     * @param outerFolder
+     * @param folderName
+     * @param description
+     * @return 
+     */    
+    public static Folder createFolder(Folder outerFolder, String folderName, String description){
+        Folder innerFolder = outerFolder.createAndAddFolder();
+        innerFolder.withName(folderName);
+        innerFolder.withDescription(description);
+        return innerFolder;
+    }
 
     
     /**
@@ -501,6 +515,9 @@ public class KmlUtility implements KmlConstants{
         //Create the level 1 placemark. (outermost placemark)
         Placemark outerPlacemark = outerFolder.createAndAddPlacemark();
         outerPlacemark.setName(node.getNodeName());
+        
+        String description = parlour.prepareHTMLContent(node, mould);
+        outerPlacemark.setDescription(description);
 
         Point p = outerPlacemark.createAndSetPoint();
         p.addToCoordinates(longitude, latitude, altitude);

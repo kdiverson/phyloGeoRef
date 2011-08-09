@@ -47,8 +47,12 @@ public class HTMLParlour {
     public String prepareHTMLContent(PhylogenyNode node, PhylogenyMould mould){
         StringBuilder content = new StringBuilder("");
         addHeading(node, content);
-        addId(node, content);        
-        addPropertiesTable(node, mould, content);
+        addId(node, content);
+        
+        if(mould != null){
+            addPropertiesTable(node, mould, content);
+        }
+        
         addLineBreak(content);
         addPropertiesTable(node, content);
         
@@ -140,18 +144,13 @@ public class HTMLParlour {
     private void addPropertiesTable(PhylogenyNode node, PhylogenyMould mould, StringBuilder content){
         
         content = content.append("<table bgcolor=\"#000000\">");
-        Set<String> propertyNames = mould.getAllPropertyNames();
-        
-        out.println("Name_____"+node.getNodeName());/////////////////////////////
+        Set<String> propertyNames = mould.getAllPropertyNames();        
         
         for(String propertyName:propertyNames){
             String propertyValue = mould.accessValue(propertyName);
             addRow(propertyName, propertyValue, content);
-            out.println(propertyName+", "+propertyValue);////////////////////////////////////////////////////
-        }
-        out.println("length"+content.length());///////////////////
-        out.println("\n");////////////////////////////////////////
-        
+            
+        }        
         content = content.append("</table>");
     }
     

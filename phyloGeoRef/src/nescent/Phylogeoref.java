@@ -29,6 +29,7 @@ import nescent.phylogeoref.processor.PhylogenyProcessor;
 import nescent.phylogeoref.processor.ProcessorFactory;
 import nescent.phylogeoref.reader.GrandUnifiedReader;
 import nescent.phylogeoref.writer.AdvancedKmlWriter;
+import nescent.phylogeoref.writer.PaintStyle;
 import org.forester.phylogeny.Phylogeny;
 
 /**
@@ -69,29 +70,29 @@ public class Phylogeoref {
      */
     public static void main(String...args) throws Throwable{
 
-        //File treeFile = new File("samples\\treeHypothetical\\tree.nwk");
-        //File metaFile=new File("samples\\treeHypothetical\\test.csv");
+        File treeFile = new File("samples\\treeHypothetical\\tree.nwk");
+        File metaFile=new File("samples\\treeHypothetical\\test.csv");
 
         //File treeFile = new File("samples\\tree1\\testTree.xml");
         //File metaFile = new File("src\\testCoordsmeta2.csv");
     
-        File treeFile = new File("samples\\mammals\\mammalsTree.xml");
+        //File treeFile = new File("samples\\mammals\\mammalsTree.xml");
         //File metaFile = new File("samples\\mammals\\mammals_in_tree.txt");
-        File metaFile = new File("samples\\mammals\\Mammals_in_tree_pantheria.csv");
+        //File metaFile = new File("samples\\mammals\\Mammals_in_tree_pantheria.csv");
         
         File[] metaFiles = new File[]{metaFile};
 
 
         GrandUnifiedReader gur = new GrandUnifiedReader();
         //gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim('\t').setCladeDiv(6);
-        gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(',').setCladeDiv(6);
+        //gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(',').setCladeDiv(6);
         //gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(',').setCladeDiv(0);
-        //gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(',').setCladeDiv(4);
+        gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(',').setCladeDiv(4);
 
 
         //gur.setArgs(5,4,3,1,2);
-        gur.setArgs(5,4,3,0,1,0); 
-        //gur.setArgs(1,2,3);
+        //gur.setArgs(5,4,3,0,1,0); 
+        gur.setArgs(1,2,3);
 
         gur.buildUnifiedPhylogeny();
         
@@ -101,7 +102,7 @@ public class Phylogeoref {
         
 
         PhylogenyProcessor processor = ProcessorFactory.getInstance(false);
-        AdvancedKmlWriter kmlw = new AdvancedKmlWriter();
+        AdvancedKmlWriter kmlw = new AdvancedKmlWriter(PaintStyle.HIERARCHICAL);
         
         for(int i=0; i<phyArray.length; i++){
 
@@ -110,5 +111,5 @@ public class Phylogeoref {
             kmlw.createKMZ(phyArray[i], mouldMapArray[i], "mojo");
             
         }
-    }   
+    }
 }
