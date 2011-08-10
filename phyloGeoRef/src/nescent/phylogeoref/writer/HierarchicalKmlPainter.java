@@ -62,7 +62,8 @@ public class HierarchicalKmlPainter implements KmlPainter{
             Folder folder = null;
             
             if(node.isRoot()){
-                folder = KmlUtility.createFolder(document, node.getNodeName(), "Root Node");
+                Integer id = node.getNodeId();
+                folder = KmlUtility.createFolder(document, node.getNodeName()+" HTU-"+id.toString(), "Root Node");
                 
                 String name = node.getNodeName();
                 PhylogenyMould mould = mouldMap.get(name);
@@ -76,7 +77,8 @@ public class HierarchicalKmlPainter implements KmlPainter{
                 Folder parentFolder = folderMap.get(parentNode);
                 
                 String name = node.getNodeName();
-                Folder childFolder = KmlUtility.createFolder(parentFolder, name, name);
+                Integer id = node.getNodeId();
+                Folder childFolder = KmlUtility.createFolder(parentFolder, name+" HTU-"+id.toString(), name);
                 
                 PhylogenyMould mould = mouldMap.get(name);
                 KmlUtility.createHTUPlacemark(childFolder, node, mould);

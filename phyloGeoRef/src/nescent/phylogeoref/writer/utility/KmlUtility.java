@@ -507,14 +507,17 @@ public class KmlUtility implements KmlConstants{
         double latitude = getLatitude(node);
         double longitude = getLongitude(node);
         double altitude = getAltitude(node);
+        
+        Integer id = node.getNodeId();
+        String name = node.getNodeName()+" HTU-"+id.toString();
 
         //Create the level 1 folder.
         Folder outerFolder = folder.createAndAddFolder();
-        outerFolder.withName(node.getNodeName());
+        outerFolder.withName(name);
 
         //Create the level 1 placemark. (outermost placemark)
         Placemark outerPlacemark = outerFolder.createAndAddPlacemark();
-        outerPlacemark.setName(node.getNodeName());
+        outerPlacemark.setName(name);
         
         String description = parlour.prepareHTMLContent(node, mould);
         outerPlacemark.setDescription(description);
