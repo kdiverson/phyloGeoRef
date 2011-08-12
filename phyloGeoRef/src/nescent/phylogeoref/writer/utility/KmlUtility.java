@@ -18,6 +18,7 @@
 package nescent.phylogeoref.writer.utility;
 
 import de.micromata.opengis.kml.v_2_2_0.AltitudeMode;
+import de.micromata.opengis.kml.v_2_2_0.Boundary;
 import de.micromata.opengis.kml.v_2_2_0.ColorMode;
 import de.micromata.opengis.kml.v_2_2_0.Coordinate;
 import de.micromata.opengis.kml.v_2_2_0.Document;
@@ -28,10 +29,13 @@ import de.micromata.opengis.kml.v_2_2_0.LabelStyle;
 import de.micromata.opengis.kml.v_2_2_0.LatLonAltBox;
 import de.micromata.opengis.kml.v_2_2_0.LineString;
 import de.micromata.opengis.kml.v_2_2_0.LineStyle;
+import de.micromata.opengis.kml.v_2_2_0.LinearRing;
 import de.micromata.opengis.kml.v_2_2_0.Lod;
 import de.micromata.opengis.kml.v_2_2_0.Pair;
 import de.micromata.opengis.kml.v_2_2_0.Placemark;
 import de.micromata.opengis.kml.v_2_2_0.Point;
+import de.micromata.opengis.kml.v_2_2_0.PolyStyle;
+import de.micromata.opengis.kml.v_2_2_0.Polygon;
 import de.micromata.opengis.kml.v_2_2_0.Region;
 import de.micromata.opengis.kml.v_2_2_0.Style;
 import de.micromata.opengis.kml.v_2_2_0.StyleMap;
@@ -39,6 +43,8 @@ import de.micromata.opengis.kml.v_2_2_0.StyleState;
 import de.micromata.opengis.kml.v_2_2_0.ViewRefreshMode;
 import static java.lang.System.out;
 import java.awt.Color;
+import java.util.List;
+import java.util.Vector;
 import nescent.phylogeoref.reader.PhylogenyMould;
 import org.forester.phylogeny.PhylogenyNode;
 import org.forester.phylogeny.data.BranchColor;
@@ -154,7 +160,13 @@ public class KmlUtility implements KmlConstants{
         lod.setMinFadeExtent(MIN_FADE_EXTENT);
         lod.setMaxFadeExtent(MAX_FADE_EXTENT);
 
-        createMiddlePlacemark(outerFolder, node, mould, description);     
+        createMiddlePlacemark(outerFolder, node, mould, description);
+        
+        //Multi-Occurrence of same specie.
+        //Remember you cannot place multiple entities in the same placemarks.
+        if(mould.getNumObservations() > 1){
+            createPolygon(mould.getLatVector(), mould.getLonVector(), folder, node);
+        }
     }
 
     
@@ -517,7 +529,6 @@ public class KmlUtility implements KmlConstants{
 
         //Create the level 1 placemark. (outermost placemark)
         Placemark outerPlacemark = outerFolder.createAndAddPlacemark();
-        outerPlacemark.setName(name);
         
         String description = parlour.prepareHTMLContent(node, mould);
         outerPlacemark.setDescription(description);
@@ -619,6 +630,44 @@ public class KmlUtility implements KmlConstants{
         Coordinate toCoord = new Coordinate(destLong, destLat, destAlt);
         
         KmlToolkit.drawCurvedLine(line, fromCoord, toCoord);
-    }    
+    }
+    
+    
+    /**
+     * Creates a polygon on the surface of the earth filled with the specified color.
+     * @param latVector
+     * @param lonVector 
+     * @param folder the folder in which the polygon is to be drawn.
+     */
+    public static void createPolygon(Vector<Double> latVector, Vector<Double> lonVector, Folder folder, PhylogenyNode node){
+        
+        Placemark polyPlacemark = folder.createAndAddPlacemark();
+        polyPlacemark.setName(node.getNodeName());
+        
+        Style style = polyPlacemark.createAndAddStyle();
+        PolyStyle polyStyle = style.createAndSetPolyStyle();
+        
+        String color = getColor(node);
+        polyStyle.setColor(color);
+        
+        Polygon polygon = polyPlacemark.createAndSetPolygon();
+        Boundary boundary = polygon.createAndSetOuterBoundaryIs();
+        LinearRing lRing = boundary.createAndSetLinearRing();
+        List<Coordinate> coordList = lRing.createAndSetCoordinates();
+        
+        int l = latVector.size();
+        for(int i=0; i<l; i++){
+            Double lat = latVector.get(i);
+            Double lon = lonVector.get(i);
+            Coordinate coordinate = new Coordinate(lon, lat);
+            coordList.add(coordinate);
+        }
+        
+        Double lat = latVector.get(0);
+        Double lon = lonVector.get(0);
+        Coordinate coordinate = new Coordinate(lon, lat);
+        coordList.add(coordinate);
+        
+    }
 
 }

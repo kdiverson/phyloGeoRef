@@ -32,21 +32,17 @@ import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
  * Paints a dynamic kml file with animations.
  * @author apurv
  */
-public class HierarchicalKmlPainter implements KmlPainter{
-
-    private Phylogeny phylogeny;    //the phylogeny currently being drawn.
-    private Map<String, PhylogenyMould> mouldMap;   //the mould map associated with the currently drawn phylogeny.
-    private Document document;
+public class HierarchicalKmlPainter extends KmlPainter{
     
     private HashMap<PhylogenyNode,Folder> folderMap;   //Contains the mapping from the node to the kml folder corresponding to it.
 
     public HierarchicalKmlPainter(Phylogeny phylogeny, Map mouldMap, Document document) {
-        this.phylogeny = phylogeny;
-        this.mouldMap = (HashMap) mouldMap;
-        this.document = document;
+        super(phylogeny, (HashMap) mouldMap, document);        
         folderMap = new HashMap<PhylogenyNode, Folder>();
     }
 
+    
+    
     @Override
     public void paintPhylogeny() {
         
@@ -88,56 +84,7 @@ public class HierarchicalKmlPainter implements KmlPainter{
             }
         }
         putExternalNodes();        
-    }
-           
-        
-    /**
-     * Puts the placemarks for external nodes in a separate folder named "Taxon Label".
-     * Places the members of different clades in separate folder.
-     */
-    private void putExternalNodes(){      
-        //Create a folder to put all the tip nodes.
-        Folder folder = KmlUtility.createFolder(document, "Taxon Label", "Contains the leaf obeservations");
-        Set<PhylogenyNode> extNodeSet = phylogeny.getExternalNodes();
-        HashMap<String, Folder> cladeFolderMap = new HashMap<String, Folder>();
-
-        for(PhylogenyNode node:extNodeSet){
-            
-            String name = node.getNodeName();
-            PhylogenyMould mould = mouldMap.get(name);
-            
-            Folder cladeFolder = null;
-            String clade = mould.getClade();
-            
-            if(cladeFolderMap.containsKey(clade)){
-                cladeFolder = cladeFolderMap.get(clade);
-                
-            }else{
-                cladeFolder = KmlUtility.createFolder(folder, clade, "Contains members of the clade "+clade);
-                cladeFolderMap.put(clade, cladeFolder);
-            }
-            
-            //Create a placemark in folder for node having mould with it.
-            KmlUtility.createExternalPlacemark(cladeFolder, node, mould);
-        }
-    }
-
-    /**
-     * Draws all the edges from the node to its children.
-     * @param folder the folder in which everything at this level is to be drawn.
-     * @param node
-     * @param mould
-     */
-    private void drawEdges(Folder folder, PhylogenyNode node){
-
-        for (int i=0; i < node.getNumberOfDescendants(); i++){
-            
-            PhylogenyNode childNode = node.getChildNode(i);           
-            
-            KmlUtility.createBranch(folder, node, childNode);
-            
-        }
-    }    
+    }                       
 
     
 }

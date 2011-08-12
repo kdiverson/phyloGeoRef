@@ -258,9 +258,10 @@ public class ComputeUtility {
         //Transform back
         meanPos = unTransform(transMeanPos, globalAngleZero, globalAngleMax, maxDistance);
         
-        out.println(Arrays.deepToString(posVector.toArray()));
-        out.println(Arrays.deepToString(tPosVector.toArray()));
-        out.println("mean position is "+meanPos);
+        //TODO: Remove; This is commented because its very handy in debugging.
+        //out.println(Arrays.deepToString(posVector.toArray()));
+        //out.println(Arrays.deepToString(tPosVector.toArray()));
+        //out.println("mean position is "+meanPos);
         return meanPos;
     }
     
@@ -352,10 +353,7 @@ public class ComputeUtility {
             }else if(position < gAngleZero || position > gAngleMax){
                 negatives++;
             }
-        }
-        
-        out.println(positives);//////////////////////////////////////////////////////////////////////////////
-        out.println(negatives);//////////////////////////////////////////////////////////////////////////////
+        }                
         
         if(positives>negatives){
             sgn =  1;
@@ -785,30 +783,25 @@ public class ComputeUtility {
             //Find the candidate mean postions.
             double cMean1 = addClockwise(gAngleZero, Math.abs(tMeanPos));
             double cMean2 = addAntiClockwise(gAngleZero, Math.abs(tMeanPos));
-            
-            out.println("CMean1 = "+cMean1);//////////////////////////////////////////
-            out.println("CMean2 = "+cMean2);//////////////////////////////////////////
-            
+                       
             //Find which one lies between gAngleZero and gAngleMax
             double d1 = findMinAngularDistance(gAngleZero, cMean1);
             double d2 = findMinAngularDistance(cMean1, gAngleMax);
-            out.println(d1+" + "+ "d2 "+d2+" == "+(d1+d2)+", whereas"+maxDistance);///////////////////
             
             if(((d1+d2)-maxDistance) <= ERROR){
                 meanPos = cMean1;
-                out.println("1) d1 = "+d1+" + "+ "d2 "+d2+" == "+maxDistance);///////////////////
+
             }
             
             d1 = findMinAngularDistance(gAngleZero, cMean2);
             d2 = findMinAngularDistance(cMean2, gAngleMax);
-            out.println(d1+" + "+ "d2 "+d2+" == "+(d1+d2)+", whereas"+maxDistance);///////////////////
             
             if( ((d1+d2)-maxDistance) <= ERROR){
                 meanPos = cMean2;
-                out.println("2) d1 = "+d1+" + "+ "d2 "+d2+" == "+maxDistance);///////////////////
+
             }
         }
-        out.println("local mean pos "+meanPos);
+        
         return meanPos;
     }
     

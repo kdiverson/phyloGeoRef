@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import nescent.phylogeoref.processor.utility.ComputeUtility;
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
 import org.forester.phylogeny.data.BranchColor;
@@ -96,7 +97,7 @@ public class PhylogenyKitchen {
         b = new Random();
 
 
-        in = new UniversalMetadataReader(metaFile,  delim);
+        in = new UniversalMetadataReader(this.metaFile,  this.delim);
     }
 
         
@@ -259,8 +260,10 @@ public class PhylogenyKitchen {
      * @param node
      */
     private void mixIngredients(PhylogenyNode node)throws NullPointerException{
-
-        setNodeData(node.getNodeData());
+        
+        PhylogenyMould mould = map.get(node.getNodeName());
+        
+        setNodeData(node.getNodeData(), mould);
 
         // If the user has specified a colums to be taken as clade, color this node.
         setBranchData(node.getBranchData());
@@ -275,22 +278,51 @@ public class PhylogenyKitchen {
 
     /**
      * Sets node data for this node.
+     * 
      * @param nodeData
      */
-    private void setNodeData(NodeData nodeData){
+    private void setNodeData(NodeData nodeData, PhylogenyMould mould){
 
         Taxonomy taxo = new Taxonomy();
         nodeData.setTaxonomy(taxo);
         taxo.setScientificName(get("sname"));
-        taxo.setCommonName(get("cname"));
+        taxo.setCommonName(get("cname"));        
+        
+        Double lat = Double.parseDouble(get("latitude"));
+        Double lon = Double.parseDouble(get("longitude"));
+        
+        mould.addLatitude(lat);
+        mould.addLongitude(lon);
+        int n = mould.getNumObservations();
+        
+        if(n == 0){
+            Distribution dist = new Distribution(get("label"));
+            nodeData.setDistribution(dist);
+        
+            dist.setLatitude(new BigDecimal(lat));
+            dist.setLongitude(new BigDecimal(lon));
+            dist.setAltitude(BigDecimal.ZERO);
+                        
+            n++;
+            mould.setNumObservations(n);
+            
+        }else{
 
-        Distribution dist = new Distribution(get("label"));
-        nodeData.setDistribution(dist);
-        Float lat = Float.parseFloat(get("latitude"));
-        Float lon = Float.parseFloat(get("longitude"));
-        dist.setLatitude(new BigDecimal(lat));
-        dist.setLongitude(new BigDecimal(lon));
-        dist.setAltitude(BigDecimal.ZERO);
+            Distribution dist = nodeData.getDistribution();
+            
+            Double curLat = dist.getLatitude().doubleValue();            
+            double sigmaLat = curLat*n + lat;
+            n++;
+            Double meanLat = sigmaLat/n;
+            
+            double meanLon = ComputeUtility.findMeanPosition(mould.getLonVector());            
+            
+            dist.setLatitude(new BigDecimal(meanLat));
+            dist.setLongitude(new BigDecimal(meanLon));
+            dist.setAltitude(BigDecimal.ZERO);
+            
+            mould.setNumObservations(n);
+        }
     }
 
     /**

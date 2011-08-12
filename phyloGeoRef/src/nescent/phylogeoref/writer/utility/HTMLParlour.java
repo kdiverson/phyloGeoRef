@@ -129,8 +129,7 @@ public class HTMLParlour {
             addRow("Distance To Parent", distParent.toString(), content);
         }
         
-        //TODO: Add the confidence value to the table.
-        
+        //TODO: Add the confidence value to the table.                
                 
         content = content.append("</table>");
     }
@@ -144,13 +143,19 @@ public class HTMLParlour {
     private void addPropertiesTable(PhylogenyNode node, PhylogenyMould mould, StringBuilder content){
         
         content = content.append("<table bgcolor=\"#000000\">");
-        Set<String> propertyNames = mould.getAllPropertyNames();        
+        Set<String> propertyNames = mould.getAllPropertyNames();                
         
         for(String propertyName:propertyNames){
             String propertyValue = mould.accessValue(propertyName);
             addRow(propertyName, propertyValue, content);
             
-        }        
+        }
+        
+        if(mould.getNumObservations()>1){
+            Integer numObs = mould.getNumObservations();
+            addRow("Observations", numObs.toString(), content);
+        }
+        
         content = content.append("</table>");
     }
     

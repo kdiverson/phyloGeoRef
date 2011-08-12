@@ -20,6 +20,7 @@ package nescent.phylogeoref.reader;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.Vector;
 import org.forester.phylogeny.PhylogenyNode;
 
 /**
@@ -34,12 +35,21 @@ public class PhylogenyMould {
     private Map<String, String> propertyMap; //The map which will contain all the secondary properties.
     private String clade; //The clade to which this node belongs. Null if no clade divison has been spec.
 
-    //TODO: Implemetation for multiple observations yet to be done.
     private int numObservations;    //The number of observations of this species.
+        
+    private Vector<Double> latVector;   //Vector for holding  latitude values for multiple occurrences.
+    private Vector<Double> lonVector;   //Vector for holding longitude values for multiple occurrences.
+    
 
     public PhylogenyMould(){
         propertyMap = new HashMap<String, String>();
+        latVector = new Vector<Double>();
+        lonVector = new Vector<Double>();
     }
+
+    public int getNumObservations() {
+        return numObservations;
+    }    
 
     public String getClade(){
         return clade;
@@ -69,8 +79,15 @@ public class PhylogenyMould {
     public String accessValue(String propName){
         return propertyMap.get(propName);
     }
-    
 
+    public Vector<Double> getLatVector() {
+        return latVector;
+    }
+
+    public Vector<Double> getLonVector() {
+        return lonVector;
+    }
+            
     public PhylogenyNode getAssociatedNode() {
         return node;
     }
@@ -81,6 +98,18 @@ public class PhylogenyMould {
 
     public void setClade(String cladeName){
         clade = cladeName;
+    }
+    
+    public void setNumObservations(int numObservations) {
+        this.numObservations = numObservations;
+    }
+    
+    public void addLatitude(Double latitude){
+        latVector.add(latitude);
+    }
+    
+    public void addLongitude(Double longitude){
+        lonVector.add(longitude);
     }
 
 
