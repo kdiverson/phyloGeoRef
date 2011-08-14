@@ -44,9 +44,9 @@ public class Phylogeoref {
         setupLogger(); //Setup the logger at class load
     }
 
-   /**
-    * Sets up the logger.
-    */
+    /**
+     * Sets up the logger.
+     */
     private static void setupLogger(){
         LOGGER.setLevel(Level.ALL);
         try {
@@ -97,6 +97,8 @@ public class Phylogeoref {
         gur.buildUnifiedPhylogeny();
         
         Phylogeny phy = gur.getPhylogeny();
+        Map mouldMap = gur.getMouldMap();
+        
         Phylogeny phyArray[] =  gur.getPhylogenyArray();
         Map mouldMapArray[] = gur.getMouldMaps();
         
