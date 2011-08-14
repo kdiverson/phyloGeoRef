@@ -438,7 +438,7 @@ public class KmlUtility implements KmlConstants{
      */
     private static String getLighterShade(String color){
         String lighterShade = color.substring(2);
-        return "dd"+lighterShade;
+        return "bb"+lighterShade;
     }
 
 
@@ -647,12 +647,32 @@ public class KmlUtility implements KmlConstants{
         Style style = polyPlacemark.createAndAddStyle();
         PolyStyle polyStyle = style.createAndSetPolyStyle();
         
-        String color = getColor(node);
+        String color = getLighterShade(getColor(node));
         polyStyle.setColor(color);
+        
+        Region region =  polyPlacemark.createAndSetRegion();
+        LatLonAltBox box = region.createAndSetLatLonAltBox();
+        
+        double minLat = findMinPosition(latVector);
+        double maxLat = findMaxPosition(latVector);
+        double minLon = findMinPosition(lonVector);
+        double maxLon = findMaxPosition(lonVector);
+        
+        box.setNorth(maxLat);
+        box.setSouth(minLat);
+        box.setEast(maxLon);
+        box.setWest(minLon);
+        
+        Lod lod = region.createAndSetLod();
+        lod.setMaxLodPixels(1024.0);
+        lod.setMinLodPixels(128.0);
+        lod.setMinFadeExtent(64);
+        lod.setMaxFadeExtent(256);
         
         Polygon polygon = polyPlacemark.createAndSetPolygon();
         Boundary boundary = polygon.createAndSetOuterBoundaryIs();
         LinearRing lRing = boundary.createAndSetLinearRing();
+        lRing.setTessellate(Boolean.TRUE);
         List<Coordinate> coordList = lRing.createAndSetCoordinates();
         
         int l = latVector.size();
@@ -668,6 +688,36 @@ public class KmlUtility implements KmlConstants{
         Coordinate coordinate = new Coordinate(lon, lat);
         coordList.add(coordinate);
         
+    }
+
+    /**
+     * Finds the minimum position.
+     * @param posVector
+     * @return 
+     */
+    private static double findMinPosition(Vector<Double> posVector) {
+        double minPos = posVector.elementAt(0);
+        for(Double pos:posVector){
+            if(pos < minPos){
+                minPos = pos;
+            }
+        }
+        return minPos;
+    }
+    
+    /**
+     * Finds the maximum position.
+     * @param posVector
+     * @return 
+     */
+    private static double findMaxPosition(Vector<Double> posVector) {
+        double maxPos = posVector.elementAt(0);
+        for(Double pos:posVector){
+            if(pos > maxPos){
+                maxPos = pos;
+            }
+        }
+        return maxPos;
     }
 
 }
