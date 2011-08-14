@@ -38,6 +38,11 @@ public class CSVMetadataReader implements MetadataReader{
     private char delim;
     private CSVReader in;
 
+    /**
+     * Reads metadata from a CSV file.
+     * @param metaFile
+     * @param delim
+     */
     public CSVMetadataReader(File metaFile, char delim){
         this.metaFile = metaFile;
         this.delim = delim;

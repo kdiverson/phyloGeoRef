@@ -21,14 +21,9 @@ import java.io.File;
 import static java.lang.System.out;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
-import java.util.logging.Level;
 import java.util.logging.Logger;
-import nescent.phylogeoref.validator.exception.LocationNotFoundException;
 import org.forester.phylogeny.Phylogeny;
 import org.forester.phylogeny.PhylogenyNode;
-import org.forester.phylogeny.data.Distribution;
-import org.forester.phylogeny.data.NodeData;
 import org.forester.phylogeny.iterators.PhylogenyNodeIterator;
 
 /**

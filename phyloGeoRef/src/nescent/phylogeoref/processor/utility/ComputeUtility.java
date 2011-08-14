@@ -803,26 +803,6 @@ public class ComputeUtility {
         }
         
         return meanPos;
-    }
-    
-    
-    
-    //TODO: Delete this test case.
-    public static void main(String args[]){
-        Vector<Double> posVector = new Vector<Double>();
-        double a1=132.0;
-        double a2=132.0;
-        double a3=132.0;
-        
-        posVector.add(a1);
-        posVector.add(a2);
-        posVector.add(a3);
-        
-        double mean = findMeanPosition(posVector);
-        double dist = findMinAngularDistance(a1, a2);
-        out.println(dist);
-        out.println(mean);
-    }
-        
+    }        
     
 }

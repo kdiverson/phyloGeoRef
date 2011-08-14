@@ -87,6 +87,7 @@ public class NeXMLReader implements TreeReader{
      * @param xmlFile
      * @return the array of Phylogenies
      */
+    @Override
     public Phylogeny[] readPhylogenyArray(File xmlFile){
         Phylogeny[] phylogenies = null;
         try{
@@ -110,6 +111,7 @@ public class NeXMLReader implements TreeReader{
      * @param xmlFile
      * @return
      */
+    @Override
     public Phylogeny readPhylogeny(File xmlFile){
         return this.readPhylogenyArray(xmlFile)[0];
     }

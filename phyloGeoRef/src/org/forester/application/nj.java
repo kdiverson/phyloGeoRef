@@ -31,7 +31,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-//To Do: Temporarily commented as it has no use. Need to get the complete biojava package.
+//TODO: Temporarily commented as it has no use. Need to get the complete biojava package.
 //import org.biojava3.phylo.CheckTreeAccuracy;
 
 import org.forester.io.writers.PhylogenyWriter;
@@ -115,7 +115,7 @@ public class nj {
         DistanceMatrix distanceMatrix = null;
         try {
             matrices = parser.parse( infile );
-            //To Do: Temporarily Commented. See the imports at the top.
+            //TODO: Temporarily Commented. See the imports at the top.
             //distanceMatrix = CheckTreeAccuracy.copyMatrix(matrices[0]);
         }
         catch ( final IOException e ) {
@@ -135,7 +135,7 @@ public class nj {
         final long end_time = new Date().getTime();
 
         Phylogeny p = ps.get(0);
-        //To Do: Temporarily Commented. See the imports at the top.
+        //TODO: Temporarily Commented. See the imports at the top.
         //CheckTreeAccuracy checkTreeAccuracy = new CheckTreeAccuracy();
         //checkTreeAccuracy.process(p,distanceMatrix );
 
