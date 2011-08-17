@@ -61,6 +61,8 @@ public class Phylogeoref {
             LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
         }
     }
+    
+    
 
 
     /**
@@ -68,34 +70,68 @@ public class Phylogeoref {
      * @param args
      * @throws Throwable
      */
-    public static void main(String...args) throws Throwable{
+    public void generate(PhyloGeoRefWidget phyWidget, boolean compress){
 
-        File treeFile = new File("samples\\treeHypothetical\\tree.nwk");
-        File metaFile=new File("samples\\treeHypothetical\\test.csv");        
+        File treeFile = phyWidget.getTreeFile();
+        File metaFile = phyWidget.getMetaFile();
+        Character delim = (phyWidget.getDelim().getText()).charAt(1);
+        int cladeDiv = Integer.parseInt(phyWidget.getCladeDiv().getText());
+        
+        int label = Integer.parseInt(phyWidget.getLabel().getText());
+        int lat = Integer.parseInt(phyWidget.getLatitude().getText());
+        int lon = Integer.parseInt(phyWidget.getLongitude().getText());
+        int id = Integer.parseInt(phyWidget.getId().getText());
+        int sname = Integer.parseInt(phyWidget.getSname().getText());
+        int cname = Integer.parseInt(phyWidget.getCname().getText());
         
         File[] metaFiles = new File[]{metaFile};
 
 
         GrandUnifiedReader gur = new GrandUnifiedReader();
         
-        gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(',').setCladeDiv(4);
+        gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(delim).setCladeDiv(cladeDiv);
         
-        gur.setArgs(1,2,3);
+        gur.setArgs(label, lat, lon, id, sname, cname);
 
         gur.buildUnifiedPhylogeny();
                 
         Phylogeny phyArray[] =  gur.getPhylogenyArray();
         Map mouldMapArray[] = gur.getMouldMaps();
         
-
-        PhylogenyProcessor processor = ProcessorFactory.getInstance(false);
-        AdvancedKmlWriter kmlw = new AdvancedKmlWriter(PaintStyle.HIERARCHICAL);
+        int pStyleNum = phyWidget.getPaintStyle().getSelectedIndex();
+        int hasWeightNum = phyWidget.getWeighted().getSelectedIndex();
         
-        for(int i=0; i<phyArray.length; i++){
+        PaintStyle pStyle = null;
+        if(pStyleNum == 0){
+            pStyle = PaintStyle.HIERARCHICAL;
+            
+        }else if(pStyleNum == 1){
+            pStyle = PaintStyle.LEVELWISE;
+            
+        }
+        
+        boolean hasWeight = false;
+        if(hasWeightNum == 0){
+            hasWeight = true;
+                    
+        }else{
+            hasWeight = false;
+                    
+        }
+
+        PhylogenyProcessor processor = ProcessorFactory.getInstance(hasWeight);
+        AdvancedKmlWriter kmlw = new AdvancedKmlWriter(pStyle);
+        
+        for(Integer i=0; i<phyArray.length; i++){
 
             processor.phylogenify(phyArray[i]);
 
-            kmlw.createKMZ(phyArray[i], mouldMapArray[i], "mojo");
+            if(compress){
+                kmlw.createKMZ(phyArray[i], mouldMapArray[i], "output"+i.toString());
+                
+            }else{
+                kmlw.createKML(phyArray[i], mouldMapArray[i], "output"+i.toString());
+            }
             
         }
     }
