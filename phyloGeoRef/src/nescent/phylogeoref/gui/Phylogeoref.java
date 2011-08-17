@@ -15,7 +15,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package nescent;
+package nescent.phylogeoref.gui;
 
 import java.io.File;
 import java.io.IOException;
@@ -71,34 +71,19 @@ public class Phylogeoref {
     public static void main(String...args) throws Throwable{
 
         File treeFile = new File("samples\\treeHypothetical\\tree.nwk");
-        File metaFile=new File("samples\\treeHypothetical\\test.csv");
-
-        //File treeFile = new File("samples\\tree1\\testTree.xml");
-        //File metaFile = new File("src\\testCoordsmeta2.csv");
-    
-        //File treeFile = new File("samples\\mammals\\mammalsTree.xml");
-        //File metaFile = new File("samples\\mammals\\mammals_in_tree.txt");
-        //File metaFile = new File("samples\\mammals\\Mammals_in_tree_pantheria.csv");
+        File metaFile=new File("samples\\treeHypothetical\\test.csv");        
         
         File[] metaFiles = new File[]{metaFile};
 
 
         GrandUnifiedReader gur = new GrandUnifiedReader();
-        //gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim('\t').setCladeDiv(6);
-        //gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(',').setCladeDiv(6);
-        //gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(',').setCladeDiv(0);
+        
         gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(',').setCladeDiv(4);
-
-
-        //gur.setArgs(5,4,3,1,2);
-        //gur.setArgs(5,4,3,0,1,0); 
+        
         gur.setArgs(1,2,3);
 
         gur.buildUnifiedPhylogeny();
-        
-        Phylogeny phy = gur.getPhylogeny();
-        Map mouldMap = gur.getMouldMap();
-        
+                
         Phylogeny phyArray[] =  gur.getPhylogenyArray();
         Map mouldMapArray[] = gur.getMouldMaps();
         
