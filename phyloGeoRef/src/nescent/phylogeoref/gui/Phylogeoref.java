@@ -201,11 +201,12 @@ public class Phylogeoref {
                 kmlw.createKMZ(phyArray[i], mouldMapArray[i], "outputTree-"+i.toString());
                 
             }else{
-                System.out.println("\n Writing the kml, compressing to kmz ...");
+                System.out.println("\n Writing the kml ...");
                 kmlw.createKML(phyArray[i], mouldMapArray[i], "outputTree-"+i.toString());
             }
             
         }
         System.out.println("\n Open the output file in google earth browser to view the tree.");
+        System.out.println("\n You can close the window to exit.");
     }
 }
