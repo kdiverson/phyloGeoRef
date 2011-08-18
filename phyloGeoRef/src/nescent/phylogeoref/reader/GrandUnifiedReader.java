@@ -159,12 +159,12 @@ public class GrandUnifiedReader {
      *  <tr>
      *      <td> args[1] </td>
      *      <td> Latitude </td>
-     *      <td> 3, third column is to be read as latitude      </td>
+     *      <td> 4, third column is to be read as latitude      </td>
      *  </tr>
      *  <tr>
      *      <td> args[2] </td>
      *      <td> Longitude </td>
-     *      <td> 4, fourth column to be read as longitude </td>
+     *      <td> 3, fourth column to be read as longitude </td>
      *  </tr>
      *  <tr>
      *      <td> args[3] </td>

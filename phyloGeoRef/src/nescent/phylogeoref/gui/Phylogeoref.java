@@ -71,28 +71,97 @@ public class Phylogeoref {
      * @throws Throwable
      */
     public void generate(PhyloGeoRefWidget phyWidget, boolean compress){
+        
+        //Get all the values.
 
+        //Get the files.
         File treeFile = phyWidget.getTreeFile();
         File metaFile = phyWidget.getMetaFile();
-        Character delim = (phyWidget.getDelim().getText()).charAt(1);
-        int cladeDiv = Integer.parseInt(phyWidget.getCladeDiv().getText());
         
-        int label = Integer.parseInt(phyWidget.getLabel().getText());
-        int lat = Integer.parseInt(phyWidget.getLatitude().getText());
-        int lon = Integer.parseInt(phyWidget.getLongitude().getText());
-        int id = Integer.parseInt(phyWidget.getId().getText());
-        int sname = Integer.parseInt(phyWidget.getSname().getText());
-        int cname = Integer.parseInt(phyWidget.getCname().getText());
+        //TODO: This needs to be modfied for other type of delimeters.
+        //TODO: Currently supports any normal char, tab and space.
+        //Get the delimiter character.
+        String delimText = phyWidget.getDelim().getText();
+        char delim = ',';
+        if(delimText !=null && !delimText.equals("")){
+            
+            if(delimText.equals("\\t"))
+                delim = '\t';                       
+            
+        }
+        
+        
+        //Get which column is to be used as the clade.
+        int cladeDiv = 0;
+        String cladeDivText = phyWidget.getCladeDiv().getText();
+        if(cladeDivText != null && !cladeDivText.equals("")){
+            cladeDiv = Integer.parseInt(cladeDivText);            
+        }
+        
+        //Get which column is to be used as the label.
+        int label = 0;
+        String labelText = phyWidget.getLabel().getText();
+        try{
+            label = Integer.parseInt(labelText);
+            
+        }catch(NumberFormatException ex){
+            phyWidget.showMessageDialog("Invalid value for label column");
+            LOGGER.log(Level.SEVERE, ex.getMessage());
+        }
+        
+        
+        //Get the latitude column.
+        int lat=2;
+        String latText = phyWidget.getLatitude().getText();
+        try{
+        lat = Integer.parseInt(latText);
+        
+        }catch(NumberFormatException ex){
+            phyWidget.showMessageDialog("Invalid value for latitude column");
+            LOGGER.log(Level.SEVERE, ex.getMessage());
+        }
+        
+        //Get the longitude column.
+        int lon=3;
+        String lonText = phyWidget.getLongitude().getText();
+        try{
+        lon = Integer.parseInt(lonText);
+        
+        }catch(NumberFormatException ex){
+            phyWidget.showMessageDialog("Invalid value for longitude column");
+            LOGGER.log(Level.SEVERE, ex.getMessage());
+        }
+                 
+        //Get the id column.
+        int id = 0;
+        String idText = phyWidget.getId().getText();
+        if(idText!=null && !idText.equals("")){
+            id = Integer.parseInt(idText);
+        }
+        
+        //Get the column for scientific name.
+        int sname = 0;
+        String snameText = phyWidget.getSname().getText();
+        if(snameText!=null && !snameText.equals("")){
+            sname = Integer.parseInt(snameText);
+        }
+        
+        //Get the column for common name.
+        int cname = 0;
+        String cnameText = phyWidget.getCname().getText();
+        if(cnameText!=null && !cnameText.equals("")){
+            cname = Integer.parseInt(cnameText);
+        }
+        
         
         File[] metaFiles = new File[]{metaFile};
 
-
-        GrandUnifiedReader gur = new GrandUnifiedReader();
-        
-        gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(delim).setCladeDiv(cladeDiv);
-        
+        GrandUnifiedReader gur = new GrandUnifiedReader();        
+        gur.setTreeFile(treeFile).setMetaFile(metaFiles).setDelim(delim).setCladeDiv(cladeDiv);        
         gur.setArgs(label, lat, lon, id, sname, cname);
-
+        
+        System.out.println("\n Building the phylogeny ... ");
+        
         gur.buildUnifiedPhylogeny();
                 
         Phylogeny phyArray[] =  gur.getPhylogenyArray();
@@ -101,6 +170,7 @@ public class Phylogeoref {
         int pStyleNum = phyWidget.getPaintStyle().getSelectedIndex();
         int hasWeightNum = phyWidget.getWeighted().getSelectedIndex();
         
+        //TODO: This needs to be modified when more styles are added into phlyogeoref.
         PaintStyle pStyle = null;
         if(pStyleNum == 0){
             pStyle = PaintStyle.HIERARCHICAL;
@@ -127,12 +197,15 @@ public class Phylogeoref {
             processor.phylogenify(phyArray[i]);
 
             if(compress){
-                kmlw.createKMZ(phyArray[i], mouldMapArray[i], "output"+i.toString());
+                System.out.println("\n Writing the kml, compressing to kmz ...");
+                kmlw.createKMZ(phyArray[i], mouldMapArray[i], "outputTree-"+i.toString());
                 
             }else{
-                kmlw.createKML(phyArray[i], mouldMapArray[i], "output"+i.toString());
+                System.out.println("\n Writing the kml, compressing to kmz ...");
+                kmlw.createKML(phyArray[i], mouldMapArray[i], "outputTree-"+i.toString());
             }
             
         }
+        System.out.println("\n Open the output file in google earth browser to view the tree.");
     }
 }

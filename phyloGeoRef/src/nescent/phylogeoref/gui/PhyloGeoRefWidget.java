@@ -25,6 +25,7 @@ package nescent.phylogeoref.gui;
 import java.io.File;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -98,7 +99,16 @@ public class PhyloGeoRefWidget extends javax.swing.JFrame {
 
     /** Creates new form PhyloGeoRefWidget */
     public PhyloGeoRefWidget() {
+        this.setName("PhyloGeoRef");
         initComponents();
+    }
+    
+    /**
+     * Shows a message dialog.
+     * @param text 
+     */
+    public void showMessageDialog(String text){
+        JOptionPane.showMessageDialog(this, text);
     }
 
     /** This method is called from within the constructor to
@@ -138,6 +148,7 @@ public class PhyloGeoRefWidget extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         generateKML.setText("KML");
         generateKML.addActionListener(new java.awt.event.ActionListener() {
@@ -317,8 +328,8 @@ public class PhyloGeoRefWidget extends javax.swing.JFrame {
         
         if(selection == JFileChooser.APPROVE_OPTION){
             treeFile = treeFileChooser.getSelectedFile();
-        }
-        this.treeFileLabel.setText(treeFile.getName());
+            this.treeFileLabel.setText(treeFile.getName());
+        }        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -328,8 +339,9 @@ public class PhyloGeoRefWidget extends javax.swing.JFrame {
         
         if(selection == JFileChooser.APPROVE_OPTION){
             metaFile = metaFileChooser.getSelectedFile();
+            this.metaFileLabel.setText(metaFile.getName());
         }
-        this.metaFileLabel.setText(metaFile.getName());
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void generateKMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateKMLActionPerformed

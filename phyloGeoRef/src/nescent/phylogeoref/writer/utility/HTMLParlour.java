@@ -129,6 +129,19 @@ public class HTMLParlour {
             addRow("Distance To Parent", distParent.toString(), content);
         }
         
+        
+        if(node.isInternal()){
+            String childrenText = "";
+        
+            //Add children ids in the balloon.
+            for (int i=0; i < node.getNumberOfDescendants(); i++){
+                PhylogenyNode childNode = node.getChildNode(i);
+                childrenText = childrenText + new Integer(childNode.getNodeId()).toString()+", ";
+            }
+            
+            addRow("Child Ids", childrenText, content);
+        }
+        
         //TODO: Add the confidence value to the table.                
                 
         content = content.append("</table>");
