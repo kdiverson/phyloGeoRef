@@ -1,0 +1,1647 @@
+ Manual/phyloGeoRef.pdf                             |  Bin 0 -> 233949 bytes
+ README                                             |   78 +-
+ phyloGeoRef/README                                 |   53 -
+ phyloGeoRef/build/built-jar.properties             |    4 +
+ phyloGeoRef/build/classes/AddressExample.class     |  Bin 1784 -> 0 bytes
+ phyloGeoRef/build/classes/JdbcExample.class        |  Bin 1525 -> 0 bytes
+ phyloGeoRef/build/classes/MockColumn.class         |  Bin 742 -> 0 bytes
+ phyloGeoRef/build/classes/MockResultSet.class      |  Bin 25150 -> 0 bytes
+ .../build/classes/MockResultSetMetaData.class      |  Bin 4620 -> 0 bytes
+ .../au/com/bytecode/opencsv/CSVParserTest.class    |  Bin 5422 -> 0 bytes
+ .../au/com/bytecode/opencsv/CSVReaderTest.class    |  Bin 2853 -> 0 bytes
+ .../au/com/bytecode/opencsv/CSVWriter.class        |  Bin 5011 -> 4976 bytes
+ .../au/com/bytecode/opencsv/CSVWriterTest.class    |  Bin 3407 -> 0 bytes
+ .../classes/au/com/bytecode/opencsv/MockClob.class |  Bin 2015 -> 0 bytes
+ .../au/com/bytecode/opencsv/MockResultSet.class    |  Bin 22024 -> 0 bytes
+ .../com/bytecode/opencsv/MockResultSetHelper.class |  Bin 903 -> 0 bytes
+ .../bytecode/opencsv/MockResultSetMetaData.class   |  Bin 3271 -> 0 bytes
+ .../au/com/bytecode/opencsv/OpencsvTest.class      |  Bin 1306 -> 0 bytes
+ .../au/com/bytecode/opencsv/ResultSetHelper.class  |  Bin 368 -> 317 bytes
+ .../opencsv/ResultSetHelperServiceTest.class       |  Bin 3443 -> 0 bytes
+ .../au/com/bytecode/opencsv/UniCodeTest.class      |  Bin 2350 -> 0 bytes
+ .../bean/ColumnPositionMappingStrategyTest.class   |  Bin 1876 -> 0 bytes
+ .../bytecode/opencsv/bean/CsvToBeanTest$1.class    |  Bin 1520 -> 0 bytes
+ .../com/bytecode/opencsv/bean/CsvToBeanTest.class  |  Bin 1528 -> 0 bytes
+ .../bean/HeaderColumnNameMappingStrategyTest.class |  Bin 2310 -> 0 bytes
+ ...derColumnNameTranslateMappingStrategyTest.class |  Bin 941 -> 0 bytes
+ .../bytecode/opencsv/bean/MappingStrategy.class    |  Bin 642 -> 575 bytes
+ .../au/com/bytecode/opencsv/bean/MockBean.class    |  Bin 1132 -> 0 bytes
+ .../au/com/bytecode/opencsv/bean/package.html      |   12 +
+ .../classes/au/com/bytecode/opencsv/package.html   |   12 +
+ .../micromata/jak/AtsConformanceLevel1Test.class   |  Bin 5478 -> 0 bytes
+ .../micromata/jak/AtsConformanceLevel2Test.class   |  Bin 3836 -> 0 bytes
+ .../micromata/jak/AtsConformanceLevel3Test.class   |  Bin 1857 -> 0 bytes
+ .../de/micromata/jak/KmlGxReferenceApiTest.class   |  Bin 2937 -> 0 bytes
+ .../de/micromata/jak/KmlReferenceApiTest.class     |  Bin 13045 -> 0 bytes
+ .../de/micromata/jak/KmlReferenceCheck.class       |  Bin 12141 -> 0 bytes
+ .../de/micromata/jak/KmlReferencePojoTest.class    |  Bin 13049 -> 0 bytes
+ .../de/micromata/jak/NameSpaceBeautyfier.class     |  Bin 959 -> 0 bytes
+ .../de/micromata/jak/StressTest$Statistics.class   |  Bin 1791 -> 0 bytes
+ .../classes/de/micromata/jak/StressTest$Time.class |  Bin 1067 -> 0 bytes
+ .../classes/de/micromata/jak/StressTest.class      |  Bin 6312 -> 0 bytes
+ .../build/classes/de/micromata/jak/Utils.class     |  Bin 9402 -> 0 bytes
+ .../de/micromata/jak/examples/CloneTest.class      |  Bin 807 -> 0 bytes
+ .../de/micromata/jak/examples/Example1.class       |  Bin 4871 -> 0 bytes
+ .../de/micromata/jak/examples/Example2.class       |  Bin 7376 -> 0 bytes
+ .../de/micromata/jak/examples/Example3.class       |  Bin 5918 -> 0 bytes
+ .../de/micromata/jak/examples/Example4.class       |  Bin 7685 -> 0 bytes
+ .../micromata/jak/examples/ReadCsvFileTest.class   |  Bin 1276 -> 0 bytes
+ .../classes/de/micromata/jak/examples/Utils.class  |  Bin 7933 -> 0 bytes
+ .../incubator/JAXBSample$DeclareOnTopMapper.class  |  Bin 739 -> 0 bytes
+ .../incubator/JAXBSample$PreDeclaredMapper.class   |  Bin 751 -> 0 bytes
+ .../jak/incubator/JAXBSample$PreferredMapper.class |  Bin 961 -> 0 bytes
+ .../de/micromata/jak/incubator/JAXBSample.class    |  Bin 3255 -> 0 bytes
+ .../de/micromata/jak/incubator/JustAType.class     |  Bin 501 -> 0 bytes
+ .../de/micromata/jak/incubator/KmzTest.class       |  Bin 2868 -> 0 bytes
+ .../jak/internal/IAtsConformanceLevel1.class       |  Bin 1641 -> 0 bytes
+ .../jak/internal/IAtsConformanceLevel2.class       |  Bin 1099 -> 0 bytes
+ .../jak/internal/IAtsConformanceLevel3.class       |  Bin 508 -> 0 bytes
+ .../de/micromata/jak/internal/IKMLReference.class  |  Bin 4307 -> 0 bytes
+ .../micromata/jak/internal/IKmlGxReference.class   |  Bin 1559 -> 0 bytes
+ .../build/classes/de/micromata/jak/jugh/Jugh.class |  Bin 5097 -> 0 bytes
+ .../opengis/kml/v_2_2_0/AbstractLatLonBox.class    |  Bin 8026 -> 0 bytes
+ .../opengis/kml/v_2_2_0/AbstractObject.class       |  Bin 5725 -> 0 bytes
+ .../opengis/kml/v_2_2_0/AbstractView.class         |  Bin 6391 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Alias.class   |  Bin 7036 -> 0 bytes
+ .../opengis/kml/v_2_2_0/AltitudeMode.class         |  Bin 2261 -> 0 bytes
+ .../opengis/kml/v_2_2_0/BalloonStyle.class         |  Bin 10940 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/BasicLink.class  |  Bin 6800 -> 0 bytes
+ .../opengis/kml/v_2_2_0/BooleanConverter.class     |  Bin 1457 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/Boundary.class   |  Bin 5744 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Camera.class  |  Bin 11438 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Change.class  |  Bin 3567 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/ColorMode.class  |  Bin 1895 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/ColorStyle.class |  Bin 9761 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/Container.class  |  Bin 15587 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/Coordinate.class |  Bin 3922 -> 0 bytes
+ .../opengis/kml/v_2_2_0/CoordinatesConverter.class |  Bin 2808 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Create.class  |  Bin 4036 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Data.class    |  Bin 6027 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Delete.class  |  Bin 5657 -> 0 bytes
+ .../opengis/kml/v_2_2_0/DisplayMode.class          |  Bin 1909 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/Document.class   |  Bin 25010 -> 0 bytes
+ .../opengis/kml/v_2_2_0/ExtendedData.class         |  Bin 6198 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Feature.class |  Bin 22672 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Folder.class  |  Bin 23547 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/Geometry.class   |  Bin 6431 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/GridOrigin.class |  Bin 1917 -> 0 bytes
+ .../opengis/kml/v_2_2_0/GroundOverlay.class        |  Bin 23662 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Icon.class    |  Bin 12286 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/IconStyle.class  |  Bin 14043 -> 0 bytes
+ .../opengis/kml/v_2_2_0/ImagePyramid.class         |  Bin 8149 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/ItemIcon.class   |  Bin 7917 -> 0 bytes
+ .../opengis/kml/v_2_2_0/ItemIconState.class        |  Bin 2279 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Kml$1.class   |  Bin 226 -> 0 bytes
+ .../kml/v_2_2_0/Kml$NameSpaceBeautyfier.class      |  Bin 1303 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Kml.class     |  Bin 17750 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/KmlFactory.class |  Bin 24951 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/LabelStyle.class |  Bin 11979 -> 0 bytes
+ .../opengis/kml/v_2_2_0/LatLonAltBox.class         |  Bin 11168 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/LatLonBox.class  |  Bin 9939 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/LineString.class |  Bin 12177 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/LineStyle.class  |  Bin 11953 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/LinearRing.class |  Bin 12177 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Link.class    |  Bin 12220 -> 0 bytes
+ .../opengis/kml/v_2_2_0/ListItemType.class         |  Bin 2134 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/ListStyle.class  |  Bin 11482 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/Location.class   |  Bin 7453 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Lod.class     |  Bin 7771 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/LookAt.class  |  Bin 11442 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/Metadata.class   |  Bin 3232 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Model.class   |  Bin 13492 -> 0 bytes
+ .../opengis/kml/v_2_2_0/MultiGeometry.class        |  Bin 11157 -> 0 bytes
+ .../kml/v_2_2_0/NamespaceFilterHandler.class       |  Bin 2714 -> 0 bytes
+ .../kml/v_2_2_0/NamespaceFilterXMLReader.class     |  Bin 3376 -> 0 bytes
+ .../opengis/kml/v_2_2_0/NetworkLink.class          |  Bin 18183 -> 0 bytes
+ .../opengis/kml/v_2_2_0/NetworkLinkControl.class   |  Bin 11640 -> 0 bytes
+ .../opengis/kml/v_2_2_0/Orientation.class          |  Bin 7488 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Overlay.class |  Bin 17370 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Pair.class    |  Bin 8710 -> 0 bytes
+ .../opengis/kml/v_2_2_0/PhotoOverlay.class         |  Bin 25327 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/Placemark.class  |  Bin 17953 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Point.class   |  Bin 11602 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/PolyStyle.class  |  Bin 12554 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Polygon.class |  Bin 12317 -> 0 bytes
+ .../opengis/kml/v_2_2_0/RefreshMode.class          |  Bin 2014 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Region.class  |  Bin 7926 -> 0 bytes
+ .../opengis/kml/v_2_2_0/ResourceMap.class          |  Bin 7643 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Scale.class   |  Bin 7290 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Schema.class  |  Bin 5867 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/SchemaData.class |  Bin 6923 -> 0 bytes
+ .../opengis/kml/v_2_2_0/ScreenOverlay.class        |  Bin 24463 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Shape.class   |  Bin 1957 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/SimpleData.class |  Bin 2759 -> 0 bytes
+ .../opengis/kml/v_2_2_0/SimpleField.class          |  Bin 4662 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Snippet.class |  Bin 2758 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Style.class   |  Bin 13816 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/StyleMap.class   |  Bin 9777 -> 0 bytes
+ .../opengis/kml/v_2_2_0/StyleSelector.class        |  Bin 6345 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/StyleState.class |  Bin 1909 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/SubStyle.class   |  Bin 6289 -> 0 bytes
+ .../opengis/kml/v_2_2_0/TimePrimitive.class        |  Bin 6349 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/TimeSpan.class   |  Bin 9244 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/TimeStamp.class  |  Bin 8887 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Units.class   |  Bin 1962 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Update.class  |  Bin 4901 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/Vec2.class    |  Bin 3698 -> 0 bytes
+ .../opengis/kml/v_2_2_0/ViewRefreshMode.class      |  Bin 2122 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/ViewVolume.class |  Bin 8211 -> 0 bytes
+ .../opengis/kml/v_2_2_0/annotations/Obvious.class  |  Bin 315 -> 0 bytes
+ .../opengis/kml/v_2_2_0/atom/Author.class          |  Bin 3175 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/atom/Link.class  |  Bin 4336 -> 0 bytes
+ .../opengis/kml/v_2_2_0/atom/package-info.class    |  Bin 350 -> 0 bytes
+ .../opengis/kml/v_2_2_0/gx/AnimatedUpdate.class    |  Bin 4958 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/gx/FlyTo.class   |  Bin 5781 -> 0 bytes
+ .../opengis/kml/v_2_2_0/gx/FlyToMode.class         |  Bin 1913 -> 0 bytes
+ .../opengis/kml/v_2_2_0/gx/LatLonQuad.class        |  Bin 5938 -> 0 bytes
+ .../opengis/kml/v_2_2_0/gx/PlayMode.class          |  Bin 1819 -> 0 bytes
+ .../opengis/kml/v_2_2_0/gx/Playlist.class          |  Bin 6728 -> 0 bytes
+ .../opengis/kml/v_2_2_0/gx/SoundCue.class          |  Bin 3604 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/gx/Tour.class |  Bin 11562 -> 0 bytes
+ .../opengis/kml/v_2_2_0/gx/TourControl.class       |  Bin 3870 -> 0 bytes
+ .../opengis/kml/v_2_2_0/gx/TourPrimitive.class     |  Bin 1453 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/gx/Wait.class |  Bin 3562 -> 0 bytes
+ .../opengis/kml/v_2_2_0/gx/package-info.class      |  Bin 354 -> 0 bytes
+ .../opengis/kml/v_2_2_0/package-info.class         |  Bin 348 -> 0 bytes
+ .../kml/v_2_2_0/xal/AddressDetails$Address.class   |  Bin 3808 -> 0 bytes
+ .../AddressDetails$Country$CountryNameCode.class   |  Bin 3949 -> 0 bytes
+ .../kml/v_2_2_0/xal/AddressDetails$Country.class   |  Bin 13273 -> 0 bytes
+ ...s$PostalServiceElements$AddressIdentifier.class |  Bin 4502 -> 0 bytes
+ ...ils$PostalServiceElements$AddressLatitude.class |  Bin 4047 -> 0 bytes
+ ...lServiceElements$AddressLatitudeDirection.class |  Bin 4092 -> 0 bytes
+ ...ls$PostalServiceElements$AddressLongitude.class |  Bin 4052 -> 0 bytes
+ ...ServiceElements$AddressLongitudeDirection.class |  Bin 4097 -> 0 bytes
+ ...ressDetails$PostalServiceElements$Barcode.class |  Bin 4007 -> 0 bytes
+ ...PostalServiceElements$EndorsementLineCode.class |  Bin 4067 -> 0 bytes
+ ...Details$PostalServiceElements$KeyLineCode.class |  Bin 4027 -> 0 bytes
+ ...Details$PostalServiceElements$SortingCode.class |  Bin 3149 -> 0 bytes
+ ...ceElements$SupplementaryPostalServiceData.class |  Bin 4122 -> 0 bytes
+ .../xal/AddressDetails$PostalServiceElements.class |  Bin 18565 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/AddressDetails.class   |  Bin 16100 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/AddressLine.class      |  Bin 3617 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/AddressLines.class     |  Bin 5150 -> 0 bytes
+ ...AdministrativeArea$AdministrativeAreaName.class |  Bin 3907 -> 0 bytes
+ ...inistrativeArea$SubAdministrativeAreaName.class |  Bin 4125 -> 0 bytes
+ .../AdministrativeArea$SubAdministrativeArea.class |  Bin 12459 -> 0 bytes
+ .../kml/v_2_2_0/xal/AdministrativeArea.class       |  Bin 13309 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/BuildingName.class     |  Bin 4280 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/CountryName.class      |  Bin 3617 -> 0 bytes
+ .../v_2_2_0/xal/Department$DepartmentName.class    |  Bin 3819 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/Department.class       |  Bin 9337 -> 0 bytes
+ .../DependentLocality$DependentLocalityName.class  |  Bin 3896 -> 0 bytes
+ ...DependentLocality$DependentLocalityNumber.class |  Bin 4082 -> 0 bytes
+ .../kml/v_2_2_0/xal/DependentLocality.class        |  Bin 20549 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/Firm$FirmName.class    |  Bin 3753 -> 0 bytes
+ .../micromata/opengis/kml/v_2_2_0/xal/Firm.class   |  Bin 10662 -> 0 bytes
+ .../LargeMailUser$LargeMailUserIdentifier.class    |  Bin 4309 -> 0 bytes
+ .../xal/LargeMailUser$LargeMailUserName.class      |  Bin 3774 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/LargeMailUser.class    |  Bin 15116 -> 0 bytes
+ .../kml/v_2_2_0/xal/Locality$LocalityName.class    |  Bin 3797 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/Locality.class         |  Bin 18694 -> 0 bytes
+ .../kml/v_2_2_0/xal/MailStop$MailStopName.class    |  Bin 3797 -> 0 bytes
+ .../kml/v_2_2_0/xal/MailStop$MailStopNumber.class  |  Bin 3858 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/MailStop.class         |  Bin 7924 -> 0 bytes
+ .../kml/v_2_2_0/xal/PostBox$PostBoxNumber.class    |  Bin 3361 -> 0 bytes
+ .../xal/PostBox$PostBoxNumberExtension.class       |  Bin 3513 -> 0 bytes
+ .../v_2_2_0/xal/PostBox$PostBoxNumberPrefix.class  |  Bin 3887 -> 0 bytes
+ .../v_2_2_0/xal/PostBox$PostBoxNumberSuffix.class  |  Bin 3887 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/PostBox.class          |  Bin 12296 -> 0 bytes
+ .../v_2_2_0/xal/PostOffice$PostOfficeName.class    |  Bin 3819 -> 0 bytes
+ .../v_2_2_0/xal/PostOffice$PostOfficeNumber.class  |  Bin 4436 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/PostOffice.class       |  Bin 13029 -> 0 bytes
+ .../xal/PostalCode$PostTown$PostTownName.class     |  Bin 3926 -> 0 bytes
+ .../xal/PostalCode$PostTown$PostTownSuffix.class   |  Bin 3501 -> 0 bytes
+ .../kml/v_2_2_0/xal/PostalCode$PostTown.class      |  Bin 7770 -> 0 bytes
+ .../v_2_2_0/xal/PostalCode$PostalCodeNumber.class  |  Bin 3829 -> 0 bytes
+ .../xal/PostalCode$PostalCodeNumberExtension.class |  Bin 4385 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/PostalCode.class       |  Bin 10305 -> 0 bytes
+ .../v_2_2_0/xal/PostalRoute$PostalRouteName.class  |  Bin 3830 -> 0 bytes
+ .../xal/PostalRoute$PostalRouteNumber.class        |  Bin 3405 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/PostalRoute.class      |  Bin 9875 -> 0 bytes
+ .../kml/v_2_2_0/xal/Premise$PremiseLocation.class  |  Bin 3371 -> 0 bytes
+ .../kml/v_2_2_0/xal/Premise$PremiseName.class      |  Bin 4367 -> 0 bytes
+ ...PremiseNumberRange$PremiseNumberRangeFrom.class |  Bin 9071 -> 0 bytes
+ ...e$PremiseNumberRange$PremiseNumberRangeTo.class |  Bin 9047 -> 0 bytes
+ .../v_2_2_0/xal/Premise$PremiseNumberRange.class   |  Bin 8049 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/Premise.class          |  Bin 23956 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/PremiseNumber.class    |  Bin 5587 -> 0 bytes
+ .../kml/v_2_2_0/xal/PremiseNumberPrefix.class      |  Bin 4145 -> 0 bytes
+ .../kml/v_2_2_0/xal/PremiseNumberSuffix.class      |  Bin 4161 -> 0 bytes
+ .../xal/SubPremise$SubPremiseLocation.class        |  Bin 2987 -> 0 bytes
+ .../v_2_2_0/xal/SubPremise$SubPremiseName.class    |  Bin 4400 -> 0 bytes
+ .../v_2_2_0/xal/SubPremise$SubPremiseNumber.class  |  Bin 5863 -> 0 bytes
+ .../xal/SubPremise$SubPremiseNumberPrefix.class    |  Bin 4355 -> 0 bytes
+ .../xal/SubPremise$SubPremiseNumberSuffix.class    |  Bin 4355 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/SubPremise.class       |  Bin 18946 -> 0 bytes
+ .../xal/Thoroughfare$DependentThoroughfare.class   |  Bin 12251 -> 0 bytes
+ ...ughfareNumberRange$ThoroughfareNumberFrom.class |  Bin 5333 -> 0 bytes
+ ...roughfareNumberRange$ThoroughfareNumberTo.class |  Bin 5317 -> 0 bytes
+ .../xal/Thoroughfare$ThoroughfareNumberRange.class |  Bin 10272 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/Thoroughfare.class     |  Bin 25086 -> 0 bytes
+ .../kml/v_2_2_0/xal/ThoroughfareLeadingType.class  |  Bin 3772 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/ThoroughfareName.class |  Bin 3727 -> 0 bytes
+ .../kml/v_2_2_0/xal/ThoroughfareNumber.class       |  Bin 5597 -> 0 bytes
+ .../kml/v_2_2_0/xal/ThoroughfareNumberPrefix.class |  Bin 4191 -> 0 bytes
+ .../kml/v_2_2_0/xal/ThoroughfareNumberSuffix.class |  Bin 4191 -> 0 bytes
+ .../v_2_2_0/xal/ThoroughfarePostDirection.class    |  Bin 3790 -> 0 bytes
+ .../kml/v_2_2_0/xal/ThoroughfarePreDirection.class |  Bin 3783 -> 0 bytes
+ .../kml/v_2_2_0/xal/ThoroughfareTrailingType.class |  Bin 3779 -> 0 bytes
+ .../de/micromata/opengis/kml/v_2_2_0/xal/XAL.class |  Bin 7111 -> 0 bytes
+ .../opengis/kml/v_2_2_0/xal/package-info.class     |  Bin 362 -> 0 bytes
+ .../integrationTest/issue2153020/DataReader.class  |  Bin 1429 -> 0 bytes
+ .../integrationTest/issue2564366/DataReader.class  |  Bin 1775 -> 0 bytes
+ .../opengis/kml/v_2_2_0/AbstractLatLonBox.rs       |    1 -
+ .../opengis/kml/v_2_2_0/AbstractObject.rs          |    1 -
+ .../micromata/opengis/kml/v_2_2_0/AbstractView.rs  |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Alias.rs  |    1 -
+ .../micromata/opengis/kml/v_2_2_0/AltitudeMode.rs  |    1 -
+ .../micromata/opengis/kml/v_2_2_0/BalloonStyle.rs  |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/BasicLink.rs  |    1 -
+ .../opengis/kml/v_2_2_0/BooleanConverter.rs        |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/Boundary.rs   |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Camera.rs |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Change.rs |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/ColorMode.rs  |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/ColorStyle.rs |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/Container.rs  |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/Coordinate.rs |    1 -
+ .../opengis/kml/v_2_2_0/CoordinatesConverter.rs    |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Create.rs |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Data.rs   |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Delete.rs |    1 -
+ .../micromata/opengis/kml/v_2_2_0/DisplayMode.rs   |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/Document.rs   |    1 -
+ .../micromata/opengis/kml/v_2_2_0/ExtendedData.rs  |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/Feature.rs    |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Folder.rs |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/Geometry.rs   |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/GridOrigin.rs |    1 -
+ .../micromata/opengis/kml/v_2_2_0/GroundOverlay.rs |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Icon.rs   |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/IconStyle.rs  |    1 -
+ .../micromata/opengis/kml/v_2_2_0/ImagePyramid.rs  |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/ItemIcon.rs   |    1 -
+ .../micromata/opengis/kml/v_2_2_0/ItemIconState.rs |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Kml.rs    |    2 -
+ .../de/micromata/opengis/kml/v_2_2_0/KmlFactory.rs |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/LabelStyle.rs |    1 -
+ .../micromata/opengis/kml/v_2_2_0/LatLonAltBox.rs  |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/LatLonBox.rs  |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/LineString.rs |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/LineStyle.rs  |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/LinearRing.rs |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Link.rs   |    1 -
+ .../micromata/opengis/kml/v_2_2_0/ListItemType.rs  |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/ListStyle.rs  |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/Location.rs   |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Lod.rs    |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/LookAt.rs |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/Metadata.rs   |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Model.rs  |    1 -
+ .../micromata/opengis/kml/v_2_2_0/MultiGeometry.rs |    1 -
+ .../opengis/kml/v_2_2_0/NamespaceFilterHandler.rs  |    1 -
+ .../kml/v_2_2_0/NamespaceFilterXMLReader.rs        |    1 -
+ .../micromata/opengis/kml/v_2_2_0/NetworkLink.rs   |    1 -
+ .../opengis/kml/v_2_2_0/NetworkLinkControl.rs      |    1 -
+ .../micromata/opengis/kml/v_2_2_0/Orientation.rs   |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/Overlay.rs    |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Pair.rs   |    1 -
+ .../micromata/opengis/kml/v_2_2_0/PhotoOverlay.rs  |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/Placemark.rs  |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Point.rs  |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/PolyStyle.rs  |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/Polygon.rs    |    1 -
+ .../micromata/opengis/kml/v_2_2_0/RefreshMode.rs   |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Region.rs |    1 -
+ .../micromata/opengis/kml/v_2_2_0/ResourceMap.rs   |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Scale.rs  |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Schema.rs |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/SchemaData.rs |    1 -
+ .../micromata/opengis/kml/v_2_2_0/ScreenOverlay.rs |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Shape.rs  |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/SimpleData.rs |    1 -
+ .../micromata/opengis/kml/v_2_2_0/SimpleField.rs   |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/Snippet.rs    |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Style.rs  |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/StyleMap.rs   |    1 -
+ .../micromata/opengis/kml/v_2_2_0/StyleSelector.rs |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/StyleState.rs |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/SubStyle.rs   |    1 -
+ .../micromata/opengis/kml/v_2_2_0/TimePrimitive.rs |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/TimeSpan.rs   |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/TimeStamp.rs  |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Units.rs  |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Update.rs |    1 -
+ .../jak/de/micromata/opengis/kml/v_2_2_0/Vec2.rs   |    1 -
+ .../opengis/kml/v_2_2_0/ViewRefreshMode.rs         |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/ViewVolume.rs |    1 -
+ .../opengis/kml/v_2_2_0/annotations/Obvious.rs     |    1 -
+ .../micromata/opengis/kml/v_2_2_0/atom/Author.rs   |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/atom/Link.rs  |    1 -
+ .../opengis/kml/v_2_2_0/gx/AnimatedUpdate.rs       |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/gx/FlyTo.rs   |    1 -
+ .../micromata/opengis/kml/v_2_2_0/gx/FlyToMode.rs  |    1 -
+ .../micromata/opengis/kml/v_2_2_0/gx/LatLonQuad.rs |    1 -
+ .../micromata/opengis/kml/v_2_2_0/gx/PlayMode.rs   |    1 -
+ .../micromata/opengis/kml/v_2_2_0/gx/Playlist.rs   |    1 -
+ .../micromata/opengis/kml/v_2_2_0/gx/SoundCue.rs   |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/gx/Tour.rs    |    1 -
+ .../opengis/kml/v_2_2_0/gx/TourControl.rs          |    1 -
+ .../opengis/kml/v_2_2_0/gx/TourPrimitive.rs        |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/gx/Wait.rs    |    1 -
+ .../opengis/kml/v_2_2_0/xal/AddressDetails.rs      |   15 -
+ .../opengis/kml/v_2_2_0/xal/AddressLine.rs         |    1 -
+ .../opengis/kml/v_2_2_0/xal/AddressLines.rs        |    1 -
+ .../opengis/kml/v_2_2_0/xal/AdministrativeArea.rs  |    4 -
+ .../opengis/kml/v_2_2_0/xal/BuildingName.rs        |    1 -
+ .../opengis/kml/v_2_2_0/xal/CountryName.rs         |    1 -
+ .../opengis/kml/v_2_2_0/xal/Department.rs          |    2 -
+ .../opengis/kml/v_2_2_0/xal/DependentLocality.rs   |    3 -
+ .../de/micromata/opengis/kml/v_2_2_0/xal/Firm.rs   |    2 -
+ .../opengis/kml/v_2_2_0/xal/LargeMailUser.rs       |    3 -
+ .../micromata/opengis/kml/v_2_2_0/xal/Locality.rs  |    2 -
+ .../micromata/opengis/kml/v_2_2_0/xal/MailStop.rs  |    3 -
+ .../micromata/opengis/kml/v_2_2_0/xal/PostBox.rs   |    5 -
+ .../opengis/kml/v_2_2_0/xal/PostOffice.rs          |    3 -
+ .../opengis/kml/v_2_2_0/xal/PostalCode.rs          |    6 -
+ .../opengis/kml/v_2_2_0/xal/PostalRoute.rs         |    3 -
+ .../micromata/opengis/kml/v_2_2_0/xal/Premise.rs   |    6 -
+ .../opengis/kml/v_2_2_0/xal/PremiseNumber.rs       |    1 -
+ .../opengis/kml/v_2_2_0/xal/PremiseNumberPrefix.rs |    1 -
+ .../opengis/kml/v_2_2_0/xal/PremiseNumberSuffix.rs |    1 -
+ .../opengis/kml/v_2_2_0/xal/SubPremise.rs          |    6 -
+ .../opengis/kml/v_2_2_0/xal/Thoroughfare.rs        |    5 -
+ .../kml/v_2_2_0/xal/ThoroughfareLeadingType.rs     |    1 -
+ .../opengis/kml/v_2_2_0/xal/ThoroughfareName.rs    |    1 -
+ .../opengis/kml/v_2_2_0/xal/ThoroughfareNumber.rs  |    1 -
+ .../kml/v_2_2_0/xal/ThoroughfareNumberPrefix.rs    |    1 -
+ .../kml/v_2_2_0/xal/ThoroughfareNumberSuffix.rs    |    1 -
+ .../kml/v_2_2_0/xal/ThoroughfarePostDirection.rs   |    1 -
+ .../kml/v_2_2_0/xal/ThoroughfarePreDirection.rs    |    1 -
+ .../kml/v_2_2_0/xal/ThoroughfareTrailingType.rs    |    1 -
+ .../de/micromata/opengis/kml/v_2_2_0/xal/XAL.rs    |    1 -
+ .../nexml/InterpretNEXML/HyperlinkHandler.class    |  Bin 1727 -> 0 bytes
+ .../nexml/InterpretNEXML/InterpretNEXML.class      |  Bin 2663 -> 0 bytes
+ .../nexml/InterpretNEXML/ObjectConverter.class     |  Bin 10197 -> 0 bytes
+ .../nexml/InterpretNEXML/PredicateHandler.class    |  Bin 1643 -> 0 bytes
+ .../InterpretNEXML/PredicateHandlerImpl.class      |  Bin 2581 -> 0 bytes
+ .../nexml/InterpretNEXML/TaxonLinkHandler.class    |  Bin 992 -> 0 bytes
+ .../nexml/InterpretNEXML/TaxonUIDHandler.class     |  Bin 988 -> 0 bytes
+ phyloGeoRef/build/classes/nescent/DemoMain.class   |  Bin 0 -> 3679 bytes
+ phyloGeoRef/build/classes/nescent/DemoMain2.class  |  Bin 0 -> 4084 bytes
+ phyloGeoRef/build/classes/nescent/DemoMain3.class  |  Bin 0 -> 4099 bytes
+ .../build/classes/nescent/phyloGeoRef/Quad.class   |  Bin 3067 -> 0 bytes
+ .../build/classes/nescent/phyloGeoRef/Triple.class |  Bin 2625 -> 0 bytes
+ .../classes/nescent/phyloGeoRef/calc3Dtree.class   |  Bin 9379 -> 0 bytes
+ .../nescent/phyloGeoRef/geoData/parseCoords.class  |  Bin 6660 -> 0 bytes
+ .../phyloGeoRef/geoData/parseMetadata.class        |  Bin 320 -> 0 bytes
+ .../nescent/phyloGeoRef/kml/kmlWriter.class        |  Bin 6346 -> 0 bytes
+ .../build/classes/nescent/phyloGeoRef/magic.class  |  Bin 1839 -> 0 bytes
+ .../nescent/phyloGeoRef/tree/NeXMLtoPhyObj.class   |  Bin 6468 -> 0 bytes
+ .../nescent/phyloGeoRef/tree/getNeXMLtree.class    |  Bin 1061 -> 0 bytes
+ .../classes/nescent/phyloGeoRef/tree/getTree.class |  Bin 3884 -> 0 bytes
+ .../nescent/phyloGeoRef/tree/returnTree.class      |  Bin 305 -> 0 bytes
+ .../nescent/phyloGeoRef/tree/storeTree.class       |  Bin 1581 -> 0 bytes
+ .../nescent/phyloGeoRef/tree/treeInfo.class        |  Bin 299 -> 0 bytes
+ .../classes/nescent/phylogeoref/Calc3DTree.class   |  Bin 0 -> 9458 bytes
+ .../build/classes/nescent/phylogeoref/Magic.class  |  Bin 0 -> 1868 bytes
+ .../build/classes/nescent/phylogeoref/Quad.class   |  Bin 0 -> 2970 bytes
+ .../build/classes/nescent/phylogeoref/Triple.class |  Bin 0 -> 2528 bytes
+ .../nescent/phylogeoref/geodata/ParseCoords.class  |  Bin 0 -> 6660 bytes
+ .../phylogeoref/geodata/ParseMetadata.class        |  Bin 0 -> 320 bytes
+ .../phylogeoref/gui/PhyloGeoRefWidget$1.class      |  Bin 0 -> 891 bytes
+ .../phylogeoref/gui/PhyloGeoRefWidget$2.class      |  Bin 0 -> 891 bytes
+ .../phylogeoref/gui/PhyloGeoRefWidget$3.class      |  Bin 0 -> 891 bytes
+ .../phylogeoref/gui/PhyloGeoRefWidget$4.class      |  Bin 0 -> 891 bytes
+ .../phylogeoref/gui/PhyloGeoRefWidget$5.class      |  Bin 0 -> 613 bytes
+ .../phylogeoref/gui/PhyloGeoRefWidget.class        |  Bin 0 -> 9685 bytes
+ .../nescent/phylogeoref/gui/Phylogeoref.class      |  Bin 0 -> 6762 bytes
+ .../phylogeoref/processor/PhylogenyProcessor.class |  Bin 0 -> 209 bytes
+ .../phylogeoref/processor/ProcessorFactory.class   |  Bin 0 -> 947 bytes
+ .../processor/UnweightedPhylogenyProcessor.class   |  Bin 0 -> 5952 bytes
+ .../processor/WeightedPhylogenyProcessor.class     |  Bin 0 -> 6261 bytes
+ .../processor/utility/ComputeUtility.class         |  Bin 0 -> 10862 bytes
+ .../phylogeoref/reader/CSVMetadataReader.class     |  Bin 0 -> 1605 bytes
+ .../phylogeoref/reader/GrandUnifiedReader.class    |  Bin 0 -> 5184 bytes
+ .../phylogeoref/reader/MetadataReader.class        |  Bin 0 -> 179 bytes
+ .../phylogeoref/reader/MultiFormatReader.class     |  Bin 0 -> 4254 bytes
+ .../nescent/phylogeoref/reader/NeXMLEngine.class   |  Bin 0 -> 3575 bytes
+ .../nescent/phylogeoref/reader/NeXMLReader.class   |  Bin 0 -> 3105 bytes
+ .../phylogeoref/reader/PhylogenyKitchen.class      |  Bin 0 -> 9287 bytes
+ .../phylogeoref/reader/PhylogenyMould.class        |  Bin 0 -> 2697 bytes
+ .../phylogeoref/reader/TextMetadataReader.class    |  Bin 0 -> 1793 bytes
+ .../nescent/phylogeoref/reader/TreeReader.class    |  Bin 0 -> 288 bytes
+ .../reader/UniversalMetadataReader.class           |  Bin 0 -> 1989 bytes
+ .../phylogeoref/reader/UniversalTreeReader.class   |  Bin 0 -> 2049 bytes
+ .../exception/LocationNotFoundException.class      |  Bin 0 -> 843 bytes
+ .../phylogeoref/reader/utility/PhyloUtility.class  |  Bin 0 -> 7290 bytes
+ .../reader/utility/PhylogenyFactory.class          |  Bin 0 -> 1507 bytes
+ .../phylogeoref/validator/PhylogenyValidator.class |  Bin 0 -> 5827 bytes
+ .../exception/InvalidChildrenException.class       |  Bin 0 -> 848 bytes
+ .../exception/InvalidEdgeLengthException.class     |  Bin 0 -> 844 bytes
+ .../exception/InvalidLatitudeException.class       |  Bin 0 -> 914 bytes
+ .../exception/InvalidLongitudeException.class      |  Bin 0 -> 917 bytes
+ .../exception/LocationNotFoundException.class      |  Bin 0 -> 849 bytes
+ .../exception/MissingEdgeLengthException.class     |  Bin 0 -> 846 bytes
+ .../validator/exception/SingleChildException.class |  Bin 0 -> 851 bytes
+ .../validator/exception/ZeroChildException.class   |  Bin 0 -> 768 bytes
+ .../phylogeoref/writer/AdvancedKmlWriter.class     |  Bin 0 -> 3653 bytes
+ .../writer/HierarchicalKmlPainter.class            |  Bin 0 -> 3447 bytes
+ .../nescent/phylogeoref/writer/KmlPainter.class    |  Bin 0 -> 3885 bytes
+ .../phylogeoref/writer/LevelwiseKmlPainter.class   |  Bin 0 -> 3151 bytes
+ .../nescent/phylogeoref/writer/PaintStyle.class    |  Bin 0 -> 1112 bytes
+ .../phylogeoref/writer/SimpleKmlWriter.class       |  Bin 0 -> 6392 bytes
+ .../nescent/phylogeoref/writer/utility/AMath.class |  Bin 0 -> 2899 bytes
+ .../phylogeoref/writer/utility/HTMLParlour.class   |  Bin 0 -> 7033 bytes
+ .../phylogeoref/writer/utility/KmlConstants.class  |  Bin 0 -> 893 bytes
+ .../phylogeoref/writer/utility/KmlToolkit.class    |  Bin 0 -> 4208 bytes
+ .../phylogeoref/writer/utility/KmlUtility.class    |  Bin 0 -> 18956 bytes
+ phyloGeoRef/build/classes/nescent/testMain.class   |  Bin 4605 -> 4572 bytes
+ .../classes/org/forester/application/goac.class    |  Bin 8858 -> 8846 bytes
+ .../classes/org/forester/application/nj.class      |  Bin 6243 -> 6427 bytes
+ .../org/forester/application/obo_tool.class        |  Bin 4967 -> 4963 bytes
+ .../classes/org/forester/application/pccx.class    |  Bin 10475 -> 10478 bytes
+ .../forester/application/pfam2go_extractor.class   |  Bin 4311 -> 4307 bytes
+ .../classes/org/forester/application/pfam_go.class |  Bin 4669 -> 4665 bytes
+ .../classes/org/forester/application/sdi_r.class   |  Bin 8895 -> 8891 bytes
+ .../org/forester/application/surfacing.class       |  Bin 94928 -> 94900 bytes
+ .../org/forester/application/surfacing_old.class   |  Bin 93050 -> 93022 bytes
+ .../forester/archaeopteryx/ArchaeopteryxA.class    |  Bin 6187 -> 6078 bytes
+ .../forester/archaeopteryx/ArchaeopteryxE$2.class  |  Bin 1271 -> 1198 bytes
+ .../forester/archaeopteryx/ArchaeopteryxE.class    |  Bin 30057 -> 29956 bytes
+ .../archaeopteryx/ColorSchemeChooser.class         |  Bin 6643 -> 6635 bytes
+ .../forester/archaeopteryx/ControlPanel$1.class    |  Bin 903 -> 830 bytes
+ .../forester/archaeopteryx/ControlPanel$2.class    |  Bin 1495 -> 1422 bytes
+ .../org/forester/archaeopteryx/ControlPanel.class  |  Bin 38162 -> 38158 bytes
+ .../org/forester/archaeopteryx/DefaultFilter.class |  Bin 1392 -> 1307 bytes
+ .../org/forester/archaeopteryx/FontChooser.class   |  Bin 8386 -> 8301 bytes
+ .../archaeopteryx/GraphicsFileFilter.class         |  Bin 1086 -> 1001 bytes
+ .../org/forester/archaeopteryx/MainFrame.class     |  Bin 44380 -> 44336 bytes
+ .../forester/archaeopteryx/MainFrameApplet$1.class |  Bin 929 -> 856 bytes
+ .../forester/archaeopteryx/MainFrameApplet$2.class |  Bin 1316 -> 1243 bytes
+ .../forester/archaeopteryx/MainFrameApplet$3.class |  Bin 2613 -> 2540 bytes
+ .../forester/archaeopteryx/MainFrameApplet.class   |  Bin 9690 -> 9605 bytes
+ .../archaeopteryx/MainFrameApplication$1.class     |  Bin 1381 -> 1308 bytes
+ .../archaeopteryx/MainFrameApplication$2.class     |  Bin 1356 -> 1283 bytes
+ .../archaeopteryx/MainFrameApplication$3.class     |  Bin 2910 -> 2837 bytes
+ .../archaeopteryx/MainFrameApplication.class       |  Bin 45809 -> 45684 bytes
+ .../org/forester/archaeopteryx/MainPanel$1.class   |  Bin 1357 -> 1284 bytes
+ .../org/forester/archaeopteryx/MainPanel$2.class   |  Bin 1357 -> 1284 bytes
+ .../org/forester/archaeopteryx/MainPanel.class     |  Bin 12949 -> 12832 bytes
+ .../forester/archaeopteryx/MainPanelApplets.class  |  Bin 2815 -> 2742 bytes
+ .../org/forester/archaeopteryx/MouseListener.class |  Bin 2093 -> 1972 bytes
+ .../org/forester/archaeopteryx/NHFilter.class      |  Bin 1111 -> 1026 bytes
+ .../org/forester/archaeopteryx/NHXFilter.class     |  Bin 960 -> 875 bytes
+ .../org/forester/archaeopteryx/NexusFilter.class   |  Bin 1046 -> 961 bytes
+ .../forester/archaeopteryx/NodeEditPanel$1.class   |  Bin 1207 -> 1110 bytes
+ .../forester/archaeopteryx/NodeEditPanel$2.class   |  Bin 1502 -> 1429 bytes
+ .../archaeopteryx/NodeEditPanel$TagNumber.class    |  Bin 1501 -> 1428 bytes
+ .../org/forester/archaeopteryx/NodeEditPanel.class |  Bin 25885 -> 25827 bytes
+ .../org/forester/archaeopteryx/NodeFrame$1.class   |  Bin 951 -> 878 bytes
+ .../org/forester/archaeopteryx/NodeFrame$2.class   |  Bin 1289 -> 1216 bytes
+ .../org/forester/archaeopteryx/NodePanel.class     |  Bin 16061 -> 15976 bytes
+ .../Options$OVERVIEW_PLACEMENT_TYPE.class          |  Bin 1954 -> 1881 bytes
+ .../org/forester/archaeopteryx/PdfFilter.class     |  Bin 903 -> 818 bytes
+ .../org/forester/archaeopteryx/TextFrame$1.class   |  Bin 826 -> 753 bytes
+ .../org/forester/archaeopteryx/TolFilter.class     |  Bin 1043 -> 958 bytes
+ .../org/forester/archaeopteryx/TreePanel$1.class   |  Bin 1044 -> 971 bytes
+ .../org/forester/archaeopteryx/TreePanel$2.class   |  Bin 939 -> 866 bytes
+ ...eePanel$SubtreeColorizationActionListener.class |  Bin 1427 -> 1354 bytes
+ .../org/forester/archaeopteryx/TreePanel.class     |  Bin 98943 -> 98842 bytes
+ .../org/forester/archaeopteryx/UrlTreeReader.class |  Bin 10320 -> 10247 bytes
+ .../archaeopteryx/Util$GraphicsExportType.class    |  Bin 1746 -> 1673 bytes
+ .../classes/org/forester/archaeopteryx/Util.class  |  Bin 25443 -> 25435 bytes
+ .../org/forester/archaeopteryx/WebLink.class       |  Bin 1289 -> 1216 bytes
+ .../org/forester/archaeopteryx/XMLFilter.class     |  Bin 1071 -> 986 bytes
+ .../data/RenderableDomainArchitecture.class        |  Bin 8316 -> 8135 bytes
+ .../phylogeny/data/RenderablePhylogenyData.class   |  Bin 631 -> 486 bytes
+ .../BasicPhylogeniesWebserviceClient.class         |  Bin 2956 -> 2775 bytes
+ .../webservices/PhylogeniesWebserviceClient.class  |  Bin 1098 -> 1008 bytes
+ .../webservices/WebservicesManager.class           |  Bin 1863 -> 1790 bytes
+ .../forester/development/AminoAcidSequence.class   |  Bin 3640 -> 3567 bytes
+ .../org/forester/development/BasicMsa.class        |  Bin 3407 -> 3334 bytes
+ .../classes/org/forester/development/Factory.class |  Bin 274 -> 227 bytes
+ .../classes/org/forester/development/Msa.class     |  Bin 339 -> 263 bytes
+ .../org/forester/development/MsaFactory.class      |  Bin 243 -> 196 bytes
+ .../org/forester/development/Sequence.class        |  Bin 320 -> 253 bytes
+ .../forester/development/SimpleMutableMsa.class    |  Bin 2373 -> 2264 bytes
+ .../development/StreamBasedMsaFactory.class        |  Bin 311 -> 264 bytes
+ .../org/forester/development/SupportCount.class    |  Bin 7577 -> 7572 bytes
+ .../org/forester/go/BasicGoRelationship.class      |  Bin 3834 -> 3749 bytes
+ .../classes/org/forester/go/BasicGoSubset.class    |  Bin 3204 -> 3119 bytes
+ .../classes/org/forester/go/BasicGoTerm.class      |  Bin 7129 -> 6984 bytes
+ .../classes/org/forester/go/BasicGoXRef.class      |  Bin 4100 -> 4003 bytes
+ .../build/classes/org/forester/go/GoId.class       |  Bin 2538 -> 2441 bytes
+ .../classes/org/forester/go/GoNameSpace.class      |  Bin 3377 -> 3292 bytes
+ .../classes/org/forester/go/GoRelationship.class   |  Bin 741 -> 699 bytes
+ .../build/classes/org/forester/go/GoSubset.class   |  Bin 858 -> 822 bytes
+ .../build/classes/org/forester/go/GoTerm.class     |  Bin 1005 -> 909 bytes
+ .../build/classes/org/forester/go/GoUtils.class    |  Bin 9425 -> 9401 bytes
+ .../build/classes/org/forester/go/GoXRef.class     |  Bin 1113 -> 1071 bytes
+ .../build/classes/org/forester/go/Mapping.class    |  Bin 357 -> 315 bytes
+ .../build/classes/org/forester/go/OBOparser.class  |  Bin 8776 -> 8756 bytes
+ .../classes/org/forester/go/PfamToGoMapping.class  |  Bin 2464 -> 2343 bytes
+ .../org/forester/go/etc/MetaOntologizer.class      |  Bin 21593 -> 21573 bytes
+ .../org/forester/go/etc/OntologizerResult.class    |  Bin 5328 -> 5255 bytes
+ .../forester/io/parsers/HmmPfamOutputParser.class  |  Bin 20735 -> 20727 bytes
+ .../io/parsers/HmmscanPerDomainTableParser.class   |  Bin 19162 -> 19154 bytes
+ .../org/forester/io/parsers/PhylogenyParser.class  |  Bin 402 -> 349 bytes
+ .../io/parsers/nexus/NexusCharactersParser.class   |  Bin 3940 -> 3936 bytes
+ .../forester/io/parsers/nexus/PaupLogParser.class  |  Bin 4777 -> 4773 bytes
+ .../io/parsers/phyloxml/PhyloXmlHandler.class      |  Bin 12215 -> 12106 bytes
+ ...PhyloXmlParser$PhyloXmlParserErrorHandler.class |  Bin 2622 -> 2525 bytes
+ .../io/parsers/phyloxml/PhyloXmlParser.class       |  Bin 10557 -> 10553 bytes
+ .../io/parsers/phyloxml/PhyloXmlUtil.class         |  Bin 2582 -> 2578 bytes
+ .../forester/io/parsers/phyloxml/XmlElement.class  |  Bin 6016 -> 5943 bytes
+ .../phyloxml/phylogenydata/AccessionParser.class   |  Bin 1758 -> 1685 bytes
+ .../phyloxml/phylogenydata/AnnotationParser.class  |  Bin 3294 -> 3221 bytes
+ .../phylogenydata/BinaryCharactersParser.class     |  Bin 3767 -> 3694 bytes
+ .../phyloxml/phylogenydata/BranchWidthParser.class |  Bin 1476 -> 1403 bytes
+ .../phyloxml/phylogenydata/ColorParser.class       |  Bin 2181 -> 2108 bytes
+ .../phyloxml/phylogenydata/ConfidenceParser.class  |  Bin 1838 -> 1765 bytes
+ .../phyloxml/phylogenydata/DateParser.class        |  Bin 2709 -> 2636 bytes
+ .../phylogenydata/DistributionParser.class         |  Bin 1458 -> 1385 bytes
+ .../phylogenydata/DomainArchitectureParser.class   |  Bin 3155 -> 3082 bytes
+ .../phyloxml/phylogenydata/EventParser.class       |  Bin 3057 -> 2984 bytes
+ .../phyloxml/phylogenydata/IdentifierParser.class  |  Bin 1866 -> 1793 bytes
+ .../PhylogenyDataPhyloXmlParser.class              |  Bin 416 -> 368 bytes
+ .../phyloxml/phylogenydata/PointParser.class       |  Bin 1437 -> 1364 bytes
+ .../phyloxml/phylogenydata/PropertyParser.class    |  Bin 2807 -> 2734 bytes
+ .../phylogenydata/ProteinDomainParser.class        |  Bin 2833 -> 2760 bytes
+ .../phyloxml/phylogenydata/ReferenceParser.class   |  Bin 1751 -> 1678 bytes
+ .../phyloxml/phylogenydata/SequenceParser.class    |  Bin 3566 -> 3493 bytes
+ .../phylogenydata/SequenceRelationParser.class     |  Bin 1414 -> 1341 bytes
+ .../parsers/phyloxml/phylogenydata/UriParser.class |  Bin 2244 -> 2171 bytes
+ .../tol/TolParser$TolParserErrorHandler.class      |  Bin 2421 -> 2324 bytes
+ .../org/forester/io/parsers/tol/TolParser.class    |  Bin 9703 -> 9699 bytes
+ .../forester/io/parsers/tol/TolXmlHandler.class    |  Bin 9279 -> 9170 bytes
+ .../org/forester/io/writers/PhylogenyWriter.class  |  Bin 20773 -> 20769 bytes
+ .../BasicExternalNodeBasedCoverageExtender.class   |  Bin 7300 -> 7298 bytes
+ .../pccx/BranchCountingBasedScoringMethod.class    |  Bin 2840 -> 2843 bytes
+ .../pccx/BranchLengthBasedScoringMethod.class      |  Bin 2019 -> 1922 bytes
+ .../build/classes/org/forester/pccx/Coverage.class |  Bin 224 -> 182 bytes
+ .../forester/pccx/CoverageCalculationMethod.class  |  Bin 576 -> 477 bytes
+ .../forester/pccx/CoverageCalculationOptions.class |  Bin 229 -> 193 bytes
+ .../org/forester/pccx/CoverageExtender.class       |  Bin 601 -> 484 bytes
+ .../pccx/ExternalNodeBasedCoverageMethod.class     |  Bin 6535 -> 6538 bytes
+ .../pccx/LogBranchLengthBasedScoringMethod.class   |  Bin 2139 -> 2042 bytes
+ .../pccx/ScoringMethodForExternalNode.class        |  Bin 802 -> 683 bytes
+ .../classes/org/forester/phylogeny/Edge.class      |  Bin 316 -> 268 bytes
+ .../classes/org/forester/phylogeny/Phylogeny.class |  Bin 25230 -> 25149 bytes
+ .../org/forester/phylogeny/PhylogenyBranch.class   |  Bin 3829 -> 3732 bytes
+ .../org/forester/phylogeny/PhylogenyMethods.class  |  Bin 25193 -> 25084 bytes
+ .../org/forester/phylogeny/PhylogenyNode.class     |  Bin 18048 -> 17947 bytes
+ .../org/forester/phylogeny/PhylogenyNodeI.class    |  Bin 641 -> 515 bytes
+ .../org/forester/phylogeny/data/Accession.class    |  Bin 3444 -> 3347 bytes
+ .../org/forester/phylogeny/data/Annotation.class   |  Bin 5772 -> 5627 bytes
+ .../forester/phylogeny/data/BinaryCharacters.class |  Bin 9447 -> 9302 bytes
+ .../org/forester/phylogeny/data/BranchColor.class  |  Bin 3017 -> 2872 bytes
+ .../org/forester/phylogeny/data/BranchData.class   |  Bin 4616 -> 4475 bytes
+ .../org/forester/phylogeny/data/BranchWidth.class  |  Bin 2523 -> 2378 bytes
+ .../org/forester/phylogeny/data/Confidence.class   |  Bin 3938 -> 3853 bytes
+ .../classes/org/forester/phylogeny/data/Date.class |  Bin 4463 -> 4318 bytes
+ .../org/forester/phylogeny/data/Distribution.class |  Bin 4185 -> 4040 bytes
+ .../phylogeny/data/DomainArchitecture.class        |  Bin 7092 -> 7019 bytes
+ .../org/forester/phylogeny/data/Event.class        |  Bin 8498 -> 8425 bytes
+ .../org/forester/phylogeny/data/Identifier.class   |  Bin 3700 -> 3603 bytes
+ .../forester/phylogeny/data/PhylogenyData.class    |  Bin 572 -> 460 bytes
+ .../org/forester/phylogeny/data/Point.class        |  Bin 4106 -> 3961 bytes
+ .../forester/phylogeny/data/PropertiesMap.class    |  Bin 5004 -> 4839 bytes
+ .../phylogeny/data/Property$AppliesTo$1.class      |  Bin 803 -> 730 bytes
+ .../phylogeny/data/Property$AppliesTo$2.class      |  Bin 799 -> 726 bytes
+ .../phylogeny/data/Property$AppliesTo$3.class      |  Bin 798 -> 725 bytes
+ .../phylogeny/data/Property$AppliesTo$4.class      |  Bin 804 -> 731 bytes
+ .../phylogeny/data/Property$AppliesTo$5.class      |  Bin 807 -> 734 bytes
+ .../phylogeny/data/Property$AppliesTo$6.class      |  Bin 799 -> 726 bytes
+ .../org/forester/phylogeny/data/Property.class     |  Bin 6844 -> 6699 bytes
+ .../forester/phylogeny/data/ProteinDomain.class    |  Bin 4747 -> 4674 bytes
+ .../org/forester/phylogeny/data/Reference.class    |  Bin 3521 -> 3448 bytes
+ .../org/forester/phylogeny/data/Sequence.class     |  Bin 8804 -> 8703 bytes
+ .../forester/phylogeny/data/SequenceRelation.class |  Bin 1492 -> 1359 bytes
+ .../org/forester/phylogeny/data/Taxonomy.class     |  Bin 8577 -> 8472 bytes
+ .../classes/org/forester/phylogeny/data/Uri.class  |  Bin 3213 -> 3080 bytes
+ .../factories/ParserBasedPhylogenyFactory.class    |  Bin 3060 -> 2987 bytes
+ .../phylogeny/factories/PhylogenyFactory.class     |  Bin 666 -> 576 bytes
+ .../iterators/PhylogenyNodeIterator.class          |  Bin 496 -> 448 bytes
+ .../BasicCharacterStateMatrix.class                |  Bin 14279 -> 13990 bytes
+ .../BasicSymmetricalDistanceMatrix.class           |  Bin 4917 -> 4844 bytes
+ .../CharacterStateMatrix$BinaryStates.class        |  Bin 2305 -> 2232 bytes
+ .../CharacterStateMatrix$GainLossStates.class      |  Bin 2295 -> 2222 bytes
+ .../phylogenyinference/CharacterStateMatrix.class  |  Bin 2284 -> 1984 bytes
+ .../phylogenyinference/DiscreteState.class         |  Bin 2169 -> 2060 bytes
+ .../phylogenyinference/DistanceMatrix.class        |  Bin 709 -> 568 bytes
+ .../phylogenyinference/DistanceMatrixParser.class  |  Bin 336 -> 289 bytes
+ .../phylogenyinference/DistanceMethod.class        |  Bin 287 -> 243 bytes
+ .../phylogenyinference/DolloParsimony.class        |  Bin 14174 -> 14166 bytes
+ .../phylogenyinference/FitchParsimony.class        |  Bin 19804 -> 19792 bytes
+ .../phylogenyinference/NeighborJoining.class       |  Bin 7148 -> 7144 bytes
+ .../phylogenyinference/SankoffParsimony.class      |  Bin 19812 -> 19800 bytes
+ .../SymmetricalDistanceMatrixParser.class          |  Bin 6979 -> 6975 bytes
+ .../build/classes/org/forester/sdi/GSDI.class      |  Bin 7547 -> 7462 bytes
+ .../build/classes/org/forester/sdi/SDI.class       |  Bin 7566 -> 7493 bytes
+ .../AdjactantDirectedCombinableDomains.class       |  Bin 1887 -> 1810 bytes
+ .../surfacing/BasicBinaryDomainCombination.class   |  Bin 4931 -> 4822 bytes
+ .../surfacing/BasicCombinableDomains.class         |  Bin 6460 -> 6367 bytes
+ .../org/forester/surfacing/BasicDomain.class       |  Bin 5295 -> 5174 bytes
+ .../BasicDomainSimilarityCalculator.class          |  Bin 9038 -> 9022 bytes
+ .../BasicGenomeWideCombinableDomains.class         |  Bin 14567 -> 14414 bytes
+ .../org/forester/surfacing/BasicProtein.class      |  Bin 5165 -> 5036 bytes
+ .../org/forester/surfacing/BasicSpecies.class      |  Bin 2118 -> 2009 bytes
+ .../surfacing/BinaryDomainCombination.class        |  Bin 959 -> 856 bytes
+ .../org/forester/surfacing/CombinableDomains.class |  Bin 1581 -> 1360 bytes
+ ...CombinationsBasedPairwiseDomainSimilarity.class |  Bin 1392 -> 1319 bytes
+ ...nsBasedPairwiseDomainSimilarityCalculator.class |  Bin 2175 -> 2167 bytes
+ .../surfacing/DirectedCombinableDomains.class      |  Bin 1851 -> 1774 bytes
+ .../classes/org/forester/surfacing/Domain.class    |  Bin 751 -> 633 bytes
+ ...chitectureBasedGenomeSimilarityCalculator.class |  Bin 8859 -> 8827 bytes
+ .../surfacing/DomainCountsDifferenceUtil.class     |  Bin 30156 -> 30088 bytes
+ .../classes/org/forester/surfacing/DomainId.class  |  Bin 3536 -> 3427 bytes
+ .../org/forester/surfacing/DomainLengths.class     |  Bin 4888 -> 4876 bytes
+ .../forester/surfacing/DomainLengthsTable.class    |  Bin 6817 -> 6805 bytes
+ .../surfacing/DomainParsimonyCalculator.class      |  Bin 28009 -> 27963 bytes
+ .../org/forester/surfacing/DomainSimilarity.class  |  Bin 1711 -> 1559 bytes
+ .../surfacing/DomainSimilarityCalculator.class     |  Bin 897 -> 728 bytes
+ .../surfacing/GenomeWideCombinableDomains.class    |  Bin 1653 -> 1534 bytes
+ .../surfacing/PairwiseDomainSimilarity.class       |  Bin 267 -> 225 bytes
+ .../PairwiseDomainSimilarityCalculator.class       |  Bin 404 -> 340 bytes
+ .../surfacing/PairwiseGenomeComparator.class       |  Bin 15288 -> 15280 bytes
+ .../surfacing/PrintableDomainSimilarity.class      |  Bin 19109 -> 19004 bytes
+ ...intableSpeciesSpecificDomainSimilariyData.class |  Bin 5340 -> 5263 bytes
+ .../classes/org/forester/surfacing/Protein.class   |  Bin 1131 -> 956 bytes
+ .../classes/org/forester/surfacing/ProteinId.class |  Bin 2128 -> 2019 bytes
+ .../org/forester/surfacing/SimpleDomain.class      |  Bin 2906 -> 2785 bytes
+ .../classes/org/forester/surfacing/Species.class   |  Bin 325 -> 289 bytes
+ .../SpeciesSpecificDomainSimilariyData.class       |  Bin 917 -> 811 bytes
+ .../org/forester/surfacing/SurfacingUtil.class     |  Bin 69426 -> 69337 bytes
+ .../org/forester/surfacing/TestSurfacing.class     |  Bin 106161 -> 106049 bytes
+ .../build/classes/org/forester/test/Test.class     |  Bin 126411 -> 126305 bytes
+ .../org/forester/tools/ConfidenceAssessor.class    |  Bin 6452 -> 6440 bytes
+ .../org/forester/tools/TreeSplitMatrix.class       |  Bin 7894 -> 7805 bytes
+ .../forester/util/BasicDescriptiveStatistics.class |  Bin 6559 -> 6486 bytes
+ .../classes/org/forester/util/BasicTable.class     |  Bin 5625 -> 5552 bytes
+ .../org/forester/util/CommandLineArguments.class   |  Bin 8610 -> 8606 bytes
+ .../org/forester/util/DescriptiveStatistics.class  |  Bin 922 -> 746 bytes
+ .../classes/org/forester/util/ForesterUtil.class   |  Bin 29057 -> 29045 bytes
+ .../classes/org/forester/util/GeneralTable.class   |  Bin 5081 -> 4984 bytes
+ .../forester/util/WindowsUtils$StreamReader.class  |  Bin 1092 -> 1019 bytes
+ .../classes/org/nexml/model/Annotatable.class      |  Bin 3560 -> 3240 bytes
+ .../build/classes/org/nexml/model/Annotation.class |  Bin 1568 -> 1491 bytes
+ .../org/nexml/model/CategoricalMatrix.class        |  Bin 493 -> 451 bytes
+ .../build/classes/org/nexml/model/Character.class  |  Bin 357 -> 293 bytes
+ .../classes/org/nexml/model/CharacterState.class   |  Bin 300 -> 247 bytes
+ .../org/nexml/model/CharacterStateSet.class        |  Bin 1289 -> 1143 bytes
+ .../org/nexml/model/CompoundCharacterState.class   |  Bin 459 -> 397 bytes
+ .../classes/org/nexml/model/ContinuousMatrix.class |  Bin 338 -> 302 bytes
+ .../build/classes/org/nexml/model/Document.class   |  Bin 1108 -> 1114 bytes
+ .../classes/org/nexml/model/DocumentFactory.class  |  Bin 2345 -> 3576 bytes
+ .../build/classes/org/nexml/model/Edge.class       |  Bin 353 -> 364 bytes
+ .../build/classes/org/nexml/model/FloatEdge.class  |  Bin 283 -> 230 bytes
+ .../build/classes/org/nexml/model/IntEdge.class    |  Bin 281 -> 228 bytes
+ .../build/classes/org/nexml/model/Matrix.class     |  Bin 1288 -> 1272 bytes
+ .../build/classes/org/nexml/model/MatrixCell.class |  Bin 418 -> 366 bytes
+ .../classes/org/nexml/model/MolecularMatrix.class  |  Bin 990 -> 900 bytes
+ .../build/classes/org/nexml/model/Network.class    |  Bin 1018 -> 886 bytes
+ .../classes/org/nexml/model/NexmlWritable.class    |  Bin 385 -> 468 bytes
+ .../build/classes/org/nexml/model/Node.class       |  Bin 269 -> 225 bytes
+ .../classes/org/nexml/model/OTULinkable.class      |  Bin 293 -> 243 bytes
+ .../build/classes/org/nexml/model/OTUs.class       |  Bin 1143 -> 1061 bytes
+ .../classes/org/nexml/model/OTUsLinkable.class     |  Bin 300 -> 249 bytes
+ .../build/classes/org/nexml/model/Segmented.class  |  Bin 0 -> 272 bytes
+ .../classes/org/nexml/model/TestAnnotation.class   |  Bin 3766 -> 0 bytes
+ .../classes/org/nexml/model/TestBaseURI.class      |  Bin 1467 -> 0 bytes
+ .../org/nexml/model/TestContinuousMatrix.class     |  Bin 817 -> 0 bytes
+ .../classes/org/nexml/model/TestFileParse.class    |  Bin 790 -> 0 bytes
+ .../build/classes/org/nexml/model/TestMatrix.class |  Bin 773 -> 0 bytes
+ .../org/nexml/model/TestMolecularMatrix.class      |  Bin 1026 -> 0 bytes
+ .../build/classes/org/nexml/model/TestOTUs.class   |  Bin 757 -> 0 bytes
+ .../classes/org/nexml/model/TestParseTrees.class   |  Bin 2444 -> 0 bytes
+ .../org/nexml/model/TestSerialization.class        |  Bin 899 -> 0 bytes
+ .../classes/org/nexml/model/TestTreeBlock.class    |  Bin 891 -> 0 bytes
+ .../build/classes/org/nexml/model/Tree.class       |  Bin 315 -> 279 bytes
+ .../build/classes/org/nexml/model/TreeBlock.class  |  Bin 773 -> 843 bytes
+ .../org/nexml/model/impl/AnnotatableImpl.class     |  Bin 15091 -> 15311 bytes
+ .../org/nexml/model/impl/AnnotationImpl$1.class    |  Bin 0 -> 1875 bytes
+ .../org/nexml/model/impl/AnnotationImpl$2.class    |  Bin 0 -> 1792 bytes
+ .../impl/AnnotationImpl$Base64BinaryWrapper.class  |  Bin 0 -> 1277 bytes
+ .../model/impl/AnnotationImpl$CharWrapper.class    |  Bin 0 -> 864 bytes
+ .../impl/AnnotationImpl$DateTimeWrapper.class      |  Bin 0 -> 1142 bytes
+ .../impl/AnnotationImpl$DurationWrapper.class      |  Bin 0 -> 1332 bytes
+ .../model/impl/AnnotationImpl$SimpleObject.class   |  Bin 729 -> 729 bytes
+ .../org/nexml/model/impl/AnnotationImpl.class      |  Bin 16040 -> 19218 bytes
+ .../nexml/model/impl/CategoricalMatrixImpl.class   |  Bin 9104 -> 8992 bytes
+ .../org/nexml/model/impl/CharacterImpl.class       |  Bin 1452 -> 1379 bytes
+ .../org/nexml/model/impl/CharacterStateImpl.class  |  Bin 1283 -> 1210 bytes
+ .../nexml/model/impl/CharacterStateSetImpl.class   |  Bin 6844 -> 6759 bytes
+ .../model/impl/CompoundCharacterStateImpl.class    |  Bin 2375 -> 2371 bytes
+ .../nexml/model/impl/ContinuousMatrixImpl.class    |  Bin 6023 -> 6092 bytes
+ .../org/nexml/model/impl/DocumentImpl.class        |  Bin 16125 -> 17114 bytes
+ .../classes/org/nexml/model/impl/EdgeImpl.class    |  Bin 2378 -> 2391 bytes
+ .../org/nexml/model/impl/FloatEdgeImpl.class       |  Bin 1433 -> 1504 bytes
+ .../org/nexml/model/impl/FloatNetworkImpl.class    |  Bin 2362 -> 2277 bytes
+ .../org/nexml/model/impl/FloatTreeImpl.class       |  Bin 2341 -> 2256 bytes
+ .../classes/org/nexml/model/impl/IntEdgeImpl.class |  Bin 1778 -> 1776 bytes
+ .../org/nexml/model/impl/IntNetworkImpl.class      |  Bin 2255 -> 2170 bytes
+ .../classes/org/nexml/model/impl/IntTreeImpl.class |  Bin 2317 -> 2232 bytes
+ .../org/nexml/model/impl/MatrixCellImpl.class      |  Bin 1885 -> 1812 bytes
+ .../classes/org/nexml/model/impl/MatrixImpl.class  |  Bin 9474 -> 9903 bytes
+ .../impl/MolecularCharacterStateSetImpl.class      |  Bin 8598 -> 8091 bytes
+ .../org/nexml/model/impl/MolecularMatrixImpl.class |  Bin 9704 -> 9117 bytes
+ .../classes/org/nexml/model/impl/NetworkImpl.class |  Bin 6024 -> 5879 bytes
+ .../org/nexml/model/impl/NexmlWritableImpl.class   |  Bin 6079 -> 6432 bytes
+ .../classes/org/nexml/model/impl/NodeImpl.class    |  Bin 1786 -> 1701 bytes
+ .../classes/org/nexml/model/impl/OTUImpl.class     |  Bin 835 -> 762 bytes
+ .../classes/org/nexml/model/impl/OTUsImpl.class    |  Bin 3557 -> 3875 bytes
+ .../model/impl/PolymorphicCharacterStateImpl.class |  Bin 882 -> 809 bytes
+ .../classes/org/nexml/model/impl/SetManager.class  |  Bin 5397 -> 5385 bytes
+ .../org/nexml/model/impl/TreeBlockImpl.class       |  Bin 11379 -> 11911 bytes
+ .../classes/org/nexml/model/impl/TreeImpl.class    |  Bin 12085 -> 12211 bytes
+ .../model/impl/UncertainCharacterStateImpl.class   |  Bin 872 -> 799 bytes
+ phyloGeoRef/build/classes/testCoords.csv           |    8 +
+ phyloGeoRef/build/classes/testCoords2.csv          |    8 +
+ phyloGeoRef/build/classes/testCoordsmeta.csv       |    8 +
+ phyloGeoRef/build/classes/testCoordsmeta2.csv      |    9 +
+ phyloGeoRef/build/classes/testMain.class           |  Bin 3762 -> 0 bytes
+ phyloGeoRef/build/classes/testTree.nwk             |    1 +
+ .../build/classes/validator/XmlValidator.class     |  Bin 2276 -> 0 bytes
+ .../processor/utility/ComputeUtilityTest.class     |  Bin 0 -> 2434 bytes
+ phyloGeoRef/dist/README.TXT                        |   32 +
+ phyloGeoRef/dist/javadoc/.DS_Store                 |  Bin 12292 -> 0 bytes
+ phyloGeoRef/dist/javadoc/AddressExample.html       |  269 -
+ phyloGeoRef/dist/javadoc/JdbcExample.html          |  250 -
+ phyloGeoRef/dist/javadoc/MockResultSet.html        | 5308 ------
+ .../javadoc/au/com/bytecode/opencsv/CSVParser.html |  609 -
+ .../au/com/bytecode/opencsv/CSVParserTest.html     |  590 -
+ .../javadoc/au/com/bytecode/opencsv/CSVReader.html |  570 -
+ .../au/com/bytecode/opencsv/CSVReaderTest.html     |  430 -
+ .../javadoc/au/com/bytecode/opencsv/CSVWriter.html |  750 -
+ .../au/com/bytecode/opencsv/CSVWriterTest.html     |  419 -
+ .../javadoc/au/com/bytecode/opencsv/MockClob.html  |  586 -
+ .../au/com/bytecode/opencsv/MockResultSet.html     | 4982 ------
+ .../com/bytecode/opencsv/MockResultSetHelper.html  |  299 -
+ .../bytecode/opencsv/MockResultSetMetaData.html    |  889 -
+ .../au/com/bytecode/opencsv/OpencsvTest.html       |  263 -
+ .../au/com/bytecode/opencsv/ResultSetHelper.html   |  237 -
+ .../bytecode/opencsv/ResultSetHelperService.html   |  329 -
+ .../opencsv/ResultSetHelperServiceTest.html        |  426 -
+ .../au/com/bytecode/opencsv/UniCodeTest.html       |  343 -
+ .../bean/ColumnPositionMappingStrategy.html        |  371 -
+ .../bean/ColumnPositionMappingStrategyTest.html    |  295 -
+ .../au/com/bytecode/opencsv/bean/CsvToBean.html    |  356 -
+ .../com/bytecode/opencsv/bean/CsvToBeanTest.html   |  248 -
+ .../bean/HeaderColumnNameMappingStrategy.html      |  554 -
+ .../bean/HeaderColumnNameMappingStrategyTest.html  |  269 -
+ .../HeaderColumnNameTranslateMappingStrategy.html  |  341 -
+ ...aderColumnNameTranslateMappingStrategyTest.html |  248 -
+ .../com/bytecode/opencsv/bean/MappingStrategy.html |  266 -
+ .../au/com/bytecode/opencsv/bean/MockBean.html     |  402 -
+ .../com/bytecode/opencsv/bean/package-frame.html   |   60 -
+ .../com/bytecode/opencsv/bean/package-summary.html |  224 -
+ .../au/com/bytecode/opencsv/bean/package-tree.html |  162 -
+ .../au/com/bytecode/opencsv/package-frame.html     |   70 -
+ .../au/com/bytecode/opencsv/package-summary.html   |  244 -
+ .../au/com/bytecode/opencsv/package-tree.html      |  166 -
+ phyloGeoRef/dist/javadoc/constant-values.html      | 3075 ----
+ .../de/micromata/jak/AtsConformanceLevel1Test.html | 1360 --
+ .../de/micromata/jak/AtsConformanceLevel2Test.html |  947 -
+ .../de/micromata/jak/AtsConformanceLevel3Test.html |  472 -
+ .../de/micromata/jak/KmlGxReferenceApiTest.html    | 1148 --
+ .../de/micromata/jak/KmlReferenceApiTest.html      | 2775 ---
+ .../de/micromata/jak/KmlReferenceCheck.html        | 1642 --
+ .../de/micromata/jak/KmlReferencePojoTest.html     | 2775 ---
+ .../de/micromata/jak/NameSpaceBeautyfier.html      |  278 -
+ .../dist/javadoc/de/micromata/jak/StressTest.html  |  259 -
+ .../dist/javadoc/de/micromata/jak/Utils.html       |  519 -
+ .../de/micromata/jak/examples/CloneTest.html       |  248 -
+ .../de/micromata/jak/examples/Example1.html        |  263 -
+ .../de/micromata/jak/examples/Example2.html        |  262 -
+ .../de/micromata/jak/examples/Example3.html        |  261 -
+ .../de/micromata/jak/examples/Example4.html        |  262 -
+ .../de/micromata/jak/examples/ReadCsvFileTest.html |  276 -
+ .../javadoc/de/micromata/jak/examples/Utils.html   |  411 -
+ .../de/micromata/jak/examples/package-frame.html   |   45 -
+ .../de/micromata/jak/examples/package-summary.html |  184 -
+ .../de/micromata/jak/examples/package-tree.html    |  154 -
+ .../incubator/JAXBSample.DeclareOnTopMapper.html   |  279 -
+ .../incubator/JAXBSample.PreDeclaredMapper.html    |  279 -
+ .../jak/incubator/JAXBSample.PreferredMapper.html  |  276 -
+ .../de/micromata/jak/incubator/JAXBSample.html     |  312 -
+ .../de/micromata/jak/incubator/JustAType.html      |  272 -
+ .../de/micromata/jak/incubator/KmzTest.html        |  273 -
+ .../de/micromata/jak/incubator/package-frame.html  |   43 -
+ .../micromata/jak/incubator/package-summary.html   |  178 -
+ .../de/micromata/jak/incubator/package-tree.html   |  158 -
+ .../jak/internal/IAtsConformanceLevel1.html        | 1652 --
+ .../jak/internal/IAtsConformanceLevel2.html        | 1127 --
+ .../jak/internal/IAtsConformanceLevel3.html        |  508 -
+ .../de/micromata/jak/internal/IKMLReference.html   | 2437 ---
+ .../de/micromata/jak/internal/IKmlGxReference.html |  988 --
+ .../de/micromata/jak/internal/package-frame.html   |   41 -
+ .../de/micromata/jak/internal/package-summary.html |  177 -
+ .../de/micromata/jak/internal/package-tree.html    |  152 -
+ .../dist/javadoc/de/micromata/jak/jugh/Jugh.html   |  384 -
+ .../de/micromata/jak/jugh/package-frame.html       |   33 -
+ .../de/micromata/jak/jugh/package-summary.html     |  158 -
+ .../de/micromata/jak/jugh/package-tree.html        |  154 -
+ .../javadoc/de/micromata/jak/package-frame.html    |   51 -
+ .../javadoc/de/micromata/jak/package-summary.html  |  194 -
+ .../javadoc/de/micromata/jak/package-tree.html     |  162 -
+ .../opengis/kml/v_2_2_0/AbstractLatLonBox.html     | 1097 --
+ .../opengis/kml/v_2_2_0/AbstractObject.html        |  629 -
+ .../opengis/kml/v_2_2_0/AbstractView.html          |  696 -
+ .../de/micromata/opengis/kml/v_2_2_0/Alias.html    |  925 -
+ .../opengis/kml/v_2_2_0/AltitudeMode.html          |  419 -
+ .../opengis/kml/v_2_2_0/BalloonStyle.html          | 1421 --
+ .../micromata/opengis/kml/v_2_2_0/BasicLink.html   |  785 -
+ .../opengis/kml/v_2_2_0/BooleanConverter.html      |  285 -
+ .../de/micromata/opengis/kml/v_2_2_0/Boundary.html |  669 -
+ .../de/micromata/opengis/kml/v_2_2_0/Camera.html   | 1671 --
+ .../de/micromata/opengis/kml/v_2_2_0/Change.html   |  465 -
+ .../micromata/opengis/kml/v_2_2_0/ColorMode.html   |  371 -
+ .../micromata/opengis/kml/v_2_2_0/ColorStyle.html  | 1101 --
+ .../micromata/opengis/kml/v_2_2_0/Container.html   | 1398 --
+ .../micromata/opengis/kml/v_2_2_0/Coordinate.html  |  635 -
+ .../opengis/kml/v_2_2_0/CoordinatesConverter.html  |  285 -
+ .../de/micromata/opengis/kml/v_2_2_0/Create.html   |  537 -
+ .../de/micromata/opengis/kml/v_2_2_0/Data.html     |  862 -
+ .../de/micromata/opengis/kml/v_2_2_0/Delete.html   |  700 -
+ .../micromata/opengis/kml/v_2_2_0/DisplayMode.html |  371 -
+ .../de/micromata/opengis/kml/v_2_2_0/Document.html | 2103 ---
+ .../opengis/kml/v_2_2_0/ExtendedData.html          |  774 -
+ .../de/micromata/opengis/kml/v_2_2_0/Feature.html  | 3082 ----
+ .../de/micromata/opengis/kml/v_2_2_0/Folder.html   | 1931 ---
+ .../de/micromata/opengis/kml/v_2_2_0/Geometry.html |  718 -
+ .../micromata/opengis/kml/v_2_2_0/GridOrigin.html  |  371 -
+ .../opengis/kml/v_2_2_0/GroundOverlay.html         | 1992 ---
+ .../de/micromata/opengis/kml/v_2_2_0/Icon.html     | 1644 --
+ .../micromata/opengis/kml/v_2_2_0/IconStyle.html   | 1621 --
+ .../opengis/kml/v_2_2_0/ImagePyramid.html          | 1100 --
+ .../de/micromata/opengis/kml/v_2_2_0/ItemIcon.html |  938 -
+ .../opengis/kml/v_2_2_0/ItemIconState.html         |  442 -
+ .../de/micromata/opengis/kml/v_2_2_0/Kml.html      | 1506 --
+ .../micromata/opengis/kml/v_2_2_0/KmlFactory.html  | 2405 ---
+ .../micromata/opengis/kml/v_2_2_0/LabelStyle.html  | 1213 --
+ .../opengis/kml/v_2_2_0/LatLonAltBox.html          | 1261 --
+ .../micromata/opengis/kml/v_2_2_0/LatLonBox.html   | 1084 --
+ .../micromata/opengis/kml/v_2_2_0/LineString.html  | 1429 --
+ .../micromata/opengis/kml/v_2_2_0/LineStyle.html   | 1204 --
+ .../micromata/opengis/kml/v_2_2_0/LinearRing.html  | 1432 --
+ .../de/micromata/opengis/kml/v_2_2_0/Link.html     | 1676 --
+ .../opengis/kml/v_2_2_0/ListItemType.html          |  409 -
+ .../micromata/opengis/kml/v_2_2_0/ListStyle.html   | 1358 --
+ .../de/micromata/opengis/kml/v_2_2_0/Location.html | 1013 --
+ .../de/micromata/opengis/kml/v_2_2_0/Lod.html      | 1119 --
+ .../de/micromata/opengis/kml/v_2_2_0/LookAt.html   | 1619 --
+ .../de/micromata/opengis/kml/v_2_2_0/Metadata.html |  439 -
+ .../de/micromata/opengis/kml/v_2_2_0/Model.html    | 1706 --
+ .../opengis/kml/v_2_2_0/MultiGeometry.html         | 1175 --
+ .../micromata/opengis/kml/v_2_2_0/NetworkLink.html | 1909 ---
+ .../opengis/kml/v_2_2_0/NetworkLinkControl.html    | 1694 --
+ .../micromata/opengis/kml/v_2_2_0/Orientation.html | 1035 --
+ .../de/micromata/opengis/kml/v_2_2_0/Overlay.html  | 1770 --
+ .../de/micromata/opengis/kml/v_2_2_0/Pair.html     | 1078 --
+ .../opengis/kml/v_2_2_0/PhotoOverlay.html          | 2237 ---
+ .../micromata/opengis/kml/v_2_2_0/Placemark.html   | 1688 --
+ .../de/micromata/opengis/kml/v_2_2_0/Point.html    | 1322 --
+ .../micromata/opengis/kml/v_2_2_0/PolyStyle.html   | 1294 --
+ .../de/micromata/opengis/kml/v_2_2_0/Polygon.html  | 1506 --
+ .../micromata/opengis/kml/v_2_2_0/RefreshMode.html |  387 -
+ .../de/micromata/opengis/kml/v_2_2_0/Region.html   | 1004 --
+ .../micromata/opengis/kml/v_2_2_0/ResourceMap.html |  850 -
+ .../de/micromata/opengis/kml/v_2_2_0/Scale.html    |  985 --
+ .../de/micromata/opengis/kml/v_2_2_0/Schema.html   |  773 -
+ .../micromata/opengis/kml/v_2_2_0/SchemaData.html  |  843 -
+ .../opengis/kml/v_2_2_0/ScreenOverlay.html         | 2341 ---
+ .../de/micromata/opengis/kml/v_2_2_0/Shape.html    |  387 -
+ .../micromata/opengis/kml/v_2_2_0/SimpleData.html  |  525 -
+ .../micromata/opengis/kml/v_2_2_0/SimpleField.html |  703 -
+ .../de/micromata/opengis/kml/v_2_2_0/Snippet.html  |  528 -
+ .../de/micromata/opengis/kml/v_2_2_0/Style.html    | 1729 --
+ .../de/micromata/opengis/kml/v_2_2_0/StyleMap.html | 1035 --
+ .../opengis/kml/v_2_2_0/StyleSelector.html         |  725 -
+ .../micromata/opengis/kml/v_2_2_0/StyleState.html  |  397 -
+ .../de/micromata/opengis/kml/v_2_2_0/SubStyle.html |  696 -
+ .../opengis/kml/v_2_2_0/TimePrimitive.html         |  721 -
+ .../de/micromata/opengis/kml/v_2_2_0/TimeSpan.html | 1080 --
+ .../micromata/opengis/kml/v_2_2_0/TimeStamp.html   |  977 --
+ .../de/micromata/opengis/kml/v_2_2_0/Units.html    |  387 -
+ .../de/micromata/opengis/kml/v_2_2_0/Update.html   |  630 -
+ .../de/micromata/opengis/kml/v_2_2_0/Vec2.html     |  702 -
+ .../opengis/kml/v_2_2_0/ViewRefreshMode.html       |  403 -
+ .../micromata/opengis/kml/v_2_2_0/ViewVolume.html  | 1205 --
+ .../opengis/kml/v_2_2_0/annotations/Obvious.html   |  169 -
+ .../kml/v_2_2_0/annotations/package-frame.html     |   33 -
+ .../kml/v_2_2_0/annotations/package-summary.html   |  158 -
+ .../kml/v_2_2_0/annotations/package-tree.html      |  153 -
+ .../micromata/opengis/kml/v_2_2_0/atom/Author.html |  454 -
+ .../micromata/opengis/kml/v_2_2_0/atom/Link.html   |  923 -
+ .../opengis/kml/v_2_2_0/atom/package-frame.html    |   35 -
+ .../opengis/kml/v_2_2_0/atom/package-summary.html  |  162 -
+ .../opengis/kml/v_2_2_0/atom/package-tree.html     |  156 -
+ .../opengis/kml/v_2_2_0/gx/AnimatedUpdate.html     |  717 -
+ .../de/micromata/opengis/kml/v_2_2_0/gx/FlyTo.html |  818 -
+ .../opengis/kml/v_2_2_0/gx/FlyToMode.html          |  376 -
+ .../opengis/kml/v_2_2_0/gx/LatLonQuad.html         |  712 -
+ .../micromata/opengis/kml/v_2_2_0/gx/PlayMode.html |  359 -
+ .../micromata/opengis/kml/v_2_2_0/gx/Playlist.html |  718 -
+ .../micromata/opengis/kml/v_2_2_0/gx/SoundCue.html |  505 -
+ .../de/micromata/opengis/kml/v_2_2_0/gx/Tour.html  | 1074 --
+ .../opengis/kml/v_2_2_0/gx/TourControl.html        |  505 -
+ .../opengis/kml/v_2_2_0/gx/TourPrimitive.html      |  323 -
+ .../de/micromata/opengis/kml/v_2_2_0/gx/Wait.html  |  505 -
+ .../opengis/kml/v_2_2_0/gx/package-frame.html      |   62 -
+ .../opengis/kml/v_2_2_0/gx/package-summary.html    |  208 -
+ .../opengis/kml/v_2_2_0/gx/package-tree.html       |  181 -
+ .../opengis/kml/v_2_2_0/package-frame.html         |  206 -
+ .../opengis/kml/v_2_2_0/package-summary.html       |  497 -
+ .../opengis/kml/v_2_2_0/package-tree.html          |  259 -
+ .../kml/v_2_2_0/xal/AddressDetails.Address.html    |  625 -
+ .../AddressDetails.Country.CountryNameCode.html    |  614 -
+ .../kml/v_2_2_0/xal/AddressDetails.Country.html    | 1214 --
+ ...ls.PostalServiceElements.AddressIdentifier.html |  703 -
+ ...ails.PostalServiceElements.AddressLatitude.html |  614 -
+ ...alServiceElements.AddressLatitudeDirection.html |  614 -
+ ...ils.PostalServiceElements.AddressLongitude.html |  614 -
+ ...lServiceElements.AddressLongitudeDirection.html |  614 -
+ ...dressDetails.PostalServiceElements.Barcode.html |  614 -
+ ....PostalServiceElements.EndorsementLineCode.html |  614 -
+ ...sDetails.PostalServiceElements.KeyLineCode.html |  614 -
+ ...sDetails.PostalServiceElements.SortingCode.html |  502 -
+ ...iceElements.SupplementaryPostalServiceData.html |  614 -
+ .../xal/AddressDetails.PostalServiceElements.html  | 1870 --
+ .../opengis/kml/v_2_2_0/xal/AddressDetails.html    | 1863 --
+ .../opengis/kml/v_2_2_0/xal/AddressLine.html       |  611 -
+ .../opengis/kml/v_2_2_0/xal/AddressLines.html      |  582 -
+ .../AdministrativeArea.AdministrativeAreaName.html |  614 -
+ ...ministrativeArea.SubAdministrativeAreaName.html |  614 -
+ .../AdministrativeArea.SubAdministrativeArea.html  | 1328 --
+ .../kml/v_2_2_0/xal/AdministrativeArea.html        | 1455 --
+ .../opengis/kml/v_2_2_0/xal/BuildingName.html      |  700 -
+ .../opengis/kml/v_2_2_0/xal/CountryName.html       |  611 -
+ .../kml/v_2_2_0/xal/Department.DepartmentName.html |  614 -
+ .../opengis/kml/v_2_2_0/xal/Department.html        | 1087 --
+ .../DependentLocality.DependentLocalityName.html   |  614 -
+ .../DependentLocality.DependentLocalityNumber.html |  614 -
+ .../opengis/kml/v_2_2_0/xal/DependentLocality.html | 2120 ---
+ .../opengis/kml/v_2_2_0/xal/Firm.FirmName.html     |  614 -
+ .../de/micromata/opengis/kml/v_2_2_0/xal/Firm.html | 1230 --
+ .../xal/LargeMailUser.LargeMailUserIdentifier.html |  703 -
+ .../xal/LargeMailUser.LargeMailUserName.html       |  614 -
+ .../opengis/kml/v_2_2_0/xal/LargeMailUser.html     | 1598 --
+ .../kml/v_2_2_0/xal/Locality.LocalityName.html     |  614 -
+ .../opengis/kml/v_2_2_0/xal/Locality.html          | 1905 --
+ .../kml/v_2_2_0/xal/MailStop.MailStopName.html     |  614 -
+ .../kml/v_2_2_0/xal/MailStop.MailStopNumber.html   |  614 -
+ .../opengis/kml/v_2_2_0/xal/MailStop.html          |  952 -
+ .../kml/v_2_2_0/xal/PostBox.PostBoxNumber.html     |  525 -
+ .../xal/PostBox.PostBoxNumberExtension.html        |  525 -
+ .../v_2_2_0/xal/PostBox.PostBoxNumberPrefix.html   |  614 -
+ .../v_2_2_0/xal/PostBox.PostBoxNumberSuffix.html   |  614 -
+ .../micromata/opengis/kml/v_2_2_0/xal/PostBox.html | 1509 --
+ .../kml/v_2_2_0/xal/PostOffice.PostOfficeName.html |  614 -
+ .../v_2_2_0/xal/PostOffice.PostOfficeNumber.html   |  703 -
+ .../opengis/kml/v_2_2_0/xal/PostOffice.html        | 1422 --
+ .../xal/PostalCode.PostTown.PostTownName.html      |  614 -
+ .../xal/PostalCode.PostTown.PostTownSuffix.html    |  525 -
+ .../kml/v_2_2_0/xal/PostalCode.PostTown.html       |  865 -
+ .../v_2_2_0/xal/PostalCode.PostalCodeNumber.html   |  614 -
+ .../xal/PostalCode.PostalCodeNumberExtension.html  |  703 -
+ .../opengis/kml/v_2_2_0/xal/PostalCode.html        | 1128 --
+ .../v_2_2_0/xal/PostalRoute.PostalRouteName.html   |  614 -
+ .../v_2_2_0/xal/PostalRoute.PostalRouteNumber.html |  525 -
+ .../opengis/kml/v_2_2_0/xal/PostalRoute.html       | 1053 --
+ .../kml/v_2_2_0/xal/Premise.PremiseLocation.html   |  525 -
+ .../kml/v_2_2_0/xal/Premise.PremiseName.html       |  703 -
+ ....PremiseNumberRange.PremiseNumberRangeFrom.html |  876 -
+ ...se.PremiseNumberRange.PremiseNumberRangeTo.html |  876 -
+ .../v_2_2_0/xal/Premise.PremiseNumberRange.html    | 1077 --
+ .../micromata/opengis/kml/v_2_2_0/xal/Premise.html | 2499 ---
+ .../opengis/kml/v_2_2_0/xal/PremiseNumber.html     |  967 --
+ .../kml/v_2_2_0/xal/PremiseNumberPrefix.html       |  700 -
+ .../kml/v_2_2_0/xal/PremiseNumberSuffix.html       |  700 -
+ .../v_2_2_0/xal/SubPremise.SubPremiseLocation.html |  502 -
+ .../kml/v_2_2_0/xal/SubPremise.SubPremiseName.html |  703 -
+ .../v_2_2_0/xal/SubPremise.SubPremiseNumber.html   |  970 --
+ .../xal/SubPremise.SubPremiseNumberPrefix.html     |  703 -
+ .../xal/SubPremise.SubPremiseNumberSuffix.html     |  703 -
+ .../opengis/kml/v_2_2_0/xal/SubPremise.html        | 2025 ---
+ .../xal/Thoroughfare.DependentThoroughfare.html    | 1309 --
+ ...oughfareNumberRange.ThoroughfareNumberFrom.html |  551 -
+ ...oroughfareNumberRange.ThoroughfareNumberTo.html |  551 -
+ .../xal/Thoroughfare.ThoroughfareNumberRange.html  | 1332 --
+ .../opengis/kml/v_2_2_0/xal/Thoroughfare.html      | 2602 ---
+ .../kml/v_2_2_0/xal/ThoroughfareLeadingType.html   |  611 -
+ .../opengis/kml/v_2_2_0/xal/ThoroughfareName.html  |  611 -
+ .../kml/v_2_2_0/xal/ThoroughfareNumber.html        |  967 --
+ .../kml/v_2_2_0/xal/ThoroughfareNumberPrefix.html  |  700 -
+ .../kml/v_2_2_0/xal/ThoroughfareNumberSuffix.html  |  700 -
+ .../kml/v_2_2_0/xal/ThoroughfarePostDirection.html |  611 -
+ .../kml/v_2_2_0/xal/ThoroughfarePreDirection.html  |  611 -
+ .../kml/v_2_2_0/xal/ThoroughfareTrailingType.html  |  611 -
+ .../de/micromata/opengis/kml/v_2_2_0/xal/XAL.html  |  681 -
+ .../opengis/kml/v_2_2_0/xal/package-frame.html     |  199 -
+ .../opengis/kml/v_2_2_0/xal/package-summary.html   |  490 -
+ .../opengis/kml/v_2_2_0/xal/package-tree.html      |  238 -
+ .../integrationTest/issue2153020/DataReader.html   |  256 -
+ .../issue2153020/package-frame.html                |   33 -
+ .../issue2153020/package-summary.html              |  158 -
+ .../integrationTest/issue2153020/package-tree.html |  154 -
+ .../integrationTest/issue2564366/DataReader.html   |  256 -
+ .../issue2564366/package-frame.html                |   33 -
+ .../issue2564366/package-summary.html              |  158 -
+ .../integrationTest/issue2564366/package-tree.html |  154 -
+ .../nexml/InterpretNEXML/HyperlinkHandler.html     |  346 -
+ .../nexml/InterpretNEXML/InterpretNEXML.html       |  458 -
+ .../nexml/InterpretNEXML/ObjectConverter.html      |  418 -
+ .../nexml/InterpretNEXML/PredicateHandler.html     |  260 -
+ .../nexml/InterpretNEXML/PredicateHandlerImpl.html |  418 -
+ .../nexml/InterpretNEXML/TaxonLinkHandler.html     |  280 -
+ .../nexml/InterpretNEXML/TaxonUIDHandler.html      |  280 -
+ .../nexml/InterpretNEXML/package-frame.html        |   45 -
+ .../nexml/InterpretNEXML/package-summary.html      |  182 -
+ .../nexml/InterpretNEXML/package-tree.html         |  162 -
+ phyloGeoRef/dist/javadoc/nescent/.DS_Store         |  Bin 6148 -> 0 bytes
+ .../dist/javadoc/nescent/package-frame.html        |   33 -
+ .../dist/javadoc/nescent/package-summary.html      |  158 -
+ phyloGeoRef/dist/javadoc/nescent/package-tree.html |  154 -
+ .../dist/javadoc/nescent/phyloGeoRef/.DS_Store     |  Bin 12292 -> 0 bytes
+ .../dist/javadoc/nescent/phyloGeoRef/Quad.html     |  460 -
+ .../dist/javadoc/nescent/phyloGeoRef/Triple.html   |  420 -
+ .../javadoc/nescent/phyloGeoRef/calc3Dtree.html    |  367 -
+ .../javadoc/nescent/phyloGeoRef/geoData/.DS_Store  |  Bin 6148 -> 0 bytes
+ .../nescent/phyloGeoRef/geoData/package-frame.html |   35 -
+ .../phyloGeoRef/geoData/package-summary.html       |  162 -
+ .../nescent/phyloGeoRef/geoData/package-tree.html  |  154 -
+ .../nescent/phyloGeoRef/geoData/parseCoords.html   |  524 -
+ .../nescent/phyloGeoRef/geoData/parseMetadata.html |  225 -
+ .../dist/javadoc/nescent/phyloGeoRef/kml/.DS_Store |  Bin 6148 -> 0 bytes
+ .../javadoc/nescent/phyloGeoRef/kml/kmlWriter.html |  270 -
+ .../nescent/phyloGeoRef/kml/package-frame.html     |   33 -
+ .../nescent/phyloGeoRef/kml/package-summary.html   |  158 -
+ .../nescent/phyloGeoRef/kml/package-tree.html      |  154 -
+ .../dist/javadoc/nescent/phyloGeoRef/magic.html    |  259 -
+ .../javadoc/nescent/phyloGeoRef/package-frame.html |   39 -
+ .../nescent/phyloGeoRef/package-summary.html       |  170 -
+ .../javadoc/nescent/phyloGeoRef/package-tree.html  |  154 -
+ .../javadoc/nescent/phyloGeoRef/tree/.DS_Store     |  Bin 6148 -> 0 bytes
+ .../nescent/phyloGeoRef/tree/NeXMLtoPhyObj.html    |  297 -
+ .../nescent/phyloGeoRef/tree/getNeXMLtree.html     |  259 -
+ .../javadoc/nescent/phyloGeoRef/tree/getTree.html  |  344 -
+ .../nescent/phyloGeoRef/tree/package-frame.html    |   43 -
+ .../nescent/phyloGeoRef/tree/package-summary.html  |  178 -
+ .../nescent/phyloGeoRef/tree/package-tree.html     |  154 -
+ .../nescent/phyloGeoRef/tree/returnTree.html       |  225 -
+ .../nescent/phyloGeoRef/tree/storeTree.html        |  261 -
+ .../javadoc/nescent/phyloGeoRef/tree/treeInfo.html |  229 -
+ phyloGeoRef/dist/javadoc/nescent/testMain.html     |  276 -
+ .../javadoc/org/forester/application/confadd.html  |  253 -
+ .../org/forester/application/count_support.html    |  253 -
+ .../org/forester/application/decorator.html        |  253 -
+ .../org/forester/application/get_distances.html    |  253 -
+ .../javadoc/org/forester/application/goac.html     |  253 -
+ .../org/forester/application/meta_ontologizer.html |  253 -
+ .../javadoc/org/forester/application/nhx_too.html  |  253 -
+ .../dist/javadoc/org/forester/application/nj.html  |  253 -
+ .../javadoc/org/forester/application/obo_tool.html |  253 -
+ .../org/forester/application/package-frame.html    |   85 -
+ .../org/forester/application/package-summary.html  |  262 -
+ .../org/forester/application/package-tree.html     |  154 -
+ .../javadoc/org/forester/application/pccx.html     |  253 -
+ .../javadoc/org/forester/application/perfume.html  |  253 -
+ .../forester/application/pfam2go_extractor.html    |  253 -
+ .../javadoc/org/forester/application/pfam_go.html  |  253 -
+ .../forester/application/phyloxml_converter.html   |  253 -
+ .../org/forester/application/printAllSpecies.html  |  253 -
+ .../org/forester/application/printSameOrder.html   |  253 -
+ .../dist/javadoc/org/forester/application/rio.html |  253 -
+ .../dist/javadoc/org/forester/application/sdi.html |  253 -
+ .../javadoc/org/forester/application/sdi_r.html    |  253 -
+ .../javadoc/org/forester/application/shin.html     |  253 -
+ .../javadoc/org/forester/application/strip.html    |  253 -
+ .../forester/application/support_statistics.html   |  253 -
+ .../org/forester/application/support_transfer.html |  312 -
+ .../org/forester/application/surf_paup.html        |  253 -
+ .../org/forester/application/surfacing.html        | 1351 --
+ .../org/forester/application/surfacing_old.html    | 1351 --
+ .../dist/javadoc/org/forester/application/ta.html  |  253 -
+ .../org/forester/archaeopteryx/Archaeopteryx.html  |  314 -
+ .../org/forester/archaeopteryx/ArchaeopteryxA.html |  520 -
+ .../org/forester/archaeopteryx/ArchaeopteryxE.html |  494 -
+ .../javadoc/org/forester/archaeopteryx/Blast.html  |  225 -
+ .../org/forester/archaeopteryx/Constants.html      |  297 -
+ .../org/forester/archaeopteryx/FontChooser.html    |  639 -
+ .../org/forester/archaeopteryx/MainFrame.html      |  405 -
+ .../forester/archaeopteryx/MainFrameApplet.html    |  379 -
+ .../archaeopteryx/MainFrameApplication.html        |  404 -
+ .../org/forester/archaeopteryx/MainPanel.html      |  529 -
+ .../org/forester/archaeopteryx/TreeFontSet.html    |  256 -
+ .../org/forester/archaeopteryx/TreePanel.html      |  457 -
+ .../org/forester/archaeopteryx/UrlTreeReader.html  |  226 -
+ .../org/forester/archaeopteryx/package-frame.html  |   57 -
+ .../forester/archaeopteryx/package-summary.html    |  206 -
+ .../org/forester/archaeopteryx/package-tree.html   |  195 -
+ .../data/RenderableDomainArchitecture.html         |  765 -
+ .../phylogeny/data/RenderablePhylogenyData.html    |  348 -
+ .../phylogeny/data/package-frame.html              |   44 -
+ .../phylogeny/data/package-summary.html            |  172 -
+ .../archaeopteryx/phylogeny/data/package-tree.html |  165 -
+ .../BasicPhylogeniesWebserviceClient.html          |  535 -
+ .../webservices/PhylogeniesWebserviceClient.html   |  449 -
+ .../archaeopteryx/webservices/WebserviceUtil.html  |  454 -
+ .../WebservicesManager.WsPhylogenyFormat.html      |  406 -
+ .../webservices/WebservicesManager.html            |  300 -
+ .../archaeopteryx/webservices/package-frame.html   |   59 -
+ .../archaeopteryx/webservices/package-summary.html |  194 -
+ .../archaeopteryx/webservices/package-tree.html    |  170 -
+ .../javadoc/org/forester/datastructures/Queue.html |  325 -
+ .../org/forester/datastructures/package-frame.html |   33 -
+ .../forester/datastructures/package-summary.html   |  158 -
+ .../org/forester/datastructures/package-tree.html  |  154 -
+ .../org/forester/development/AminoAcid.html        |  441 -
+ .../forester/development/AminoAcidSequence.html    |  604 -
+ .../javadoc/org/forester/development/BasicMsa.html |  489 -
+ .../org/forester/development/DevelopmentTools.html |  326 -
+ .../javadoc/org/forester/development/Factory.html  |  210 -
+ .../dist/javadoc/org/forester/development/Msa.html |  269 -
+ .../org/forester/development/MsaFactory.html       |  210 -
+ .../javadoc/org/forester/development/Sequence.html |  264 -
+ .../org/forester/development/SimpleMutableMsa.html |  421 -
+ .../development/StreamBasedMsaFactory.html         |  222 -
+ .../org/forester/development/SupportCount.html     |  287 -
+ .../javadoc/org/forester/development/Test.html     |  253 -
+ .../org/forester/development/package-frame.html    |   64 -
+ .../org/forester/development/package-summary.html  |  212 -
+ .../org/forester/development/package-tree.html     |  164 -
+ .../org/forester/go/BasicGoRelationship.html       |  418 -
+ .../javadoc/org/forester/go/BasicGoSubset.html     |  376 -
+ .../dist/javadoc/org/forester/go/BasicGoTerm.html  |  816 -
+ .../dist/javadoc/org/forester/go/BasicGoXRef.html  |  402 -
+ phyloGeoRef/dist/javadoc/org/forester/go/GoId.html |  347 -
+ .../forester/go/GoNameSpace.GoNamespaceType.html   |  358 -
+ .../dist/javadoc/org/forester/go/GoNameSpace.html  |  589 -
+ .../org/forester/go/GoRelationship.Type.html       |  358 -
+ .../javadoc/org/forester/go/GoRelationship.html    |  354 -
+ .../javadoc/org/forester/go/GoSubset.Type.html     |  422 -
+ .../dist/javadoc/org/forester/go/GoSubset.html     |  404 -
+ .../dist/javadoc/org/forester/go/GoTerm.html       |  454 -
+ .../dist/javadoc/org/forester/go/GoUtils.html      |  423 -
+ .../dist/javadoc/org/forester/go/GoXRef.Type.html  |  534 -
+ .../dist/javadoc/org/forester/go/GoXRef.html       |  552 -
+ .../dist/javadoc/org/forester/go/Mapping.html      |  247 -
+ .../org/forester/go/OBOparser.ReturnType.html      |  310 -
+ .../dist/javadoc/org/forester/go/OBOparser.html    |  294 -
+ .../javadoc/org/forester/go/PfamToGoMapping.html   |  351 -
+ .../javadoc/org/forester/go/PfamToGoParser.html    |  275 -
+ .../dist/javadoc/org/forester/go/TestGo.html       |  274 -
+ .../org/forester/go/etc/MetaOntologizer.html       |  270 -
+ .../forester/go/etc/OntologizerResult.TYPE.html    |  342 -
+ .../org/forester/go/etc/OntologizerResult.html     |  554 -
+ .../javadoc/org/forester/go/etc/package-frame.html |   46 -
+ .../org/forester/go/etc/package-summary.html       |  176 -
+ .../javadoc/org/forester/go/etc/package-tree.html  |  165 -
+ .../javadoc/org/forester/go/package-frame.html     |   91 -
+ .../javadoc/org/forester/go/package-summary.html   |  258 -
+ .../dist/javadoc/org/forester/go/package-tree.html |  181 -
+ .../io/parsers/HmmPfamOutputParser.FilterType.html |  358 -
+ .../io/parsers/HmmPfamOutputParser.ReturnType.html |  310 -
+ .../forester/io/parsers/HmmPfamOutputParser.html   |  809 -
+ .../HmmscanPerDomainTableParser.FilterType.html    |  358 -
+ ...rDomainTableParser.INDIVIDUAL_SCORE_CUTOFF.html |  342 -
+ .../HmmscanPerDomainTableParser.ReturnType.html    |  310 -
+ .../io/parsers/HmmscanPerDomainTableParser.html    |  798 -
+ .../org/forester/io/parsers/ParserUtils.html       |  258 -
+ .../org/forester/io/parsers/PhylogenyParser.html   |  237 -
+ .../io/parsers/PhylogenyParserException.html       |  258 -
+ .../nexus/NexusBinaryStatesMatrixParser.html       |  337 -
+ .../io/parsers/nexus/NexusCharactersParser.html    |  299 -
+ .../forester/io/parsers/nexus/NexusConstants.html  |  567 -
+ .../io/parsers/nexus/NexusFormatException.html     |  256 -
+ .../io/parsers/nexus/NexusPhylogeniesParser.html   |  335 -
+ .../forester/io/parsers/nexus/PaupLogParser.html   |  280 -
+ .../forester/io/parsers/nexus/package-frame.html   |   52 -
+ .../forester/io/parsers/nexus/package-summary.html |  188 -
+ .../forester/io/parsers/nexus/package-tree.html    |  162 -
+ .../io/parsers/nhx/NHXFormatException.html         |  256 -
+ .../parsers/nhx/NHXParser.TAXONOMY_EXTRACTION.html |  342 -
+ .../org/forester/io/parsers/nhx/NHXParser.html     |  597 -
+ .../org/forester/io/parsers/nhx/NHXtags.html       |  625 -
+ .../org/forester/io/parsers/nhx/package-frame.html |   57 -
+ .../forester/io/parsers/nhx/package-summary.html   |  190 -
+ .../org/forester/io/parsers/nhx/package-tree.html  |  172 -
+ .../org/forester/io/parsers/package-frame.html     |   78 -
+ .../org/forester/io/parsers/package-summary.html   |  224 -
+ .../org/forester/io/parsers/package-tree.html      |  176 -
+ .../phyloxml/PhyloXmlDataFormatException.html      |  257 -
+ .../io/parsers/phyloxml/PhyloXmlException.html     |  259 -
+ .../io/parsers/phyloxml/PhyloXmlHandler.html       |  369 -
+ .../io/parsers/phyloxml/PhyloXmlMapping.html       | 1758 --
+ .../io/parsers/phyloxml/PhyloXmlParser.html        |  606 -
+ .../forester/io/parsers/phyloxml/PhyloXmlUtil.html |  351 -
+ .../forester/io/parsers/phyloxml/XmlElement.html   |  594 -
+ .../io/parsers/phyloxml/package-frame.html         |   54 -
+ .../io/parsers/phyloxml/package-summary.html       |  192 -
+ .../forester/io/parsers/phyloxml/package-tree.html |  167 -
+ .../phyloxml/phylogenydata/AccessionParser.html    |  251 -
+ .../phyloxml/phylogenydata/AnnotationParser.html   |  251 -
+ .../phylogenydata/BinaryCharactersParser.html      |  251 -
+ .../phyloxml/phylogenydata/BranchWidthParser.html  |  251 -
+ .../phyloxml/phylogenydata/ColorParser.html        |  251 -
+ .../phyloxml/phylogenydata/ConfidenceParser.html   |  251 -
+ .../parsers/phyloxml/phylogenydata/DateParser.html |  251 -
+ .../phyloxml/phylogenydata/DistributionParser.html |  251 -
+ .../phylogenydata/DomainArchitectureParser.html    |  251 -
+ .../phyloxml/phylogenydata/EventParser.html        |  251 -
+ .../phyloxml/phylogenydata/IdentifierParser.html   |  251 -
+ .../phylogenydata/PhylogenyDataPhyloXmlParser.html |  213 -
+ .../phyloxml/phylogenydata/PointParser.html        |  251 -
+ .../phyloxml/phylogenydata/PropertyParser.html     |  251 -
+ .../phylogenydata/ProteinDomainParser.html         |  251 -
+ .../phyloxml/phylogenydata/ReferenceParser.html    |  251 -
+ .../phyloxml/phylogenydata/SequenceParser.html     |  251 -
+ .../phylogenydata/SequenceRelationParser.html      |  251 -
+ .../phyloxml/phylogenydata/TaxonomyParser.html     |  251 -
+ .../parsers/phyloxml/phylogenydata/UriParser.html  |  251 -
+ .../phyloxml/phylogenydata/package-frame.html      |   80 -
+ .../phyloxml/phylogenydata/package-summary.html    |  244 -
+ .../phyloxml/phylogenydata/package-tree.html       |  178 -
+ .../org/forester/io/parsers/tol/TolParser.html     |  584 -
+ .../org/forester/io/parsers/tol/TolXmlHandler.html |  369 -
+ .../org/forester/io/parsers/tol/TolXmlMapping.html |  408 -
+ .../org/forester/io/parsers/tol/package-frame.html |   37 -
+ .../forester/io/parsers/tol/package-summary.html   |  166 -
+ .../org/forester/io/parsers/tol/package-tree.html  |  158 -
+ .../forester/io/writers/PhyloXmlNodeWriter.html    |  262 -
+ .../io/writers/PhylogenyWriter.FORMAT.html         |  358 -
+ .../org/forester/io/writers/PhylogenyWriter.html   |  915 -
+ .../org/forester/io/writers/package-frame.html     |   46 -
+ .../org/forester/io/writers/package-summary.html   |  176 -
+ .../org/forester/io/writers/package-tree.html      |  164 -
+ .../BasicExternalNodeBasedCoverageExtender.html    |  267 -
+ .../pccx/BranchCountingBasedScoringMethod.html     |  326 -
+ .../pccx/BranchLengthBasedScoringMethod.html       |  337 -
+ .../dist/javadoc/org/forester/pccx/Coverage.html   |  229 -
+ .../forester/pccx/CoverageCalculationMethod.html   |  216 -
+ .../forester/pccx/CoverageCalculationOptions.html  |  210 -
+ .../org/forester/pccx/CoverageCalculator.html      |  245 -
+ .../org/forester/pccx/CoverageExtender.html        |  218 -
+ .../forester/pccx/ExternalNodeBasedCoverage.html   |  417 -
+ .../pccx/ExternalNodeBasedCoverageMethod.html      |  265 -
+ .../ExternalNodeBasedCoverageMethodOptions.html    |  286 -
+ .../pccx/LogBranchLengthBasedScoringMethod.html    |  355 -
+ .../javadoc/org/forester/pccx/ModelingUtils.html   |  225 -
+ .../pccx/ScoringMethodForExternalNode.html         |  265 -
+ .../dist/javadoc/org/forester/pccx/TestPccx.html   |  253 -
+ .../javadoc/org/forester/pccx/package-frame.html   |   70 -
+ .../javadoc/org/forester/pccx/package-summary.html |  224 -
+ .../javadoc/org/forester/pccx/package-tree.html    |  166 -
+ .../dist/javadoc/org/forester/phylogeny/Edge.html  |  248 -
+ .../javadoc/org/forester/phylogeny/Phylogeny.html  | 1759 --
+ .../org/forester/phylogeny/PhylogenyBranch.html    |  483 -
+ .../org/forester/phylogeny/PhylogenyMethods.html   | 1304 --
+ .../org/forester/phylogeny/PhylogenyNode.html      | 2090 ---
+ .../org/forester/phylogeny/PhylogenyNodeI.html     |  343 -
+ .../org/forester/phylogeny/data/Accession.html     |  504 -
+ .../org/forester/phylogeny/data/Annotation.html    |  766 -
+ .../forester/phylogeny/data/BinaryCharacters.html  |  870 -
+ .../org/forester/phylogeny/data/BranchColor.html   |  472 -
+ .../org/forester/phylogeny/data/BranchData.html    |  634 -
+ .../org/forester/phylogeny/data/BranchWidth.html   |  486 -
+ .../org/forester/phylogeny/data/Confidence.html    |  598 -
+ .../javadoc/org/forester/phylogeny/data/Date.html  |  670 -
+ .../org/forester/phylogeny/data/Distribution.html  |  656 -
+ .../phylogeny/data/DomainArchitecture.html         |  615 -
+ .../forester/phylogeny/data/Event.EventType.html   |  406 -
+ .../javadoc/org/forester/phylogeny/data/Event.html | 1009 --
+ .../org/forester/phylogeny/data/Identifier.html    |  532 -
+ .../org/forester/phylogeny/data/NodeData.html      |  986 --
+ .../org/forester/phylogeny/data/PhylogenyData.html |  328 -
+ .../forester/phylogeny/data/PhylogenyDataUtil.html |  797 -
+ .../javadoc/org/forester/phylogeny/data/Point.html |  550 -
+ .../org/forester/phylogeny/data/PropertiesMap.html |  554 -
+ .../phylogeny/data/Property.AppliesTo.html         |  390 -
+ .../org/forester/phylogeny/data/Property.html      |  620 -
+ .../org/forester/phylogeny/data/ProteinDomain.html |  666 -
+ .../org/forester/phylogeny/data/Reference.html     |  518 -
+ .../org/forester/phylogeny/data/Sequence.html      |  916 -
+ .../SequenceRelation.SEQUENCE_RELATION_TYPE.html   |  422 -
+ .../forester/phylogeny/data/SequenceRelation.html  |  409 -
+ .../org/forester/phylogeny/data/Taxonomy.html      |  836 -
+ .../javadoc/org/forester/phylogeny/data/Uri.html   |  494 -
+ .../org/forester/phylogeny/data/package-frame.html |  103 -
+ .../forester/phylogeny/data/package-summary.html   |  282 -
+ .../org/forester/phylogeny/data/package-tree.html  |  191 -
+ .../phylogeny/factories/BasicPhylogenyFactory.html |  310 -
+ .../factories/ParserBasedPhylogenyFactory.html     |  318 -
+ .../phylogeny/factories/PhylogenyFactory.html      |  275 -
+ .../phylogeny/factories/package-frame.html         |   46 -
+ .../phylogeny/factories/package-summary.html       |  176 -
+ .../forester/phylogeny/factories/package-tree.html |  162 -
+ .../iterators/ChildNodeIteratorForward.html        |  348 -
+ .../iterators/ExternalForwardIterator.html         |  339 -
+ .../iterators/LevelOrderTreeIterator.html          |  370 -
+ .../phylogeny/iterators/PhylogenyNodeIterator.html |  272 -
+ .../phylogeny/iterators/PostOrderStackObject.html  |  284 -
+ .../phylogeny/iterators/PostorderTreeIterator.html |  342 -
+ .../phylogeny/iterators/PreorderTreeIterator.html  |  356 -
+ .../phylogeny/iterators/package-frame.html         |   54 -
+ .../phylogeny/iterators/package-summary.html       |  192 -
+ .../forester/phylogeny/iterators/package-tree.html |  166 -
+ .../org/forester/phylogeny/package-frame.html      |   52 -
+ .../org/forester/phylogeny/package-summary.html    |  188 -
+ .../org/forester/phylogeny/package-tree.html       |  161 -
+ .../BasicCharacterStateMatrix.html                 |  918 -
+ .../BasicSymmetricalDistanceMatrix.html            |  486 -
+ .../CharacterStateMatrix.BinaryStates.html         |  389 -
+ .../CharacterStateMatrix.Format.html               |  342 -
+ .../CharacterStateMatrix.GainLossStates.html       |  396 -
+ .../CharacterStateMatrix.NucleotideStates.html     |  374 -
+ .../phylogenyinference/CharacterStateMatrix.html   |  663 -
+ .../forester/phylogenyinference/DiscreteState.html |  347 -
+ .../phylogenyinference/DistanceMatrix.Format.html  |  310 -
+ .../phylogenyinference/DistanceMatrix.html         |  349 -
+ .../phylogenyinference/DistanceMatrixParser.html   |  213 -
+ .../phylogenyinference/DistanceMethod.html         |  207 -
+ .../phylogenyinference/DolloParsimony.html         |  393 -
+ .../phylogenyinference/FitchParsimony.html         |  496 -
+ .../phylogenyinference/NeighborJoining.html        |  277 -
+ .../phylogenyinference/SankoffParsimony.html       |  496 -
+ ...tricalDistanceMatrixParser.InputMatrixType.html |  326 -
+ .../SymmetricalDistanceMatrixParser.html           |  290 -
+ .../TestPhylogenyReconstruction.html               |  293 -
+ .../forester/phylogenyinference/package-frame.html |   87 -
+ .../phylogenyinference/package-summary.html        |  252 -
+ .../forester/phylogenyinference/package-tree.html  |  173 -
+ .../org/forester/sdi/DistanceCalculator.html       |  692 -
+ .../dist/javadoc/org/forester/sdi/GSDI.html        |  325 -
+ .../dist/javadoc/org/forester/sdi/ORcount.html     |  345 -
+ phyloGeoRef/dist/javadoc/org/forester/sdi/RIO.html |  732 -
+ .../dist/javadoc/org/forester/sdi/RIOn.html        |  310 -
+ phyloGeoRef/dist/javadoc/org/forester/sdi/SDI.html |  380 -
+ .../dist/javadoc/org/forester/sdi/SDIR.html        |  489 -
+ .../javadoc/org/forester/sdi/SDIdirectory.html     |  321 -
+ .../dist/javadoc/org/forester/sdi/SDIse.html       |  253 -
+ .../dist/javadoc/org/forester/sdi/Shin.html        |  260 -
+ .../javadoc/org/forester/sdi/TaxonomyAssigner.html |  267 -
+ .../dist/javadoc/org/forester/sdi/TestGSDI.html    |  253 -
+ .../javadoc/org/forester/sdi/package-frame.html    |   55 -
+ .../javadoc/org/forester/sdi/package-summary.html  |  202 -
+ .../javadoc/org/forester/sdi/package-tree.html     |  156 -
+ .../AdjactantDirectedBinaryDomainCombination.html  |  321 -
+ .../AdjactantDirectedCombinableDomains.html        |  271 -
+ .../surfacing/BasicBinaryDomainCombination.html    |  483 -
+ .../forester/surfacing/BasicCombinableDomains.html |  715 -
+ .../org/forester/surfacing/BasicDomain.html        |  675 -
+ .../surfacing/BasicDomainSimilarityCalculator.html |  288 -
+ .../BasicGenomeWideCombinableDomains.html          |  585 -
+ .../org/forester/surfacing/BasicProtein.html       |  583 -
+ .../org/forester/surfacing/BasicSpecies.html       |  347 -
+ ...aryDomainCombination.DomainCombinationType.html |  342 -
+ .../BinaryDomainCombination.OutputFormat.html      |  310 -
+ .../surfacing/BinaryDomainCombination.html         |  363 -
+ .../org/forester/surfacing/CombinableDomains.html  |  558 -
+ .../CombinationsBasedPairwiseDomainSimilarity.html |  336 -
+ ...onsBasedPairwiseDomainSimilarityCalculator.html |  261 -
+ .../CountsBasedPairwiseDomainSimilarity.html       |  290 -
+ .../surfacing/DirectedBinaryDomainCombination.html |  321 -
+ .../surfacing/DirectedCombinableDomains.html       |  271 -
+ .../javadoc/org/forester/surfacing/Domain.html     |  467 -
+ ...rchitectureBasedGenomeSimilarityCalculator.html |  581 -
+ ...ainCountsBasedPairwiseSimilarityCalculator.html |  261 -
+ ...CountsDifferenceUtil.COPY_CALCULATION_MODE.html |  358 -
+ .../surfacing/DomainCountsDifferenceUtil.html      |  301 -
+ .../javadoc/org/forester/surfacing/DomainId.html   |  413 -
+ .../org/forester/surfacing/DomainLengths.html      |  416 -
+ .../org/forester/surfacing/DomainLengthsTable.html |  407 -
+ .../surfacing/DomainParsimonyCalculator.html       |  743 -
+ .../DomainSimilarity.DomainSimilarityScoring.html  |  342 -
+ ...DomainSimilarity.DomainSimilaritySortField.html |  438 -
+ .../org/forester/surfacing/DomainSimilarity.html   |  518 -
+ .../DomainSimilarityCalculator.Detailedness.html   |  342 -
+ ...ainSimilarityCalculator.GoAnnotationOutput.html |  326 -
+ .../surfacing/DomainSimilarityCalculator.html      |  241 -
+ ...mains.GenomeWideCombinableDomainsSortOrder.html |  358 -
+ .../surfacing/GenomeWideCombinableDomains.html     |  428 -
+ .../org/forester/surfacing/MappingResults.html     |  348 -
+ .../surfacing/PairwiseDomainSimilarity.html        |  235 -
+ .../PairwiseDomainSimilarityCalculator.html        |  212 -
+ .../surfacing/PairwiseGenomeComparator.html        |  383 -
+ .../PrintableDomainSimilarity.PRINT_OPTION.html    |  326 -
+ .../surfacing/PrintableDomainSimilarity.html       |  820 -
+ .../javadoc/org/forester/surfacing/Protein.html    |  432 -
+ ...ntsBasedPairwiseDomainSimilarityCalculator.html |  261 -
+ .../javadoc/org/forester/surfacing/ProteinId.html  |  347 -
+ .../org/forester/surfacing/SimpleDomain.html       |  611 -
+ .../javadoc/org/forester/surfacing/Species.html    |  225 -
+ .../org/forester/surfacing/SurfacingConstants.html |  477 -
+ .../org/forester/surfacing/SurfacingUtil.html      | 1109 --
+ .../org/forester/surfacing/TestSurfacing.html      |  274 -
+ .../org/forester/surfacing/package-frame.html      |  147 -
+ .../org/forester/surfacing/package-summary.html    |  370 -
+ .../org/forester/surfacing/package-tree.html       |  191 -
+ .../dist/javadoc/org/forester/test/Test.html       |  274 -
+ .../javadoc/org/forester/test/package-frame.html   |   33 -
+ .../javadoc/org/forester/test/package-summary.html |  158 -
+ .../javadoc/org/forester/test/package-tree.html    |  154 -
+ .../org/forester/tools/ConfidenceAssessor.html     |  259 -
+ .../forester/tools/PhylogenyDecorator.FIELD.html   |  390 -
+ .../org/forester/tools/PhylogenyDecorator.html     |  523 -
+ .../org/forester/tools/TreeSplitMatrix.html        |  303 -
+ .../javadoc/org/forester/tools/package-frame.html  |   48 -
+ .../org/forester/tools/package-summary.html        |  180 -
+ .../javadoc/org/forester/tools/package-tree.html   |  164 -
+ .../javadoc/org/forester/util/AsciiHistogram.html  |  304 -
+ .../forester/util/BasicDescriptiveStatistics.html  |  764 -
+ .../dist/javadoc/org/forester/util/BasicTable.html |  434 -
+ .../org/forester/util/BasicTableParser.html        |  281 -
+ .../org/forester/util/CommandLineArguments.html    |  582 -
+ .../org/forester/util/DescriptiveStatistics.html   |  618 -
+ .../org/forester/util/ForesterConstants.html       |  405 -
+ .../util/ForesterUtil.PhylogenyNodeField.html      |  390 -
+ .../javadoc/org/forester/util/ForesterUtil.html    | 2061 ---
+ .../javadoc/org/forester/util/GeneralTable.html    |  384 -
+ .../javadoc/org/forester/util/WindowsUtils.html    |  220 -
+ .../javadoc/org/forester/util/package-frame.html   |   71 -
+ .../javadoc/org/forester/util/package-summary.html |  218 -
+ .../javadoc/org/forester/util/package-tree.html    |  170 -
+ .../dist/javadoc/org/nexml/model/Annotatable.html  |  995 --
+ .../dist/javadoc/org/nexml/model/Annotation.html   |  946 -
+ .../javadoc/org/nexml/model/CategoricalMatrix.html |  288 -
+ .../dist/javadoc/org/nexml/model/Character.html    |  282 -
+ .../javadoc/org/nexml/model/CharacterLinkable.html |  209 -
+ .../javadoc/org/nexml/model/CharacterState.html    |  283 -
+ .../javadoc/org/nexml/model/CharacterStateSet.html |  429 -
+ .../org/nexml/model/CompoundCharacterState.html    |  292 -
+ .../javadoc/org/nexml/model/ContinuousMatrix.html  |  265 -
+ .../dist/javadoc/org/nexml/model/Document.html     |  507 -
+ .../javadoc/org/nexml/model/DocumentFactory.html   |  383 -
+ phyloGeoRef/dist/javadoc/org/nexml/model/Edge.html |  328 -
+ .../dist/javadoc/org/nexml/model/FloatEdge.html    |  285 -
+ .../dist/javadoc/org/nexml/model/IntEdge.html      |  285 -
+ .../dist/javadoc/org/nexml/model/Matrix.html       |  438 -
+ .../dist/javadoc/org/nexml/model/MatrixCell.html   |  273 -
+ .../javadoc/org/nexml/model/MolecularMatrix.html   |  480 -
+ .../dist/javadoc/org/nexml/model/Network.html      |  460 -
+ .../javadoc/org/nexml/model/NetworkObject.html     |  221 -
+ .../javadoc/org/nexml/model/NexmlWritable.html     |  303 -
+ phyloGeoRef/dist/javadoc/org/nexml/model/Node.html |  293 -
+ phyloGeoRef/dist/javadoc/org/nexml/model/OTU.html  |  222 -
+ .../dist/javadoc/org/nexml/model/OTULinkable.html  |  270 -
+ phyloGeoRef/dist/javadoc/org/nexml/model/OTUs.html |  490 -
+ .../dist/javadoc/org/nexml/model/OTUsLinkable.html |  277 -
+ .../org/nexml/model/PolymorphicCharacterState.html |  236 -
+ .../javadoc/org/nexml/model/TestAnnotation.html    |  248 -
+ .../dist/javadoc/org/nexml/model/TestBaseURI.html  |  248 -
+ .../org/nexml/model/TestContinuousMatrix.html      |  248 -
+ .../javadoc/org/nexml/model/TestFileParse.html     |  248 -
+ .../dist/javadoc/org/nexml/model/TestMatrix.html   |  248 -
+ .../org/nexml/model/TestMolecularMatrix.html       |  266 -
+ .../dist/javadoc/org/nexml/model/TestOTUs.html     |  248 -
+ .../javadoc/org/nexml/model/TestParseTrees.html    |  261 -
+ .../javadoc/org/nexml/model/TestSerialization.html |  257 -
+ .../javadoc/org/nexml/model/TestTreeBlock.html     |  257 -
+ phyloGeoRef/dist/javadoc/org/nexml/model/Tree.html |  270 -
+ .../dist/javadoc/org/nexml/model/TreeBlock.html    |  339 -
+ .../org/nexml/model/UncertainCharacterState.html   |  236 -
+ .../org/nexml/model/impl/AnnotationImpl.html       | 2246 ---
+ .../javadoc/org/nexml/model/impl/DocumentImpl.html | 1818 --
+ .../org/nexml/model/impl/FloatTreeImpl.html        | 1863 --
+ .../org/nexml/model/impl/TreeBlockImpl.html        | 1932 ---
+ .../javadoc/org/nexml/model/impl/TreeImpl.html     | 2000 ---
+ .../org/nexml/model/impl/package-frame.html        |   41 -
+ .../org/nexml/model/impl/package-summary.html      |  174 -
+ .../javadoc/org/nexml/model/impl/package-tree.html |  161 -
+ .../javadoc/org/nexml/model/package-frame.html     |  118 -
+ .../javadoc/org/nexml/model/package-summary.html   |  323 -
+ .../dist/javadoc/org/nexml/model/package-tree.html |  187 -
+ phyloGeoRef/dist/javadoc/overview-frame.html       |  141 -
+ phyloGeoRef/dist/javadoc/package-frame.html        |   37 -
+ phyloGeoRef/dist/javadoc/package-list              |   50 -
+ phyloGeoRef/dist/javadoc/package-summary.html      |  156 -
+ phyloGeoRef/dist/javadoc/package-tree.html         |  155 -
+ phyloGeoRef/dist/javadoc/resources/inherit.gif     |  Bin 57 -> 0 bytes
+ phyloGeoRef/dist/javadoc/serialized-form.html      | 2781 ---
+ .../dist/javadoc/validator/XmlValidator.html       |  279 -
+ .../dist/javadoc/validator/package-frame.html      |   33 -
+ .../dist/javadoc/validator/package-summary.html    |  158 -
+ .../dist/javadoc/validator/package-tree.html       |  154 -
+ phyloGeoRef/dist/lib/JavaAPIforKml.jar             |  Bin 0 -> 619517 bytes
+ phyloGeoRef/dist/lib/activation.jar                |  Bin 0 -> 124332 bytes
+ phyloGeoRef/dist/lib/jaxb-api.jar                  |  Bin 0 -> 105134 bytes
+ phyloGeoRef/dist/lib/jaxb-impl.jar                 |  Bin 0 -> 890196 bytes
+ phyloGeoRef/dist/lib/jsr173_1.0_api.jar            |  Bin 0 -> 45539 bytes
+ phyloGeoRef/dist/lib/junit-4.8.2.jar               |  Bin 0 -> 237344 bytes
+ phyloGeoRef/dist/phyloGeoRef.jar                   |  Bin 0 -> 3002518 bytes
+ phyloGeoRef/mojo.kmz                               |  Bin 0 -> 27267 bytes
+ phyloGeoRef/nbproject/build-impl.xml               |  266 +-
+ phyloGeoRef/nbproject/genfiles.properties          |   10 +-
+ phyloGeoRef/nbproject/private/private.properties   |    9 +-
+ .../nbproject/private/profiler/configurations.xml  |  110 +
+ .../private/profiler/snapshot-1311691502377.nps    |  Bin 0 -> 20879 bytes
+ phyloGeoRef/nbproject/project.properties           |   24 +-
+ phyloGeoRef/nbproject/project.xml                  |   24 +-
+ phyloGeoRef/output0.kml                            | 4837 ++++++
+ phyloGeoRef/outputTree-0.kmz                       |  Bin 0 -> 5334813 bytes
+ phyloGeoRef/samples/2010/goodTree                  |   43 +
+ .../samples/2010/homologsLabeledAndKnown.xml       | 5627 ++++++
+ phyloGeoRef/samples/2010/merASPECIEStree.ph        |    1 +
+ phyloGeoRef/samples/2010/testCoords.csv            |    6 +
+ phyloGeoRef/samples/2010/testMerAcoords.csv        |   17 +
+ phyloGeoRef/samples/2010/testTree.nwk              |    1 +
+ phyloGeoRef/samples/2010/testTreeBranchLengths.nwk |    1 +
+ .../samples/mammals/Mammals_in_tree_pantheria.csv  | 4669 +++++
+ phyloGeoRef/samples/mammals/mammalsTree.nwk        |    1 +
+ phyloGeoRef/samples/mammals/mammalsTree.xml        |18107 ++++++++++++++++++++
+ phyloGeoRef/samples/mammals/mammals_in_tree.txt    | 4669 +++++
+ .../samples/mammals/mammals_with_ranges.nwk        |    1 +
+ phyloGeoRef/samples/tree1/testTree.nex             |    8 +
+ phyloGeoRef/samples/tree1/testTree.xml             |   44 +
+ phyloGeoRef/samples/tree2/intTestTree.nwk          |    1 +
+ phyloGeoRef/samples/tree2/intTestTree.xml          |   43 +
+ phyloGeoRef/samples/tree3/T1092.nex                |  203 +
+ phyloGeoRef/samples/tree3/T1092.xml                |  870 +
+ phyloGeoRef/samples/tree3/complete.xml             |    1 +
+ phyloGeoRef/samples/treeExperimental/testTree.nex  |    8 +
+ phyloGeoRef/samples/treeExperimental/testTree.xml  |   99 +
+ phyloGeoRef/samples/treeHypothetical/test.csv      |   23 +
+ phyloGeoRef/samples/treeHypothetical/tree.nwk      |    2 +
+ phyloGeoRef/samples/treeHypothetical/tree.xml      |  106 +
+ phyloGeoRef/src/nescent/DemoMain.java              |   95 +
+ phyloGeoRef/src/nescent/DemoMain2.java             |  117 +
+ phyloGeoRef/src/nescent/DemoMain3.java             |  106 +
+ phyloGeoRef/src/nescent/phyloGeoRef/Quad.java      |  104 -
+ phyloGeoRef/src/nescent/phyloGeoRef/Triple.java    |   93 -
+ .../src/nescent/phyloGeoRef/calc3Dtree.java        |  563 -
+ .../nescent/phyloGeoRef/geoData/parseCoords.java   |  350 -
+ .../nescent/phyloGeoRef/geoData/parseMetadata.java |   26 -
+ .../src/nescent/phyloGeoRef/kml/kmlWriter.java     |  163 -
+ phyloGeoRef/src/nescent/phyloGeoRef/magic.java     |   62 -
+ .../nescent/phyloGeoRef/tree/NeXMLtoPhyObj.java    |  264 -
+ .../src/nescent/phyloGeoRef/tree/getNeXMLtree.java |   77 -
+ .../src/nescent/phyloGeoRef/tree/getTree.java      |  173 -
+ .../src/nescent/phyloGeoRef/tree/returnTree.java   |   26 -
+ .../src/nescent/phyloGeoRef/tree/storeTree.java    |   70 -
+ .../src/nescent/phyloGeoRef/tree/treeInfo.java     |   27 -
+ .../src/nescent/phylogeoref/Calc3DTree.java        |  563 +
+ phyloGeoRef/src/nescent/phylogeoref/Magic.java     |   62 +
+ phyloGeoRef/src/nescent/phylogeoref/Quad.java      |  104 +
+ phyloGeoRef/src/nescent/phylogeoref/Triple.java    |   93 +
+ .../nescent/phylogeoref/geodata/ParseCoords.java   |  350 +
+ .../nescent/phylogeoref/geodata/ParseMetadata.java |   26 +
+ .../nescent/phylogeoref/gui/PhyloGeoRefWidget.form |  292 +
+ .../nescent/phylogeoref/gui/PhyloGeoRefWidget.java |  396 +
+ .../src/nescent/phylogeoref/gui/Phylogeoref.java   |  212 +
+ .../phylogeoref/processor/PhylogenyProcessor.java  |   33 +
+ .../phylogeoref/processor/ProcessorFactory.java    |   56 +
+ .../processor/UnweightedPhylogenyProcessor.java    |  258 +
+ .../processor/WeightedPhylogenyProcessor.java      |  273 +
+ .../processor/utility/ComputeUtility.java          |  808 +
+ .../phylogeoref/reader/CSVMetadataReader.java      |   69 +
+ .../phylogeoref/reader/GrandUnifiedReader.java     |  253 +
+ .../nescent/phylogeoref/reader/MetadataReader.java |   26 +
+ .../phylogeoref/reader/MultiFormatReader.java      |  189 +
+ .../nescent/phylogeoref/reader/NeXMLEngine.java    |  112 +
+ .../nescent/phylogeoref/reader/NeXMLReader.java    |  124 +
+ .../phylogeoref/reader/PhylogenyKitchen.java       |  359 +
+ .../nescent/phylogeoref/reader/PhylogenyMould.java |  119 +
+ .../phylogeoref/reader/TextMetadataReader.java     |   67 +
+ .../src/nescent/phylogeoref/reader/TreeReader.java |   32 +
+ .../reader/UniversalMetadataReader.java            |   79 +
+ .../phylogeoref/reader/UniversalTreeReader.java    |   78 +
+ .../phylogeoref/reader/utility/PhyloUtility.java   |  291 +
+ .../reader/utility/PhylogenyFactory.java           |   64 +
+ .../phylogeoref/validator/PhylogenyValidator.java  |  204 +
+ .../exception/InvalidChildrenException.java        |   35 +
+ .../exception/InvalidEdgeLengthException.java      |   33 +
+ .../exception/InvalidLatitudeException.java        |   34 +
+ .../exception/InvalidLongitudeException.java       |   34 +
+ .../exception/LocationNotFoundException.java       |   34 +
+ .../exception/MissingEdgeLengthException.java      |   33 +
+ .../validator/exception/SingleChildException.java  |   29 +
+ .../validator/exception/ZeroChildException.java    |   28 +
+ .../phylogeoref/writer/AdvancedKmlWriter.java      |  127 +
+ .../phylogeoref/writer/HierarchicalKmlPainter.java |   90 +
+ .../src/nescent/phylogeoref/writer/KmlPainter.java |  100 +
+ .../src/nescent/phylogeoref/writer/KmlWriter.java  |  163 +
+ .../phylogeoref/writer/LevelwiseKmlPainter.java    |   83 +
+ .../src/nescent/phylogeoref/writer/PaintStyle.java |   29 +
+ .../phylogeoref/writer/SimpleKmlWriter.java        |  168 +
+ .../nescent/phylogeoref/writer/utility/AMath.java  |  184 +
+ .../phylogeoref/writer/utility/HTMLParlour.java    |  289 +
+ .../phylogeoref/writer/utility/KmlConstants.java   |  101 +
+ .../phylogeoref/writer/utility/KmlToolkit.java     |  137 +
+ .../phylogeoref/writer/utility/KmlUtility.java     |  723 +
+ phyloGeoRef/src/nescent/testMain.java              |   31 +-
+ phyloGeoRef/src/org/forester/application/nj.java   |   13 +-
+ phyloGeoRef/src/testCoords.csv                     |   16 +-
+ phyloGeoRef/src/testCoordsmeta.csv                 |   16 +-
+ phyloGeoRef/src/testCoordsmeta2.csv                |    9 +
+ phyloGeoRef/test/.DS_Store                         |  Bin 6148 -> 0 bytes
+ phyloGeoRef/test/goodTree                          |   43 -
+ phyloGeoRef/test/homologsLabeledAndKnown.xml       | 5627 ------
+ phyloGeoRef/test/merASPECIEStree.ph                |    1 -
+ .../processor/utility/ComputeUtilityTest.java      |  122 +
+ phyloGeoRef/test/testCoords.csv                    |    6 -
+ phyloGeoRef/test/testMerAcoords.csv                |   17 -
+ phyloGeoRef/test/testTree.nwk                      |    1 -
+ phyloGeoRef/test/testTreeBranchLengths.nwk         |    1 -
+ phyloGeoRef/testfile.kml                           |   58 +-
+ 1646 files changed, 48443 insertions(+), 404300 deletions(-)
