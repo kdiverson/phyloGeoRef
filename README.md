@@ -39,7 +39,7 @@ All code in this library is owned by the origional author(s) and their licenses 
 You can import the project directly as an eclipse or a netbeans project. The IDE would complain about missing jars which you can find is dist/lib. Once you've done this you are ready to go. The package nescent contains some DemoMain.java files which you can have a look to get started. The Manual is also a good resource to look into.
 
 ### BLOGS
-You can find some the developer's rants on their gsoc blogs.
+You can find some of the developer's rants on their gsoc blogs.
 - http://phylogeoref.blogspot.com/
 - http://phylogeoref-mmxi.blogspot.in/
 
