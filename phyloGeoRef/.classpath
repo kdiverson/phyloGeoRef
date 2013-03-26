@@ -2,5 +2,11 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="/home/dapurv5/MyCode/private-projects/phyloGeoRef/phyloGeoRef/dist/lib/activation.jar"/>
+	<classpathentry kind="lib" path="/home/dapurv5/MyCode/private-projects/phyloGeoRef/phyloGeoRef/dist/lib/JavaAPIforKml.jar"/>
+	<classpathentry kind="lib" path="/home/dapurv5/MyCode/private-projects/phyloGeoRef/phyloGeoRef/dist/lib/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="/home/dapurv5/MyCode/private-projects/phyloGeoRef/phyloGeoRef/dist/lib/jaxb-impl.jar"/>
+	<classpathentry kind="lib" path="/home/dapurv5/MyCode/private-projects/phyloGeoRef/phyloGeoRef/dist/lib/jsr173_1.0_api.jar"/>
+	<classpathentry kind="lib" path="/home/dapurv5/MyCode/private-projects/phyloGeoRef/phyloGeoRef/dist/lib/junit-4.8.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
